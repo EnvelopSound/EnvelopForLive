@@ -38,12 +38,144 @@
 		"subpatcher_template" : "no-menus",
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-16",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "FullPacket" ],
+					"patcher" : 					{
+						"fileversion" : 1,
+						"appversion" : 						{
+							"major" : 7,
+							"minor" : 0,
+							"revision" : 6,
+							"architecture" : "x64",
+							"modernui" : 1
+						}
+,
+						"rect" : [ 0.0, 0.0, 640.0, 480.0 ],
+						"bglocked" : 0,
+						"openinpresentation" : 0,
+						"default_fontsize" : 12.0,
+						"default_fontface" : 0,
+						"default_fontname" : "Arial",
+						"gridonopen" : 1,
+						"gridsize" : [ 15.0, 15.0 ],
+						"gridsnaponopen" : 1,
+						"objectsnaponopen" : 1,
+						"statusbarvisible" : 2,
+						"toolbarvisible" : 1,
+						"lefttoolbarpinned" : 0,
+						"toptoolbarpinned" : 0,
+						"righttoolbarpinned" : 0,
+						"bottomtoolbarpinned" : 0,
+						"toolbars_unpinned_last_save" : 15,
+						"tallnewobj" : 0,
+						"boxanimatetime" : 200,
+						"enablehscroll" : 1,
+						"enablevscroll" : 1,
+						"devicewidth" : 0.0,
+						"description" : "",
+						"digest" : "",
+						"tags" : "",
+						"style" : "",
+						"subpatcher_template" : "no-menus",
+						"boxes" : [ 							{
+								"box" : 								{
+									"id" : "obj-4",
+									"linecount" : 2,
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "FullPacket" ],
+									"patching_rect" : [ 50.0, 100.0, 116.0, 35.0 ],
+									"style" : "",
+									"text" : "o.pack /server/subscribe/ip"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"comment" : "",
+									"id" : "obj-9",
+									"maxclass" : "inlet",
+									"numinlets" : 0,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 50.0, 40.0, 30.0, 30.0 ],
+									"style" : ""
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"comment" : "",
+									"id" : "obj-15",
+									"maxclass" : "outlet",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 50.0, 195.0, 30.0, 30.0 ],
+									"style" : ""
+								}
+
+							}
+ ],
+						"lines" : [ 							{
+								"patchline" : 								{
+									"destination" : [ "obj-15", 0 ],
+									"disabled" : 0,
+									"hidden" : 0,
+									"source" : [ "obj-4", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-4", 0 ],
+									"disabled" : 0,
+									"hidden" : 0,
+									"source" : [ "obj-9", 0 ]
+								}
+
+							}
+ ]
+					}
+,
+					"patching_rect" : [ 677.25, 477.0, 61.0, 22.0 ],
+					"saved_object_attributes" : 					{
+						"description" : "",
+						"digest" : "",
+						"globalpatchername" : "",
+						"style" : "",
+						"tags" : ""
+					}
+,
+					"style" : "",
+					"text" : "p re-label"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-8",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "" ],
+					"patching_rect" : [ 735.916687, 438.0, 29.5, 22.0 ],
+					"style" : "",
+					"text" : "t l l"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-37",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 805.916687, 535.0, 100.0, 22.0 ],
+					"patching_rect" : [ 805.916687, 566.0, 100.0, 22.0 ],
 					"style" : "",
 					"text" : "o.io.dsp.settings"
 				}
@@ -56,7 +188,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "FullPacket" ],
-					"patching_rect" : [ 805.916687, 586.0, 127.0, 22.0 ],
+					"patching_rect" : [ 805.916687, 597.0, 127.0, 22.0 ],
 					"style" : "",
 					"text" : "o.prepend /server/dsp"
 				}
@@ -69,7 +201,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "FullPacket" ],
-					"patching_rect" : [ 875.916687, 466.0, 105.0, 22.0 ],
+					"patching_rect" : [ 875.916687, 444.0, 105.0, 22.0 ],
 					"style" : "",
 					"text" : "o.prepend /server"
 				}
@@ -82,7 +214,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "FullPacket" ],
-					"patching_rect" : [ 735.916687, 374.0, 88.0, 22.0 ],
+					"patching_rect" : [ 735.916687, 366.0, 88.0, 22.0 ],
 					"style" : "",
 					"text" : "o.route /server"
 				}
@@ -98,9 +230,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 1023.0, 462.0, 459.0, 319.0 ],
-					"presentation_rect" : [ 1049.0, 455.0, 0.0, 0.0 ],
-					"text" : "/server/dsp/audiointerrupt/options : [\"Off\", \"On\"],\n/server/dsp/audiointerrupt/set : \"On\",\n/server/dsp/overdrive/options : [\"Off\", \"On\"],\n/server/dsp/overdrive/set : \"On\",\n/server/dsp/io_vector/options : [32, 64, 128, 256, 512, 1024, 2048],\n/server/dsp/io_vector/set : 32,\n/server/dsp/sig_vector/options : [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096],\n/server/dsp/sig_vector/set : 32,\n/server/dsp/samplerate/options : [44100, 48000, 88200, 96000],\n/server/dsp/samplerate/set : 44100,\n/server/dsp/output_device/options : [\"AirPlay\", \"Built-in Output\", \"JackRouter\", \"Soundflower (2ch)\", \"Soundflower (64ch)\"],\n/server/dsp/output_device/set : \"Built-in Output\",\n/server/dsp/input_device/options : [\"Built-in Microphone\", \"JackRouter\", \"Soundflower (2ch)\", \"Soundflower (64ch)\"],\n/server/dsp/input_device/set : \"Built-in Microphone\",\n/server/dsp/cpu : 2.,\n/server/dsp/switch/options : [\"Off\", \"On\"],\n/server/dsp/switch/set : \"Off\"",
+					"patching_rect" : [ 1066.0, 538.0, 459.0, 319.0 ],
+					"text" : "/server/dsp/switch/options : [\"Off\", \"On\"],\n/server/dsp/switch/set : \"Off\",\n/server/dsp/audiointerrupt/options : [\"Off\", \"On\"],\n/server/dsp/audiointerrupt/set : \"On\",\n/server/dsp/overdrive/options : [\"Off\", \"On\"],\n/server/dsp/overdrive/set : \"On\",\n/server/dsp/io_vector/options : [32, 64, 128, 256, 512, 1024, 2048],\n/server/dsp/io_vector/set : 32,\n/server/dsp/sig_vector/options : [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096],\n/server/dsp/sig_vector/set : 32,\n/server/dsp/samplerate/options : [44100, 48000, 88200, 96000],\n/server/dsp/samplerate/set : 44100,\n/server/dsp/output_device/options : [\"AirPlay\", \"Built-in Output\", \"JackRouter\", \"Soundflower (2ch)\", \"Soundflower (64ch)\"],\n/server/dsp/output_device/set : \"Built-in Output\",\n/server/dsp/input_device/options : [\"Built-in Microphone\", \"JackRouter\", \"Soundflower (2ch)\", \"Soundflower (64ch)\"],\n/server/dsp/input_device/set : \"Built-in Microphone\",\n/server/dsp/cpu : 2.",
 					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
 				}
 
@@ -115,7 +246,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 754.0, 249.0, 231.0, 24.0 ],
-					"presentation_rect" : [ 1027.0, 320.0, 0.0, 0.0 ],
 					"saved_bundle_data" : [ 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 32, 47, 115, 101, 114, 118, 101, 114, 47, 100, 115, 112, 47, 115, 119, 105, 116, 99, 104, 47, 115, 101, 116, 0, 0, 44, 115, 0, 0, 79, 110, 0, 0 ],
 					"saved_bundle_length" : 52,
 					"text" : "/server/dsp/switch/set : \"On\"",
@@ -133,7 +263,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 748.0, 213.0, 239.0, 24.0 ],
-					"presentation_rect" : [ 1023.0, 292.0, 0.0, 0.0 ],
 					"saved_bundle_data" : [ 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 32, 47, 115, 101, 114, 118, 101, 114, 47, 100, 115, 112, 47, 115, 119, 105, 116, 99, 104, 47, 115, 101, 116, 0, 0, 44, 115, 0, 0, 79, 102, 102, 0 ],
 					"saved_bundle_length" : 52,
 					"text" : "/server/dsp/switch/set : \"Off\"",
@@ -288,7 +417,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 674.916687, 556.0, 56.0, 22.0 ],
+					"patching_rect" : [ 635.916687, 572.0, 56.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -334,7 +463,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "bang" ],
-					"patching_rect" : [ 613.916687, 457.0, 24.0, 24.0 ],
+					"patching_rect" : [ 594.25, 496.0, 24.0, 24.0 ],
 					"style" : ""
 				}
 
@@ -402,7 +531,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 4,
 					"outlettype" : [ "", "", "", "FullPacket" ],
-					"patching_rect" : [ 613.916687, 342.5, 202.0, 22.0 ],
+					"patching_rect" : [ 594.25, 331.5, 144.0, 22.0 ],
 					"style" : "",
 					"text" : "o.select /ping /log /server"
 				}
@@ -415,7 +544,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 735.916687, 457.0, 50.0, 22.0 ],
+					"patching_rect" : [ 746.416687, 486.0, 50.0, 22.0 ],
 					"style" : "",
 					"text" : "host $1"
 				}
@@ -428,7 +557,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "FullPacket" ],
-					"patching_rect" : [ 735.916687, 414.0, 159.0, 22.0 ],
+					"patching_rect" : [ 735.916687, 399.0, 159.0, 22.0 ],
 					"style" : "",
 					"text" : "o.route /subscribe/ip /dsp"
 				}
@@ -440,7 +569,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 735.916687, 677.0, 140.0, 22.0 ],
+					"patching_rect" : [ 746.416687, 666.0, 140.0, 22.0 ],
 					"style" : "",
 					"text" : "udpsend localhost 5555"
 				}
@@ -633,6 +762,15 @@
 					"disabled" : 0,
 					"hidden" : 0,
 					"source" : [ "obj-14", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-39", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-16", 0 ]
 				}
 
 			}
@@ -962,15 +1100,6 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-14", 0 ],
-					"disabled" : 0,
-					"hidden" : 0,
-					"source" : [ "obj-7", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
 					"destination" : [ "obj-32", 0 ],
 					"disabled" : 0,
 					"hidden" : 0,
@@ -984,6 +1113,33 @@
 					"disabled" : 0,
 					"hidden" : 0,
 					"source" : [ "obj-7", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-8", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-7", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-14", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-8", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-16", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-8", 0 ]
 				}
 
 			}
@@ -1006,7 +1162,7 @@
 			}
 , 			{
 				"name" : "o.io.dsp.settings.maxpat",
-				"bootpath" : "~/Documents/dev-lib/__envelop",
+				"bootpath" : "~/Documents/dev-lib/EnvelopLive/dev/abstractions",
 				"type" : "JSON",
 				"implicit" : 1
 			}
