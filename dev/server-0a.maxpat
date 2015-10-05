@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 0.0, 45.0, 1075.0, 851.0 ],
+		"rect" : [ 0.0, 45.0, 1013.0, 851.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -37,6 +37,19 @@
 		"style" : "",
 		"subpatcher_template" : "no-menus",
 		"boxes" : [ 			{
+				"box" : 				{
+					"id" : "obj-4",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "" ],
+					"patching_rect" : [ 779.833313, 325.5, 123.0, 22.0 ],
+					"style" : "",
+					"text" : "routepass FullPacket"
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"id" : "obj-34",
 					"maxclass" : "message",
@@ -75,7 +88,7 @@
 					"numinlets" : 16,
 					"numoutlets" : 2,
 					"outlettype" : [ "signal", "signal" ],
-					"patching_rect" : [ 207.222229, 610.0, 127.55555, 34.0 ],
+					"patching_rect" : [ 78.724846, 616.0, 127.55555, 34.0 ],
 					"style" : "",
 					"text" : "hoa.3d.decoder~ 3 2 @mode binaural"
 				}
@@ -126,24 +139,6 @@
 					"patching_rect" : [ 669.0, 590.5, 310.0, 73.0 ],
 					"style" : "",
 					"text" : "180 69.094803 159.095001 0 90 20.905199 135 35.2644 135 -35.2644 180 -69.094803 20.905199 0 90 -20.905199 45 35.2644 45 -35.2644 0 69.094803 200.904999 0 270 20.905199 225 35.2644 225 -35.2644 0 -69.094803 339.095001 0 270 -20.905199 315 35.2644 315 -35.2644"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"fontface" : 0,
-					"fontsize" : 12.0,
-					"id" : "obj-15",
-					"linecount" : 2,
-					"maxclass" : "o.compose",
-					"numinlets" : 2,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 492.0, 162.0, 159.0, 38.0 ],
-					"saved_bundle_data" : [ 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 24, 47, 115, 111, 117, 114, 99, 101, 47, 42, 47, 97, 109, 112, 0, 0, 0, 44, 105, 0, 0, 0, 0, 0, 0, 0, 0, 0, 24, 47, 115, 111, 117, 114, 99, 101, 47, 42, 47, 101, 108, 0, 0, 0, 0, 44, 105, 0, 0, 0, 0, 0, 0 ],
-					"saved_bundle_length" : 72,
-					"text" : "/source/*/amp : 0,\n/source/*/el : 0",
-					"textcolor" : [ 0.188, 0.188, 0.188, 1.0 ]
 				}
 
 			}
@@ -310,7 +305,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 229.5, 249.0, 145.0, 76.0 ],
 					"style" : "",
-					"text" : "-44.285139 -44.285139 -999. -999. -999. -999. -999. -999. -999. -999. -999. -999. -999. -999. -999. -999."
+					"text" : "-66.605909 -66.605909 -999. -999. -999. -999. -999. -999. -999. -999. -999. -999. -999. -999. -999. -999."
 				}
 
 			}
@@ -15052,22 +15047,6 @@
 			}
 , 			{
 				"box" : 				{
-					"fontface" : 0,
-					"fontname" : "Arial",
-					"fontsize" : 11.595187,
-					"id" : "obj-29",
-					"maxclass" : "newobj",
-					"numinlets" : 16,
-					"numoutlets" : 20,
-					"outlettype" : [ "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal" ],
-					"patching_rect" : [ 63.832253, 606.0, 127.55555, 21.0 ],
-					"style" : "",
-					"text" : "hoa.3d.decoder~ 3 20"
-				}
-
-			}
-, 			{
-				"box" : 				{
 					"id" : "obj-13",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
@@ -15443,6 +15422,15 @@
 					"destination" : [ "obj-24", 0 ],
 					"disabled" : 0,
 					"hidden" : 0,
+					"source" : [ "obj-4", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-4", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
 					"source" : [ "obj-41", 0 ]
 				}
 
@@ -15471,15 +15459,6 @@
 					"disabled" : 0,
 					"hidden" : 0,
 					"source" : [ "obj-7", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-29", 0 ],
-					"disabled" : 0,
-					"hidden" : 0,
-					"source" : [ "obj-8", 0 ]
 				}
 
 			}
@@ -15800,163 +15779,10 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-29", 0 ],
-					"disabled" : 0,
-					"hidden" : 0,
-					"source" : [ "obj-9", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
 					"destination" : [ "obj-102", 0 ],
 					"disabled" : 0,
 					"hidden" : 0,
 					"source" : [ "obj-91", 18 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-29", 15 ],
-					"disabled" : 0,
-					"hidden" : 0,
-					"source" : [ "obj-91", 15 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-29", 14 ],
-					"disabled" : 0,
-					"hidden" : 0,
-					"source" : [ "obj-91", 14 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-29", 13 ],
-					"disabled" : 0,
-					"hidden" : 0,
-					"source" : [ "obj-91", 13 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-29", 12 ],
-					"disabled" : 0,
-					"hidden" : 0,
-					"source" : [ "obj-91", 12 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-29", 11 ],
-					"disabled" : 0,
-					"hidden" : 0,
-					"source" : [ "obj-91", 11 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-29", 10 ],
-					"disabled" : 0,
-					"hidden" : 0,
-					"source" : [ "obj-91", 10 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-29", 9 ],
-					"disabled" : 0,
-					"hidden" : 0,
-					"source" : [ "obj-91", 9 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-29", 8 ],
-					"disabled" : 0,
-					"hidden" : 0,
-					"source" : [ "obj-91", 8 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-29", 7 ],
-					"disabled" : 0,
-					"hidden" : 0,
-					"source" : [ "obj-91", 7 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-29", 6 ],
-					"disabled" : 0,
-					"hidden" : 0,
-					"source" : [ "obj-91", 6 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-29", 5 ],
-					"disabled" : 0,
-					"hidden" : 0,
-					"source" : [ "obj-91", 5 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-29", 4 ],
-					"disabled" : 0,
-					"hidden" : 0,
-					"source" : [ "obj-91", 4 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-29", 3 ],
-					"disabled" : 0,
-					"hidden" : 0,
-					"source" : [ "obj-91", 3 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-29", 2 ],
-					"disabled" : 0,
-					"hidden" : 0,
-					"source" : [ "obj-91", 2 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-29", 1 ],
-					"disabled" : 0,
-					"hidden" : 0,
-					"source" : [ "obj-91", 1 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-29", 0 ],
-					"disabled" : 0,
-					"hidden" : 0,
-					"source" : [ "obj-91", 0 ]
 				}
 
 			}
@@ -16122,7 +15948,7 @@
 ,
 		"dependency_cache" : [ 			{
 				"name" : "spat.multi.connect.maxpat",
-				"bootpath" : "~/Documents/dev-lib/EnvelopLive/dev/abstractions",
+				"bootpath" : "~/Documents/Max 7/Packages/ircam-spat/patchers",
 				"type" : "JSON",
 				"implicit" : 1
 			}
@@ -16154,10 +15980,6 @@
 			}
 , 			{
 				"name" : "o.route.mxo",
-				"type" : "iLaX"
-			}
-, 			{
-				"name" : "hoa.3d.decoder~.mxo",
 				"type" : "iLaX"
 			}
 , 			{
@@ -16194,6 +16016,10 @@
 			}
 , 			{
 				"name" : "spat.viewer.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "hoa.3d.decoder~.mxo",
 				"type" : "iLaX"
 			}
  ],
