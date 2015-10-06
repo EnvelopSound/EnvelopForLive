@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 0.0, 45.0, 1440.0, 852.0 ],
+		"rect" : [ -189.0, 45.0, 1440.0, 852.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -1485,7 +1485,7 @@
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
-					"outlettype" : [ "FullPacket" ],
+					"outlettype" : [ "" ],
 					"patching_rect" : [ 792.725952, 13.0, 30.0, 30.0 ],
 					"style" : ""
 				}
@@ -2120,7 +2120,7 @@
 					"outlettype" : [ "", "int" ],
 					"patching_rect" : [ 1313.262573, 251.551208, 109.0, 22.0 ],
 					"style" : "",
-					"text" : "adstatus overdrive"
+					"text" : "adstatus takeover"
 				}
 
 			}
@@ -5999,7 +5999,7 @@
 									"maxclass" : "inlet",
 									"numinlets" : 0,
 									"numoutlets" : 1,
-									"outlettype" : [ "FullPacket" ],
+									"outlettype" : [ "" ],
 									"patching_rect" : [ 50.0, 40.0, 30.0, 30.0 ],
 									"style" : ""
 								}
@@ -6777,6 +6777,36 @@
 
 			}
  ],
+		"dependency_cache" : [ 			{
+				"name" : "o.pack.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "o.prepend.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "o.union.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "o.route.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "o.expr.codebox.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "o.select.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "o.compose.mxo",
+				"type" : "iLaX"
+			}
+ ],
+		"embedsnapshot" : 0,
 		"bgfillcolor_type" : "gradient",
 		"bgfillcolor_color1" : [ 0.376471, 0.384314, 0.4, 1.0 ],
 		"bgfillcolor_color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],

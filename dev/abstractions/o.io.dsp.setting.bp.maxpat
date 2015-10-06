@@ -135,7 +135,7 @@
 					"outlettype" : [ "FullPacket" ],
 					"patching_rect" : [ 40.0, 514.0, 320.0, 27.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 3.0, 186.0, 334.0, 28.0 ],
+					"presentation_rect" : [ 3.0, 185.714279, 334.0, 28.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -157,7 +157,7 @@
 					"outlettype" : [ "FullPacket" ],
 					"patching_rect" : [ 40.0, 469.0, 320.0, 27.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 3.0, 156.0, 334.0, 28.0 ],
+					"presentation_rect" : [ 3.0, 125.14286, 334.0, 28.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -179,7 +179,7 @@
 					"outlettype" : [ "FullPacket" ],
 					"patching_rect" : [ 40.0, 422.0, 320.0, 27.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 3.0, 126.0, 334.0, 28.0 ],
+					"presentation_rect" : [ 3.0, 155.428574, 334.0, 28.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -201,7 +201,7 @@
 					"outlettype" : [ "FullPacket" ],
 					"patching_rect" : [ 40.0, 372.0, 320.0, 27.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 3.0, 96.0, 334.0, 28.0 ],
+					"presentation_rect" : [ 3.0, 94.85714, 334.0, 28.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -312,7 +312,7 @@
 					"outlettype" : [ "FullPacket" ],
 					"patching_rect" : [ 40.0, 315.0, 320.0, 27.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 3.0, 64.0, 334.0, 28.0 ],
+					"presentation_rect" : [ 3.0, 64.571426, 334.0, 28.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -334,7 +334,7 @@
 					"outlettype" : [ "FullPacket" ],
 					"patching_rect" : [ 40.0, 269.0, 320.0, 27.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 3.0, 34.0, 334.0, 28.0 ],
+					"presentation_rect" : [ 3.0, 34.285713, 334.0, 28.0 ],
 					"viewvisibility" : 1
 				}
 
