@@ -3,7 +3,7 @@
 ### package dependencies:
 * odot: https://github.com/CNMAT/CNMAT-odot/releases/tag/v1.0.9rc9-mmjss2015
 * hoaLib: https://github.com/CICM/HoaLibrary-Max
-* hiss: http://www.thehiss.org/
+* HISSTools: http://www.thehiss.org/
 
 ### setup:
 * install the above two libraries into the ``~/Documents/Max 7/Packages` folder
