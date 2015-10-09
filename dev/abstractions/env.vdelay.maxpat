@@ -38,12 +38,39 @@
 		"subpatcher_template" : "no-menus",
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-6",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 705.0, 201.0, 50.0, 22.0 ],
+					"presentation_rect" : [ 705.0, 204.0, 0.0, 0.0 ],
+					"style" : ""
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-5",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 644.0, 201.0, 59.0, 22.0 ],
+					"presentation_rect" : [ 451.0, 187.0, 0.0, 0.0 ],
+					"style" : "",
+					"text" : "active $1"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-19",
 					"maxclass" : "message",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 566.0, 159.5, 50.0, 22.0 ],
+					"patching_rect" : [ 501.0, 244.0, 50.0, 22.0 ],
 					"style" : ""
 				}
 
@@ -55,7 +82,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 540.0, 202.0, 80.0, 22.0 ],
+					"patching_rect" : [ 411.0, 244.0, 80.0, 22.0 ],
 					"style" : "",
 					"text" : "interp_ms $1"
 				}
@@ -65,12 +92,12 @@
 				"box" : 				{
 					"id" : "obj-14",
 					"maxclass" : "newobj",
-					"numinlets" : 2,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 540.0, 112.0, 94.0, 22.0 ],
+					"numinlets" : 3,
+					"numoutlets" : 3,
+					"outlettype" : [ "", "", "" ],
+					"patching_rect" : [ 589.0, 97.0, 129.0, 22.0 ],
 					"style" : "",
-					"text" : "route interp_ms"
+					"text" : "route interp_ms active"
 				}
 
 			}
@@ -81,7 +108,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 485.0, 74.0, 74.0, 22.0 ],
+					"patching_rect" : [ 534.0, 68.0, 74.0, 22.0 ],
 					"style" : "",
 					"text" : "patcherargs"
 				}
@@ -118,11 +145,11 @@
 					"id" : "obj-10",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
-					"numoutlets" : 3,
-					"outlettype" : [ "", "", "FullPacket" ],
-					"patching_rect" : [ 329.0, 88.0, 143.0, 22.0 ],
+					"numoutlets" : 4,
+					"outlettype" : [ "", "", "", "FullPacket" ],
+					"patching_rect" : [ 329.0, 88.0, 181.0, 22.0 ],
 					"style" : "",
-					"text" : "o.route /delay /interp_ms"
+					"text" : "o.route /delay /interp_ms /active"
 				}
 
 			}
@@ -146,7 +173,7 @@
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 246.0, 316.0, 30.0, 30.0 ],
+					"patching_rect" : [ 246.0, 312.0, 30.0, 30.0 ],
 					"style" : ""
 				}
 
@@ -198,7 +225,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "signal" ],
-					"patching_rect" : [ 246.0, 225.0, 102.0, 35.0 ],
+					"patching_rect" : [ 246.0, 250.5, 102.0, 35.0 ],
 					"style" : "",
 					"text" : "gen~ @gen vdelay4.gendsp"
 				}
@@ -211,7 +238,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "float", "bang" ],
-					"patching_rect" : [ 113.5, 238.0, 121.0, 22.0 ],
+					"patching_rect" : [ 91.5, 238.0, 121.0, 22.0 ],
 					"style" : "",
 					"text" : "buffer~ #0-loop 2000"
 				}
@@ -251,6 +278,15 @@
 					"disabled" : 0,
 					"hidden" : 0,
 					"source" : [ "obj-10", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-5", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-10", 2 ]
 				}
 
 			}
@@ -310,6 +346,24 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-5", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-14", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-6", 1 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-14", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-71", 0 ],
 					"disabled" : 0,
 					"hidden" : 0,
@@ -332,6 +386,15 @@
 					"disabled" : 0,
 					"hidden" : 0,
 					"source" : [ "obj-4", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-71", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-5", 0 ]
 				}
 
 			}
@@ -396,8 +459,8 @@
 , 			{
 				"name" : "newobjYellow-1",
 				"default" : 				{
-					"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
-					"fontsize" : [ 12.059008 ]
+					"fontsize" : [ 12.059008 ],
+					"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
