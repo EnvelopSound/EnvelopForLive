@@ -327,20 +327,8 @@
 						"tags" : "",
 						"style" : "",
 						"subpatcher_template" : "no-menus",
+						"visible" : 1,
 						"boxes" : [ 							{
-								"box" : 								{
-									"id" : "obj-66",
-									"maxclass" : "newobj",
-									"numinlets" : 4,
-									"numoutlets" : 5,
-									"outlettype" : [ "signal", "signal", "signal", "signal", "bang" ],
-									"patching_rect" : [ 268.0, 320.0, 100.0, 22.0 ],
-									"style" : "",
-									"text" : "env.1o_conv~"
-								}
-
-							}
-, 							{
 								"box" : 								{
 									"id" : "obj-62",
 									"maxclass" : "newobj",
@@ -404,7 +392,6 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "signal" ],
 									"patching_rect" : [ 429.0, 628.5, 29.5, 22.0 ],
-									"presentation_rect" : [ 387.0, 625.5, 0.0, 0.0 ],
 									"style" : "",
 									"text" : "*~"
 								}
@@ -418,7 +405,6 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "signal" ],
 									"patching_rect" : [ 397.0, 628.5, 29.5, 22.0 ],
-									"presentation_rect" : [ 355.0, 625.5, 0.0, 0.0 ],
 									"style" : "",
 									"text" : "*~"
 								}
@@ -432,7 +418,6 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "signal" ],
 									"patching_rect" : [ 365.0, 628.5, 29.5, 22.0 ],
-									"presentation_rect" : [ 323.0, 625.5, 0.0, 0.0 ],
 									"style" : "",
 									"text" : "*~"
 								}
@@ -446,7 +431,6 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "signal" ],
 									"patching_rect" : [ 333.0, 628.5, 29.5, 22.0 ],
-									"presentation_rect" : [ 291.0, 625.5, 0.0, 0.0 ],
 									"style" : "",
 									"text" : "*~"
 								}
@@ -498,7 +482,6 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "signal", "bang" ],
 									"patching_rect" : [ 481.0, 437.5, 36.0, 22.0 ],
-									"presentation_rect" : [ 443.0, 411.0, 0.0, 0.0 ],
 									"style" : "",
 									"text" : "line~"
 								}
@@ -512,7 +495,6 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 481.0, 401.0, 47.0, 22.0 ],
-									"presentation_rect" : [ 483.0, 347.0, 0.0, 0.0 ],
 									"style" : "",
 									"text" : "$1 300"
 								}
@@ -14829,16 +14811,6 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-99", 0 ],
-					"disabled" : 0,
-					"hidden" : 0,
-					"midpoints" : [ 362.5, 402.0, 786.0, 402.0, 786.0, 39.0, 261.5, 39.0 ],
-					"source" : [ "obj-79", 2 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
 					"destination" : [ "obj-28", 0 ],
 					"disabled" : 0,
 					"hidden" : 0,
@@ -14898,12 +14870,6 @@
 				"name" : "random.svg",
 				"bootpath" : "C74:/media/max/picts/m4l-picts",
 				"type" : "svg ",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "env.1o_conv~.maxpat",
-				"bootpath" : "~/Documents/dev-lib/EnvelopLive/dev/abstractions",
-				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
