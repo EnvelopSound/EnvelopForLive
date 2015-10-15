@@ -44,7 +44,6 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 565.0, 317.5, 62.0, 22.0 ],
-					"presentation_rect" : [ 574.0, 293.5, 0.0, 0.0 ],
 					"style" : "",
 					"text" : "zl.change"
 				}
@@ -58,7 +57,6 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 504.0, 286.5, 62.0, 22.0 ],
-					"presentation_rect" : [ 507.25, 284.5, 0.0, 0.0 ],
 					"style" : "",
 					"text" : "zl.change"
 				}
