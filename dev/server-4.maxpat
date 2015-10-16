@@ -11,7 +11,7 @@
 ,
 		"rect" : [ 0.0, 45.0, 1440.0, 851.0 ],
 		"bglocked" : 0,
-		"openinpresentation" : 0,
+		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
 		"default_fontface" : 0,
 		"default_fontname" : "Arial",
@@ -43,7 +43,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 758.833374, 104.0, 65.0, 22.0 ],
+					"patching_rect" : [ 607.833374, 74.0, 65.0, 22.0 ],
 					"style" : "",
 					"text" : "r osc-pipe"
 				}
@@ -465,7 +465,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 588.5, 259.5, 110.0, 22.0 ],
+					"patching_rect" : [ 437.5, 229.5, 110.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -628,7 +628,7 @@
 																"box" : 																{
 																	"id" : "obj-34",
 																	"maxclass" : "newobj",
-																	"numinlets" : 2,
+																	"numinlets" : 1,
 																	"numoutlets" : 2,
 																	"outlettype" : [ "", "FullPacket" ],
 																	"patching_rect" : [ 50.0, 205.5, 71.0, 22.0 ],
@@ -892,7 +892,7 @@
 																				"box" : 																				{
 																					"id" : "obj-149",
 																					"maxclass" : "newobj",
-																					"numinlets" : 2,
+																					"numinlets" : 1,
 																					"numoutlets" : 2,
 																					"outlettype" : [ "", "FullPacket" ],
 																					"patching_rect" : [ 131.0, 198.0, 119.0, 22.0 ],
@@ -1241,7 +1241,7 @@
 																				"box" : 																				{
 																					"id" : "obj-12",
 																					"maxclass" : "newobj",
-																					"numinlets" : 2,
+																					"numinlets" : 1,
 																					"numoutlets" : 2,
 																					"outlettype" : [ "", "FullPacket" ],
 																					"patching_rect" : [ 143.0, 292.0, 103.0, 22.0 ],
@@ -1587,7 +1587,7 @@
 																				"box" : 																				{
 																					"id" : "obj-155",
 																					"maxclass" : "newobj",
-																					"numinlets" : 5,
+																					"numinlets" : 1,
 																					"numoutlets" : 5,
 																					"outlettype" : [ "", "", "", "", "FullPacket" ],
 																					"patching_rect" : [ 84.5, 138.0, 332.0, 22.0 ],
@@ -2034,7 +2034,7 @@
 																				"box" : 																				{
 																					"id" : "obj-1",
 																					"maxclass" : "newobj",
-																					"numinlets" : 3,
+																					"numinlets" : 1,
 																					"numoutlets" : 3,
 																					"outlettype" : [ "", "", "FullPacket" ],
 																					"patching_rect" : [ 230.0, 141.0, 204.0, 22.0 ],
@@ -2677,7 +2677,7 @@
 												"box" : 												{
 													"id" : "obj-19",
 													"maxclass" : "newobj",
-													"numinlets" : 2,
+													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "FullPacket" ],
 													"patching_rect" : [ 400.166626, 255.0, 88.0, 22.0 ],
@@ -2745,7 +2745,7 @@
 												"box" : 												{
 													"id" : "obj-1",
 													"maxclass" : "newobj",
-													"numinlets" : 4,
+													"numinlets" : 1,
 													"numoutlets" : 4,
 													"outlettype" : [ "", "", "", "FullPacket" ],
 													"patching_rect" : [ 361.499969, 174.0, 135.0, 22.0 ],
@@ -2771,7 +2771,7 @@
 												"box" : 												{
 													"id" : "obj-45",
 													"maxclass" : "newobj",
-													"numinlets" : 2,
+													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "FullPacket" ],
 													"patching_rect" : [ 495.666626, 598.0, 71.0, 22.0 ],
@@ -3674,7 +3674,7 @@
 												"box" : 												{
 													"id" : "obj-15",
 													"maxclass" : "newobj",
-													"numinlets" : 2,
+													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "FullPacket" ],
 													"patching_rect" : [ 45.0, 64.0, 159.0, 22.0 ],
@@ -3687,7 +3687,7 @@
 												"box" : 												{
 													"id" : "obj-8",
 													"maxclass" : "newobj",
-													"numinlets" : 2,
+													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "FullPacket" ],
 													"patching_rect" : [ 45.0, 230.0, 81.0, 22.0 ],
@@ -4468,7 +4468,7 @@
 																"box" : 																{
 																	"id" : "obj-34",
 																	"maxclass" : "newobj",
-																	"numinlets" : 2,
+																	"numinlets" : 1,
 																	"numoutlets" : 2,
 																	"outlettype" : [ "", "FullPacket" ],
 																	"patching_rect" : [ 50.0, 205.5, 71.0, 22.0 ],
@@ -4732,7 +4732,7 @@
 																				"box" : 																				{
 																					"id" : "obj-149",
 																					"maxclass" : "newobj",
-																					"numinlets" : 2,
+																					"numinlets" : 1,
 																					"numoutlets" : 2,
 																					"outlettype" : [ "", "FullPacket" ],
 																					"patching_rect" : [ 131.0, 198.0, 119.0, 22.0 ],
@@ -5081,7 +5081,7 @@
 																				"box" : 																				{
 																					"id" : "obj-12",
 																					"maxclass" : "newobj",
-																					"numinlets" : 2,
+																					"numinlets" : 1,
 																					"numoutlets" : 2,
 																					"outlettype" : [ "", "FullPacket" ],
 																					"patching_rect" : [ 143.0, 292.0, 103.0, 22.0 ],
@@ -5427,7 +5427,7 @@
 																				"box" : 																				{
 																					"id" : "obj-155",
 																					"maxclass" : "newobj",
-																					"numinlets" : 5,
+																					"numinlets" : 1,
 																					"numoutlets" : 5,
 																					"outlettype" : [ "", "", "", "", "FullPacket" ],
 																					"patching_rect" : [ 84.5, 138.0, 332.0, 22.0 ],
@@ -5874,7 +5874,7 @@
 																				"box" : 																				{
 																					"id" : "obj-1",
 																					"maxclass" : "newobj",
-																					"numinlets" : 3,
+																					"numinlets" : 1,
 																					"numoutlets" : 3,
 																					"outlettype" : [ "", "", "FullPacket" ],
 																					"patching_rect" : [ 230.0, 141.0, 204.0, 22.0 ],
@@ -6517,7 +6517,7 @@
 												"box" : 												{
 													"id" : "obj-19",
 													"maxclass" : "newobj",
-													"numinlets" : 2,
+													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "FullPacket" ],
 													"patching_rect" : [ 400.166626, 255.0, 88.0, 22.0 ],
@@ -6585,7 +6585,7 @@
 												"box" : 												{
 													"id" : "obj-1",
 													"maxclass" : "newobj",
-													"numinlets" : 4,
+													"numinlets" : 1,
 													"numoutlets" : 4,
 													"outlettype" : [ "", "", "", "FullPacket" ],
 													"patching_rect" : [ 361.499969, 174.0, 135.0, 22.0 ],
@@ -6611,7 +6611,7 @@
 												"box" : 												{
 													"id" : "obj-45",
 													"maxclass" : "newobj",
-													"numinlets" : 2,
+													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "FullPacket" ],
 													"patching_rect" : [ 495.666626, 598.0, 71.0, 22.0 ],
@@ -7514,7 +7514,7 @@
 												"box" : 												{
 													"id" : "obj-15",
 													"maxclass" : "newobj",
-													"numinlets" : 2,
+													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "FullPacket" ],
 													"patching_rect" : [ 45.0, 64.0, 159.0, 22.0 ],
@@ -7527,7 +7527,7 @@
 												"box" : 												{
 													"id" : "obj-8",
 													"maxclass" : "newobj",
-													"numinlets" : 2,
+													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "FullPacket" ],
 													"patching_rect" : [ 45.0, 230.0, 81.0, 22.0 ],
@@ -8308,7 +8308,7 @@
 																"box" : 																{
 																	"id" : "obj-34",
 																	"maxclass" : "newobj",
-																	"numinlets" : 2,
+																	"numinlets" : 1,
 																	"numoutlets" : 2,
 																	"outlettype" : [ "", "FullPacket" ],
 																	"patching_rect" : [ 50.0, 205.5, 71.0, 22.0 ],
@@ -8572,7 +8572,7 @@
 																				"box" : 																				{
 																					"id" : "obj-149",
 																					"maxclass" : "newobj",
-																					"numinlets" : 2,
+																					"numinlets" : 1,
 																					"numoutlets" : 2,
 																					"outlettype" : [ "", "FullPacket" ],
 																					"patching_rect" : [ 131.0, 198.0, 119.0, 22.0 ],
@@ -8921,7 +8921,7 @@
 																				"box" : 																				{
 																					"id" : "obj-12",
 																					"maxclass" : "newobj",
-																					"numinlets" : 2,
+																					"numinlets" : 1,
 																					"numoutlets" : 2,
 																					"outlettype" : [ "", "FullPacket" ],
 																					"patching_rect" : [ 143.0, 292.0, 103.0, 22.0 ],
@@ -9267,7 +9267,7 @@
 																				"box" : 																				{
 																					"id" : "obj-155",
 																					"maxclass" : "newobj",
-																					"numinlets" : 5,
+																					"numinlets" : 1,
 																					"numoutlets" : 5,
 																					"outlettype" : [ "", "", "", "", "FullPacket" ],
 																					"patching_rect" : [ 84.5, 138.0, 332.0, 22.0 ],
@@ -9714,7 +9714,7 @@
 																				"box" : 																				{
 																					"id" : "obj-1",
 																					"maxclass" : "newobj",
-																					"numinlets" : 3,
+																					"numinlets" : 1,
 																					"numoutlets" : 3,
 																					"outlettype" : [ "", "", "FullPacket" ],
 																					"patching_rect" : [ 230.0, 141.0, 204.0, 22.0 ],
@@ -10357,7 +10357,7 @@
 												"box" : 												{
 													"id" : "obj-19",
 													"maxclass" : "newobj",
-													"numinlets" : 2,
+													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "FullPacket" ],
 													"patching_rect" : [ 400.166626, 255.0, 88.0, 22.0 ],
@@ -10425,7 +10425,7 @@
 												"box" : 												{
 													"id" : "obj-1",
 													"maxclass" : "newobj",
-													"numinlets" : 4,
+													"numinlets" : 1,
 													"numoutlets" : 4,
 													"outlettype" : [ "", "", "", "FullPacket" ],
 													"patching_rect" : [ 361.499969, 174.0, 135.0, 22.0 ],
@@ -10451,7 +10451,7 @@
 												"box" : 												{
 													"id" : "obj-45",
 													"maxclass" : "newobj",
-													"numinlets" : 2,
+													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "FullPacket" ],
 													"patching_rect" : [ 495.666626, 598.0, 71.0, 22.0 ],
@@ -11354,7 +11354,7 @@
 												"box" : 												{
 													"id" : "obj-15",
 													"maxclass" : "newobj",
-													"numinlets" : 2,
+													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "FullPacket" ],
 													"patching_rect" : [ 45.0, 64.0, 159.0, 22.0 ],
@@ -11367,7 +11367,7 @@
 												"box" : 												{
 													"id" : "obj-8",
 													"maxclass" : "newobj",
-													"numinlets" : 2,
+													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "FullPacket" ],
 													"patching_rect" : [ 45.0, 230.0, 81.0, 22.0 ],
@@ -12148,7 +12148,7 @@
 																"box" : 																{
 																	"id" : "obj-34",
 																	"maxclass" : "newobj",
-																	"numinlets" : 2,
+																	"numinlets" : 1,
 																	"numoutlets" : 2,
 																	"outlettype" : [ "", "FullPacket" ],
 																	"patching_rect" : [ 50.0, 205.5, 71.0, 22.0 ],
@@ -12412,7 +12412,7 @@
 																				"box" : 																				{
 																					"id" : "obj-149",
 																					"maxclass" : "newobj",
-																					"numinlets" : 2,
+																					"numinlets" : 1,
 																					"numoutlets" : 2,
 																					"outlettype" : [ "", "FullPacket" ],
 																					"patching_rect" : [ 131.0, 198.0, 119.0, 22.0 ],
@@ -12761,7 +12761,7 @@
 																				"box" : 																				{
 																					"id" : "obj-12",
 																					"maxclass" : "newobj",
-																					"numinlets" : 2,
+																					"numinlets" : 1,
 																					"numoutlets" : 2,
 																					"outlettype" : [ "", "FullPacket" ],
 																					"patching_rect" : [ 143.0, 292.0, 103.0, 22.0 ],
@@ -13107,7 +13107,7 @@
 																				"box" : 																				{
 																					"id" : "obj-155",
 																					"maxclass" : "newobj",
-																					"numinlets" : 5,
+																					"numinlets" : 1,
 																					"numoutlets" : 5,
 																					"outlettype" : [ "", "", "", "", "FullPacket" ],
 																					"patching_rect" : [ 84.5, 138.0, 332.0, 22.0 ],
@@ -13554,7 +13554,7 @@
 																				"box" : 																				{
 																					"id" : "obj-1",
 																					"maxclass" : "newobj",
-																					"numinlets" : 3,
+																					"numinlets" : 1,
 																					"numoutlets" : 3,
 																					"outlettype" : [ "", "", "FullPacket" ],
 																					"patching_rect" : [ 230.0, 141.0, 204.0, 22.0 ],
@@ -14197,7 +14197,7 @@
 												"box" : 												{
 													"id" : "obj-19",
 													"maxclass" : "newobj",
-													"numinlets" : 2,
+													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "FullPacket" ],
 													"patching_rect" : [ 400.166626, 255.0, 88.0, 22.0 ],
@@ -14265,7 +14265,7 @@
 												"box" : 												{
 													"id" : "obj-1",
 													"maxclass" : "newobj",
-													"numinlets" : 4,
+													"numinlets" : 1,
 													"numoutlets" : 4,
 													"outlettype" : [ "", "", "", "FullPacket" ],
 													"patching_rect" : [ 361.499969, 174.0, 135.0, 22.0 ],
@@ -14291,7 +14291,7 @@
 												"box" : 												{
 													"id" : "obj-45",
 													"maxclass" : "newobj",
-													"numinlets" : 2,
+													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "FullPacket" ],
 													"patching_rect" : [ 495.666626, 598.0, 71.0, 22.0 ],
@@ -15190,7 +15190,7 @@
 								"box" : 								{
 									"id" : "obj-8",
 									"maxclass" : "newobj",
-									"numinlets" : 5,
+									"numinlets" : 1,
 									"numoutlets" : 5,
 									"outlettype" : [ "", "", "", "", "FullPacket" ],
 									"patching_rect" : [ 440.0, 169.0, 106.0, 22.0 ],
@@ -15312,7 +15312,7 @@
 												"box" : 												{
 													"id" : "obj-15",
 													"maxclass" : "newobj",
-													"numinlets" : 2,
+													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "FullPacket" ],
 													"patching_rect" : [ 45.0, 64.0, 159.0, 22.0 ],
@@ -15325,7 +15325,7 @@
 												"box" : 												{
 													"id" : "obj-8",
 													"maxclass" : "newobj",
-													"numinlets" : 2,
+													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "FullPacket" ],
 													"patching_rect" : [ 45.0, 230.0, 81.0, 22.0 ],
@@ -16284,7 +16284,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 644.5, 346.5, 55.0, 22.0 ],
+					"patching_rect" : [ 493.5, 316.5, 55.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -16305,7 +16305,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 73.0, 222.0, 150.0, 47.0 ],
+					"patching_rect" : [ 819.0, 250.0, 150.0, 47.0 ],
 					"style" : "",
 					"text" : "when a source changes reverb, it should load the buffers"
 				}
@@ -16318,7 +16318,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 53.313965, 9.0, 395.0, 114.0 ],
+					"patching_rect" : [ 799.313965, 37.0, 395.0, 114.0 ],
 					"style" : "",
 					"text" : "/source/1/reverb/id  = number of reverb\n/source/1/reverb/amp = global reverb gain (curve~),\n/source/1/reverb/cascade = global reverb filter (casecade~),\n/source/1/reverb/early/amp = early reverb output amplitude,\n/source/1/reverb/early/send/amp = early reverb amplitude to late reverb,\n\n/reverb/1/id = number (pre assigned),\n/reverb/1/amp = late reverb bus amp"
 				}
@@ -16331,7 +16331,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 599.923767, 426.0, 72.0, 22.0 ],
+					"patching_rect" : [ 448.923767, 396.0, 72.0, 22.0 ],
 					"style" : "",
 					"text" : "loadmess 1"
 				}
@@ -16348,7 +16348,7 @@
 					"numinlets" : 16,
 					"numoutlets" : 2,
 					"outlettype" : [ "signal", "signal" ],
-					"patching_rect" : [ 441.704163, 601.0, 127.55555, 34.0 ],
+					"patching_rect" : [ 290.704163, 571.0, 127.55555, 34.0 ],
 					"style" : "",
 					"text" : "hoa.3d.decoder~ 3 2 @mode binaural"
 				}
@@ -16363,7 +16363,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "int", "", "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 599.923767, 464.0, 100.0, 22.0 ],
+					"patching_rect" : [ 448.923767, 434.0, 100.0, 22.0 ],
 					"style" : ""
 				}
 
@@ -16379,7 +16379,7 @@
 					"numinlets" : 16,
 					"numoutlets" : 16,
 					"outlettype" : [ "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal" ],
-					"patching_rect" : [ 441.704163, 504.0, 127.55555, 34.0 ],
+					"patching_rect" : [ 290.704163, 474.0, 127.55555, 34.0 ],
 					"style" : "",
 					"text" : "hoa.3d.optim~ 3 maxRe"
 				}
@@ -16394,7 +16394,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 588.5, 104.0, 123.0, 24.0 ],
+					"patching_rect" : [ 437.5, 74.0, 123.0, 24.0 ],
 					"saved_bundle_data" : [ 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 105, 110, 105, 116, 0, 0, 0, 44, 115, 0, 0, 98, 97, 110, 103, 0, 0, 0, 0 ],
 					"saved_bundle_length" : 40,
 					"text" : "/init : \"bang\"",
@@ -16551,7 +16551,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 980.416626, 754.0, 82.0, 22.0 ],
+					"patching_rect" : [ 829.416626, 724.0, 82.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -16613,7 +16613,7 @@
 								"box" : 								{
 									"id" : "obj-132",
 									"maxclass" : "newobj",
-									"numinlets" : 2,
+									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "FullPacket" ],
 									"patching_rect" : [ 50.0, 100.0, 70.0, 22.0 ],
@@ -16758,7 +16758,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 723.833374, 153.5, 113.0, 22.0 ],
+					"patching_rect" : [ 572.833374, 123.5, 113.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -16779,7 +16779,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 305.896271, 688.0, 78.0, 22.0 ],
+					"patching_rect" : [ 154.896271, 628.0, 78.0, 22.0 ],
 					"style" : "",
 					"text" : "env.o.accum"
 				}
@@ -16791,7 +16791,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 723.833374, 186.0, 69.0, 22.0 ],
+					"patching_rect" : [ 572.833374, 156.0, 69.0, 22.0 ],
 					"style" : "",
 					"text" : "universal 1"
 				}
@@ -16805,7 +16805,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "FullPacket" ],
-					"patching_rect" : [ 305.896271, 589.0, 112.0, 35.0 ],
+					"patching_rect" : [ 154.896271, 559.0, 112.0, 35.0 ],
 					"style" : "",
 					"text" : "o.prepend /server/dsp/meter"
 				}
@@ -16818,7 +16818,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "FullPacket" ],
-					"patching_rect" : [ 324.896271, 470.5, 99.0, 22.0 ],
+					"patching_rect" : [ 173.896271, 440.5, 99.0, 22.0 ],
 					"style" : "",
 					"text" : "o.pack /encoded"
 				}
@@ -16831,7 +16831,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "FullPacket" ],
-					"patching_rect" : [ 305.896271, 309.0, 79.0, 22.0 ],
+					"patching_rect" : [ 154.896271, 279.0, 79.0, 22.0 ],
 					"style" : "",
 					"text" : "o.pack /input"
 				}
@@ -17801,7 +17801,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 441.704163, 440.0, 132.0, 22.0 ],
+					"patching_rect" : [ 290.704163, 410.0, 132.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -18780,7 +18780,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 441.704163, 277.0, 132.0, 22.0 ],
+					"patching_rect" : [ 290.704163, 247.0, 132.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -18873,7 +18873,7 @@
 								"box" : 								{
 									"id" : "obj-66",
 									"maxclass" : "newobj",
-									"numinlets" : 17,
+									"numinlets" : 1,
 									"numoutlets" : 17,
 									"outlettype" : [ "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "FullPacket" ],
 									"patching_rect" : [ 500.0, 236.0, 307.0, 22.0 ],
@@ -19946,7 +19946,7 @@
 																				"box" : 																				{
 																					"id" : "obj-13",
 																					"maxclass" : "newobj",
-																					"numinlets" : 2,
+																					"numinlets" : 1,
 																					"numoutlets" : 2,
 																					"outlettype" : [ "", "FullPacket" ],
 																					"patching_rect" : [ 50.0, 575.5, 100.0, 22.0 ],
@@ -20560,7 +20560,7 @@
 												"box" : 												{
 													"id" : "obj-31",
 													"maxclass" : "newobj",
-													"numinlets" : 2,
+													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "FullPacket" ],
 													"patching_rect" : [ 992.5, 621.5, 81.0, 22.0 ],
@@ -20715,7 +20715,7 @@
 												"box" : 												{
 													"id" : "obj-45",
 													"maxclass" : "newobj",
-													"numinlets" : 2,
+													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "FullPacket" ],
 													"patching_rect" : [ 766.5, 201.0, 89.0, 22.0 ],
@@ -20854,7 +20854,7 @@
 																				"box" : 																				{
 																					"id" : "obj-13",
 																					"maxclass" : "newobj",
-																					"numinlets" : 2,
+																					"numinlets" : 1,
 																					"numoutlets" : 2,
 																					"outlettype" : [ "", "FullPacket" ],
 																					"patching_rect" : [ 50.0, 575.5, 100.0, 22.0 ],
@@ -21457,7 +21457,7 @@
 												"box" : 												{
 													"id" : "obj-25",
 													"maxclass" : "newobj",
-													"numinlets" : 5,
+													"numinlets" : 1,
 													"numoutlets" : 5,
 													"outlettype" : [ "", "", "", "", "FullPacket" ],
 													"patching_rect" : [ 766.5, 370.5, 207.0, 22.0 ],
@@ -21783,7 +21783,7 @@
 												"box" : 												{
 													"id" : "obj-7",
 													"maxclass" : "newobj",
-													"numinlets" : 7,
+													"numinlets" : 1,
 													"numoutlets" : 7,
 													"outlettype" : [ "", "", "", "", "", "", "FullPacket" ],
 													"patching_rect" : [ 198.75, 196.0, 241.0, 22.0 ],
@@ -23863,7 +23863,7 @@
 																				"box" : 																				{
 																					"id" : "obj-13",
 																					"maxclass" : "newobj",
-																					"numinlets" : 2,
+																					"numinlets" : 1,
 																					"numoutlets" : 2,
 																					"outlettype" : [ "", "FullPacket" ],
 																					"patching_rect" : [ 50.0, 575.5, 100.0, 22.0 ],
@@ -24477,7 +24477,7 @@
 												"box" : 												{
 													"id" : "obj-31",
 													"maxclass" : "newobj",
-													"numinlets" : 2,
+													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "FullPacket" ],
 													"patching_rect" : [ 992.5, 621.5, 81.0, 22.0 ],
@@ -24632,7 +24632,7 @@
 												"box" : 												{
 													"id" : "obj-45",
 													"maxclass" : "newobj",
-													"numinlets" : 2,
+													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "FullPacket" ],
 													"patching_rect" : [ 766.5, 201.0, 89.0, 22.0 ],
@@ -24771,7 +24771,7 @@
 																				"box" : 																				{
 																					"id" : "obj-13",
 																					"maxclass" : "newobj",
-																					"numinlets" : 2,
+																					"numinlets" : 1,
 																					"numoutlets" : 2,
 																					"outlettype" : [ "", "FullPacket" ],
 																					"patching_rect" : [ 50.0, 575.5, 100.0, 22.0 ],
@@ -25374,7 +25374,7 @@
 												"box" : 												{
 													"id" : "obj-25",
 													"maxclass" : "newobj",
-													"numinlets" : 5,
+													"numinlets" : 1,
 													"numoutlets" : 5,
 													"outlettype" : [ "", "", "", "", "FullPacket" ],
 													"patching_rect" : [ 766.5, 370.5, 207.0, 22.0 ],
@@ -25700,7 +25700,7 @@
 												"box" : 												{
 													"id" : "obj-7",
 													"maxclass" : "newobj",
-													"numinlets" : 7,
+													"numinlets" : 1,
 													"numoutlets" : 7,
 													"outlettype" : [ "", "", "", "", "", "", "FullPacket" ],
 													"patching_rect" : [ 198.75, 196.0, 241.0, 22.0 ],
@@ -27780,7 +27780,7 @@
 																				"box" : 																				{
 																					"id" : "obj-13",
 																					"maxclass" : "newobj",
-																					"numinlets" : 2,
+																					"numinlets" : 1,
 																					"numoutlets" : 2,
 																					"outlettype" : [ "", "FullPacket" ],
 																					"patching_rect" : [ 50.0, 575.5, 100.0, 22.0 ],
@@ -28394,7 +28394,7 @@
 												"box" : 												{
 													"id" : "obj-31",
 													"maxclass" : "newobj",
-													"numinlets" : 2,
+													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "FullPacket" ],
 													"patching_rect" : [ 992.5, 621.5, 81.0, 22.0 ],
@@ -28549,7 +28549,7 @@
 												"box" : 												{
 													"id" : "obj-45",
 													"maxclass" : "newobj",
-													"numinlets" : 2,
+													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "FullPacket" ],
 													"patching_rect" : [ 766.5, 201.0, 89.0, 22.0 ],
@@ -28688,7 +28688,7 @@
 																				"box" : 																				{
 																					"id" : "obj-13",
 																					"maxclass" : "newobj",
-																					"numinlets" : 2,
+																					"numinlets" : 1,
 																					"numoutlets" : 2,
 																					"outlettype" : [ "", "FullPacket" ],
 																					"patching_rect" : [ 50.0, 575.5, 100.0, 22.0 ],
@@ -29291,7 +29291,7 @@
 												"box" : 												{
 													"id" : "obj-25",
 													"maxclass" : "newobj",
-													"numinlets" : 5,
+													"numinlets" : 1,
 													"numoutlets" : 5,
 													"outlettype" : [ "", "", "", "", "FullPacket" ],
 													"patching_rect" : [ 766.5, 370.5, 207.0, 22.0 ],
@@ -29617,7 +29617,7 @@
 												"box" : 												{
 													"id" : "obj-7",
 													"maxclass" : "newobj",
-													"numinlets" : 7,
+													"numinlets" : 1,
 													"numoutlets" : 7,
 													"outlettype" : [ "", "", "", "", "", "", "FullPacket" ],
 													"patching_rect" : [ 198.75, 196.0, 241.0, 22.0 ],
@@ -31697,7 +31697,7 @@
 																				"box" : 																				{
 																					"id" : "obj-13",
 																					"maxclass" : "newobj",
-																					"numinlets" : 2,
+																					"numinlets" : 1,
 																					"numoutlets" : 2,
 																					"outlettype" : [ "", "FullPacket" ],
 																					"patching_rect" : [ 50.0, 575.5, 100.0, 22.0 ],
@@ -32311,7 +32311,7 @@
 												"box" : 												{
 													"id" : "obj-31",
 													"maxclass" : "newobj",
-													"numinlets" : 2,
+													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "FullPacket" ],
 													"patching_rect" : [ 992.5, 621.5, 81.0, 22.0 ],
@@ -32466,7 +32466,7 @@
 												"box" : 												{
 													"id" : "obj-45",
 													"maxclass" : "newobj",
-													"numinlets" : 2,
+													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "FullPacket" ],
 													"patching_rect" : [ 766.5, 201.0, 89.0, 22.0 ],
@@ -32605,7 +32605,7 @@
 																				"box" : 																				{
 																					"id" : "obj-13",
 																					"maxclass" : "newobj",
-																					"numinlets" : 2,
+																					"numinlets" : 1,
 																					"numoutlets" : 2,
 																					"outlettype" : [ "", "FullPacket" ],
 																					"patching_rect" : [ 50.0, 575.5, 100.0, 22.0 ],
@@ -33208,7 +33208,7 @@
 												"box" : 												{
 													"id" : "obj-25",
 													"maxclass" : "newobj",
-													"numinlets" : 5,
+													"numinlets" : 1,
 													"numoutlets" : 5,
 													"outlettype" : [ "", "", "", "", "FullPacket" ],
 													"patching_rect" : [ 766.5, 370.5, 207.0, 22.0 ],
@@ -33534,7 +33534,7 @@
 												"box" : 												{
 													"id" : "obj-7",
 													"maxclass" : "newobj",
-													"numinlets" : 7,
+													"numinlets" : 1,
 													"numoutlets" : 7,
 													"outlettype" : [ "", "", "", "", "", "", "FullPacket" ],
 													"patching_rect" : [ 198.75, 196.0, 241.0, 22.0 ],
@@ -35614,7 +35614,7 @@
 																				"box" : 																				{
 																					"id" : "obj-13",
 																					"maxclass" : "newobj",
-																					"numinlets" : 2,
+																					"numinlets" : 1,
 																					"numoutlets" : 2,
 																					"outlettype" : [ "", "FullPacket" ],
 																					"patching_rect" : [ 50.0, 575.5, 100.0, 22.0 ],
@@ -36228,7 +36228,7 @@
 												"box" : 												{
 													"id" : "obj-31",
 													"maxclass" : "newobj",
-													"numinlets" : 2,
+													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "FullPacket" ],
 													"patching_rect" : [ 992.5, 621.5, 81.0, 22.0 ],
@@ -36383,7 +36383,7 @@
 												"box" : 												{
 													"id" : "obj-45",
 													"maxclass" : "newobj",
-													"numinlets" : 2,
+													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "FullPacket" ],
 													"patching_rect" : [ 766.5, 201.0, 89.0, 22.0 ],
@@ -36522,7 +36522,7 @@
 																				"box" : 																				{
 																					"id" : "obj-13",
 																					"maxclass" : "newobj",
-																					"numinlets" : 2,
+																					"numinlets" : 1,
 																					"numoutlets" : 2,
 																					"outlettype" : [ "", "FullPacket" ],
 																					"patching_rect" : [ 50.0, 575.5, 100.0, 22.0 ],
@@ -37125,7 +37125,7 @@
 												"box" : 												{
 													"id" : "obj-25",
 													"maxclass" : "newobj",
-													"numinlets" : 5,
+													"numinlets" : 1,
 													"numoutlets" : 5,
 													"outlettype" : [ "", "", "", "", "FullPacket" ],
 													"patching_rect" : [ 766.5, 370.5, 207.0, 22.0 ],
@@ -37451,7 +37451,7 @@
 												"box" : 												{
 													"id" : "obj-7",
 													"maxclass" : "newobj",
-													"numinlets" : 7,
+													"numinlets" : 1,
 													"numoutlets" : 7,
 													"outlettype" : [ "", "", "", "", "", "", "FullPacket" ],
 													"patching_rect" : [ 198.75, 196.0, 241.0, 22.0 ],
@@ -39531,7 +39531,7 @@
 																				"box" : 																				{
 																					"id" : "obj-13",
 																					"maxclass" : "newobj",
-																					"numinlets" : 2,
+																					"numinlets" : 1,
 																					"numoutlets" : 2,
 																					"outlettype" : [ "", "FullPacket" ],
 																					"patching_rect" : [ 50.0, 575.5, 100.0, 22.0 ],
@@ -40145,7 +40145,7 @@
 												"box" : 												{
 													"id" : "obj-31",
 													"maxclass" : "newobj",
-													"numinlets" : 2,
+													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "FullPacket" ],
 													"patching_rect" : [ 992.5, 621.5, 81.0, 22.0 ],
@@ -40300,7 +40300,7 @@
 												"box" : 												{
 													"id" : "obj-45",
 													"maxclass" : "newobj",
-													"numinlets" : 2,
+													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "FullPacket" ],
 													"patching_rect" : [ 766.5, 201.0, 89.0, 22.0 ],
@@ -40439,7 +40439,7 @@
 																				"box" : 																				{
 																					"id" : "obj-13",
 																					"maxclass" : "newobj",
-																					"numinlets" : 2,
+																					"numinlets" : 1,
 																					"numoutlets" : 2,
 																					"outlettype" : [ "", "FullPacket" ],
 																					"patching_rect" : [ 50.0, 575.5, 100.0, 22.0 ],
@@ -41042,7 +41042,7 @@
 												"box" : 												{
 													"id" : "obj-25",
 													"maxclass" : "newobj",
-													"numinlets" : 5,
+													"numinlets" : 1,
 													"numoutlets" : 5,
 													"outlettype" : [ "", "", "", "", "FullPacket" ],
 													"patching_rect" : [ 766.5, 370.5, 207.0, 22.0 ],
@@ -41368,7 +41368,7 @@
 												"box" : 												{
 													"id" : "obj-7",
 													"maxclass" : "newobj",
-													"numinlets" : 7,
+													"numinlets" : 1,
 													"numoutlets" : 7,
 													"outlettype" : [ "", "", "", "", "", "", "FullPacket" ],
 													"patching_rect" : [ 198.75, 196.0, 241.0, 22.0 ],
@@ -43448,7 +43448,7 @@
 																				"box" : 																				{
 																					"id" : "obj-13",
 																					"maxclass" : "newobj",
-																					"numinlets" : 2,
+																					"numinlets" : 1,
 																					"numoutlets" : 2,
 																					"outlettype" : [ "", "FullPacket" ],
 																					"patching_rect" : [ 50.0, 575.5, 100.0, 22.0 ],
@@ -44062,7 +44062,7 @@
 												"box" : 												{
 													"id" : "obj-31",
 													"maxclass" : "newobj",
-													"numinlets" : 2,
+													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "FullPacket" ],
 													"patching_rect" : [ 992.5, 621.5, 81.0, 22.0 ],
@@ -44217,7 +44217,7 @@
 												"box" : 												{
 													"id" : "obj-45",
 													"maxclass" : "newobj",
-													"numinlets" : 2,
+													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "FullPacket" ],
 													"patching_rect" : [ 766.5, 201.0, 89.0, 22.0 ],
@@ -44356,7 +44356,7 @@
 																				"box" : 																				{
 																					"id" : "obj-13",
 																					"maxclass" : "newobj",
-																					"numinlets" : 2,
+																					"numinlets" : 1,
 																					"numoutlets" : 2,
 																					"outlettype" : [ "", "FullPacket" ],
 																					"patching_rect" : [ 50.0, 575.5, 100.0, 22.0 ],
@@ -44959,7 +44959,7 @@
 												"box" : 												{
 													"id" : "obj-25",
 													"maxclass" : "newobj",
-													"numinlets" : 5,
+													"numinlets" : 1,
 													"numoutlets" : 5,
 													"outlettype" : [ "", "", "", "", "FullPacket" ],
 													"patching_rect" : [ 766.5, 370.5, 207.0, 22.0 ],
@@ -45285,7 +45285,7 @@
 												"box" : 												{
 													"id" : "obj-7",
 													"maxclass" : "newobj",
-													"numinlets" : 7,
+													"numinlets" : 1,
 													"numoutlets" : 7,
 													"outlettype" : [ "", "", "", "", "", "", "FullPacket" ],
 													"patching_rect" : [ 198.75, 196.0, 241.0, 22.0 ],
@@ -47365,7 +47365,7 @@
 																				"box" : 																				{
 																					"id" : "obj-13",
 																					"maxclass" : "newobj",
-																					"numinlets" : 2,
+																					"numinlets" : 1,
 																					"numoutlets" : 2,
 																					"outlettype" : [ "", "FullPacket" ],
 																					"patching_rect" : [ 50.0, 575.5, 100.0, 22.0 ],
@@ -47979,7 +47979,7 @@
 												"box" : 												{
 													"id" : "obj-31",
 													"maxclass" : "newobj",
-													"numinlets" : 2,
+													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "FullPacket" ],
 													"patching_rect" : [ 992.5, 621.5, 81.0, 22.0 ],
@@ -48134,7 +48134,7 @@
 												"box" : 												{
 													"id" : "obj-45",
 													"maxclass" : "newobj",
-													"numinlets" : 2,
+													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "FullPacket" ],
 													"patching_rect" : [ 766.5, 201.0, 89.0, 22.0 ],
@@ -48273,7 +48273,7 @@
 																				"box" : 																				{
 																					"id" : "obj-13",
 																					"maxclass" : "newobj",
-																					"numinlets" : 2,
+																					"numinlets" : 1,
 																					"numoutlets" : 2,
 																					"outlettype" : [ "", "FullPacket" ],
 																					"patching_rect" : [ 50.0, 575.5, 100.0, 22.0 ],
@@ -48876,7 +48876,7 @@
 												"box" : 												{
 													"id" : "obj-25",
 													"maxclass" : "newobj",
-													"numinlets" : 5,
+													"numinlets" : 1,
 													"numoutlets" : 5,
 													"outlettype" : [ "", "", "", "", "FullPacket" ],
 													"patching_rect" : [ 766.5, 370.5, 207.0, 22.0 ],
@@ -49202,7 +49202,7 @@
 												"box" : 												{
 													"id" : "obj-7",
 													"maxclass" : "newobj",
-													"numinlets" : 7,
+													"numinlets" : 1,
 													"numoutlets" : 7,
 													"outlettype" : [ "", "", "", "", "", "", "FullPacket" ],
 													"patching_rect" : [ 198.75, 196.0, 241.0, 22.0 ],
@@ -51282,7 +51282,7 @@
 																				"box" : 																				{
 																					"id" : "obj-13",
 																					"maxclass" : "newobj",
-																					"numinlets" : 2,
+																					"numinlets" : 1,
 																					"numoutlets" : 2,
 																					"outlettype" : [ "", "FullPacket" ],
 																					"patching_rect" : [ 50.0, 575.5, 100.0, 22.0 ],
@@ -51896,7 +51896,7 @@
 												"box" : 												{
 													"id" : "obj-31",
 													"maxclass" : "newobj",
-													"numinlets" : 2,
+													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "FullPacket" ],
 													"patching_rect" : [ 992.5, 621.5, 81.0, 22.0 ],
@@ -52051,7 +52051,7 @@
 												"box" : 												{
 													"id" : "obj-45",
 													"maxclass" : "newobj",
-													"numinlets" : 2,
+													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "FullPacket" ],
 													"patching_rect" : [ 766.5, 201.0, 89.0, 22.0 ],
@@ -52190,7 +52190,7 @@
 																				"box" : 																				{
 																					"id" : "obj-13",
 																					"maxclass" : "newobj",
-																					"numinlets" : 2,
+																					"numinlets" : 1,
 																					"numoutlets" : 2,
 																					"outlettype" : [ "", "FullPacket" ],
 																					"patching_rect" : [ 50.0, 575.5, 100.0, 22.0 ],
@@ -52793,7 +52793,7 @@
 												"box" : 												{
 													"id" : "obj-25",
 													"maxclass" : "newobj",
-													"numinlets" : 5,
+													"numinlets" : 1,
 													"numoutlets" : 5,
 													"outlettype" : [ "", "", "", "", "FullPacket" ],
 													"patching_rect" : [ 766.5, 370.5, 207.0, 22.0 ],
@@ -53119,7 +53119,7 @@
 												"box" : 												{
 													"id" : "obj-7",
 													"maxclass" : "newobj",
-													"numinlets" : 7,
+													"numinlets" : 1,
 													"numoutlets" : 7,
 													"outlettype" : [ "", "", "", "", "", "", "FullPacket" ],
 													"patching_rect" : [ 198.75, 196.0, 241.0, 22.0 ],
@@ -55199,7 +55199,7 @@
 																				"box" : 																				{
 																					"id" : "obj-13",
 																					"maxclass" : "newobj",
-																					"numinlets" : 2,
+																					"numinlets" : 1,
 																					"numoutlets" : 2,
 																					"outlettype" : [ "", "FullPacket" ],
 																					"patching_rect" : [ 50.0, 575.5, 100.0, 22.0 ],
@@ -55813,7 +55813,7 @@
 												"box" : 												{
 													"id" : "obj-31",
 													"maxclass" : "newobj",
-													"numinlets" : 2,
+													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "FullPacket" ],
 													"patching_rect" : [ 992.5, 621.5, 81.0, 22.0 ],
@@ -55968,7 +55968,7 @@
 												"box" : 												{
 													"id" : "obj-45",
 													"maxclass" : "newobj",
-													"numinlets" : 2,
+													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "FullPacket" ],
 													"patching_rect" : [ 766.5, 201.0, 89.0, 22.0 ],
@@ -56107,7 +56107,7 @@
 																				"box" : 																				{
 																					"id" : "obj-13",
 																					"maxclass" : "newobj",
-																					"numinlets" : 2,
+																					"numinlets" : 1,
 																					"numoutlets" : 2,
 																					"outlettype" : [ "", "FullPacket" ],
 																					"patching_rect" : [ 50.0, 575.5, 100.0, 22.0 ],
@@ -56710,7 +56710,7 @@
 												"box" : 												{
 													"id" : "obj-25",
 													"maxclass" : "newobj",
-													"numinlets" : 5,
+													"numinlets" : 1,
 													"numoutlets" : 5,
 													"outlettype" : [ "", "", "", "", "FullPacket" ],
 													"patching_rect" : [ 766.5, 370.5, 207.0, 22.0 ],
@@ -57036,7 +57036,7 @@
 												"box" : 												{
 													"id" : "obj-7",
 													"maxclass" : "newobj",
-													"numinlets" : 7,
+													"numinlets" : 1,
 													"numoutlets" : 7,
 													"outlettype" : [ "", "", "", "", "", "", "FullPacket" ],
 													"patching_rect" : [ 198.75, 196.0, 241.0, 22.0 ],
@@ -59116,7 +59116,7 @@
 																				"box" : 																				{
 																					"id" : "obj-13",
 																					"maxclass" : "newobj",
-																					"numinlets" : 2,
+																					"numinlets" : 1,
 																					"numoutlets" : 2,
 																					"outlettype" : [ "", "FullPacket" ],
 																					"patching_rect" : [ 50.0, 575.5, 100.0, 22.0 ],
@@ -59730,7 +59730,7 @@
 												"box" : 												{
 													"id" : "obj-31",
 													"maxclass" : "newobj",
-													"numinlets" : 2,
+													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "FullPacket" ],
 													"patching_rect" : [ 992.5, 621.5, 81.0, 22.0 ],
@@ -59885,7 +59885,7 @@
 												"box" : 												{
 													"id" : "obj-45",
 													"maxclass" : "newobj",
-													"numinlets" : 2,
+													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "FullPacket" ],
 													"patching_rect" : [ 766.5, 201.0, 89.0, 22.0 ],
@@ -60024,7 +60024,7 @@
 																				"box" : 																				{
 																					"id" : "obj-13",
 																					"maxclass" : "newobj",
-																					"numinlets" : 2,
+																					"numinlets" : 1,
 																					"numoutlets" : 2,
 																					"outlettype" : [ "", "FullPacket" ],
 																					"patching_rect" : [ 50.0, 575.5, 100.0, 22.0 ],
@@ -60627,7 +60627,7 @@
 												"box" : 												{
 													"id" : "obj-25",
 													"maxclass" : "newobj",
-													"numinlets" : 5,
+													"numinlets" : 1,
 													"numoutlets" : 5,
 													"outlettype" : [ "", "", "", "", "FullPacket" ],
 													"patching_rect" : [ 766.5, 370.5, 207.0, 22.0 ],
@@ -60953,7 +60953,7 @@
 												"box" : 												{
 													"id" : "obj-7",
 													"maxclass" : "newobj",
-													"numinlets" : 7,
+													"numinlets" : 1,
 													"numoutlets" : 7,
 													"outlettype" : [ "", "", "", "", "", "", "FullPacket" ],
 													"patching_rect" : [ 198.75, 196.0, 241.0, 22.0 ],
@@ -63033,7 +63033,7 @@
 																				"box" : 																				{
 																					"id" : "obj-13",
 																					"maxclass" : "newobj",
-																					"numinlets" : 2,
+																					"numinlets" : 1,
 																					"numoutlets" : 2,
 																					"outlettype" : [ "", "FullPacket" ],
 																					"patching_rect" : [ 50.0, 575.5, 100.0, 22.0 ],
@@ -63647,7 +63647,7 @@
 												"box" : 												{
 													"id" : "obj-31",
 													"maxclass" : "newobj",
-													"numinlets" : 2,
+													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "FullPacket" ],
 													"patching_rect" : [ 992.5, 621.5, 81.0, 22.0 ],
@@ -63802,7 +63802,7 @@
 												"box" : 												{
 													"id" : "obj-45",
 													"maxclass" : "newobj",
-													"numinlets" : 2,
+													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "FullPacket" ],
 													"patching_rect" : [ 766.5, 201.0, 89.0, 22.0 ],
@@ -63941,7 +63941,7 @@
 																				"box" : 																				{
 																					"id" : "obj-13",
 																					"maxclass" : "newobj",
-																					"numinlets" : 2,
+																					"numinlets" : 1,
 																					"numoutlets" : 2,
 																					"outlettype" : [ "", "FullPacket" ],
 																					"patching_rect" : [ 50.0, 575.5, 100.0, 22.0 ],
@@ -64544,7 +64544,7 @@
 												"box" : 												{
 													"id" : "obj-25",
 													"maxclass" : "newobj",
-													"numinlets" : 5,
+													"numinlets" : 1,
 													"numoutlets" : 5,
 													"outlettype" : [ "", "", "", "", "FullPacket" ],
 													"patching_rect" : [ 766.5, 370.5, 207.0, 22.0 ],
@@ -64870,7 +64870,7 @@
 												"box" : 												{
 													"id" : "obj-7",
 													"maxclass" : "newobj",
-													"numinlets" : 7,
+													"numinlets" : 1,
 													"numoutlets" : 7,
 													"outlettype" : [ "", "", "", "", "", "", "FullPacket" ],
 													"patching_rect" : [ 198.75, 196.0, 241.0, 22.0 ],
@@ -66950,7 +66950,7 @@
 																				"box" : 																				{
 																					"id" : "obj-13",
 																					"maxclass" : "newobj",
-																					"numinlets" : 2,
+																					"numinlets" : 1,
 																					"numoutlets" : 2,
 																					"outlettype" : [ "", "FullPacket" ],
 																					"patching_rect" : [ 50.0, 575.5, 100.0, 22.0 ],
@@ -67564,7 +67564,7 @@
 												"box" : 												{
 													"id" : "obj-31",
 													"maxclass" : "newobj",
-													"numinlets" : 2,
+													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "FullPacket" ],
 													"patching_rect" : [ 992.5, 621.5, 81.0, 22.0 ],
@@ -67719,7 +67719,7 @@
 												"box" : 												{
 													"id" : "obj-45",
 													"maxclass" : "newobj",
-													"numinlets" : 2,
+													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "FullPacket" ],
 													"patching_rect" : [ 766.5, 201.0, 89.0, 22.0 ],
@@ -67858,7 +67858,7 @@
 																				"box" : 																				{
 																					"id" : "obj-13",
 																					"maxclass" : "newobj",
-																					"numinlets" : 2,
+																					"numinlets" : 1,
 																					"numoutlets" : 2,
 																					"outlettype" : [ "", "FullPacket" ],
 																					"patching_rect" : [ 50.0, 575.5, 100.0, 22.0 ],
@@ -68461,7 +68461,7 @@
 												"box" : 												{
 													"id" : "obj-25",
 													"maxclass" : "newobj",
-													"numinlets" : 5,
+													"numinlets" : 1,
 													"numoutlets" : 5,
 													"outlettype" : [ "", "", "", "", "FullPacket" ],
 													"patching_rect" : [ 766.5, 370.5, 207.0, 22.0 ],
@@ -68787,7 +68787,7 @@
 												"box" : 												{
 													"id" : "obj-7",
 													"maxclass" : "newobj",
-													"numinlets" : 7,
+													"numinlets" : 1,
 													"numoutlets" : 7,
 													"outlettype" : [ "", "", "", "", "", "", "FullPacket" ],
 													"patching_rect" : [ 198.75, 196.0, 241.0, 22.0 ],
@@ -70867,7 +70867,7 @@
 																				"box" : 																				{
 																					"id" : "obj-13",
 																					"maxclass" : "newobj",
-																					"numinlets" : 2,
+																					"numinlets" : 1,
 																					"numoutlets" : 2,
 																					"outlettype" : [ "", "FullPacket" ],
 																					"patching_rect" : [ 50.0, 575.5, 100.0, 22.0 ],
@@ -71481,7 +71481,7 @@
 												"box" : 												{
 													"id" : "obj-31",
 													"maxclass" : "newobj",
-													"numinlets" : 2,
+													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "FullPacket" ],
 													"patching_rect" : [ 992.5, 621.5, 81.0, 22.0 ],
@@ -71636,7 +71636,7 @@
 												"box" : 												{
 													"id" : "obj-45",
 													"maxclass" : "newobj",
-													"numinlets" : 2,
+													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "FullPacket" ],
 													"patching_rect" : [ 766.5, 201.0, 89.0, 22.0 ],
@@ -71775,7 +71775,7 @@
 																				"box" : 																				{
 																					"id" : "obj-13",
 																					"maxclass" : "newobj",
-																					"numinlets" : 2,
+																					"numinlets" : 1,
 																					"numoutlets" : 2,
 																					"outlettype" : [ "", "FullPacket" ],
 																					"patching_rect" : [ 50.0, 575.5, 100.0, 22.0 ],
@@ -72378,7 +72378,7 @@
 												"box" : 												{
 													"id" : "obj-25",
 													"maxclass" : "newobj",
-													"numinlets" : 5,
+													"numinlets" : 1,
 													"numoutlets" : 5,
 													"outlettype" : [ "", "", "", "", "FullPacket" ],
 													"patching_rect" : [ 766.5, 370.5, 207.0, 22.0 ],
@@ -72704,7 +72704,7 @@
 												"box" : 												{
 													"id" : "obj-7",
 													"maxclass" : "newobj",
-													"numinlets" : 7,
+													"numinlets" : 1,
 													"numoutlets" : 7,
 													"outlettype" : [ "", "", "", "", "", "", "FullPacket" ],
 													"patching_rect" : [ 198.75, 196.0, 241.0, 22.0 ],
@@ -74784,7 +74784,7 @@
 																				"box" : 																				{
 																					"id" : "obj-13",
 																					"maxclass" : "newobj",
-																					"numinlets" : 2,
+																					"numinlets" : 1,
 																					"numoutlets" : 2,
 																					"outlettype" : [ "", "FullPacket" ],
 																					"patching_rect" : [ 50.0, 575.5, 100.0, 22.0 ],
@@ -75398,7 +75398,7 @@
 												"box" : 												{
 													"id" : "obj-31",
 													"maxclass" : "newobj",
-													"numinlets" : 2,
+													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "FullPacket" ],
 													"patching_rect" : [ 992.5, 621.5, 81.0, 22.0 ],
@@ -75553,7 +75553,7 @@
 												"box" : 												{
 													"id" : "obj-45",
 													"maxclass" : "newobj",
-													"numinlets" : 2,
+													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "FullPacket" ],
 													"patching_rect" : [ 766.5, 201.0, 89.0, 22.0 ],
@@ -75692,7 +75692,7 @@
 																				"box" : 																				{
 																					"id" : "obj-13",
 																					"maxclass" : "newobj",
-																					"numinlets" : 2,
+																					"numinlets" : 1,
 																					"numoutlets" : 2,
 																					"outlettype" : [ "", "FullPacket" ],
 																					"patching_rect" : [ 50.0, 575.5, 100.0, 22.0 ],
@@ -76295,7 +76295,7 @@
 												"box" : 												{
 													"id" : "obj-25",
 													"maxclass" : "newobj",
-													"numinlets" : 5,
+													"numinlets" : 1,
 													"numoutlets" : 5,
 													"outlettype" : [ "", "", "", "", "FullPacket" ],
 													"patching_rect" : [ 766.5, 370.5, 207.0, 22.0 ],
@@ -76621,7 +76621,7 @@
 												"box" : 												{
 													"id" : "obj-7",
 													"maxclass" : "newobj",
-													"numinlets" : 7,
+													"numinlets" : 1,
 													"numoutlets" : 7,
 													"outlettype" : [ "", "", "", "", "", "", "FullPacket" ],
 													"patching_rect" : [ 198.75, 196.0, 241.0, 22.0 ],
@@ -78701,7 +78701,7 @@
 																				"box" : 																				{
 																					"id" : "obj-13",
 																					"maxclass" : "newobj",
-																					"numinlets" : 2,
+																					"numinlets" : 1,
 																					"numoutlets" : 2,
 																					"outlettype" : [ "", "FullPacket" ],
 																					"patching_rect" : [ 50.0, 575.5, 100.0, 22.0 ],
@@ -79315,7 +79315,7 @@
 												"box" : 												{
 													"id" : "obj-31",
 													"maxclass" : "newobj",
-													"numinlets" : 2,
+													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "FullPacket" ],
 													"patching_rect" : [ 992.5, 621.5, 81.0, 22.0 ],
@@ -79470,7 +79470,7 @@
 												"box" : 												{
 													"id" : "obj-45",
 													"maxclass" : "newobj",
-													"numinlets" : 2,
+													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "FullPacket" ],
 													"patching_rect" : [ 766.5, 201.0, 89.0, 22.0 ],
@@ -79609,7 +79609,7 @@
 																				"box" : 																				{
 																					"id" : "obj-13",
 																					"maxclass" : "newobj",
-																					"numinlets" : 2,
+																					"numinlets" : 1,
 																					"numoutlets" : 2,
 																					"outlettype" : [ "", "FullPacket" ],
 																					"patching_rect" : [ 50.0, 575.5, 100.0, 22.0 ],
@@ -80212,7 +80212,7 @@
 												"box" : 												{
 													"id" : "obj-25",
 													"maxclass" : "newobj",
-													"numinlets" : 5,
+													"numinlets" : 1,
 													"numoutlets" : 5,
 													"outlettype" : [ "", "", "", "", "FullPacket" ],
 													"patching_rect" : [ 766.5, 370.5, 207.0, 22.0 ],
@@ -80538,7 +80538,7 @@
 												"box" : 												{
 													"id" : "obj-7",
 													"maxclass" : "newobj",
-													"numinlets" : 7,
+													"numinlets" : 1,
 													"numoutlets" : 7,
 													"outlettype" : [ "", "", "", "", "", "", "FullPacket" ],
 													"patching_rect" : [ 198.75, 196.0, 241.0, 22.0 ],
@@ -84430,7 +84430,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 441.704163, 345.0, 132.0, 22.0 ],
+					"patching_rect" : [ 290.704163, 315.0, 132.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -84703,7 +84703,7 @@
 								"box" : 								{
 									"id" : "obj-30",
 									"maxclass" : "newobj",
-									"numinlets" : 2,
+									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "FullPacket" ],
 									"patching_rect" : [ 140.000015, 128.5, 88.0, 22.0 ],
@@ -84755,7 +84755,7 @@
 								"box" : 								{
 									"id" : "obj-7",
 									"maxclass" : "newobj",
-									"numinlets" : 4,
+									"numinlets" : 1,
 									"numoutlets" : 4,
 									"outlettype" : [ "", "", "", "FullPacket" ],
 									"patching_rect" : [ 140.000015, 161.5, 174.0, 22.0 ],
@@ -84982,7 +84982,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 817.833374, 715.0, 87.0, 22.0 ],
+					"patching_rect" : [ 666.833374, 685.0, 87.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -85002,7 +85002,7 @@
 					"maxclass" : "ezdac~",
 					"numinlets" : 2,
 					"numoutlets" : 0,
-					"patching_rect" : [ 693.5, 725.0, 45.0, 45.0 ],
+					"patching_rect" : [ 542.5, 695.0, 45.0, 45.0 ],
 					"style" : ""
 				}
 
@@ -85013,7 +85013,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 902.0, 421.0, 229.0, 20.0 ],
+					"patching_rect" : [ 751.0, 391.0, 229.0, 20.0 ],
 					"style" : "",
 					"text" : "to do: add timetags for network analysis?"
 				}
@@ -85026,7 +85026,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 870.416626, 380.5, 355.0, 33.0 ],
+					"patching_rect" : [ 719.416626, 350.5, 355.0, 33.0 ],
 					"style" : "",
 					"text" : "envelop server ip will be listed somewhere in the documentation, and probably on a piece of paper by the computer..."
 				}
@@ -85039,7 +85039,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "bang" ],
-					"patching_rect" : [ 864.0, 517.0, 60.0, 22.0 ],
+					"patching_rect" : [ 713.0, 487.0, 60.0, 22.0 ],
 					"style" : "",
 					"text" : "loadbang"
 				}
@@ -85055,7 +85055,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 864.0, 548.0, 267.0, 38.0 ],
+					"patching_rect" : [ 713.0, 518.0, 267.0, 38.0 ],
 					"saved_bundle_data" : [ 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 24, 47, 115, 101, 114, 118, 101, 114, 47, 118, 101, 114, 115, 105, 111, 110, 0, 44, 105, 0, 0, 0, 0, 0, 0, 0, 0, 0, 40, 47, 115, 101, 114, 118, 101, 114, 47, 115, 117, 98, 115, 99, 114, 105, 98, 101, 47, 105, 112, 0, 0, 0, 0, 44, 115, 0, 0, 49, 50, 55, 46, 48, 46, 48, 46, 49, 0, 0, 0 ],
 					"saved_bundle_length" : 88,
 					"text" : "/server/version : 0,\n/server/subscribe/ip : \"127.0.0.1\"",
@@ -85069,7 +85069,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 817.833374, 754.0, 140.0, 22.0 ],
+					"patching_rect" : [ 666.833374, 724.0, 140.0, 22.0 ],
 					"style" : "",
 					"text" : "udpsend localhost 5555"
 				}
@@ -85084,7 +85084,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 2,
 					"numoutlets" : 0,
-					"patching_rect" : [ 441.704163, 658.0, 127.55555, 21.0 ],
+					"patching_rect" : [ 290.704163, 628.0, 127.55555, 21.0 ],
 					"style" : "",
 					"text" : "dac~"
 				}
@@ -85094,10 +85094,10 @@
 				"box" : 				{
 					"id" : "obj-12",
 					"maxclass" : "newobj",
-					"numinlets" : 3,
+					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "FullPacket" ],
-					"patching_rect" : [ 588.5, 309.0, 131.0, 22.0 ],
+					"patching_rect" : [ 437.5, 279.0, 131.0, 22.0 ],
 					"style" : "",
 					"text" : "o.route /source /reverb"
 				}
@@ -85109,7 +85109,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 457.923767, 756.0, 124.0, 22.0 ],
+					"patching_rect" : [ 306.923767, 726.0, 124.0, 22.0 ],
 					"style" : "",
 					"text" : "spat.multi.connect 20"
 				}
@@ -85123,7 +85123,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 16,
 					"outlettype" : [ "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal" ],
-					"patching_rect" : [ 441.704163, 222.0, 131.219604, 35.0 ],
+					"patching_rect" : [ 290.704163, 192.0, 131.219604, 35.0 ],
 					"style" : "",
 					"text" : "adc~ 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16"
 				}
@@ -85136,7 +85136,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 723.833374, 67.0, 135.0, 22.0 ],
+					"patching_rect" : [ 572.833374, 37.0, 135.0, 22.0 ],
 					"style" : "",
 					"text" : "udpreceive 4444 cnmat"
 				}
@@ -85355,7 +85355,7 @@
 					"destination" : [ "obj-12", 0 ],
 					"disabled" : 0,
 					"hidden" : 0,
-					"midpoints" : [ 827.333374, 294.5, 598.0, 294.5 ],
+					"midpoints" : [ 676.333374, 264.5, 447.0, 264.5 ],
 					"source" : [ "obj-139", 1 ]
 				}
 
@@ -85419,7 +85419,7 @@
 					"destination" : [ "obj-23", 15 ],
 					"disabled" : 0,
 					"hidden" : 0,
-					"midpoints" : [ 649.923767, 493.375, 559.759713, 493.375 ],
+					"midpoints" : [ 498.923767, 463.375, 408.759713, 463.375 ],
 					"source" : [ "obj-19", 1 ]
 				}
 
@@ -86110,8 +86110,8 @@
 			}
  ],
 		"parameters" : 		{
-			"obj-94::obj-91" : [ "encoded", "encoded", 0 ],
-			"obj-57::obj-88" : [ "input", "input", 0 ]
+			"obj-57::obj-88" : [ "input", "input", 0 ],
+			"obj-94::obj-91" : [ "encoded", "encoded", 0 ]
 		}
 ,
 		"dependency_cache" : [ 			{
