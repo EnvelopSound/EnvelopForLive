@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 158.0, 95.0, 759.0, 723.0 ],
+		"rect" : [ 327.0, 357.0, 759.0, 723.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -61,12 +61,14 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 250.0, 114.829582, 66.0, 18.0 ],
 					"style" : "",
-					"text" : "1806.01 hz"
+					"text" : "8.18 hz"
 				}
 
 			}
 , 			{
 				"box" : 				{
+					"activedialcolor" : [ 0.317647, 0.654902, 0.976471, 1.0 ],
+					"activeneedlecolor" : [ 0.65098, 0.666667, 0.662745, 0.62 ],
 					"appearance" : 1,
 					"id" : "obj-19",
 					"maxclass" : "live.dial",
@@ -93,12 +95,15 @@
 
 					}
 ,
+					"textcolor" : [ 0.862745, 0.870588, 0.878431, 1.0 ],
 					"varname" : "high_gain"
 				}
 
 			}
 , 			{
 				"box" : 				{
+					"activedialcolor" : [ 0.317647, 0.654902, 0.976471, 1.0 ],
+					"activeneedlecolor" : [ 0.65098, 0.666667, 0.662745, 0.62 ],
 					"appearance" : 1,
 					"id" : "obj-18",
 					"maxclass" : "live.dial",
@@ -125,12 +130,15 @@
 
 					}
 ,
+					"textcolor" : [ 0.862745, 0.870588, 0.878431, 1.0 ],
 					"varname" : "low_gain"
 				}
 
 			}
 , 			{
 				"box" : 				{
+					"activedialcolor" : [ 0.317647, 0.654902, 0.976471, 1.0 ],
+					"activeneedlecolor" : [ 0.65098, 0.666667, 0.662745, 0.62 ],
 					"appearance" : 1,
 					"id" : "obj-17",
 					"maxclass" : "live.dial",
@@ -157,6 +165,7 @@
 
 					}
 ,
+					"textcolor" : [ 0.862745, 0.870588, 0.878431, 1.0 ],
 					"varname" : "mid_gain"
 				}
 
@@ -251,6 +260,11 @@
 					}
 ,
 					"shownumber" : 0,
+					"slidercolor" : [ 1.0, 1.0, 1.0, 1.0 ],
+					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
+					"tribordercolor" : [ 0.317647, 0.654902, 0.976471, 1.0 ],
+					"tricolor" : [ 1.0, 1.0, 1.0, 1.0 ],
+					"trioncolor" : [ 1.0, 1.0, 1.0, 1.0 ],
 					"varname" : "center_hz"
 				}
 
@@ -394,7 +408,7 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 60.0, 6.5, 256.0, 108.0 ],
 					"range" : [ 0.0, 16.0 ],
-					"setfilter" : [ 2, 7, 1, 0, 0, 1806.005371, 0.163154, 0.707, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1, 5, 1, 0, 0, 1806.005371, 0.930045, 0.707, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0, 6, 1, 0, 0, 1806.005371, 0.10559, 0.707, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 ],
+					"setfilter" : [ 2, 7, 1, 0, 0, 8.175799, 0.001, 0.707, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1, 5, 1, 0, 0, 8.175799, 0.001, 0.707, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0, 6, 1, 0, 0, 8.175799, 0.001, 0.707, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 ],
 					"style" : ""
 				}
 
@@ -618,10 +632,10 @@
 			}
  ],
 		"parameters" : 		{
-			"obj-6" : [ "center_hz", "center_hz", 0 ],
-			"obj-17" : [ "mid_gain", "mid_gain", 0 ],
 			"obj-19" : [ "high_gain", "high_gain", 0 ],
-			"obj-18" : [ "low_gain", "low_gain", 0 ]
+			"obj-17" : [ "mid_gain", "mid_gain", 0 ],
+			"obj-18" : [ "low_gain", "low_gain", 0 ],
+			"obj-6" : [ "center_hz", "center_hz", 0 ]
 		}
 ,
 		"dependency_cache" : [ 			{

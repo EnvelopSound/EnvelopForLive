@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 225.0, 156.0, 1076.0, 399.0 ],
+		"rect" : [ 223.0, 65.0, 1081.0, 406.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -61,7 +61,7 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 721.0, 95.0, 338.0, 19.0 ],
 					"style" : "",
-					"text" : "none"
+					"text" : "unknown client"
 				}
 
 			}
@@ -449,8 +449,8 @@
 , 							{
 								"name" : "newobjYellow-1",
 								"default" : 								{
-									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
-									"fontsize" : [ 12.059008 ]
+									"fontsize" : [ 12.059008 ],
+									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -1230,7 +1230,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 789.0, 490.5, 57.0, 20.0 ],
+					"patching_rect" : [ 798.0, 551.0, 57.0, 20.0 ],
 					"style" : "",
 					"text" : "to server"
 				}
@@ -1242,7 +1242,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 759.0, 461.5, 137.0, 22.0 ],
+					"patching_rect" : [ 768.0, 522.0, 137.0, 22.0 ],
 					"style" : "",
 					"text" : "udpsend localhost 4444"
 				}
@@ -1402,7 +1402,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "FullPacket" ],
-					"patching_rect" : [ 759.0, 399.0, 127.0, 22.0 ],
+					"patching_rect" : [ 768.0, 410.0, 127.0, 22.0 ],
 					"style" : "",
 					"text" : "o.prepend /server/dsp"
 				}
@@ -1878,8 +1878,8 @@
 , 			{
 				"name" : "newobjYellow-1",
 				"default" : 				{
-					"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
-					"fontsize" : [ 12.059008 ]
+					"fontsize" : [ 12.059008 ],
+					"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -1888,8 +1888,8 @@
 , 			{
 				"name" : "newobjYellow-2",
 				"default" : 				{
-					"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
-					"fontsize" : [ 12.059008 ]
+					"fontsize" : [ 12.059008 ],
+					"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
