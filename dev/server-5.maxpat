@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 52.0, 287.0, 1440.0, 851.0 ],
+		"rect" : [ 8.0, 45.0, 1440.0, 851.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -85309,18 +85309,6 @@
 			}
 , 			{
 				"box" : 				{
-					"id" : "obj-11",
-					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 306.923767, 726.0, 124.0, 22.0 ],
-					"style" : "",
-					"text" : "spat.multi.connect 20"
-				}
-
-			}
-, 			{
-				"box" : 				{
 					"id" : "obj-10",
 					"linecount" : 2,
 					"maxclass" : "newobj",
@@ -85623,7 +85611,7 @@
 					"destination" : [ "obj-23", 15 ],
 					"disabled" : 0,
 					"hidden" : 0,
-					"midpoints" : [ 498.923767, 493.375, 408.759712, 493.375 ],
+					"midpoints" : [ 498.923767, 493.375, 408.759713, 493.375 ],
 					"source" : [ "obj-19", 1 ]
 				}
 
@@ -86338,18 +86326,6 @@
 		}
 ,
 		"dependency_cache" : [ 			{
-				"name" : "spat.multi.connect.maxpat",
-				"bootpath" : "~/Documents/dev-lib/EnvelopLive/dev/abstractions",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "spat.multi-connect.js",
-				"bootpath" : "~/Documents/dev-lib/EnvelopLive/dev/abstractions",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
 				"name" : "env.o.accum.maxpat",
 				"bootpath" : "~/Documents/dev-lib/EnvelopLive/dev/abstractions",
 				"type" : "JSON",
@@ -86384,10 +86360,6 @@
 				"bootpath" : "~/Documents/dev-lib/EnvelopLive/dev/abstractions",
 				"type" : "JSON",
 				"implicit" : 1
-			}
-, 			{
-				"name" : "spat.print.mxo",
-				"type" : "iLaX"
 			}
 , 			{
 				"name" : "o.route.mxo",
