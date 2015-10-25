@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 42.0, 45.0, 1081.0, 406.0 ],
+		"rect" : [ 42.0, 45.0, 1075.0, 396.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -37,6 +37,19 @@
 		"style" : "",
 		"subpatcher_template" : "no-menus",
 		"boxes" : [ 			{
+				"box" : 				{
+					"id" : "obj-42",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "FullPacket" ],
+					"patching_rect" : [ 61.0, 170.0, 100.0, 22.0 ],
+					"style" : "",
+					"text" : "o.route /viewer"
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"id" : "obj-41",
 					"maxclass" : "newobj",
@@ -80,7 +93,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 0.0, 0.0, 640.0, 480.0 ],
+						"rect" : [ 484.0, 45.0, 640.0, 480.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -112,13 +125,13 @@
 									"fontface" : 0,
 									"fontsize" : 12.0,
 									"id" : "obj-25",
-									"linecount" : 9,
+									"linecount" : 14,
 									"maxclass" : "o.expr.codebox",
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "FullPacket", "FullPacket" ],
-									"patching_rect" : [ 50.0, 100.0, 409.0, 141.0 ],
-									"text" : "/nsources ??= 16,\n/nsources = clip(/nsources, 0, 16),\n\nmap(\n  lambda([i],\n    assign(\"/source/\"+i+\"/mute\", int32(i > /nsources))\n  ), aseq(1, 16)\n),\ndelete(/nsources)",
+									"patching_rect" : [ 50.0, 100.0, 510.0, 209.0 ],
+									"text" : "/nsources ??= 16,\n/nsources = clip(/nsources, 0, 16),\n\nmap(\n  lambda([i],\n    /mute = int32(i > /nsources),\n    assign(\"/source/\"+i+\"/mute\", /mute),\n    if( !/mute,\n      assign(\"/viewer/source/\"+i+\"/color\", [1., 1., 1., 1.] ),\n      assign(\"/viewer/source/\"+i+\"/color\", [1., 1., 1., 0.])\n    )\n  ), aseq(1, 16)\n),\ndelete(/nsources)",
 									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
 
@@ -355,6 +368,32 @@
 						"subpatcher_template" : "no-menus",
 						"boxes" : [ 							{
 								"box" : 								{
+									"id" : "obj-7",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "FullPacket" ],
+									"patching_rect" : [ 230.0, 131.0, 91.0, 22.0 ],
+									"style" : "",
+									"text" : "o.route /source"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-3",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "FullPacket" ],
+									"patching_rect" : [ 230.0, 626.0, 71.0, 22.0 ],
+									"style" : "",
+									"text" : "o.route /out"
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"id" : "obj-26",
 									"maxclass" : "comment",
 									"numinlets" : 1,
@@ -370,13 +409,13 @@
 									"fontface" : 0,
 									"fontsize" : 12.0,
 									"id" : "obj-24",
-									"linecount" : 26,
+									"linecount" : 24,
 									"maxclass" : "o.expr.codebox",
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "FullPacket", "FullPacket" ],
-									"patching_rect" : [ 230.0, 232.0, 891.0, 372.0 ],
-									"text" : "/interpolation ??= 100, \n/curve ??= 0.,\n\nmap(\n  lambda(a,\n    if( bound(a+\"/aed\"),\n      progn(\n        /id = int32(split(\"/\", a)),\n        /aed = value(a+\"/aed\"),\n        /dist = (/aed[[2]] < 1.) ? 1. : /aed[[2]],\n        /amp = 1.0 / /dist,\n        assign(a+\"/amp\", [/amp, /interpolation, /curve] ),\n        assign(a+\"/delay\", /dist * 2.9239766082 ), # ms per meter\n\n        # hoalib format\n        /az = -degtorad() * /aed[[0]],\n        /el = degtorad() * /aed[[1]],\n        assign(a+\"/pol\", [ /aed[[2]], /az, /el ]),\n        assign(a+\"/az\", [/az, /interpolation, /curve] ),\n        assign(a+\"/el\", [/el, /interpolation, /curve] )\n      )\n    )\n  ), /addrs\n),\ndelete(/id), delete(/aed), delete(/dist), delete(/amp), delete(/addrs), delete(/az), delete(/el), delete(/interpolation), delete(/curve)",
+									"patching_rect" : [ 230.0, 266.0, 891.0, 345.0 ],
+									"text" : "/interpolation ??= 100, \n/curve ??= 0.,\n\nmap(\n  lambda(a,\n    if( bound(a+\"/aed\"),\n      progn(\n        /id = int32(split(\"/\", a)),\n        /aed = value(a+\"/aed\"),\n        /dist = (/aed[[2]] < 1.) ? 1. : /aed[[2]],\n        /amp = 1.0 / /dist,\n        assign(\"/out/source\"+a+\"/amp\", [/amp, /interpolation, /curve] ),\n        assign(\"/out/source\"+a+\"/delay\", /dist * 2.9239766082 ), # ms per meter\n\n        # hoalib format\n        /az = -degtorad() * /aed[[0]],\n        /el = degtorad() * /aed[[1]],\n        assign(\"/out/viewer/source\"+a+\"/pol\", [ /aed[[2]], /az, /el ]),\n        assign(\"/out/source\"+a+\"/az\", [/az, /interpolation, /curve] ),\n        assign(\"/out/source\"+a+\"/el\", [/el, /interpolation, /curve] )\n      )\n    )\n  ), /addrs\n)",
 									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
 
@@ -400,7 +439,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "FullPacket" ],
-									"patching_rect" : [ 230.0, 203.0, 63.0, 22.0 ],
+									"patching_rect" : [ 230.0, 227.0, 63.0, 22.0 ],
 									"style" : "",
 									"text" : "o.flatten"
 								}
@@ -413,7 +452,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "FullPacket" ],
-									"patching_rect" : [ 230.0, 136.0, 63.0, 22.0 ],
+									"patching_rect" : [ 230.0, 160.0, 63.0, 22.0 ],
 									"style" : "",
 									"text" : "o.explode"
 								}
@@ -428,7 +467,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "FullPacket", "FullPacket" ],
-									"patching_rect" : [ 230.0, 164.0, 178.0, 32.0 ],
+									"patching_rect" : [ 230.0, 188.0, 178.0, 32.0 ],
 									"text" : "/addrs = getaddresses()",
 									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
@@ -442,7 +481,7 @@
 									"numinlets" : 0,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 122.0, 22.0, 30.0, 30.0 ],
+									"patching_rect" : [ 87.0, 22.0, 30.0, 30.0 ],
 									"style" : ""
 								}
 
@@ -461,27 +500,14 @@
 							}
 , 							{
 								"box" : 								{
-									"id" : "obj-6",
-									"maxclass" : "newobj",
-									"numinlets" : 1,
-									"numoutlets" : 1,
-									"outlettype" : [ "FullPacket" ],
-									"patching_rect" : [ 230.0, 649.0, 107.0, 22.0 ],
-									"style" : "",
-									"text" : "o.prepend /source"
-								}
-
-							}
-, 							{
-								"box" : 								{
 									"id" : "obj-2",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "FullPacket" ],
-									"patching_rect" : [ 122.0, 81.0, 91.0, 22.0 ],
+									"patching_rect" : [ 87.0, 81.0, 126.0, 22.0 ],
 									"style" : "",
-									"text" : "o.route /source"
+									"text" : "o.select /source/*/aed"
 								}
 
 							}
@@ -495,7 +521,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 397.0, 11.0, 224.0, 38.0 ],
+									"patching_rect" : [ 362.0, 11.0, 224.0, 38.0 ],
 									"saved_bundle_data" : [ 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 48, 47, 115, 111, 117, 114, 99, 101, 47, 49, 47, 97, 101, 100, 0, 0, 0, 44, 100, 100, 100, 0, 0, 0, 0, 64, 102, -128, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 63, -16, 0, 0, 0, 0, 0, 0 ],
 									"saved_bundle_length" : 68,
 									"text" : "/source/1/aed : [180., 0., 1.]",
@@ -524,19 +550,19 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-21", 0 ],
+									"destination" : [ "obj-23", 0 ],
 									"disabled" : 0,
 									"hidden" : 0,
-									"source" : [ "obj-2", 0 ]
+									"source" : [ "obj-2", 1 ]
 								}
 
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-23", 0 ],
+									"destination" : [ "obj-7", 0 ],
 									"disabled" : 0,
 									"hidden" : 0,
-									"source" : [ "obj-2", 1 ]
+									"source" : [ "obj-2", 0 ]
 								}
 
 							}
@@ -569,7 +595,7 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-6", 0 ],
+									"destination" : [ "obj-3", 0 ],
 									"disabled" : 0,
 									"hidden" : 0,
 									"source" : [ "obj-24", 0 ]
@@ -581,7 +607,16 @@
 									"destination" : [ "obj-23", 0 ],
 									"disabled" : 0,
 									"hidden" : 0,
-									"source" : [ "obj-6", 0 ]
+									"source" : [ "obj-3", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-21", 0 ],
+									"disabled" : 0,
+									"hidden" : 0,
+									"source" : [ "obj-7", 0 ]
 								}
 
 							}
@@ -646,20 +681,6 @@
 ,
 					"style" : "",
 					"text" : "p source-calc"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-17",
-					"linecount" : 2,
-					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 3,
-					"outlettype" : [ "", "", "FullPacket" ],
-					"patching_rect" : [ 61.0, 176.5, 126.0, 35.0 ],
-					"style" : "",
-					"text" : "o.select /source/*/pol /source/*/aed"
 				}
 
 			}
@@ -754,7 +775,7 @@
 									"maxclass" : "inlet",
 									"numinlets" : 0,
 									"numoutlets" : 1,
-									"outlettype" : [ "" ],
+									"outlettype" : [ "FullPacket" ],
 									"patching_rect" : [ 50.0, 40.0, 30.0, 30.0 ],
 									"style" : ""
 								}
@@ -840,11 +861,11 @@
 					"id" : "obj-72",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "FullPacket" ],
-					"patching_rect" : [ 61.0, 308.5, 133.0, 22.0 ],
+					"numoutlets" : 1,
+					"outlettype" : [ "FullPacket" ],
+					"patching_rect" : [ 61.0, 279.5, 63.0, 22.0 ],
 					"style" : "",
-					"text" : "o.atomize /source/*/pol"
+					"text" : "o.atomize"
 				}
 
 			}
@@ -1705,7 +1726,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-17", 0 ],
+					"destination" : [ "obj-42", 0 ],
 					"disabled" : 0,
 					"hidden" : 0,
 					"source" : [ "obj-14", 0 ]
@@ -1727,24 +1748,6 @@
 					"disabled" : 0,
 					"hidden" : 0,
 					"source" : [ "obj-16", 1 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-7", 0 ],
-					"disabled" : 0,
-					"hidden" : 0,
-					"source" : [ "obj-17", 2 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-72", 0 ],
-					"disabled" : 0,
-					"hidden" : 0,
-					"source" : [ "obj-17", 0 ]
 				}
 
 			}
@@ -1858,7 +1861,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-17", 0 ],
+					"destination" : [ "obj-42", 0 ],
 					"disabled" : 0,
 					"hidden" : 0,
 					"source" : [ "obj-38", 0 ]
@@ -1871,6 +1874,24 @@
 					"disabled" : 0,
 					"hidden" : 0,
 					"source" : [ "obj-41", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-7", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-42", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-72", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-42", 0 ]
 				}
 
 			}
