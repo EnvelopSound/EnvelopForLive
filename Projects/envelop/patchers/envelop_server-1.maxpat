@@ -21608,55 +21608,55 @@
 ,
 		"dependency_cache" : [ 			{
 				"name" : "env.o.accum.maxpat",
-				"bootpath" : "~/Documents/Max 7/Projects/envelop/patchers",
+				"bootpath" : "~/Documents/dev-lib/EnvelopLive/Projects/envelop/patchers",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "o.io.dsp.settings.maxpat",
-				"bootpath" : "~/Documents/Max 7/Projects/envelop/patchers",
+				"bootpath" : "~/Documents/dev-lib/EnvelopLive/Projects/envelop/patchers",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "env.16src_3o_early-conv.maxpat",
-				"bootpath" : "~/Documents/Max 7/Projects/envelop/patchers",
+				"bootpath" : "~/Documents/dev-lib/EnvelopLive/Projects/envelop/patchers",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "env.vdelay.maxpat",
-				"bootpath" : "~/Documents/Max 7/Projects/envelop/patchers",
+				"bootpath" : "~/Documents/dev-lib/EnvelopLive/Projects/envelop/patchers",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "vdelay4.gendsp",
-				"bootpath" : "~/Documents/Max 7/Projects/envelop/code",
+				"bootpath" : "~/Documents/dev-lib/EnvelopLive/Projects/envelop/code",
 				"type" : "gDSP",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "env.1o_conv~.maxpat",
-				"bootpath" : "~/Documents/Max 7/Projects/envelop/patchers",
+				"bootpath" : "~/Documents/dev-lib/EnvelopLive/Projects/envelop/patchers",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "env.conv.buffergen.maxpat",
-				"bootpath" : "~/Documents/Max 7/Projects/envelop/patchers",
+				"bootpath" : "~/Documents/dev-lib/EnvelopLive/Projects/envelop/patchers",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "multi.connect.maxpat",
-				"bootpath" : "~/Documents/Max 7/Projects/envelop/patchers",
+				"bootpath" : "~/Documents/dev-lib/EnvelopLive/Projects/envelop/patchers",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "spat.multi-connect.js",
-				"bootpath" : "~/Documents/Max 7/Projects/envelop/code",
+				"bootpath" : "~/Documents/dev-lib/EnvelopLive/Projects/envelop/code",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
