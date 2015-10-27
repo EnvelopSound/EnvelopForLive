@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 199.0, 45.0, 946.0, 851.0 ],
+		"rect" : [ 58.0, 45.0, 946.0, 851.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -135,7 +135,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 353.0, 769.0, 124.0, 22.0 ],
 					"style" : "",
-					"text" : "spat.multi.connect 16"
+					"text" : "multi.connect 16"
 				}
 
 			}
@@ -19539,13 +19539,14 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-87",
+					"linecount" : 2,
 					"maxclass" : "newobj",
 					"numinlets" : 16,
 					"numoutlets" : 16,
 					"outlettype" : [ "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal" ],
-					"patching_rect" : [ 186.484558, 350.5, 249.0, 22.0 ],
+					"patching_rect" : [ 186.484558, 350.5, 250.0, 35.0 ],
 					"style" : "",
-					"text" : "poly~ env.16src_3o_early-conv 16 @target 0"
+					"text" : "poly~ env.16src_3o_early-conv 16 @target 0 @parallel 1"
 				}
 
 			}
@@ -21334,7 +21335,7 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "spat.multi.connect.maxpat",
+				"name" : "multi.connect.maxpat",
 				"bootpath" : "~/Documents/dev-lib/EnvelopLive/dev/abstractions",
 				"type" : "JSON",
 				"implicit" : 1
@@ -21423,10 +21424,6 @@
 			}
 , 			{
 				"name" : "o.var.mxo",
-				"type" : "iLaX"
-			}
-, 			{
-				"name" : "spat.print.mxo",
 				"type" : "iLaX"
 			}
  ],
