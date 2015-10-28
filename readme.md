@@ -1,7 +1,7 @@
 # EnvelopLive
 The EnvelopLive server/client system consists of a set of Max For Live devices that communicate via OSC to a spatial processing server running either on the same computer via a Jack Audio Router or on a separate computer. OSC messages are dispatched to the server via a "client" Max patch, which allows a global view of the spatial scene, and facilitates synchronized group processing when needed.
 
-Version 1 of the Envelop system was developed by Rama Gottfried, and is modeled on the architecture of Ircam-Spat combined with an odot port of Alex Harker's "Convolution Reverb Pro" Max For Live device for use with B-Format impulse responses.
+Version 1 of the Envelop system was developed by Rama Gottfried, and is modeled on the architecture of Ircam-Spat combined with an odot port of Alex Harker's "Convolution Reverb Pro" Max For Live device adapted for use with B-Format impulse responses.
 
 Since Live only supports mono or stereo tracks, you need to send your audio streams to be spatialized to an external server for Ambisonic encoding and processing. To do this, there are a few options -- either via software or hardware. The instructions below are for a software based solution, however if you have an audio interface with 8+ channels, you may want to look into "zero-latency monitoring" and hardware loopback options for sending audio from Live to the Max server.
 
