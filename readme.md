@@ -3,7 +3,7 @@ The EnvelopLive server/client system consists of a set of Max For Live devices t
 
 Version 1 of the Envelop system was developed by Rama Gottfried, and is modeled on the architecture of Ircam-Spat combined with an odot port of Alex Harker's "Convolution Reverb Pro" Max For Live device adapted for use with B-Format impulse responses.
 
-Since Live only supports mono or stereo tracks, you need to send your audio streams to be spatialized to an external server for Ambisonic encoding and processing. To do this, there are a few options -- either via software or hardware. The instructions below are for a software based solution, however if you have an audio interface with 8+ channels, you may want to look into "zero-latency monitoring" and hardware loopback options for sending audio from Live to the Max server.
+Since Live only supports mono ore stereo tracks, you need to send your audio streams to be spatialized to an external server for Ambisonic encoding and processing. To do this, there are a few options -- either via software or hardware. The instructions below are for a software based solution, however if you have an audio interface with 8+ channels, you may want to look into "zero-latency monitoring" and hardware loopback options for sending audio from Live to the Max server.
 
 For more information on the signal processing architecture please see:
 * Jean-Marc Jot, *"Efficient models for reverberation and distance rendering in computer music and virtual audio reality"* IRCAM, 1997.
@@ -15,7 +15,7 @@ For information on the CNMAT-odot system please see:
 
 ### contents
 Version 1 of the Envelop system consists a two Max patches, which are contained in the `envelop` project, located in the `Projects` folder:
-* `envelope_client-1`
+* `envelop_client-1`
 * `envelop_server-1`
 
 And three Max for Live (M4L) devices which are contained in the `Max For Live Devices` directory:
@@ -42,10 +42,10 @@ For routing audio from Live to the Envelop binaural server we use the Jack Audio
 * In the JackPilot preferences, set buffer size to be 1024, with 16 channels IO
 * Start the Jack server
 * Start Max
-* Open the file `envelop.maxproj` located in the `EnvelopLive/Projects` folder. The `envelop.maxproj` automatically opens the `envelope_client-1` and `envelop_server-1` patches.
+* Open the file `envelop.maxproj` located in the `EnvelopLive/Projects` folder. The `envelop.maxproj` automatically opens the `envelop_client-1` and `envelop_server-1` patches.
 
-* Check the bottom of the `envelope_client-1` patch for error messages, it should say `/err/version: none`
-* Before turning on the DSP, in the `envelope_client-1` patch, set the server's DSP settings to be:
+* Check the bottom of the `envelop_client-1` patch for error messages, it should say `/err/version: none`
+* Before turning on the DSP, in the `envelop_client-1` patch, set the server's DSP settings to be:
   * input device: JackAudio
   * output device: JackAudio
   * sample rate: (same as set in JackPilot)
@@ -53,7 +53,7 @@ For routing audio from Live to the Envelop binaural server we use the Jack Audio
   * signal vector: 1024
   * scheduler in overdrive: on
   * scheduler in audio interrupt: off
-* Then set the server DSP state to On (in the `envelope_client-1` patch)
+* Then set the server DSP state to On (in the `envelop_client-1` patch)
 * Start Live
 * Set Live's audio IO to be Jack
 * Make sure all of Live's output ports are enabled
