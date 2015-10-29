@@ -72,6 +72,7 @@ An example Live session is included in the repository for reference.
 The operating principle is that Envelop source control MIDI device is attached to a Live Instrument or Audio track via naming scheme. This approach allows you to create MIDI tracks which contain spatial automation separately from automation used for the audio track, this is useful for cases where you want to copy spatial automation to new tracks etc.
 
 To attach a source control device to an audio track:
+
 1. choose an audio track and give it a unique name, for example "`shaker`"
 2. create a MIDI track (generally placed near the audio track for easy reference) and drag one of the source control devices onto the track.
 3. name the new MIDI track with the prefix "`envelop/`" plus the name of your track. For our example "`shaker`", you would name the attached source track: "`envelop/shaker`"
