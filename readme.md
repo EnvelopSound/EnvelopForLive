@@ -42,6 +42,8 @@ For routing audio from Live to the Envelop binaural server we use the Jack Audio
 * Start the Jack server
 * Start Max
 * Open the file `envelop.maxproj` located in the `EnvelopLive/Projects` folder. The `envelop.maxproj` automatically opens the `envelop_client-1` and `envelop_server-1` patches.
+* 
+* _NOTE: in Max 7.0.x, to enable reverb, you may need to open Options->File Preferences and add the `Projects/envelop/media` folder to your search path._
 
 * Check the bottom of the `envelop_client-1` patch for error messages, it should say `/err/version: none`
 * Before turning on the DSP, in the `envelop_client-1` patch, set the server's DSP settings to be:
