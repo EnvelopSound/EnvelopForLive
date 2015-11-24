@@ -40,18 +40,6 @@
 		"subpatcher_template" : "no-menus",
 		"boxes" : [ 			{
 				"box" : 				{
-					"id" : "obj-8",
-					"maxclass" : "comment",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 438.5, 600.0, 197.0, 20.0 ],
-					"style" : "",
-					"text" : "TODO: switch to 16 channel DAC"
-				}
-
-			}
-, 			{
-				"box" : 				{
 					"id" : "obj-5",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
@@ -96,8 +84,7 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 167.125, 11.0, 26.0, 20.0 ],
 					"style" : "",
-					"text" : "v.1",
-					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
+					"text" : "v.1"
 				}
 
 			}
@@ -114,8 +101,7 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 15.125, 27.5, 90.0, 20.0 ],
 					"style" : "",
-					"text" : "binaural server",
-					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
+					"text" : "binaural server"
 				}
 
 			}
@@ -443,8 +429,7 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 5.125, 6.5, 138.0, 29.0 ],
 					"style" : "",
-					"text" : "E N V E L O P",
-					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
+					"text" : "E N V E L O P"
 				}
 
 			}
@@ -17402,8 +17387,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 799.313965, 37.0, 429.0, 123.0 ],
 					"style" : "",
-					"text" : "/source/1/reverb/id  = number of reverb\n/source/1/reverb/amp = global reverb gain (curve~),\n/source/1/reverb/cascade = global reverb filter (casecade~),\n/source/1/reverb/early/amp = early reverb output amplitude,\n/source/1/reverb/early/send/amp = early reverb amplitude to late reverb,\n\n/reverb/1/id = number (pre assigned),\n/reverb/1/amp = late reverb bus amp",
-					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
+					"text" : "/source/1/reverb/id  = number of reverb\n/source/1/reverb/amp = global reverb gain (curve~),\n/source/1/reverb/cascade = global reverb filter (casecade~),\n/source/1/reverb/early/amp = early reverb output amplitude,\n/source/1/reverb/early/send/amp = early reverb amplitude to late reverb,\n\n/reverb/1/id = number (pre assigned),\n/reverb/1/amp = late reverb bus amp"
 				}
 
 			}
@@ -20566,8 +20550,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 719.416626, 350.5, 384.0, 36.0 ],
 					"style" : "",
-					"text" : "envelop server ip will be listed somewhere in the documentation, and probably on a piece of paper by the computer...",
-					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
+					"text" : "envelop server ip will be listed somewhere in the documentation, and probably on a piece of paper by the computer..."
 				}
 
 			}
