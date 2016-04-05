@@ -3,9 +3,9 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 7,
-			"minor" : 1,
-			"revision" : 0,
-			"architecture" : "x64",
+			"minor" : 2,
+			"revision" : 1,
+			"architecture" : "x86",
 			"modernui" : 1
 		}
 ,
@@ -340,9 +340,9 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 7,
-							"minor" : 1,
-							"revision" : 0,
-							"architecture" : "x64",
+							"minor" : 2,
+							"revision" : 1,
+							"architecture" : "x86",
 							"modernui" : 1
 						}
 ,
@@ -374,6 +374,33 @@
 						"style" : "",
 						"subpatcher_template" : "",
 						"boxes" : [ 							{
+								"box" : 								{
+									"id" : "obj-3",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 151.166626, 209.799988, 38.0, 21.0 ],
+									"presentation_rect" : [ 154.166626, 212.799988, 0.0, 0.0 ],
+									"style" : "",
+									"text" : "dbtoa"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 288.166626, 209.799988, 38.0, 21.0 ],
+									"style" : "",
+									"text" : "dbtoa"
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"id" : "obj-6",
 									"maxclass" : "message",
@@ -427,9 +454,9 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 7,
-											"minor" : 1,
-											"revision" : 0,
-											"architecture" : "x64",
+											"minor" : 2,
+											"revision" : 1,
+											"architecture" : "x86",
 											"modernui" : 1
 										}
 ,
@@ -611,9 +638,9 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 7,
-											"minor" : 1,
-											"revision" : 0,
-											"architecture" : "x64",
+											"minor" : 2,
+											"revision" : 1,
+											"architecture" : "x86",
 											"modernui" : 1
 										}
 ,
@@ -795,9 +822,9 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 7,
-											"minor" : 1,
-											"revision" : 0,
-											"architecture" : "x64",
+											"minor" : 2,
+											"revision" : 1,
+											"architecture" : "x86",
 											"modernui" : 1
 										}
 ,
@@ -979,9 +1006,9 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 7,
-											"minor" : 1,
-											"revision" : 0,
-											"architecture" : "x64",
+											"minor" : 2,
+											"revision" : 1,
+											"architecture" : "x86",
 											"modernui" : 1
 										}
 ,
@@ -1163,9 +1190,9 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 7,
-											"minor" : 1,
-											"revision" : 0,
-											"architecture" : "x64",
+											"minor" : 2,
+											"revision" : 1,
+											"architecture" : "x86",
 											"modernui" : 1
 										}
 ,
@@ -1541,6 +1568,15 @@
  ],
 						"lines" : [ 							{
 								"patchline" : 								{
+									"destination" : [ "obj-83", 0 ],
+									"disabled" : 0,
+									"hidden" : 0,
+									"source" : [ "obj-1", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-89", 0 ],
 									"disabled" : 0,
 									"hidden" : 0,
@@ -1631,7 +1667,7 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-83", 0 ],
+									"destination" : [ "obj-1", 0 ],
 									"disabled" : 0,
 									"hidden" : 0,
 									"source" : [ "obj-207", 0 ]
@@ -1640,7 +1676,7 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-86", 0 ],
+									"destination" : [ "obj-3", 0 ],
 									"disabled" : 0,
 									"hidden" : 0,
 									"source" : [ "obj-208", 0 ]
@@ -1671,6 +1707,15 @@
 									"disabled" : 0,
 									"hidden" : 0,
 									"source" : [ "obj-212", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-86", 0 ],
+									"disabled" : 0,
+									"hidden" : 0,
+									"source" : [ "obj-3", 0 ]
 								}
 
 							}
@@ -1903,9 +1948,9 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 7,
-							"minor" : 1,
-							"revision" : 0,
-							"architecture" : "x64",
+							"minor" : 2,
+							"revision" : 1,
+							"architecture" : "x86",
 							"modernui" : 1
 						}
 ,
@@ -2602,9 +2647,9 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 7,
-							"minor" : 1,
-							"revision" : 0,
-							"architecture" : "x64",
+							"minor" : 2,
+							"revision" : 1,
+							"architecture" : "x86",
 							"modernui" : 1
 						}
 ,
@@ -3329,9 +3374,9 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 7,
-							"minor" : 1,
-							"revision" : 0,
-							"architecture" : "x64",
+							"minor" : 2,
+							"revision" : 1,
+							"architecture" : "x86",
 							"modernui" : 1
 						}
 ,
@@ -3923,9 +3968,9 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 7,
-							"minor" : 1,
-							"revision" : 0,
-							"architecture" : "x64",
+							"minor" : 2,
+							"revision" : 1,
+							"architecture" : "x86",
 							"modernui" : 1
 						}
 ,
@@ -4185,9 +4230,9 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 7,
-											"minor" : 1,
-											"revision" : 0,
-											"architecture" : "x64",
+											"minor" : 2,
+											"revision" : 1,
+											"architecture" : "x86",
 											"modernui" : 1
 										}
 ,
@@ -4388,9 +4433,9 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 7,
-											"minor" : 1,
-											"revision" : 0,
-											"architecture" : "x64",
+											"minor" : 2,
+											"revision" : 1,
+											"architecture" : "x86",
 											"modernui" : 1
 										}
 ,
@@ -4567,9 +4612,9 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 7,
-											"minor" : 1,
-											"revision" : 0,
-											"architecture" : "x64",
+											"minor" : 2,
+											"revision" : 1,
+											"architecture" : "x86",
 											"modernui" : 1
 										}
 ,
@@ -4857,9 +4902,9 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 7,
-											"minor" : 1,
-											"revision" : 0,
-											"architecture" : "x64",
+											"minor" : 2,
+											"revision" : 1,
+											"architecture" : "x86",
 											"modernui" : 1
 										}
 ,
@@ -5639,9 +5684,9 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 7,
-											"minor" : 1,
-											"revision" : 0,
-											"architecture" : "x64",
+											"minor" : 2,
+											"revision" : 1,
+											"architecture" : "x86",
 											"modernui" : 1
 										}
 ,
@@ -6103,9 +6148,9 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 7,
-											"minor" : 1,
-											"revision" : 0,
-											"architecture" : "x64",
+											"minor" : 2,
+											"revision" : 1,
+											"architecture" : "x86",
 											"modernui" : 1
 										}
 ,
@@ -7039,8 +7084,8 @@
 , 											{
 												"name" : "newobjYellow-1",
 												"default" : 												{
-													"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
-													"fontsize" : [ 12.059008 ]
+													"fontsize" : [ 12.059008 ],
+													"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
 												}
 ,
 												"parentstyle" : "",
@@ -7049,8 +7094,8 @@
 , 											{
 												"name" : "newobjYellow-2",
 												"default" : 												{
-													"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
-													"fontsize" : [ 12.059008 ]
+													"fontsize" : [ 12.059008 ],
+													"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
 												}
 ,
 												"parentstyle" : "",
@@ -7623,8 +7668,8 @@
 , 							{
 								"name" : "newobjYellow-1",
 								"default" : 								{
-									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
-									"fontsize" : [ 12.059008 ]
+									"fontsize" : [ 12.059008 ],
+									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -7633,8 +7678,8 @@
 , 							{
 								"name" : "newobjYellow-2",
 								"default" : 								{
-									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
-									"fontsize" : [ 12.059008 ]
+									"fontsize" : [ 12.059008 ],
+									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -8353,50 +8398,50 @@
 			}
  ],
 		"parameters" : 		{
-			"obj-21::obj-18" : [ "direct_low_gain", "low_gain", 0 ],
-			"obj-21::obj-19" : [ "direct_high_gain", "high_gain", 0 ],
+			"obj-21::obj-6" : [ "direct_center_hz", "center_hz", 0 ],
+			"obj-46" : [ "elevation", "elev", 0 ],
 			"obj-106::obj-147" : [ "zoom", "zoom", 0 ],
+			"obj-10::obj-18" : [ "reverb_low_gain", "low_gain", 0 ],
+			"obj-21::obj-19" : [ "direct_high_gain", "high_gain", 0 ],
+			"obj-10::obj-19" : [ "reverb_high_gain", "high_gain", 0 ],
 			"obj-53" : [ "distance", "dist", 0 ],
-			"obj-10::obj-17" : [ "reverb_mid_gain", "mid_gain", 0 ],
+			"obj-21::obj-18" : [ "direct_low_gain", "low_gain", 0 ],
+			"obj-21::obj-17" : [ "direct_mid_gain", "mid_gain", 0 ],
+			"obj-31" : [ "early_gain", "early_gain", 0 ],
+			"obj-74" : [ "reverb_number", "reverb_number", 0 ],
+			"obj-10::obj-6" : [ "reverb_center_hz", "center_hz", 0 ],
 			"obj-63" : [ "azimuth", "az", 0 ],
 			"obj-34" : [ "late_gain", "late_gain", 0 ],
-			"obj-31" : [ "early_gain", "early_gain", 0 ],
-			"obj-10::obj-18" : [ "reverb_low_gain", "low_gain", 0 ],
-			"obj-21::obj-6" : [ "direct_center_hz", "center_hz", 0 ],
-			"obj-10::obj-19" : [ "reverb_high_gain", "high_gain", 0 ],
-			"obj-21::obj-17" : [ "direct_mid_gain", "mid_gain", 0 ],
-			"obj-46" : [ "elevation", "elev", 0 ],
-			"obj-10::obj-6" : [ "reverb_center_hz", "center_hz", 0 ],
-			"obj-74" : [ "reverb_number", "reverb_number", 0 ]
+			"obj-10::obj-17" : [ "reverb_mid_gain", "mid_gain", 0 ]
 		}
 ,
 		"dependency_cache" : [ 			{
 				"name" : "env.udp.bp.maxpat",
-				"bootpath" : "~/Documents/dev-lib/EnvelopLive/Max For Live Devices/envelop_mono Project/patchers",
+				"bootpath" : "~/Code/EnvelopLive/Max For Live Devices/envelop_mono Project/patchers",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "thru.maxpat",
-				"bootpath" : "~/Documents/dev-lib/EnvelopLive/Max For Live Devices/envelop_mono Project/patchers",
+				"bootpath" : "~/Code/EnvelopLive/Max For Live Devices/envelop_mono Project/patchers",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "r.live.get-param-ids.maxpat",
-				"bootpath" : "~/Documents/dev-lib/EnvelopLive/Max For Live Devices/envelop_mono Project/patchers",
+				"bootpath" : "~/Code/EnvelopLive/Max For Live Devices/envelop_mono Project/patchers",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "r.live.iter-id2name.maxpat",
-				"bootpath" : "~/Documents/dev-lib/EnvelopLive/Max For Live Devices/envelop_mono Project/patchers",
+				"bootpath" : "~/Code/EnvelopLive/Max For Live Devices/envelop_mono Project/patchers",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "env.viewer.mono.maxpat",
-				"bootpath" : "~/Documents/dev-lib/EnvelopLive/Max For Live Devices/envelop_mono Project/patchers",
+				"bootpath" : "~/Code/EnvelopLive/Max For Live Devices/envelop_mono Project/patchers",
 				"type" : "JSON",
 				"implicit" : 1
 			}
@@ -8508,8 +8553,8 @@
 , 			{
 				"name" : "newobjYellow-1",
 				"default" : 				{
-					"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
-					"fontsize" : [ 12.059008 ]
+					"fontsize" : [ 12.059008 ],
+					"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -8518,8 +8563,8 @@
 , 			{
 				"name" : "newobjYellow-2",
 				"default" : 				{
-					"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
-					"fontsize" : [ 12.059008 ]
+					"fontsize" : [ 12.059008 ],
+					"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
