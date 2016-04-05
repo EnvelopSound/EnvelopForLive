@@ -3,9 +3,9 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 7,
-			"minor" : 1,
-			"revision" : 0,
-			"architecture" : "x64",
+			"minor" : 2,
+			"revision" : 1,
+			"architecture" : "x86",
 			"modernui" : 1
 		}
 ,
@@ -47,9 +47,9 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 7,
-							"minor" : 1,
-							"revision" : 0,
-							"architecture" : "x64",
+							"minor" : 2,
+							"revision" : 1,
+							"architecture" : "x86",
 							"modernui" : 1
 						}
 ,
@@ -410,14 +410,14 @@
 					"maxclass" : "newobj",
 					"numinlets" : 2,
 					"numoutlets" : 2,
-					"outlettype" : [ "bang", "FullPacket" ],
+					"outlettype" : [ "", "FullPacket" ],
 					"patcher" : 					{
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 7,
-							"minor" : 1,
-							"revision" : 0,
-							"architecture" : "x64",
+							"minor" : 2,
+							"revision" : 1,
+							"architecture" : "x86",
 							"modernui" : 1
 						}
 ,
@@ -449,19 +449,6 @@
 						"style" : "",
 						"subpatcher_template" : "no-menus",
 						"boxes" : [ 							{
-								"box" : 								{
-									"id" : "obj-1",
-									"maxclass" : "newobj",
-									"numinlets" : 1,
-									"numoutlets" : 2,
-									"outlettype" : [ "bang", "int" ],
-									"patching_rect" : [ 50.0, 412.551208, 30.0, 22.0 ],
-									"style" : "",
-									"text" : "t b i"
-								}
-
-							}
-, 							{
 								"box" : 								{
 									"id" : "obj-104",
 									"maxclass" : "newobj",
@@ -557,24 +544,6 @@
 						"lines" : [ 							{
 								"patchline" : 								{
 									"destination" : [ "obj-79", 0 ],
-									"disabled" : 0,
-									"hidden" : 0,
-									"source" : [ "obj-1", 1 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-79", 0 ],
-									"disabled" : 0,
-									"hidden" : 0,
-									"source" : [ "obj-1", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-1", 0 ],
 									"disabled" : 0,
 									"hidden" : 0,
 									"source" : [ "obj-104", 0 ]
@@ -704,9 +673,9 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 7,
-							"minor" : 1,
-							"revision" : 0,
-							"architecture" : "x64",
+							"minor" : 2,
+							"revision" : 1,
+							"architecture" : "x86",
 							"modernui" : 1
 						}
 ,
@@ -748,9 +717,9 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 7,
-											"minor" : 1,
-											"revision" : 0,
-											"architecture" : "x64",
+											"minor" : 2,
+											"revision" : 1,
+											"architecture" : "x86",
 											"modernui" : 1
 										}
 ,
@@ -1116,9 +1085,9 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 7,
-											"minor" : 1,
-											"revision" : 0,
-											"architecture" : "x64",
+											"minor" : 2,
+											"revision" : 1,
+											"architecture" : "x86",
 											"modernui" : 1
 										}
 ,
@@ -1515,9 +1484,9 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 7,
-							"minor" : 1,
-							"revision" : 0,
-							"architecture" : "x64",
+							"minor" : 2,
+							"revision" : 1,
+							"architecture" : "x86",
 							"modernui" : 1
 						}
 ,
@@ -1878,14 +1847,14 @@
 					"maxclass" : "newobj",
 					"numinlets" : 2,
 					"numoutlets" : 2,
-					"outlettype" : [ "bang", "FullPacket" ],
+					"outlettype" : [ "", "FullPacket" ],
 					"patcher" : 					{
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 7,
-							"minor" : 1,
-							"revision" : 0,
-							"architecture" : "x64",
+							"minor" : 2,
+							"revision" : 1,
+							"architecture" : "x86",
 							"modernui" : 1
 						}
 ,
@@ -1917,19 +1886,6 @@
 						"style" : "",
 						"subpatcher_template" : "no-menus",
 						"boxes" : [ 							{
-								"box" : 								{
-									"id" : "obj-1",
-									"maxclass" : "newobj",
-									"numinlets" : 1,
-									"numoutlets" : 2,
-									"outlettype" : [ "bang", "int" ],
-									"patching_rect" : [ 50.0, 412.551208, 30.0, 22.0 ],
-									"style" : "",
-									"text" : "t b i"
-								}
-
-							}
-, 							{
 								"box" : 								{
 									"id" : "obj-104",
 									"maxclass" : "newobj",
@@ -2027,24 +1983,6 @@
 									"destination" : [ "obj-79", 0 ],
 									"disabled" : 0,
 									"hidden" : 0,
-									"source" : [ "obj-1", 1 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-79", 0 ],
-									"disabled" : 0,
-									"hidden" : 0,
-									"source" : [ "obj-1", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-1", 0 ],
-									"disabled" : 0,
-									"hidden" : 0,
 									"source" : [ "obj-104", 0 ]
 								}
 
@@ -2135,9 +2073,9 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 7,
-							"minor" : 1,
-							"revision" : 0,
-							"architecture" : "x64",
+							"minor" : 2,
+							"revision" : 1,
+							"architecture" : "x86",
 							"modernui" : 1
 						}
 ,
@@ -2498,14 +2436,14 @@
 					"maxclass" : "newobj",
 					"numinlets" : 2,
 					"numoutlets" : 2,
-					"outlettype" : [ "bang", "FullPacket" ],
+					"outlettype" : [ "", "FullPacket" ],
 					"patcher" : 					{
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 7,
-							"minor" : 1,
-							"revision" : 0,
-							"architecture" : "x64",
+							"minor" : 2,
+							"revision" : 1,
+							"architecture" : "x86",
 							"modernui" : 1
 						}
 ,
@@ -2537,19 +2475,6 @@
 						"style" : "",
 						"subpatcher_template" : "no-menus",
 						"boxes" : [ 							{
-								"box" : 								{
-									"id" : "obj-1",
-									"maxclass" : "newobj",
-									"numinlets" : 1,
-									"numoutlets" : 2,
-									"outlettype" : [ "bang", "int" ],
-									"patching_rect" : [ 50.0, 412.551208, 30.0, 22.0 ],
-									"style" : "",
-									"text" : "t b i"
-								}
-
-							}
-, 							{
 								"box" : 								{
 									"id" : "obj-104",
 									"maxclass" : "newobj",
@@ -2647,24 +2572,6 @@
 									"destination" : [ "obj-79", 0 ],
 									"disabled" : 0,
 									"hidden" : 0,
-									"source" : [ "obj-1", 1 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-79", 0 ],
-									"disabled" : 0,
-									"hidden" : 0,
-									"source" : [ "obj-1", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-1", 0 ],
-									"disabled" : 0,
-									"hidden" : 0,
 									"source" : [ "obj-104", 0 ]
 								}
 
@@ -2755,9 +2662,9 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 7,
-							"minor" : 1,
-							"revision" : 0,
-							"architecture" : "x64",
+							"minor" : 2,
+							"revision" : 1,
+							"architecture" : "x86",
 							"modernui" : 1
 						}
 ,
@@ -3118,14 +3025,14 @@
 					"maxclass" : "newobj",
 					"numinlets" : 2,
 					"numoutlets" : 2,
-					"outlettype" : [ "bang", "FullPacket" ],
+					"outlettype" : [ "", "FullPacket" ],
 					"patcher" : 					{
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 7,
-							"minor" : 1,
-							"revision" : 0,
-							"architecture" : "x64",
+							"minor" : 2,
+							"revision" : 1,
+							"architecture" : "x86",
 							"modernui" : 1
 						}
 ,
@@ -3157,19 +3064,6 @@
 						"style" : "",
 						"subpatcher_template" : "no-menus",
 						"boxes" : [ 							{
-								"box" : 								{
-									"id" : "obj-1",
-									"maxclass" : "newobj",
-									"numinlets" : 1,
-									"numoutlets" : 2,
-									"outlettype" : [ "bang", "int" ],
-									"patching_rect" : [ 50.0, 412.551208, 30.0, 22.0 ],
-									"style" : "",
-									"text" : "t b i"
-								}
-
-							}
-, 							{
 								"box" : 								{
 									"id" : "obj-104",
 									"maxclass" : "newobj",
@@ -3267,24 +3161,6 @@
 									"destination" : [ "obj-79", 0 ],
 									"disabled" : 0,
 									"hidden" : 0,
-									"source" : [ "obj-1", 1 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-79", 0 ],
-									"disabled" : 0,
-									"hidden" : 0,
-									"source" : [ "obj-1", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-1", 0 ],
-									"disabled" : 0,
-									"hidden" : 0,
 									"source" : [ "obj-104", 0 ]
 								}
 
@@ -3375,9 +3251,9 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 7,
-							"minor" : 1,
-							"revision" : 0,
-							"architecture" : "x64",
+							"minor" : 2,
+							"revision" : 1,
+							"architecture" : "x86",
 							"modernui" : 1
 						}
 ,
@@ -3738,14 +3614,14 @@
 					"maxclass" : "newobj",
 					"numinlets" : 2,
 					"numoutlets" : 2,
-					"outlettype" : [ "bang", "FullPacket" ],
+					"outlettype" : [ "", "FullPacket" ],
 					"patcher" : 					{
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 7,
-							"minor" : 1,
-							"revision" : 0,
-							"architecture" : "x64",
+							"minor" : 2,
+							"revision" : 1,
+							"architecture" : "x86",
 							"modernui" : 1
 						}
 ,
@@ -3777,19 +3653,6 @@
 						"style" : "",
 						"subpatcher_template" : "no-menus",
 						"boxes" : [ 							{
-								"box" : 								{
-									"id" : "obj-1",
-									"maxclass" : "newobj",
-									"numinlets" : 1,
-									"numoutlets" : 2,
-									"outlettype" : [ "bang", "int" ],
-									"patching_rect" : [ 50.0, 412.551208, 30.0, 22.0 ],
-									"style" : "",
-									"text" : "t b i"
-								}
-
-							}
-, 							{
 								"box" : 								{
 									"id" : "obj-104",
 									"maxclass" : "newobj",
@@ -3887,24 +3750,6 @@
 									"destination" : [ "obj-79", 0 ],
 									"disabled" : 0,
 									"hidden" : 0,
-									"source" : [ "obj-1", 1 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-79", 0 ],
-									"disabled" : 0,
-									"hidden" : 0,
-									"source" : [ "obj-1", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-1", 0 ],
-									"disabled" : 0,
-									"hidden" : 0,
 									"source" : [ "obj-104", 0 ]
 								}
 
@@ -3995,9 +3840,9 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 7,
-							"minor" : 1,
-							"revision" : 0,
-							"architecture" : "x64",
+							"minor" : 2,
+							"revision" : 1,
+							"architecture" : "x86",
 							"modernui" : 1
 						}
 ,
@@ -4358,14 +4203,14 @@
 					"maxclass" : "newobj",
 					"numinlets" : 2,
 					"numoutlets" : 2,
-					"outlettype" : [ "bang", "FullPacket" ],
+					"outlettype" : [ "", "FullPacket" ],
 					"patcher" : 					{
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 7,
-							"minor" : 1,
-							"revision" : 0,
-							"architecture" : "x64",
+							"minor" : 2,
+							"revision" : 1,
+							"architecture" : "x86",
 							"modernui" : 1
 						}
 ,
@@ -4397,19 +4242,6 @@
 						"style" : "",
 						"subpatcher_template" : "no-menus",
 						"boxes" : [ 							{
-								"box" : 								{
-									"id" : "obj-1",
-									"maxclass" : "newobj",
-									"numinlets" : 1,
-									"numoutlets" : 2,
-									"outlettype" : [ "bang", "int" ],
-									"patching_rect" : [ 50.0, 412.551208, 30.0, 22.0 ],
-									"style" : "",
-									"text" : "t b i"
-								}
-
-							}
-, 							{
 								"box" : 								{
 									"id" : "obj-104",
 									"maxclass" : "newobj",
@@ -4507,24 +4339,6 @@
 									"destination" : [ "obj-79", 0 ],
 									"disabled" : 0,
 									"hidden" : 0,
-									"source" : [ "obj-1", 1 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-79", 0 ],
-									"disabled" : 0,
-									"hidden" : 0,
-									"source" : [ "obj-1", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-1", 0 ],
-									"disabled" : 0,
-									"hidden" : 0,
 									"source" : [ "obj-104", 0 ]
 								}
 
@@ -4615,9 +4429,9 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 7,
-							"minor" : 1,
-							"revision" : 0,
-							"architecture" : "x64",
+							"minor" : 2,
+							"revision" : 1,
+							"architecture" : "x86",
 							"modernui" : 1
 						}
 ,
@@ -4978,14 +4792,14 @@
 					"maxclass" : "newobj",
 					"numinlets" : 2,
 					"numoutlets" : 2,
-					"outlettype" : [ "bang", "FullPacket" ],
+					"outlettype" : [ "", "FullPacket" ],
 					"patcher" : 					{
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 7,
-							"minor" : 1,
-							"revision" : 0,
-							"architecture" : "x64",
+							"minor" : 2,
+							"revision" : 1,
+							"architecture" : "x86",
 							"modernui" : 1
 						}
 ,
@@ -5017,19 +4831,6 @@
 						"style" : "",
 						"subpatcher_template" : "no-menus",
 						"boxes" : [ 							{
-								"box" : 								{
-									"id" : "obj-1",
-									"maxclass" : "newobj",
-									"numinlets" : 1,
-									"numoutlets" : 2,
-									"outlettype" : [ "bang", "int" ],
-									"patching_rect" : [ 50.0, 412.551208, 30.0, 22.0 ],
-									"style" : "",
-									"text" : "t b i"
-								}
-
-							}
-, 							{
 								"box" : 								{
 									"id" : "obj-104",
 									"maxclass" : "newobj",
@@ -5127,24 +4928,6 @@
 									"destination" : [ "obj-79", 0 ],
 									"disabled" : 0,
 									"hidden" : 0,
-									"source" : [ "obj-1", 1 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-79", 0 ],
-									"disabled" : 0,
-									"hidden" : 0,
-									"source" : [ "obj-1", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-1", 0 ],
-									"disabled" : 0,
-									"hidden" : 0,
 									"source" : [ "obj-104", 0 ]
 								}
 
@@ -5235,9 +5018,9 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 7,
-							"minor" : 1,
-							"revision" : 0,
-							"architecture" : "x64",
+							"minor" : 2,
+							"revision" : 1,
+							"architecture" : "x86",
 							"modernui" : 1
 						}
 ,
@@ -5598,14 +5381,14 @@
 					"maxclass" : "newobj",
 					"numinlets" : 2,
 					"numoutlets" : 2,
-					"outlettype" : [ "bang", "FullPacket" ],
+					"outlettype" : [ "", "FullPacket" ],
 					"patcher" : 					{
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 7,
-							"minor" : 1,
-							"revision" : 0,
-							"architecture" : "x64",
+							"minor" : 2,
+							"revision" : 1,
+							"architecture" : "x86",
 							"modernui" : 1
 						}
 ,
@@ -5637,19 +5420,6 @@
 						"style" : "",
 						"subpatcher_template" : "no-menus",
 						"boxes" : [ 							{
-								"box" : 								{
-									"id" : "obj-1",
-									"maxclass" : "newobj",
-									"numinlets" : 1,
-									"numoutlets" : 2,
-									"outlettype" : [ "bang", "int" ],
-									"patching_rect" : [ 50.0, 412.551208, 30.0, 22.0 ],
-									"style" : "",
-									"text" : "t b i"
-								}
-
-							}
-, 							{
 								"box" : 								{
 									"id" : "obj-104",
 									"maxclass" : "newobj",
@@ -5745,24 +5515,6 @@
 						"lines" : [ 							{
 								"patchline" : 								{
 									"destination" : [ "obj-79", 0 ],
-									"disabled" : 0,
-									"hidden" : 0,
-									"source" : [ "obj-1", 1 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-79", 0 ],
-									"disabled" : 0,
-									"hidden" : 0,
-									"source" : [ "obj-1", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-1", 0 ],
 									"disabled" : 0,
 									"hidden" : 0,
 									"source" : [ "obj-104", 0 ]
@@ -6651,7 +6403,7 @@
  ],
 		"dependency_cache" : [ 			{
 				"name" : "env.o.accum.maxpat",
-				"bootpath" : "~/Documents/dev-lib/EnvelopLive/dev/abstractions",
+				"bootpath" : "~/Code/EnvelopLive/Projects/envelop/patchers",
 				"type" : "JSON",
 				"implicit" : 1
 			}
