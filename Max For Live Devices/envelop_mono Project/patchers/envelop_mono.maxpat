@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 34.0, 79.0, 1372.0, 783.0 ],
+		"rect" : [ 34.0, 79.0, 927.0, 783.0 ],
 		"bgcolor" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 		"editing_bgcolor" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 		"bglocked" : 0,
@@ -135,19 +135,6 @@
 					"patching_rect" : [ 271.5, 209.400085, 125.0, 22.0 ],
 					"style" : "",
 					"text" : "o.select /source/*/aed"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-12",
-					"maxclass" : "newobj",
-					"numinlets" : 2,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 271.5, 552.0, 46.0, 22.0 ],
-					"style" : "",
-					"text" : "route L"
 				}
 
 			}
@@ -381,7 +368,6 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 151.166626, 209.799988, 38.0, 21.0 ],
-									"presentation_rect" : [ 154.166626, 212.799988, 0.0, 0.0 ],
 									"style" : "",
 									"text" : "dbtoa"
 								}
@@ -1954,7 +1940,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 1079.0, 161.0, 328.0, 142.0 ],
+						"rect" : [ 868.0, 95.0, 328.0, 142.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 1,
 						"default_fontsize" : 12.0,
@@ -2653,7 +2639,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 723.0, 170.0, 328.0, 142.0 ],
+						"rect" : [ 466.0, 95.0, 328.0, 142.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 1,
 						"default_fontsize" : 12.0,
@@ -3308,19 +3294,6 @@
 					"patching_rect" : [ 507.625, 244.700073, 29.5, 22.0 ],
 					"style" : "",
 					"text" : "t l l"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-131",
-					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 3,
-					"outlettype" : [ "float", "float", "float" ],
-					"patching_rect" : [ 271.5, 582.0, 100.0, 22.0 ],
-					"style" : "",
-					"text" : "unpack 0. 0. 0."
 				}
 
 			}
@@ -7993,15 +7966,6 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-12", 0 ],
-					"disabled" : 0,
-					"hidden" : 0,
-					"source" : [ "obj-106", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
 					"destination" : [ "obj-106", 1 ],
 					"disabled" : 0,
 					"hidden" : 0,
@@ -8015,15 +7979,6 @@
 					"disabled" : 0,
 					"hidden" : 0,
 					"source" : [ "obj-110", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-131", 0 ],
-					"disabled" : 0,
-					"hidden" : 0,
-					"source" : [ "obj-12", 0 ]
 				}
 
 			}
@@ -8096,33 +8051,6 @@
 					"disabled" : 0,
 					"hidden" : 0,
 					"source" : [ "obj-126", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-46", 0 ],
-					"disabled" : 0,
-					"hidden" : 0,
-					"source" : [ "obj-131", 1 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-53", 0 ],
-					"disabled" : 0,
-					"hidden" : 0,
-					"source" : [ "obj-131", 2 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-63", 0 ],
-					"disabled" : 0,
-					"hidden" : 0,
-					"source" : [ "obj-131", 0 ]
 				}
 
 			}
@@ -8398,21 +8326,21 @@
 			}
  ],
 		"parameters" : 		{
-			"obj-21::obj-6" : [ "direct_center_hz", "center_hz", 0 ],
-			"obj-46" : [ "elevation", "elev", 0 ],
 			"obj-106::obj-147" : [ "zoom", "zoom", 0 ],
-			"obj-10::obj-18" : [ "reverb_low_gain", "low_gain", 0 ],
-			"obj-21::obj-19" : [ "direct_high_gain", "high_gain", 0 ],
-			"obj-10::obj-19" : [ "reverb_high_gain", "high_gain", 0 ],
-			"obj-53" : [ "distance", "dist", 0 ],
 			"obj-21::obj-18" : [ "direct_low_gain", "low_gain", 0 ],
 			"obj-21::obj-17" : [ "direct_mid_gain", "mid_gain", 0 ],
-			"obj-31" : [ "early_gain", "early_gain", 0 ],
-			"obj-74" : [ "reverb_number", "reverb_number", 0 ],
-			"obj-10::obj-6" : [ "reverb_center_hz", "center_hz", 0 ],
-			"obj-63" : [ "azimuth", "az", 0 ],
+			"obj-53" : [ "distance", "dist", 0 ],
+			"obj-46" : [ "elevation", "elev", 0 ],
 			"obj-34" : [ "late_gain", "late_gain", 0 ],
-			"obj-10::obj-17" : [ "reverb_mid_gain", "mid_gain", 0 ]
+			"obj-10::obj-17" : [ "reverb_mid_gain", "mid_gain", 0 ],
+			"obj-10::obj-6" : [ "reverb_center_hz", "center_hz", 0 ],
+			"obj-10::obj-19" : [ "reverb_high_gain", "high_gain", 0 ],
+			"obj-10::obj-18" : [ "reverb_low_gain", "low_gain", 0 ],
+			"obj-21::obj-19" : [ "direct_high_gain", "high_gain", 0 ],
+			"obj-74" : [ "reverb_number", "reverb_number", 0 ],
+			"obj-63" : [ "azimuth", "az", 0 ],
+			"obj-21::obj-6" : [ "direct_center_hz", "center_hz", 0 ],
+			"obj-31" : [ "early_gain", "early_gain", 0 ]
 		}
 ,
 		"dependency_cache" : [ 			{
