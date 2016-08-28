@@ -3,8 +3,8 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 7,
-			"minor" : 0,
-			"revision" : 6,
+			"minor" : 2,
+			"revision" : 4,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -38,13 +38,38 @@
 		"subpatcher_template" : "no-menus",
 		"boxes" : [ 			{
 				"box" : 				{
+					"comment" : "",
+					"id" : "obj-15",
+					"maxclass" : "outlet",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 756.5, 126.0, 30.0, 30.0 ],
+					"presentation_rect" : [ 669.0, 345.0, 0.0, 0.0 ],
+					"style" : ""
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-8",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "" ],
+					"patching_rect" : [ 318.5, 80.0, 29.5, 22.0 ],
+					"style" : "",
+					"text" : "t l l"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-6",
 					"maxclass" : "message",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 705.0, 201.0, 50.0, 22.0 ],
-					"presentation_rect" : [ 705.0, 204.0, 0.0, 0.0 ],
+					"patching_rect" : [ 705.0, 244.0, 50.0, 22.0 ],
 					"style" : ""
 				}
 
@@ -56,8 +81,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 644.0, 201.0, 59.0, 22.0 ],
-					"presentation_rect" : [ 451.0, 187.0, 0.0, 0.0 ],
+					"patching_rect" : [ 644.0, 244.0, 59.0, 22.0 ],
 					"style" : "",
 					"text" : "active $1"
 				}
@@ -95,7 +119,7 @@
 					"numinlets" : 3,
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
-					"patching_rect" : [ 589.0, 97.0, 129.0, 22.0 ],
+					"patching_rect" : [ 589.0, 173.0, 129.0, 22.0 ],
 					"style" : "",
 					"text" : "route interp_ms active"
 				}
@@ -108,7 +132,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 534.0, 68.0, 74.0, 22.0 ],
+					"patching_rect" : [ 534.0, 144.0, 74.0, 22.0 ],
 					"style" : "",
 					"text" : "patcherargs"
 				}
@@ -121,7 +145,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "signal" ],
-					"patching_rect" : [ 329.0, 181.0, 33.0, 22.0 ],
+					"patching_rect" : [ 329.0, 243.0, 33.0, 22.0 ],
 					"style" : "",
 					"text" : "sig~"
 				}
@@ -134,7 +158,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 329.0, 148.0, 59.0, 22.0 ],
+					"patching_rect" : [ 329.0, 210.0, 59.0, 22.0 ],
 					"style" : "",
 					"text" : "speedlim"
 				}
@@ -147,7 +171,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 4,
 					"outlettype" : [ "", "", "", "FullPacket" ],
-					"patching_rect" : [ 329.0, 88.0, 181.0, 22.0 ],
+					"patching_rect" : [ 329.0, 130.0, 181.0, 22.0 ],
 					"style" : "",
 					"text" : "o.route /delay /interp_ms /active"
 				}
@@ -160,7 +184,7 @@
 					"numinlets" : 3,
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
-					"patching_rect" : [ 246.0, 50.0, 185.0, 22.0 ],
+					"patching_rect" : [ 235.5, 50.0, 185.0, 22.0 ],
 					"style" : "",
 					"text" : "routepass signal FullPacket"
 				}
@@ -173,7 +197,7 @@
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 246.0, 312.0, 30.0, 30.0 ],
+					"patching_rect" : [ 235.5, 369.0, 30.0, 30.0 ],
 					"style" : ""
 				}
 
@@ -186,7 +210,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 246.0, 3.0, 30.0, 30.0 ],
+					"patching_rect" : [ 235.5, 6.0, 30.0, 30.0 ],
 					"style" : ""
 				}
 
@@ -225,7 +249,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "signal" ],
-					"patching_rect" : [ 246.0, 250.5, 102.0, 35.0 ],
+					"patching_rect" : [ 235.5, 307.5, 112.5, 35.0 ],
 					"style" : "",
 					"text" : "gen~ @gen vdelay4.gendsp"
 				}
@@ -238,7 +262,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "float", "bang" ],
-					"patching_rect" : [ 91.5, 238.0, 121.0, 22.0 ],
+					"patching_rect" : [ 56.5, 300.0, 121.0, 22.0 ],
 					"style" : "",
 					"text" : "buffer~ #0-loop 2000"
 				}
@@ -412,7 +436,16 @@
 					"destination" : [ "obj-10", 0 ],
 					"disabled" : 0,
 					"hidden" : 0,
-					"source" : [ "obj-9", 1 ]
+					"source" : [ "obj-8", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-15", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-8", 0 ]
 				}
 
 			}
@@ -425,10 +458,19 @@
 				}
 
 			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-8", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-9", 1 ]
+				}
+
+			}
  ],
 		"dependency_cache" : [ 			{
 				"name" : "vdelay4.gendsp",
-				"bootpath" : "~/Documents/dev-lib/EnvelopLive/dev/dsp",
+				"bootpath" : "~/Documents/dev-lib/EnvelopLive/Projects/envelop/code",
 				"type" : "gDSP",
 				"implicit" : 1
 			}
@@ -437,7 +479,7 @@
 				"type" : "iLaX"
 			}
  ],
-		"embedsnapshot" : 0,
+		"autosave" : 0,
 		"styles" : [ 			{
 				"name" : "newobjBlue-1",
 				"default" : 				{
