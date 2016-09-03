@@ -4,7 +4,7 @@
 		"appversion" : 		{
 			"major" : 7,
 			"minor" : 2,
-			"revision" : 4,
+			"revision" : 5,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -37,6 +37,18 @@
 		"style" : "",
 		"subpatcher_template" : "Default Max 7",
 		"boxes" : [ 			{
+				"box" : 				{
+					"id" : "obj-3",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 30.0, 146.0, 186.0, 22.0 ],
+					"style" : "",
+					"text" : "poly~ env.fx.rev.source 1 args #1"
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"id" : "obj-2",
 					"maxclass" : "newobj",
@@ -81,11 +93,53 @@
 				"implicit" : 1
 			}
 , 			{
+				"name" : "env.fx.rev.source.maxpat",
+				"bootpath" : "~/Documents/dev-lib/EnvelopLive/Projects/envelop/patchers",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "env.1o_conv~.maxpat",
+				"bootpath" : "~/Documents/dev-lib/EnvelopLive/Projects/envelop/patchers",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "env.o.accum.maxpat",
+				"bootpath" : "~/Documents/dev-lib/EnvelopLive/Projects/envelop/patchers",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
 				"name" : "o.route.mxo",
 				"type" : "iLaX"
 			}
 , 			{
 				"name" : "hoa.3d.map~.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "multiconvolve~.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "o.pack.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "o.union.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "o.prepend.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "o.select.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "o.expr.codebox.mxo",
 				"type" : "iLaX"
 			}
  ],
