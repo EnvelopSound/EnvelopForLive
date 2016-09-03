@@ -2,12 +2,12 @@
 	"name" : "envelop",
 	"version" : 1,
 	"creationdate" : 3528779853,
-	"modificationdate" : 3528797906,
+	"modificationdate" : 3555678141,
 	"viewrect" : [ 28.0, 57.0, 300.0, 500.0 ],
 	"autoorganize" : 1,
 	"hideprojectwindow" : 1,
 	"showdependencies" : 1,
-	"autolocalize" : 1,
+	"autolocalize" : 0,
 	"contents" : 	{
 		"patchers" : 		{
 			"envelop_server-1.maxpat" : 			{
