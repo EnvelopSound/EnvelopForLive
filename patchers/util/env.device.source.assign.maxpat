@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 1679.0, 130.0, 1368.0, 787.0 ],
+		"rect" : [ 116.0, 79.0, 1368.0, 787.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -44,7 +44,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 298.452148, 8.0, 30.0, 30.0 ],
+					"patching_rect" : [ 298.452148, 7.0, 30.0, 30.0 ],
 					"style" : ""
 				}
 
@@ -56,7 +56,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "FullPacket" ],
-					"patching_rect" : [ 206.0, 159.800049, 171.0, 22.0 ],
+					"patching_rect" : [ 206.0, 159.800049, 180.452148, 22.0 ],
 					"style" : "",
 					"text" : "o.union"
 				}
@@ -107,7 +107,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 704.0, 553.499878, 170.0, 20.0 ],
+					"patching_rect" : [ 563.0, 528.499878, 170.0, 20.0 ],
 					"style" : "",
 					"text" : "<< set fx name as argument 1"
 				}
@@ -120,7 +120,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "FullPacket" ],
-					"patching_rect" : [ 425.0, 497.499878, 100.0, 22.0 ],
+					"patching_rect" : [ 425.0, 519.499878, 116.0, 22.0 ],
 					"style" : "",
 					"text" : "o.prepend #1"
 				}
@@ -145,7 +145,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 207.0, 664.0, 100.0, 22.0 ],
+					"patching_rect" : [ 207.0, 664.0, 55.0, 22.0 ],
 					"style" : "",
 					"text" : "o.collect"
 				}
@@ -158,7 +158,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "bang", "" ],
-					"patching_rect" : [ 206.0, 384.0, 40.0, 22.0 ],
+					"patching_rect" : [ 206.0, 406.0, 40.0, 22.0 ],
 					"style" : "",
 					"text" : "t b l"
 				}
@@ -184,7 +184,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "FullPacket" ],
-					"patching_rect" : [ 227.0, 596.499878, 100.0, 22.0 ],
+					"patching_rect" : [ 227.0, 618.499878, 100.0, 22.0 ],
 					"style" : "",
 					"text" : "o.route /source/0"
 				}
@@ -197,7 +197,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "FullPacket" ],
-					"patching_rect" : [ 362.0, 596.499878, 100.0, 22.0 ],
+					"patching_rect" : [ 362.0, 618.499878, 100.0, 22.0 ],
 					"style" : "",
 					"text" : "o.route /source/0"
 				}
@@ -208,13 +208,13 @@
 					"fontface" : 0,
 					"fontsize" : 12.0,
 					"id" : "obj-10",
-					"linecount" : 9,
+					"linecount" : 11,
 					"maxclass" : "o.expr.codebox",
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "FullPacket", "FullPacket" ],
-					"patching_rect" : [ 206.0, 230.0, 323.0, 141.0 ],
-					"text" : "/prev/assign/L ??= 0,\n/prev/assign/R ??= 0,\n\n/set/L = [\"set\", \"/source/\" +/assign/L],\n/set/R = [\"set\", \"/source/\" +/assign/R],\n\nif( /assign/R == 0 && /prev/assign/R != 0,\n  /disable_prev/active = 0\n)",
+					"patching_rect" : [ 206.0, 227.0, 323.0, 168.0 ],
+					"text" : "/assign/L ??= 0,\n/assign/R ??= 0,\n/prev/assign/L ??= 0,\n/prev/assign/R ??= 0,\n\n/set/L = [\"set\", \"/source/\" +/assign/L],\n/set/R = [\"set\", \"/source/\" +/assign/R],\n\nif( /assign/R == 0 && /prev/assign/R != 0,\n  /disable_prev/active = 0\n)",
 					"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 				}
 
@@ -397,7 +397,7 @@
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
-					"outlettype" : [ "" ],
+					"outlettype" : [ "FullPacket" ],
 					"patching_rect" : [ 206.0, 26.0, 30.0, 30.0 ],
 					"style" : ""
 				}
@@ -410,7 +410,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "FullPacket" ],
-					"patching_rect" : [ 227.0, 428.0, 99.0, 22.0 ],
+					"patching_rect" : [ 227.0, 450.0, 99.0, 22.0 ],
 					"style" : "",
 					"text" : "o.select /fx"
 				}
@@ -423,7 +423,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 4,
 					"outlettype" : [ "", "", "", "FullPacket" ],
-					"patching_rect" : [ 307.0, 464.19989, 196.0, 22.0 ],
+					"patching_rect" : [ 307.0, 486.19989, 196.0, 22.0 ],
 					"style" : "",
 					"text" : "o.route /set/L /set/R /disable_prev"
 				}
@@ -438,7 +438,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "FullPacket" ],
-					"patching_rect" : [ 362.0, 553.499878, 106.0, 20.0 ],
+					"patching_rect" : [ 362.0, 575.499878, 106.0, 20.0 ],
 					"style" : "",
 					"text" : "o.prepend /source/0"
 				}
@@ -453,7 +453,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "FullPacket" ],
-					"patching_rect" : [ 228.0, 553.499878, 106.0, 20.0 ],
+					"patching_rect" : [ 228.0, 575.499878, 106.0, 20.0 ],
 					"style" : "",
 					"text" : "o.prepend /source/0"
 				}
@@ -668,38 +668,6 @@
 
 			}
  ],
-		"dependency_cache" : [ 			{
-				"name" : "env.o.accum.maxpat",
-				"bootpath" : "~/Documents/Max 7/Packages/EnvelopLive/patchers/util",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "o.prepend.mxo",
-				"type" : "iLaX"
-			}
-, 			{
-				"name" : "o.route.mxo",
-				"type" : "iLaX"
-			}
-, 			{
-				"name" : "o.select.mxo",
-				"type" : "iLaX"
-			}
-, 			{
-				"name" : "o.union.mxo",
-				"type" : "iLaX"
-			}
-, 			{
-				"name" : "o.expr.codebox.mxo",
-				"type" : "iLaX"
-			}
-, 			{
-				"name" : "o.collect.mxo",
-				"type" : "iLaX"
-			}
- ],
-		"autosave" : 0,
 		"styles" : [ 			{
 				"name" : "AudioStatus_Menu",
 				"default" : 				{
