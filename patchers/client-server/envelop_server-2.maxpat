@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 1706.0, 60.0, 1118.0, 855.0 ],
+		"rect" : [ 1789.0, 47.0, 1118.0, 855.0 ],
 		"bgcolor" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 		"editing_bgcolor" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 		"bglocked" : 0,
@@ -39,6 +39,22 @@
 		"style" : "",
 		"subpatcher_template" : "no-menus",
 		"boxes" : [ 			{
+				"box" : 				{
+					"fontface" : 0,
+					"fontsize" : 12.0,
+					"id" : "obj-37",
+					"linecount" : 5,
+					"maxclass" : "o.display",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 689.923767, 155.0, 366.0, 88.0 ],
+					"text" : "/source/1/amp : [1., 100, 0.],\n/source/1/delay : 2.92398,\n/source/1/az : 0.488401,\n/source/1/el : 0.531827,\n/source/1/dist : 1.",
+					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"id" : "obj-34",
 					"maxclass" : "comment",
@@ -211,7 +227,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 2348.0, 775.0, 170.0, 69.0 ],
+						"rect" : [ 2431.0, 762.0, 170.0, 69.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 1,
 						"default_fontsize" : 12.0,
@@ -21912,6 +21928,15 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-13", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-139", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-37", 0 ],
 					"disabled" : 0,
 					"hidden" : 0,
 					"source" : [ "obj-139", 1 ]

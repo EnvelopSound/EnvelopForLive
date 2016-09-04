@@ -38,6 +38,58 @@
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-4",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 3,
+					"outlettype" : [ "", "", "FullPacket" ],
+					"patching_rect" : [ 227.0, 442.0, 130.0, 22.0 ],
+					"style" : "",
+					"text" : "o.route /L /R"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-6",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 2,
+					"outlettype" : [ "bang", "" ],
+					"patching_rect" : [ 687.0, 99.0, 36.0, 22.0 ],
+					"style" : "",
+					"text" : "sel 0"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-5",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 704.0, 133.0, 50.0, 22.0 ],
+					"style" : "",
+					"text" : "set $1"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-3",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 687.0, 69.0, 100.0, 22.0 ],
+					"style" : "",
+					"text" : "loadmess #1"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"comment" : "",
 					"id" : "obj-1",
 					"maxclass" : "inlet",
@@ -95,9 +147,9 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "FullPacket" ],
-					"patching_rect" : [ 206.0, 123.400085, 117.0, 22.0 ],
+					"patching_rect" : [ 206.0, 123.400085, 65.0, 22.0 ],
 					"style" : "",
-					"text" : "o.prepend #1"
+					"text" : "o.prepend"
 				}
 
 			}
@@ -107,7 +159,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 563.0, 528.499878, 170.0, 20.0 ],
+					"patching_rect" : [ 798.0, 70.0, 170.0, 20.0 ],
 					"style" : "",
 					"text" : "<< set fx name as argument 1"
 				}
@@ -120,9 +172,9 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "FullPacket" ],
-					"patching_rect" : [ 425.0, 519.499878, 116.0, 22.0 ],
+					"patching_rect" : [ 536.0, 550.499878, 65.0, 22.0 ],
 					"style" : "",
-					"text" : "o.prepend #1"
+					"text" : "o.prepend"
 				}
 
 			}
@@ -171,7 +223,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 537.0, 323.0, 407.0, 33.0 ],
+					"patching_rect" : [ 578.0, 341.0, 407.0, 33.0 ],
 					"style" : "",
 					"text" : "<< turn off channel fx if perviously was active (if another track is using that channel, it will be reactivated when a messaage is sent through)"
 				}
@@ -184,7 +236,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "FullPacket" ],
-					"patching_rect" : [ 227.0, 618.499878, 100.0, 22.0 ],
+					"patching_rect" : [ 231.0, 625.499878, 100.0, 22.0 ],
 					"style" : "",
 					"text" : "o.route /source/0"
 				}
@@ -197,7 +249,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "FullPacket" ],
-					"patching_rect" : [ 362.0, 618.499878, 100.0, 22.0 ],
+					"patching_rect" : [ 347.0, 625.499878, 100.0, 22.0 ],
 					"style" : "",
 					"text" : "o.route /source/0"
 				}
@@ -397,7 +449,7 @@
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
-					"outlettype" : [ "FullPacket" ],
+					"outlettype" : [ "" ],
 					"patching_rect" : [ 206.0, 26.0, 30.0, 30.0 ],
 					"style" : ""
 				}
@@ -410,7 +462,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "FullPacket" ],
-					"patching_rect" : [ 227.0, 450.0, 99.0, 22.0 ],
+					"patching_rect" : [ 338.0, 475.0, 99.0, 22.0 ],
 					"style" : "",
 					"text" : "o.select /fx"
 				}
@@ -423,7 +475,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 4,
 					"outlettype" : [ "", "", "", "FullPacket" ],
-					"patching_rect" : [ 307.0, 486.19989, 196.0, 22.0 ],
+					"patching_rect" : [ 418.0, 502.19989, 196.0, 22.0 ],
 					"style" : "",
 					"text" : "o.route /set/L /set/R /disable_prev"
 				}
@@ -438,7 +490,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "FullPacket" ],
-					"patching_rect" : [ 362.0, 575.499878, 106.0, 20.0 ],
+					"patching_rect" : [ 347.0, 582.499878, 106.0, 20.0 ],
 					"style" : "",
 					"text" : "o.prepend /source/0"
 				}
@@ -453,7 +505,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "FullPacket" ],
-					"patching_rect" : [ 228.0, 575.499878, 106.0, 20.0 ],
+					"patching_rect" : [ 232.0, 582.499878, 106.0, 20.0 ],
 					"style" : "",
 					"text" : "o.prepend /source/0"
 				}
@@ -534,10 +586,19 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-66", 0 ],
+					"destination" : [ "obj-4", 0 ],
 					"disabled" : 0,
 					"hidden" : 0,
 					"source" : [ "obj-29", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-6", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-3", 0 ]
 				}
 
 			}
@@ -556,6 +617,60 @@
 					"disabled" : 0,
 					"hidden" : 0,
 					"source" : [ "obj-35", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-109", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-4", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-116", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-4", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-66", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-4", 2 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-35", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-5", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-70", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-5", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-5", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-6", 1 ]
 				}
 
 			}
@@ -668,6 +783,38 @@
 
 			}
  ],
+		"dependency_cache" : [ 			{
+				"name" : "env.o.accum.maxpat",
+				"bootpath" : "~/Documents/Max 7/Packages/EnvelopLive/patchers/util",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "o.prepend.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "o.route.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "o.select.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "o.union.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "o.expr.codebox.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "o.collect.mxo",
+				"type" : "iLaX"
+			}
+ ],
+		"autosave" : 0,
 		"styles" : [ 			{
 				"name" : "AudioStatus_Menu",
 				"default" : 				{
