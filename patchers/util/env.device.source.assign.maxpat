@@ -82,7 +82,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 687.0, 69.0, 100.0, 22.0 ],
+					"patching_rect" : [ 687.0, 69.0, 114.0, 22.0 ],
 					"style" : "",
 					"text" : "loadmess #1"
 				}
@@ -172,7 +172,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "FullPacket" ],
-					"patching_rect" : [ 536.0, 550.499878, 65.0, 22.0 ],
+					"patching_rect" : [ 543.0, 553.499878, 65.0, 22.0 ],
 					"style" : "",
 					"text" : "o.prepend"
 				}
@@ -460,11 +460,11 @@
 					"id" : "obj-66",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "FullPacket" ],
-					"patching_rect" : [ 338.0, 475.0, 99.0, 22.0 ],
+					"numoutlets" : 3,
+					"outlettype" : [ "", "", "FullPacket" ],
+					"patching_rect" : [ 338.0, 475.0, 106.0, 22.0 ],
 					"style" : "",
-					"text" : "o.select /fx"
+					"text" : "o.select /fx /active"
 				}
 
 			}
@@ -475,7 +475,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 4,
 					"outlettype" : [ "", "", "", "FullPacket" ],
-					"patching_rect" : [ 418.0, 502.19989, 196.0, 22.0 ],
+					"patching_rect" : [ 425.0, 515.19989, 196.0, 22.0 ],
 					"style" : "",
 					"text" : "o.route /set/L /set/R /disable_prev"
 				}
@@ -706,7 +706,25 @@
 					"destination" : [ "obj-109", 0 ],
 					"disabled" : 0,
 					"hidden" : 0,
+					"source" : [ "obj-66", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-109", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
 					"source" : [ "obj-66", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-116", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-66", 1 ]
 				}
 
 			}
@@ -724,7 +742,7 @@
 					"destination" : [ "obj-65", 0 ],
 					"disabled" : 0,
 					"hidden" : 0,
-					"source" : [ "obj-66", 1 ]
+					"source" : [ "obj-66", 2 ]
 				}
 
 			}
@@ -783,38 +801,6 @@
 
 			}
  ],
-		"dependency_cache" : [ 			{
-				"name" : "env.o.accum.maxpat",
-				"bootpath" : "~/Documents/Max 7/Packages/EnvelopLive/patchers/util",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "o.prepend.mxo",
-				"type" : "iLaX"
-			}
-, 			{
-				"name" : "o.route.mxo",
-				"type" : "iLaX"
-			}
-, 			{
-				"name" : "o.select.mxo",
-				"type" : "iLaX"
-			}
-, 			{
-				"name" : "o.union.mxo",
-				"type" : "iLaX"
-			}
-, 			{
-				"name" : "o.expr.codebox.mxo",
-				"type" : "iLaX"
-			}
-, 			{
-				"name" : "o.collect.mxo",
-				"type" : "iLaX"
-			}
- ],
-		"autosave" : 0,
 		"styles" : [ 			{
 				"name" : "AudioStatus_Menu",
 				"default" : 				{
