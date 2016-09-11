@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 1734.0, 75.0, 1253.0, 855.0 ],
+		"rect" : [ 1833.0, 133.0, 1253.0, 855.0 ],
 		"bgcolor" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 		"editing_bgcolor" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 		"bglocked" : 0,
@@ -77,7 +77,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 2108.0, 215.0, 177.0, 28.0 ],
+						"rect" : [ 2207.0, 273.0, 177.0, 28.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 1,
 						"default_fontsize" : 12.0,
@@ -641,7 +641,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 2166.0, 720.0, 172.0, 49.0 ],
+						"rect" : [ 2265.0, 778.0, 172.0, 49.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 1,
 						"default_fontsize" : 12.0,
@@ -13660,7 +13660,7 @@
 															"modernui" : 1
 														}
 ,
-														"rect" : [ 1720.0, 203.0, 1058.0, 783.0 ],
+														"rect" : [ 213.0, 106.0, 1058.0, 783.0 ],
 														"bglocked" : 0,
 														"openinpresentation" : 0,
 														"default_fontsize" : 12.0,
@@ -16147,7 +16147,7 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 703.266724, 494.5, 257.0, 116.0 ],
-																	"text" : "/size : 195.276,\n/sr : 44100,\n/xFade : 662,\n/directFade : 44,\n/clipMixing/min : 1764,\n/clipMixing/max : 17640,\n/clipMixing/params : [1764, 17640]",
+																	"text" : "/size : 194.094,\n/sr : 44100,\n/xFade : 662,\n/directFade : 44,\n/clipMixing/min : 1764,\n/clipMixing/max : 17640,\n/clipMixing/params : [1764, 17640]",
 																	"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
 																}
 
