@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ -16.0, 80.0, 1319.0, 790.0 ],
+		"rect" : [ 104.0, 81.0, 1319.0, 790.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -87,7 +87,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 380.0, 280.0, 50.0, 22.0 ],
 					"style" : "",
-					"text" : "mute 0"
+					"text" : "mute 1"
 				}
 
 			}
@@ -814,7 +814,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 358.0, 457.0, 119.0, 22.0 ],
+					"patching_rect" : [ 357.0, 420.0, 119.0, 22.0 ],
 					"style" : "",
 					"text" : "1 cartesian $1 $2 $3"
 				}
@@ -943,7 +943,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 16,
 					"numoutlets" : 0,
-					"patching_rect" : [ 205.5, 611.5, 176.5, 22.0 ],
+					"patching_rect" : [ 239.5, 618.5, 176.5, 22.0 ],
 					"style" : "",
 					"text" : "env.16_send~ #1"
 				}
@@ -991,7 +991,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 227.0, 147.0, 821.0, 630.0 ],
+						"rect" : [ 1670.0, 298.0, 821.0, 630.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -1080,7 +1080,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "FullPacket", "FullPacket" ],
 									"patching_rect" : [ 50.0, 98.0, 597.0, 195.0 ],
-									"text" : "/prev/id ??= 0,\n\nif( bound(/id),\n  if( /id == 0,\n    /early/clear = \"bang\",\n    if( /id != /prev/id,\n      progn(\n        /set/bus = \"rev\"+/id,\n        assign(\"/ping/reverb/\"+/id+\"/init/getER/to\", /source/id)\n      )\n    )\n  )\n)",
+									"text" : "/prev/id ??= 0,\n\nif( bound(/id),\n  if( /id == 0,\n    /early/clear = \"bang\",\n    if( /id != /prev/id,\n      progn(\n        /set/bus = \"rev\"+/id,\n        assign(\"/ping/busfx/reverb/\"+/id+\"/init/getER/to\", /source/id)\n      )\n    )\n  )\n)",
 									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
 
@@ -1289,14 +1289,13 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-14",
-					"linecount" : 2,
 					"maxclass" : "newobj",
 					"numinlets" : 4,
 					"numoutlets" : 4,
 					"outlettype" : [ "signal", "signal", "signal", "signal" ],
-					"patching_rect" : [ 205.5, 533.0, 114.0, 35.0 ],
+					"patching_rect" : [ 205.5, 565.0, 114.0, 22.0 ],
 					"style" : "",
-					"text" : "env.1o_conv~ @send/name rev1"
+					"text" : "env.1o_conv~"
 				}
 
 			}
@@ -1728,6 +1727,56 @@
 
 			}
  ],
+		"dependency_cache" : [ 			{
+				"name" : "env.1o_conv~.maxpat",
+				"bootpath" : "~/Documents/Max 7/Packages/EnvelopLive/patchers/fx/reverb",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "env.16_send~.maxpat",
+				"bootpath" : "~/Documents/Max 7/Packages/EnvelopLive/patchers/util",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "o.route.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "hoa.3d.map~.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "multiconvolve~.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "o.pack.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "o.union.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "o.expr.codebox.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "o.prepend.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "o.select.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "o.cond.mxo",
+				"type" : "iLaX"
+			}
+ ],
+		"autosave" : 0,
 		"styles" : [ 			{
 				"name" : "AudioStatus_Menu",
 				"default" : 				{

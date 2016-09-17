@@ -1,21 +1,21 @@
 {
 	"name" : "envelop",
 	"version" : 1,
-	"creationdate" : 3556938385,
-	"modificationdate" : 3556938410,
-	"viewrect" : [ 29.0, 70.0, 300.0, 500.0 ],
+	"creationdate" : 3528779853,
+	"modificationdate" : 3556938015,
+	"viewrect" : [ 42.0, 100.0, 300.0, 500.0 ],
 	"autoorganize" : 1,
-	"hideprojectwindow" : 0,
+	"hideprojectwindow" : 1,
 	"showdependencies" : 1,
 	"autolocalize" : 0,
 	"contents" : 	{
 		"patchers" : 		{
-			"envelop_server-2.maxpat" : 			{
+			"envelop_server-1.maxpat" : 			{
 				"kind" : "patcher",
 				"toplevel" : 1
 			}
 ,
-			"envelop_client-2.maxpat" : 			{
+			"envelop_client-1.maxpat" : 			{
 				"kind" : "patcher",
 				"toplevel" : 1
 			}
@@ -40,7 +40,7 @@
 
 	}
 ,
-	"detailsvisible" : 0,
+	"detailsvisible" : 1,
 	"amxdtype" : 1633771873,
 	"readonly" : 0,
 	"devpathtype" : 0,

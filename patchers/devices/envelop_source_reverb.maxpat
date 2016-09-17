@@ -485,7 +485,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 2,
 					"numoutlets" : 1,
-					"outlettype" : [ "" ],
+					"outlettype" : [ "FullPacket" ],
 					"patching_rect" : [ 1017.952209, 644.0, 197.0, 22.0 ],
 					"style" : "",
 					"text" : "env.device.source.assign /fx/reverb"
@@ -522,7 +522,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 125.0, 179.0, 908.0, 518.0 ],
+						"rect" : [ 253.0, 220.0, 908.0, 518.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -553,12 +553,12 @@
 								"box" : 								{
 									"fontface" : 0,
 									"fontsize" : 12.0,
-									"id" : "obj-5",
+									"id" : "obj-1",
 									"maxclass" : "o.compose",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 97.0, 339.5, 102.0, 24.0 ],
+									"patching_rect" : [ 101.0, 49.5, 102.0, 24.0 ],
 									"saved_bundle_data" : [ 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 97, 99, 116, 105, 118, 101, 0, 44, 105, 0, 0, 0, 0, 0, 0 ],
 									"saved_bundle_length" : 36,
 									"text" : "/active : 0",
@@ -568,12 +568,12 @@
 							}
 , 							{
 								"box" : 								{
-									"id" : "obj-3",
+									"id" : "obj-2",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "bang" ],
-									"patching_rect" : [ 97.0, 304.0, 58.0, 22.0 ],
+									"patching_rect" : [ 101.0, 14.0, 58.0, 22.0 ],
 									"style" : "",
 									"text" : "freebang"
 								}
@@ -584,13 +584,13 @@
 									"fontface" : 0,
 									"fontsize" : 12.0,
 									"id" : "obj-43",
-									"linecount" : 12,
+									"linecount" : 18,
 									"maxclass" : "o.expr.codebox",
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "FullPacket", "FullPacket" ],
-									"patching_rect" : [ 50.0, 98.0, 697.0, 182.0 ],
-									"text" : "/active = int32( \n  (/attached/output == \"Ext. Out\") &&\n  (/attached/active == 1) && \n  (/attached/channels > 0) && \n  /device/active == 1 && \n  /track/active == 1\n),\n/attach/test = (/attached/output == \"Ext. Out\"),\n/err =  /attach/test ? \"\" : \"output must be set to Ext. Out\",\n\n/assign/L = (/attach/test && /attached/channels > 0) ? /attached/channels[[0]] : 0,\n/assign/R = (/attach/test && length(/attached/channels) > 1) ? /attached/channels[[1]] : 0",
+									"patching_rect" : [ 50.0, 91.0, 697.0, 263.0 ],
+									"text" : "/err ??= \"\",\n/attached/output ??= \"\",\n/attached/channels ??= [],\n\n/active ??= int32( \n  (/attached/output == \"Ext. Out\") &&\n  (/attached/active == 1) && \n  (/attached/channels > 0) && \n  /device/active == 1 && \n  /track/active == 1\n),\n\nif( /err == \"\" && /attached/output != \"Ext. Out\", \n  /err = \"output must be set to Ext. Out\"\n),\n\n/assign/L = (/err == \"\" && /attached/channels > 0) ? /attached/channels[[0]] : 0,\n/assign/R = (/err == \"\" && length(/attached/channels) > 1) ? /attached/channels[[1]] : 0",
 									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
 
@@ -623,10 +623,19 @@
  ],
 						"lines" : [ 							{
 								"patchline" : 								{
-									"destination" : [ "obj-5", 0 ],
+									"destination" : [ "obj-43", 0 ],
 									"disabled" : 0,
 									"hidden" : 0,
-									"source" : [ "obj-3", 0 ]
+									"source" : [ "obj-1", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1", 0 ],
+									"disabled" : 0,
+									"hidden" : 0,
+									"source" : [ "obj-2", 0 ]
 								}
 
 							}
@@ -645,15 +654,6 @@
 									"disabled" : 0,
 									"hidden" : 0,
 									"source" : [ "obj-44", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-45", 0 ],
-									"disabled" : 0,
-									"hidden" : 0,
-									"source" : [ "obj-5", 0 ]
 								}
 
 							}
@@ -732,8 +732,8 @@
 , 							{
 								"name" : "newobjYellow-1",
 								"default" : 								{
-									"fontsize" : [ 12.059008 ],
-									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
+									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
+									"fontsize" : [ 12.059008 ]
 								}
 ,
 								"parentstyle" : "",
@@ -742,8 +742,8 @@
 , 							{
 								"name" : "newobjYellow-2",
 								"default" : 								{
-									"fontsize" : [ 12.059008 ],
-									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
+									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
+									"fontsize" : [ 12.059008 ]
 								}
 ,
 								"parentstyle" : "",
@@ -1779,7 +1779,7 @@
 									"maxclass" : "inlet",
 									"numinlets" : 0,
 									"numoutlets" : 1,
-									"outlettype" : [ "" ],
+									"outlettype" : [ "FullPacket" ],
 									"patching_rect" : [ 50.0, 40.0, 30.0, 30.0 ],
 									"style" : ""
 								}
@@ -4083,8 +4083,8 @@
 , 											{
 												"name" : "newobjYellow-1",
 												"default" : 												{
-													"fontsize" : [ 12.059008 ],
-													"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
+													"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
+													"fontsize" : [ 12.059008 ]
 												}
 ,
 												"parentstyle" : "",
@@ -4093,8 +4093,8 @@
 , 											{
 												"name" : "newobjYellow-2",
 												"default" : 												{
-													"fontsize" : [ 12.059008 ],
-													"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
+													"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
+													"fontsize" : [ 12.059008 ]
 												}
 ,
 												"parentstyle" : "",
@@ -5298,8 +5298,8 @@
 , 							{
 								"name" : "newobjYellow-1",
 								"default" : 								{
-									"fontsize" : [ 12.059008 ],
-									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
+									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
+									"fontsize" : [ 12.059008 ]
 								}
 ,
 								"parentstyle" : "",
@@ -5308,8 +5308,8 @@
 , 							{
 								"name" : "newobjYellow-2",
 								"default" : 								{
-									"fontsize" : [ 12.059008 ],
-									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
+									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
+									"fontsize" : [ 12.059008 ]
 								}
 ,
 								"parentstyle" : "",
@@ -5386,7 +5386,7 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 31.952209, 48.049988, 31.0, 18.0 ],
 					"style" : "",
-					"text" : "1",
+					"text" : "5",
 					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
 				}
 
@@ -5775,13 +5775,13 @@
 			}
  ],
 		"parameters" : 		{
-			"obj-10::obj-18" : [ "reverb_low_gain", "low_gain", 0 ],
-			"obj-31" : [ "early_gain", "early_gain", 0 ],
-			"obj-10::obj-6" : [ "reverb_center_hz", "center_hz", 0 ],
-			"obj-10::obj-19" : [ "reverb_high_gain", "high_gain", 0 ],
-			"obj-34" : [ "late_gain", "late_gain", 0 ],
 			"obj-10::obj-17" : [ "reverb_mid_gain", "mid_gain", 0 ],
-			"obj-74" : [ "reverb_number", "reverb_number", 0 ]
+			"obj-31" : [ "early_gain", "early_gain", 0 ],
+			"obj-10::obj-18" : [ "reverb_low_gain", "low_gain", 0 ],
+			"obj-34" : [ "late_gain", "late_gain", 0 ],
+			"obj-74" : [ "reverb_number", "reverb_number", 0 ],
+			"obj-10::obj-6" : [ "reverb_center_hz", "center_hz", 0 ],
+			"obj-10::obj-19" : [ "reverb_high_gain", "high_gain", 0 ]
 		}
 ,
 		"dependency_cache" : [ 			{
@@ -5902,8 +5902,8 @@
 , 			{
 				"name" : "newobjYellow-1",
 				"default" : 				{
-					"fontsize" : [ 12.059008 ],
-					"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
+					"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
+					"fontsize" : [ 12.059008 ]
 				}
 ,
 				"parentstyle" : "",
@@ -5912,8 +5912,8 @@
 , 			{
 				"name" : "newobjYellow-2",
 				"default" : 				{
-					"fontsize" : [ 12.059008 ],
-					"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
+					"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
+					"fontsize" : [ 12.059008 ]
 				}
 ,
 				"parentstyle" : "",
