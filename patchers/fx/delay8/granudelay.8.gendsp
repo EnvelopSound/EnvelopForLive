@@ -1,0 +1,522 @@
+{
+	"patcher" : 	{
+		"fileversion" : 1,
+		"appversion" : 		{
+			"major" : 7,
+			"minor" : 2,
+			"revision" : 5,
+			"architecture" : "x64",
+			"modernui" : 1
+		}
+,
+		"rect" : [ 160.0, 79.0, 991.0, 787.0 ],
+		"editing_bgcolor" : [ 0.9, 0.9, 0.9, 1.0 ],
+		"bglocked" : 0,
+		"openinpresentation" : 0,
+		"default_fontsize" : 12.0,
+		"default_fontface" : 0,
+		"default_fontname" : "Arial",
+		"gridonopen" : 1,
+		"gridsize" : [ 15.0, 15.0 ],
+		"gridsnaponopen" : 1,
+		"objectsnaponopen" : 1,
+		"statusbarvisible" : 2,
+		"toolbarvisible" : 1,
+		"lefttoolbarpinned" : 0,
+		"toptoolbarpinned" : 0,
+		"righttoolbarpinned" : 0,
+		"bottomtoolbarpinned" : 0,
+		"toolbars_unpinned_last_save" : 0,
+		"tallnewobj" : 0,
+		"boxanimatetime" : 200,
+		"enablehscroll" : 1,
+		"enablevscroll" : 1,
+		"devicewidth" : 0.0,
+		"description" : "",
+		"digest" : "",
+		"tags" : "",
+		"style" : "",
+		"subpatcher_template" : "",
+		"boxes" : [ 			{
+				"box" : 				{
+					"id" : "obj-24",
+					"linecount" : 2,
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 886.777771, 60.5, 123.0, 35.0 ],
+					"style" : "",
+					"text" : "in 11 @comment reset"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-22",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 670.75, 756.0, 37.0, 22.0 ],
+					"style" : "",
+					"text" : "out 8"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-21",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 579.5, 756.0, 37.0, 22.0 ],
+					"style" : "",
+					"text" : "out 7"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-20",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 488.25, 756.0, 37.0, 22.0 ],
+					"style" : "",
+					"text" : "out 6"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-19",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 397.75, 756.0, 37.0, 22.0 ],
+					"style" : "",
+					"text" : "out 5"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-18",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 305.75, 756.0, 37.0, 22.0 ],
+					"style" : "",
+					"text" : "out 4"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-11",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 214.5, 756.0, 37.0, 22.0 ],
+					"style" : "",
+					"text" : "out 3"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-15",
+					"linecount" : 2,
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 32.0, 19.5, 132.0, 35.0 ],
+					"style" : "",
+					"text" : "in 1 @comment live_input"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-12",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 421.0, 78.0, 147.0, 22.0 ],
+					"style" : "",
+					"text" : "in 6 @comment feedback"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-17",
+					"linecount" : 2,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 803.0, 220.0, 147.0, 33.0 ],
+					"style" : "",
+					"text" : "with panning instead of variable number of outlets"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-16",
+					"linecount" : 2,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 796.0, 182.0, 147.0, 33.0 ],
+					"style" : "",
+					"text" : "gen version of granubuf~\nrama gottfried, 2016"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-14",
+					"linecount" : 2,
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 750.777771, 60.5, 123.0, 35.0 ],
+					"style" : "",
+					"text" : "in 10 @comment yexp"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-3",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 668.666687, 30.0, 123.0, 22.0 ],
+					"style" : "",
+					"text" : "in 9 @comment xexp"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-6",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 587.555542, 8.0, 119.0, 22.0 ],
+					"style" : "",
+					"text" : "in 8 @comment amp"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-13",
+					"linecount" : 2,
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 511.444458, 37.5, 118.0, 35.0 ],
+					"style" : "",
+					"text" : "in 7 @comment channel @default -1"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-2",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 123.25, 756.0, 37.0, 22.0 ],
+					"style" : "",
+					"text" : "out 2"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-1",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 762.0, 760.0, 37.0, 22.0 ],
+					"style" : "",
+					"text" : "out 9"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-10",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 310.0, 54.0, 180.0, 22.0 ],
+					"style" : "",
+					"text" : "in 5 @comment \"start point\""
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-9",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 269.222229, 30.0, 119.0, 22.0 ],
+					"style" : "",
+					"text" : "in 4 @comment rate"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-8",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 110.0, 60.5, 132.0, 22.0 ],
+					"style" : "",
+					"text" : "in 2 @comment trigger"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-7",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 188.111099, 4.5, 185.0, 22.0 ],
+					"style" : "",
+					"text" : "in 3 @comment \"dur in samples\""
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"code" : "expA(x0) // approx exp(x) (more accurate than 'fastexp()') from sm_filter_pack\n{\n\tx = 0.999996 + (0.031261316 + (0.00048274797 + 0.000006 * x0) * x0) * x0;\n\tx *= x; x *= x; x *= x; x *= x; x *= x;\n\treturn x;\n}\r\n\r\nBuffer genbuf1(\"genbuf1\");\r\nBuffer genbuf2(\"genbuf2\");\r\nBuffer genbuf3(\"genbuf1\");\r\nBuffer genbuf4(\"genbuf2\");\r\nBuffer genbuf5(\"genbuf1\");\r\nBuffer genbuf6(\"genbuf2\");\r\nBuffer genbuf7(\"genbuf1\");\r\nBuffer genbuf8(\"genbuf2\");\r\n\r\n// grain phase 0-1\r\nData m_phase(512);\r\nData m_incr(512);\r\n\r\n//storage for each grain's parameters:\r\nData m_samplaylen(512); // number of samples to play in grain\r\nData m_sampstart(512);\r\nData m_rate(512);\r\nData m_channel(512);\r\nData m_amp(512);\r\nData m_xexp(512);\r\nData m_yexp(512);\r\n\r\nHistory graincount, sampcount, channelcount;\r\nParam numvoices(16);\r\n\r\ninput =\t\tin1;\r\ntrigger = \tin2;\r\ndur = \t\tin3;\r\nrate = \t\tin4;\r\nstart =\t\tin5; // start == delay\r\nfeedback =\tin6;\r\nchannel =\tin7;\r\namp =\t\tin8;\r\nxexp =\t\tin9;\r\nyexp =\t\tin10;\r\nreset = in11;\r\n\r\nif( reset > 0)\r\n{\r\n\tfor( i = 0; i < numvoices; i += 1 )\r\n\t\tpoke(m_incr, 0, i, 0, 0);\r\n}\r\n\r\nsamp_len = dim(genbuf1);\r\nsampstart = (sampcount + 1) % samp_len;\r\n\r\n_out1 = 0;\r\n_out2 = 0;\r\n_out3 = 0;\r\n_out4 = 0;\r\n_out5 = 0;\r\n_out6 = 0;\r\n_out7 = 0;\r\n_out8 = 0;\r\n\r\nquarterPI = PI / 4.;\r\n\r\n// n.b. this loop happens on every sample\r\n// so make sure only to alloc new grain once when there's a trigger\r\nalloccheck = 0; \r\n\r\nfor( i = 0; i < numvoices; i += 1 )\r\n{\r\n\r\n\t// make new grain if needed and this voice is free, incr is set to zero when freed\r\n\tif( peek(m_incr, i, 0, channels=1) == 0  )\r\n\t{\r\n\t\tif( alloccheck == 0 && trigger > 0 && graincount < numvoices && rate != 0 && dur != 0 && amp > 0 )\r\n\t\t{ \r\n\t\t\talloccheck = 1;\r\n\t  \t\tpoke(m_amp, \tamp, \ti, 0, 0);\r\n\t\t\tpoke(m_rate,\trate,\ti, 0, 0);\r\n\r\n\t\t\t// duration of grain\r\n\t\t\t// or if negative use the length of the original sample scaled by ratio\r\n\t\t\tgr_dur = (dur <= 0) ? samp_len / abs(rate) : mstosamps(dur);\r\n\t\t\tgr_dur = (gr_dur >= samp_len) ? samp_len : gr_dur;\r\n\t\t\t\r\n\t\t\t// phase goes 0-1\r\n\t\t\t\r\n\t\t\t// if rate is negative, then play backwards\r\n \t\t\t// to do this some decision has to be made, \r\n\t\t\t// for instance, right now we will use the same \"start\" and \"end\" points, \r\n\t\t\t// but use a negative incr and start the phase at 1 if backwards\r\n\t\t\t\r\n\t\t\tpoke(m_phase, \trate < 0, \ti, 0, 0); // start at 1 if rate is negative\r\n\r\n\t\t\t//make sure start and end points are inside the buffer\r\n\t\t\tsamp_delay = clip(mstosamps(abs(start)), 0, samp_len-1);\r\n\t\t\tsamp_playstart = wrap(sampcount - samp_delay, 0, samp_len-1);\r\n\t\t\t\r\n\t\t\tpoke(m_sampstart, \tsamp_playstart,\t\ti, 0, 0);\r\n\t\t\t\r\n\t\t\tplaylen = abs(rate * gr_dur);\r\n\t\t\t\r\n\t\t\tif( samp_delay > playlen )\r\n\t\t\t{\r\n\t\t  \t\tpoke(m_samplaylen, \tplaylen,\ti, 0, 0);\r\n\t\t\t\tpoke(m_incr, rate / playlen, \ti, 0, 0);\r\n\r\n\t\t\t}\r\n\t\t\telse\r\n\t\t\t{\r\n\t\t  \t\tpoke(m_samplaylen, \tsamp_delay,\ti, 0, 0);\r\n\t\t\t\tpoke(m_incr, rate / samp_delay,\ti, 0, 0);\r\n\t\t\t}\t\t\t\r\n\t\t\t\r\n\t\t\tif(channel < 0){\r\n\t\t\t\tchannelcount = (channelcount + 1) % 8;\r\n\t\t\t\tchannel = channelcount;\r\n\t\t\t}\r\n\t\t\t\r\n\t  \t\tpoke(m_channel, channel,\ti, 0, 0);\t\r\n\t  \t\tpoke(m_xexp, \txexp, \t\ti, 0, 0);\r\n\t  \t\tpoke(m_yexp, \tyexp, \t\ti, 0, 0);\r\n\t\t\tgraincount += 1;\r\n\t\t}\r\n\t}\r\n\t\r\n\t_incr, _tmp = peek(m_incr, i, 0, channels=1);\r\n\r\n\tif( _incr != 0  )\r\n\t{\r\n\t\t_pc, _tmp \t\t\t=\tpeek(m_phase, i, 0, channels=1);\r\n\t\t_start_offset, _tmp\t= \tpeek(m_sampstart, i, 0, channels=1);\t\r\n\t\t_playlen, _tmp \t\t=\tpeek(m_samplaylen, i, 0, channels=1);\t\r\n\t\t_channel, _tmp \t\t=\tpeek(m_channel, i, 0, channels=1);\t\r\n\t\t_amp, _tmp \t\t\t=\tpeek(m_amp, i, 0, channels=1);\t\r\n\t\t_xexp, _tmp \t\t=\tpeek(m_xexp, i, 0, channels=1);\t\r\n\t\t_yexp, _tmp \t\t=\tpeek(m_yexp, i, 0, channels=1);\t\r\n\r\n\t\t\r\n\t\tpx = pow(_pc, expA(_xexp));\r\n\t\tax = fastsin( PI * px);\r\n\t\tenv = _amp * pow( ax, expA(_yexp));\r\n\t\t\r\n\t\tif(_channel == 0) {\r\n\t\t\tbufsamp = wave(genbuf1, (_start_offset + (_playlen * _pc)) % samp_len , 0, interp=\"cubic\", index=\"samples\");\r\n\t\t\t_out1 += bufsamp * env;\r\n\t\t} else if(_channel == 1) {\r\n\t\t\tbufsamp = wave(genbuf2, (_start_offset + (_playlen * _pc)) % samp_len , 0, interp=\"cubic\", index=\"samples\");\r\n\t\t\t_out2 += bufsamp * env;\t\t\t\t\t\t\t\t\r\n\t\t} else if(_channel == 2) {\r\n\t\t\tbufsamp = wave(genbuf3, (_start_offset + (_playlen * _pc)) % samp_len , 0, interp=\"cubic\", index=\"samples\");\r\n\t\t\t_out3 += bufsamp * env;\t\t\t\t\t\t\t\t\r\n\t\t} else if(_channel == 3) {\r\n\t\t\tbufsamp = wave(genbuf4, (_start_offset + (_playlen * _pc)) % samp_len , 0, interp=\"cubic\", index=\"samples\");\t\t\t\r\n\t\t\t_out4 += bufsamp * env;\t\t\t\t\t\r\n\t\t} else if(_channel == 4) {\r\n\t\t\tbufsamp = wave(genbuf5, (_start_offset + (_playlen * _pc)) % samp_len , 0, interp=\"cubic\", index=\"samples\");\t\t\t\r\n\t\t\t_out5 += bufsamp * env;\t\t\t\t\t\r\n\t\t}else if(_channel == 5) {\r\n\t\t\tbufsamp = wave(genbuf6, (_start_offset + (_playlen * _pc)) % samp_len , 0, interp=\"cubic\", index=\"samples\");\t\t\t\r\n\t\t\t_out6 += bufsamp * env;\t\t\t\t\t\r\n\t\t}else if(_channel == 6){\r\n\t\t\tbufsamp = wave(genbuf7, (_start_offset + (_playlen * _pc)) % samp_len , 0, interp=\"cubic\", index=\"samples\");\t\t\t\r\n\t\t\t_out7 += bufsamp * env;\t\t\t\t\t\r\n\t\t}else if(_channel == 7){\r\n\t\t\tbufsamp = wave(genbuf8, (_start_offset + (_playlen * _pc)) % samp_len , 0, interp=\"cubic\", index=\"samples\");\t\t\t\r\n\t\t\t_out8 += bufsamp * env;\t\t\r\n\t\t}\t\t\t\r\n\r\n\t\t_pc += _incr;\r\n\t\t\r\n\t\tif( _pc >= 0 && _pc <= 1 ) \r\n\t\t{\r\n\t\t\tpoke(m_phase, _pc, i, 0, 0);\r\n\t\t}\r\n\t\telse\r\n\t\t{ //kill grain\r\n\t\t\tpoke(m_incr, 0, i, 0, 0);\r\n\t\t\tgraincount -= 1;\r\n\t\t}\r\n\t}\r\n\r\n}\r\n\r\n_out1 =  dcblock(tanh(_out1));\r\n_out2 =  dcblock(tanh(_out2));\r\n_out3 =  dcblock(tanh(_out3));\r\n_out4 =  dcblock(tanh(_out4));\r\n_out5 =  dcblock(tanh(_out5));\r\n_out6 =  dcblock(tanh(_out6));\r\n_out7 =  dcblock(tanh(_out7));\r\n_out8 =  dcblock(tanh(_out8));\r\n\r\nout1 = _out1;\r\nout2 = _out2;\r\nout3 = _out3;\r\nout4 = _out4;\r\nout5 = _out5;\r\nout6 = _out6;\r\nout7 = _out7;\r\nout8 = _out8;\r\nout9 = graincount;\r\n\r\npoke(genbuf1, input+(_out1 * feedback), sampcount, 0, 0);\r\npoke(genbuf2, input+(_out2 * feedback), sampcount, 0, 0);\r\npoke(genbuf3, input+(_out3 * feedback), sampcount, 0, 0);\r\npoke(genbuf4, input+(_out4 * feedback), sampcount, 0, 0);\r\npoke(genbuf5, input+(_out5 * feedback), sampcount, 0, 0);\r\npoke(genbuf6, input+(_out6 * feedback), sampcount, 0, 0);\r\npoke(genbuf7, input+(_out7 * feedback), sampcount, 0, 0);\r\npoke(genbuf8, input+(_out8 * feedback), sampcount, 0, 0);\r\n\r\nsampcount = sampstart;",
+					"fontface" : 0,
+					"fontname" : "Arial",
+					"fontsize" : 12.0,
+					"id" : "obj-5",
+					"maxclass" : "codebox",
+					"numinlets" : 11,
+					"numoutlets" : 9,
+					"outlettype" : [ "", "", "", "", "", "", "", "", "" ],
+					"patching_rect" : [ 32.0, 107.0, 749.0, 641.0 ],
+					"style" : ""
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-4",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 32.0, 752.0, 37.0, 22.0 ],
+					"style" : "",
+					"text" : "out 1"
+				}
+
+			}
+ ],
+		"lines" : [ 			{
+				"patchline" : 				{
+					"destination" : [ "obj-5", 4 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-10", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-5", 5 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-12", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-5", 6 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-13", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-5", 9 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-14", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-5", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-15", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-5", 10 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-24", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-5", 8 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-3", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-1", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-5", 8 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-11", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-5", 2 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-18", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-5", 3 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-19", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-5", 4 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-2", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-5", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-20", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-5", 5 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-21", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-5", 6 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-22", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-5", 7 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-4", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-5", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-5", 7 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-6", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-5", 2 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-7", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-5", 1 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-8", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-5", 3 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-9", 0 ]
+				}
+
+			}
+ ],
+		"autosave" : 0
+	}
+
+}
