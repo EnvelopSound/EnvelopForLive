@@ -2,7 +2,7 @@
 	"name" : "envelop_fx_reverb_bus",
 	"version" : 1,
 	"creationdate" : 3556956785,
-	"modificationdate" : 3556956793,
+	"modificationdate" : 3558522212,
 	"viewrect" : [ 29.0, 70.0, 300.0, 500.0 ],
 	"autoorganize" : 1,
 	"hideprojectwindow" : 0,
@@ -32,7 +32,7 @@
 	}
 ,
 	"detailsvisible" : 0,
-	"amxdtype" : 1633771873,
+	"amxdtype" : 1835887981,
 	"readonly" : 0,
 	"devpathtype" : 0,
 	"devpath" : "."
