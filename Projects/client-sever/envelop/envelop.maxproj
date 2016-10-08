@@ -2,7 +2,7 @@
 	"name" : "envelop",
 	"version" : 1,
 	"creationdate" : 3556938385,
-	"modificationdate" : 3558431977,
+	"modificationdate" : 3558782846,
 	"viewrect" : [ 29.0, 70.0, 300.0, 500.0 ],
 	"autoorganize" : 1,
 	"hideprojectwindow" : 0,
@@ -18,6 +18,10 @@
 			"envelop_client-2.maxpat" : 			{
 				"kind" : "patcher",
 				"toplevel" : 1
+			}
+,
+			"envelop_fileplayer.maxpat" : 			{
+				"kind" : "patcher"
 			}
 
 		}
@@ -45,7 +49,18 @@
 
 		}
 ,
+		"data" : 		{
+
+		}
+,
 		"externals" : 		{
+			"hoa.dac~.mxo" : 			{
+				"kind" : "object"
+			}
+,
+			"hoa.gain~.mxo" : 			{
+				"kind" : "object"
+			}
 
 		}
 
