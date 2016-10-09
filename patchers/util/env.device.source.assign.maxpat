@@ -3,8 +3,8 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 7,
-			"minor" : 2,
-			"revision" : 5,
+			"minor" : 3,
+			"revision" : 0,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -47,8 +47,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 7,
-							"minor" : 2,
-							"revision" : 5,
+							"minor" : 3,
+							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -371,8 +371,8 @@
 , 							{
 								"name" : "newobjYellow-1",
 								"default" : 								{
-									"fontsize" : [ 12.059008 ],
-									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
+									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
+									"fontsize" : [ 12.059008 ]
 								}
 ,
 								"parentstyle" : "",
@@ -381,8 +381,8 @@
 , 							{
 								"name" : "newobjYellow-2",
 								"default" : 								{
-									"fontsize" : [ 12.059008 ],
-									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
+									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
+									"fontsize" : [ 12.059008 ]
 								}
 ,
 								"parentstyle" : "",
@@ -417,8 +417,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 7,
-							"minor" : 2,
-							"revision" : 5,
+							"minor" : 3,
+							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -455,13 +455,13 @@
 									"fontface" : 0,
 									"fontsize" : 12.0,
 									"id" : "obj-10",
-									"linecount" : 31,
+									"linecount" : 30,
 									"maxclass" : "o.expr.codebox",
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "FullPacket", "FullPacket" ],
-									"patching_rect" : [ 50.0, 100.0, 439.0, 440.0 ],
-									"text" : "/assign/L ??= 0,\n/assign/R ??= 0,\n/prev/assign/L ??= 0,\n/prev/assign/R ??= 0,\n/attached/name ??= \"\",\n/prev/attached/name ??= \"\",\n\nif( /prev/attached/name != \"\",\n  progn(\n    /L/atttached/name = /attached/name,\n    /R/atttached/name = /attached/name\n  )\n),\n\n/set/L = [\"set\", \"/source/\" +/assign/L],\n/set/R = [\"set\", \"/source/\" +/assign/R],\n\nif( /assign/R != /prev/assign/R,\n  progn( \n    /disable_prev/R/active = 0,\n    if( /prev/attached/name != \"\",\n      /disable_prev/R/attached/name = /prev/attached/name)\n  )\n),\nif( /assign/L != /prev/assign/L,\n progn( \n    /disable_prev/L/active = 0,\n    if( /prev/attached/name != \"\",\n      /disable_prev/L/attached/name = /prev/attached/name)\n  )\n)",
+									"patching_rect" : [ 50.0, 100.0, 439.0, 426.0 ],
+									"text" : "/assign/L ??= 0,\n/assign/R ??= 0,\n/prev/assign/L ??= 0,\n/prev/assign/R ??= 0,\n/attached/name ??= \"\",\n/prev/attached/name ??= \"\",\n\nif( /prev/attached/name != \"\",\n  progn(\n    /L/atttached/name = /attached/name,\n    /R/atttached/name = /attached/name\n  )\n),\n\nif( /assign/R != /prev/assign/R,\n  progn( \n    /set/R = [\"set\", \"/source/\" +/assign/R],\n    /disable_prev/R/active = 0,\n    if( /prev/attached/name != \"\",\n      /disable_prev/R/attached/name = /prev/attached/name)\n  )\n),\nif( /assign/L != /prev/assign/L,\n progn( \n    /set/L = [\"set\", \"/source/\" +/assign/L],\n    /disable_prev/L/active = 0,\n    if( /prev/attached/name != \"\",\n      /disable_prev/L/attached/name = /prev/attached/name)\n  )\n)",
 									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
 
@@ -577,8 +577,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 7,
-							"minor" : 2,
-							"revision" : 5,
+							"minor" : 3,
+							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -920,8 +920,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 7,
-							"minor" : 2,
-							"revision" : 5,
+							"minor" : 3,
+							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -1597,8 +1597,8 @@
 , 			{
 				"name" : "newobjYellow-1",
 				"default" : 				{
-					"fontsize" : [ 12.059008 ],
-					"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
+					"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
+					"fontsize" : [ 12.059008 ]
 				}
 ,
 				"parentstyle" : "",
@@ -1607,8 +1607,8 @@
 , 			{
 				"name" : "newobjYellow-2",
 				"default" : 				{
-					"fontsize" : [ 12.059008 ],
-					"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
+					"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
+					"fontsize" : [ 12.059008 ]
 				}
 ,
 				"parentstyle" : "",
