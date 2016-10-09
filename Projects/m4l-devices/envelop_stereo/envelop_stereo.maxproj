@@ -2,7 +2,7 @@
 	"name" : "envelop_stereo",
 	"version" : 1,
 	"creationdate" : 3556956544,
-	"modificationdate" : 3558522083,
+	"modificationdate" : 3558864373,
 	"viewrect" : [ 29.0, 70.0, 300.0, 500.0 ],
 	"autoorganize" : 1,
 	"hideprojectwindow" : 0,
