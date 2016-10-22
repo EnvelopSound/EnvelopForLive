@@ -38,12 +38,26 @@
 		"subpatcher_template" : "Default Max 7",
 		"boxes" : [ 			{
 				"box" : 				{
+					"fontname" : "Arial Bold Italic",
+					"fontsize" : 18.0,
+					"id" : "obj-4",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 595.217285, 68.0, 224.0, 27.0 ],
+					"presentation_rect" : [ 449.217285, 33.0, 0.0, 0.0 ],
+					"style" : "",
+					"text" : "Envelop Effect Prototype"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-23",
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 595.217285, 185.0, 293.0, 20.0 ],
-					"presentation_rect" : [ 544.217285, 186.0, 0.0, 0.0 ],
 					"style" : "",
 					"text" : "#1 is a unique variable sent in from the parent source"
 				}
@@ -58,7 +72,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 484.217285, 107.0, 109.0, 60.0 ],
-					"presentation_rect" : [ 642.0, 145.0, 0.0, 0.0 ],
 					"style" : "",
 					"text" : "receive~ #1-in\nr #1-osc\nenv.16_send~ #1\nthispoly~",
 					"textjustification" : 2
@@ -86,7 +99,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 473.0, 454.0, 97.0, 24.0 ],
-					"presentation_rect" : [ 576.0, 405.0, 0.0, 0.0 ],
 					"style" : "",
 					"text" : "mute on load"
 				}
@@ -100,7 +112,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 426.0, 367.0, 179.0, 24.0 ],
-					"presentation_rect" : [ 568.083313, 162.0, 0.0, 0.0 ],
 					"style" : "",
 					"text" : "unmute when effect is active"
 				}
@@ -116,7 +127,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 62.083313, 306.0, 199.0, 78.0 ],
-					"presentation_rect" : [ 157.083313, 204.0, 0.0, 0.0 ],
 					"style" : "",
 					"text" : "muiting the poly voice does not gate messages from coming in, so possibly you might want to gate messages if you think they might cause CPU usage"
 				}
