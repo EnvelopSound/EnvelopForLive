@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 634.0, 106.0, 206.0, 171.0 ],
+		"rect" : [ 1044.0, 90.0, 203.0, 170.0 ],
 		"bgcolor" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 		"editing_bgcolor" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 		"bglocked" : 0,
@@ -614,7 +614,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 643.0, 156.0, 172.0, 23.0 ],
+						"rect" : [ 1053.0, 140.0, 172.0, 23.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 1,
 						"default_fontsize" : 12.0,
@@ -1178,7 +1178,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 643.0, 178.0, 172.0, 48.0 ],
+						"rect" : [ 1053.0, 162.0, 172.0, 48.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 1,
 						"default_fontsize" : 12.0,
@@ -5766,7 +5766,6 @@
 						"tags" : "",
 						"style" : "",
 						"subpatcher_template" : "no-menus",
-						"visible" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-12",
