@@ -1,5 +1,5 @@
-# EnvelopLive
-The EnvelopLive server/client system consists of a set of Max For Live devices that communicate via OSC to a spatial processing server running either on the same computer via a Jack Audio Router or on a separate computer. OSC messages are dispatched to the server via a "client" Max patch, which allows a global view of the spatial scene, and facilitates synchronized group processing when needed.
+# EnvelopForLive
+The EnvelopForLive server/client system consists of a set of Max For Live devices that communicate via OSC to a spatial processing server running either on the same computer via a Jack Audio Router or on a separate computer. OSC messages are dispatched to the server via a "client" Max patch, which allows a global view of the spatial scene, and facilitates synchronized group processing when needed.
 
 Version 1 of the Envelop system was developed by Rama Gottfried, and is modeled on the architecture of Ircam-Spat combined with an odot port of Alex Harker's "Convolution Reverb Pro" Max For Live device adapted for use with B-Format impulse responses.
 
@@ -23,7 +23,8 @@ And three Max for Live (M4L) devices which are contained in the `Max For Live De
 * `envelop_global_reverb`
 
 ### dependencies
-The EnvelopLive system requires Ableton Live, Max For Live and Max 7.
+The 
+system requires Ableton Live, Max For Live and Max 7.
 
 For routing audio from Live to the Envelop binaural server we use the Jack Audio routing application (JackPilot), downloadable from: http://jackaudio.org/downloads/. (Note, for Mac OS El Capitan, there is a link to a beta version here: https://github.com/jackaudio/jack2/issues/144 )
 
