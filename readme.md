@@ -1,3 +1,5 @@
+![Logo](media/201610_E4L_logo.png)
+
 # EnvelopForLive
 The EnvelopForLive server/client system consists of a set of Max For Live devices that communicate via OSC to a spatial processing server running either on the same computer via a Jack Audio Router or on a separate computer. OSC messages are dispatched to the server via a "client" Max patch, which allows a global view of the spatial scene, and facilitates synchronized group processing when needed.
 
