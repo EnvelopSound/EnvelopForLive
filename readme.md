@@ -1,9 +1,9 @@
 ![Logo](media/201610_E4L_logo.png)
 
-# EnvelopForLive
-The EnvelopForLive server/client system consists of a set of Max For Live devices that communicate via OSC to a spatial processing server running either on the same computer via a Jack Audio Router or on a separate computer. OSC messages are dispatched to the server via a "client" Max patch, which allows a global view of the spatial scene, and facilitates synchronized group processing when needed.
+# Envelop for Live (E4L)
+The Envelop for Live server/client system consists of a set of Max For Live devices that communicate via OSC to a spatial processing server running either on the same computer via a Jack Audio Router or on a separate computer. OSC messages are dispatched to the server via a "client" Max patch, which allows a global view of the spatial scene, and facilitates synchronized group processing when needed.
 
-Version 1 of the Envelop system was developed by Rama Gottfried, and is modeled on the architecture of Ircam-Spat combined with an odot port of Alex Harker's "Convolution Reverb Pro" Max For Live device adapted for use with B-Format impulse responses.
+Version 1 of the Envelop for Live system was developed by Rama Gottfried, and is modeled on the architecture of Ircam-Spat combined with an odot port of Alex Harker's "Convolution Reverb Pro" Max For Live device adapted for use with B-Format impulse responses.
 
 Since Live only supports mono ore stereo tracks, you need to send your audio streams to be spatialized to an external server for Ambisonic encoding and processing. To do this, there are a few options -- either via software or hardware. The instructions below are for a software based solution, however if you have an audio interface with 8+ channels, you may want to look into "zero-latency monitoring" and hardware loopback options for sending audio from Live to the Max server.
 
@@ -16,7 +16,7 @@ For information on the CNMAT-odot system please see:
 * John MacCallum, Rama Gottfried, Ilya Rostovtsev, Jean Bresson, and Adrian Freed, *"Dynamic Message-Oriented Middleware with Open Sound Control and Odot"*, ICMC, 2015.
 
 ### contents
-Version 1 of the Envelop system consists of:
+Version 1 of the Envelop for Live system consists of:
 * `envelop.maxproj` located in the `Projects` folder, which automatically loads the server and client patches along with their supporting files.
 
 And three Max for Live (M4L) devices which are contained in the `Max For Live Devices` directory:
