@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 303.0, 45.0, 496.0, 691.0 ],
+		"rect" : [ 1.0, 45.0, 494.0, 688.0 ],
 		"bgcolor" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 		"editing_bgcolor" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 		"bglocked" : 1,
@@ -39,6 +39,19 @@
 		"style" : "",
 		"subpatcher_template" : "<none>",
 		"boxes" : [ 			{
+				"box" : 				{
+					"id" : "obj-2",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "FullPacket" ],
+					"patching_rect" : [ 79.0, 332.0, 100.0, 22.0 ],
+					"style" : "",
+					"text" : "o.deferlow"
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"id" : "obj-35",
 					"maxclass" : "button",
@@ -486,7 +499,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 527.0, 523.0, 197.0, 23.0 ],
+						"rect" : [ 225.0, 523.0, 197.0, 23.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 1,
 						"default_fontsize" : 12.0,
@@ -841,8 +854,8 @@
 , 							{
 								"name" : "newobjYellow-1",
 								"default" : 								{
-									"fontsize" : [ 12.059008 ],
-									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
+									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
+									"fontsize" : [ 12.059008 ]
 								}
 ,
 								"parentstyle" : "",
@@ -851,8 +864,8 @@
 , 							{
 								"name" : "newobjYellow-2",
 								"default" : 								{
-									"fontsize" : [ 12.059008 ],
-									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
+									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
+									"fontsize" : [ 12.059008 ]
 								}
 ,
 								"parentstyle" : "",
@@ -1041,7 +1054,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "FullPacket" ],
-					"patching_rect" : [ 79.0, 312.0, 145.0, 22.0 ],
+					"patching_rect" : [ 79.0, 297.0, 145.0, 22.0 ],
 					"style" : "",
 					"text" : "o.route /from/server/dsp"
 				}
@@ -1072,7 +1085,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 541.0, 548.0, 183.0, 23.0 ],
+						"rect" : [ 239.0, 548.0, 183.0, 23.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 1,
 						"default_fontsize" : 12.0,
@@ -1427,8 +1440,8 @@
 , 							{
 								"name" : "newobjYellow-1",
 								"default" : 								{
-									"fontsize" : [ 12.059008 ],
-									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
+									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
+									"fontsize" : [ 12.059008 ]
 								}
 ,
 								"parentstyle" : "",
@@ -1437,8 +1450,8 @@
 , 							{
 								"name" : "newobjYellow-2",
 								"default" : 								{
-									"fontsize" : [ 12.059008 ],
-									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
+									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
+									"fontsize" : [ 12.059008 ]
 								}
 ,
 								"parentstyle" : "",
@@ -2461,7 +2474,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 541.0, 570.0, 183.0, 48.0 ],
+						"rect" : [ 239.0, 570.0, 183.0, 48.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 1,
 						"default_fontsize" : 12.0,
@@ -3086,8 +3099,8 @@
 , 							{
 								"name" : "newobjYellow-1",
 								"default" : 								{
-									"fontsize" : [ 12.059008 ],
-									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
+									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
+									"fontsize" : [ 12.059008 ]
 								}
 ,
 								"parentstyle" : "",
@@ -3096,8 +3109,8 @@
 , 							{
 								"name" : "newobjYellow-2",
 								"default" : 								{
-									"fontsize" : [ 12.059008 ],
-									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
+									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
+									"fontsize" : [ 12.059008 ]
 								}
 ,
 								"parentstyle" : "",
@@ -3922,7 +3935,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-24", 0 ],
+					"destination" : [ "obj-2", 0 ],
 					"disabled" : 0,
 					"hidden" : 0,
 					"source" : [ "obj-16", 0 ]
@@ -3962,6 +3975,15 @@
 					"disabled" : 0,
 					"hidden" : 0,
 					"source" : [ "obj-19", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-24", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-2", 0 ]
 				}
 
 			}
@@ -4226,26 +4248,32 @@
 ,
 		"dependency_cache" : [ 			{
 				"name" : "env.meter.maxpat",
-				"bootpath" : "~/Documents/Max 7/Packages/EnvelopLive/patchers/bpatchers",
+				"bootpath" : "~/Documents/Max 7/Packages/EnvelopForLive/patchers/bpatchers",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "o.io.dsp.setting.bp.maxpat",
-				"bootpath" : "~/Documents/Max 7/Packages/EnvelopLive/patchers/bpatchers",
+				"bootpath" : "~/Documents/Max 7/Packages/EnvelopForLive/patchers/bpatchers",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "o.io.dsp.setting.umenu.bp.maxpat",
-				"bootpath" : "~/Documents/Max 7/Packages/EnvelopLive/patchers/bpatchers",
+				"bootpath" : "~/Documents/Max 7/Packages/EnvelopForLive/patchers/bpatchers",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "ENVELOP_logo-web_8_500x.jpg",
-				"bootpath" : "~/Documents/Max 7/Packages/EnvelopLive/media",
+				"bootpath" : "~/Documents/Max 7/Packages/EnvelopForLive/media",
 				"type" : "JPEG",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "o.deferlow.maxpat",
+				"bootpath" : "~/Documents/Max 7/Packages/EnvelopForLive/patchers/util",
+				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
@@ -4282,6 +4310,10 @@
 			}
 , 			{
 				"name" : "o.atomize.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "o.var.mxo",
 				"type" : "iLaX"
 			}
  ],
@@ -4360,8 +4392,8 @@
 , 			{
 				"name" : "newobjYellow-1",
 				"default" : 				{
-					"fontsize" : [ 12.059008 ],
-					"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
+					"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
+					"fontsize" : [ 12.059008 ]
 				}
 ,
 				"parentstyle" : "",
@@ -4370,8 +4402,8 @@
 , 			{
 				"name" : "newobjYellow-2",
 				"default" : 				{
-					"fontsize" : [ 12.059008 ],
-					"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
+					"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
+					"fontsize" : [ 12.059008 ]
 				}
 ,
 				"parentstyle" : "",

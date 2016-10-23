@@ -5,11 +5,11 @@
 			"major" : 7,
 			"minor" : 3,
 			"revision" : 1,
-			"architecture" : "x86",
+			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 199.0, 135.0, 1019.0, 396.0 ],
+		"rect" : [ 284.0, 134.0, 1019.0, 396.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -38,11 +38,36 @@
 		"subpatcher_template" : "Default Max 7",
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-7",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 30.0, 195.0, 176.0, 22.0 ],
+					"style" : "",
+					"text" : "poly~ env.fx.example 1 args #1"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-4",
+					"linecount" : 4,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 30.0, 50.0, 503.0, 60.0 ],
+					"style" : "",
+					"text" : "Envelop For Live Source Effects Rack\n\nAdd your effect here. Any user-added effect should be placed in a poly~ with 1 voice and an argument of #1 (follow examples below)"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-3",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 30.0, 146.0, 186.0, 22.0 ],
+					"patching_rect" : [ 30.0, 161.0, 186.0, 22.0 ],
 					"style" : "",
 					"text" : "poly~ env.fx.rev.source 1 args #1"
 				}
@@ -54,7 +79,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 30.0, 114.0, 157.0, 22.0 ],
+					"patching_rect" : [ 30.0, 129.0, 157.0, 22.0 ],
 					"style" : "",
 					"text" : "poly~ env.fx.delay 1 args #1"
 				}
@@ -64,7 +89,7 @@
 		"lines" : [  ],
 		"dependency_cache" : [ 			{
 				"name" : "env.fx.delay.maxpat",
-				"bootpath" : "~/Documents/Max 7/Packages/EnvelopForLive/patchers/fx/delay8",
+				"bootpath" : "~/Documents/Max 7/Packages/EnvelopForLive/patchers/fx/src/delay8",
 				"type" : "JSON",
 				"implicit" : 1
 			}
@@ -76,13 +101,13 @@
 			}
 , 			{
 				"name" : "o.granudelay.8~.maxpat",
-				"bootpath" : "~/Documents/Max 7/Packages/EnvelopForLive/patchers/fx/delay8",
+				"bootpath" : "~/Documents/Max 7/Packages/EnvelopForLive/patchers/fx/src/delay8",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "granudelay.8.gendsp",
-				"bootpath" : "~/Documents/Max 7/Packages/EnvelopForLive/patchers/fx/delay8",
+				"bootpath" : "~/Documents/Max 7/Packages/EnvelopForLive/code",
 				"type" : "gDSP",
 				"implicit" : 1
 			}
@@ -100,25 +125,25 @@
 			}
 , 			{
 				"name" : "multi-filter.gendsp",
-				"bootpath" : "~/Documents/Max 7/Packages/EnvelopForLive/patchers/fx/delay8",
+				"bootpath" : "~/Documents/Max 7/Packages/EnvelopForLive/code",
 				"type" : "gDSP",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "multimode.biquad.gendsp",
-				"bootpath" : "~/Documents/Max 7/Packages/EnvelopForLive/patchers/fx/delay8",
+				"bootpath" : "~/Documents/Max 7/Packages/EnvelopForLive/code",
 				"type" : "gDSP",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "env.fx.rev.source.maxpat",
-				"bootpath" : "~/Documents/Max 7/Packages/EnvelopForLive/patchers/fx/reverb",
+				"bootpath" : "~/Documents/Max 7/Packages/EnvelopForLive/patchers/fx/src/reverb",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "env.1o_conv~.maxpat",
-				"bootpath" : "~/Documents/Max 7/Packages/EnvelopForLive/patchers/fx/reverb",
+				"bootpath" : "~/Documents/Max 7/Packages/EnvelopForLive/patchers/fx/src/reverb",
 				"type" : "JSON",
 				"implicit" : 1
 			}
