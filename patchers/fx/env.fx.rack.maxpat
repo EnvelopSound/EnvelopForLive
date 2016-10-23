@@ -3,9 +3,9 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 7,
-			"minor" : 2,
-			"revision" : 5,
-			"architecture" : "x64",
+			"minor" : 3,
+			"revision" : 1,
+			"architecture" : "x86",
 			"modernui" : 1
 		}
 ,
@@ -60,53 +60,65 @@
 				}
 
 			}
-, 			{
-				"box" : 				{
-					"id" : "obj-1",
-					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 30.0, 85.0, 157.0, 22.0 ],
-					"style" : "",
-					"text" : "poly~ env.fx.thru 1 args #1"
-				}
-
-			}
  ],
 		"lines" : [  ],
 		"dependency_cache" : [ 			{
-				"name" : "env.fx.thru.maxpat",
-				"bootpath" : "~/Documents/dev-lib/EnvelopLive/Projects/envelop/patchers",
+				"name" : "env.fx.delay.maxpat",
+				"bootpath" : "~/Documents/Max 7/Packages/EnvelopForLive/patchers/fx/delay8",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "env.16_send~.maxpat",
-				"bootpath" : "~/Documents/dev-lib/EnvelopLive/Projects/envelop/patchers",
+				"bootpath" : "~/Documents/Max 7/Packages/EnvelopForLive/patchers/util",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "env.fx.delay.maxpat",
-				"bootpath" : "~/Documents/dev-lib/EnvelopLive/Projects/envelop/patchers",
+				"name" : "o.granudelay.8~.maxpat",
+				"bootpath" : "~/Documents/Max 7/Packages/EnvelopForLive/patchers/fx/delay8",
 				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "granudelay.8.gendsp",
+				"bootpath" : "~/Documents/Max 7/Packages/EnvelopForLive/patchers/fx/delay8",
+				"type" : "gDSP",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "o.doc.handler.maxpat",
+				"bootpath" : "~/Documents/Max 7/Packages/EnvelopForLive/patchers/util",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "m158.loadbang.maxpat",
+				"bootpath" : "~/Documents/Max 7/Packages/EnvelopForLive/patchers/util",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "multi-filter.gendsp",
+				"bootpath" : "~/Documents/Max 7/Packages/EnvelopForLive/patchers/fx/delay8",
+				"type" : "gDSP",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "multimode.biquad.gendsp",
+				"bootpath" : "~/Documents/Max 7/Packages/EnvelopForLive/patchers/fx/delay8",
+				"type" : "gDSP",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "env.fx.rev.source.maxpat",
-				"bootpath" : "~/Documents/dev-lib/EnvelopLive/Projects/envelop/patchers",
+				"bootpath" : "~/Documents/Max 7/Packages/EnvelopForLive/patchers/fx/reverb",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "env.1o_conv~.maxpat",
-				"bootpath" : "~/Documents/dev-lib/EnvelopLive/Projects/envelop/patchers",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "env.o.accum.maxpat",
-				"bootpath" : "~/Documents/dev-lib/EnvelopLive/Projects/envelop/patchers",
+				"bootpath" : "~/Documents/Max 7/Packages/EnvelopForLive/patchers/fx/reverb",
 				"type" : "JSON",
 				"implicit" : 1
 			}
@@ -119,15 +131,19 @@
 				"type" : "iLaX"
 			}
 , 			{
-				"name" : "multiconvolve~.mxo",
-				"type" : "iLaX"
-			}
-, 			{
-				"name" : "o.pack.mxo",
+				"name" : "o.expr.codebox.mxo",
 				"type" : "iLaX"
 			}
 , 			{
 				"name" : "o.union.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "o.cond.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "o.pack.mxo",
 				"type" : "iLaX"
 			}
 , 			{
@@ -139,7 +155,15 @@
 				"type" : "iLaX"
 			}
 , 			{
-				"name" : "o.expr.codebox.mxo",
+				"name" : "o.collect.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "o.compose.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "multiconvolve~.mxo",
 				"type" : "iLaX"
 			}
  ],
