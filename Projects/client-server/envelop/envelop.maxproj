@@ -2,7 +2,7 @@
 	"name" : "envelop",
 	"version" : 1,
 	"creationdate" : -738029395,
-	"modificationdate" : 3560257846,
+	"modificationdate" : -734612462,
 	"viewrect" : [ 29.0, 70.0, 444.0, 731.0 ],
 	"autoorganize" : 1,
 	"hideprojectwindow" : 0,
@@ -13,6 +13,10 @@
 			"envelop_server.maxpat" : 			{
 				"kind" : "patcher",
 				"toplevel" : 1
+			}
+,
+			"env.osc.streamer.maxpat" : 			{
+				"kind" : "patcher"
 			}
 ,
 			"envelop_client.maxpat" : 			{
@@ -46,6 +50,9 @@
 		}
 ,
 		"externals" : 		{
+			"hoa.dac~.mxo" : 			{
+				"kind" : "object"
+			}
 
 		}
 
