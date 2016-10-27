@@ -5,11 +5,11 @@
 			"major" : 7,
 			"minor" : 3,
 			"revision" : 1,
-			"architecture" : "x64",
+			"architecture" : "x86",
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 676.0, 117.0, 201.0, 408.0 ],
+		"rect" : [ 513.0, 139.0, 201.0, 408.0 ],
 		"bgcolor" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 		"editing_bgcolor" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 		"bglocked" : 0,
@@ -39,6 +39,22 @@
 		"style" : "",
 		"subpatcher_template" : "no-menus",
 		"boxes" : [ 			{
+				"box" : 				{
+					"autofit" : 1,
+					"forceaspect" : 1,
+					"id" : "obj-35",
+					"maxclass" : "fpic",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "jit_matrix" ],
+					"patching_rect" : [ 1281.0, 103.5, 100.0, 19.5 ],
+					"pic" : "201610_E4L_logo_w.png",
+					"presentation" : 1,
+					"presentation_rect" : [ 2.0, 1.0, 196.839478, 38.383698 ]
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"bgcolor" : [ 0.290196, 0.309804, 0.301961, 0.0 ],
 					"id" : "obj-3",
@@ -251,7 +267,7 @@
 							"major" : 7,
 							"minor" : 3,
 							"revision" : 1,
-							"architecture" : "x64",
+							"architecture" : "x86",
 							"modernui" : 1
 						}
 ,
@@ -417,7 +433,7 @@
 							"major" : 7,
 							"minor" : 3,
 							"revision" : 1,
-							"architecture" : "x64",
+							"architecture" : "x86",
 							"modernui" : 1
 						}
 ,
@@ -694,8 +710,8 @@
 , 							{
 								"name" : "newobjYellow-1",
 								"default" : 								{
-									"fontsize" : [ 12.059008 ],
-									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
+									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
+									"fontsize" : [ 12.059008 ]
 								}
 ,
 								"parentstyle" : "",
@@ -704,8 +720,8 @@
 , 							{
 								"name" : "newobjYellow-2",
 								"default" : 								{
-									"fontsize" : [ 12.059008 ],
-									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
+									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
+									"fontsize" : [ 12.059008 ]
 								}
 ,
 								"parentstyle" : "",
@@ -763,11 +779,11 @@
 							"major" : 7,
 							"minor" : 3,
 							"revision" : 1,
-							"architecture" : "x64",
+							"architecture" : "x86",
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 684.0, 167.0, 172.0, 23.0 ],
+						"rect" : [ 521.0, 189.0, 172.0, 23.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 1,
 						"default_fontsize" : 12.0,
@@ -1143,8 +1159,8 @@
 , 							{
 								"name" : "newobjYellow-1",
 								"default" : 								{
-									"fontsize" : [ 12.059008 ],
-									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
+									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
+									"fontsize" : [ 12.059008 ]
 								}
 ,
 								"parentstyle" : "",
@@ -1153,8 +1169,8 @@
 , 							{
 								"name" : "newobjYellow-2",
 								"default" : 								{
-									"fontsize" : [ 12.059008 ],
-									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
+									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
+									"fontsize" : [ 12.059008 ]
 								}
 ,
 								"parentstyle" : "",
@@ -1213,7 +1229,7 @@
 							"major" : 7,
 							"minor" : 3,
 							"revision" : 1,
-							"architecture" : "x64",
+							"architecture" : "x86",
 							"modernui" : 1
 						}
 ,
@@ -1327,11 +1343,11 @@
 							"major" : 7,
 							"minor" : 3,
 							"revision" : 1,
-							"architecture" : "x64",
+							"architecture" : "x86",
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 684.0, 189.0, 172.0, 48.0 ],
+						"rect" : [ 521.0, 211.0, 172.0, 48.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 1,
 						"default_fontsize" : 12.0,
@@ -1888,8 +1904,8 @@
 , 							{
 								"name" : "newobjYellow-1",
 								"default" : 								{
-									"fontsize" : [ 12.059008 ],
-									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
+									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
+									"fontsize" : [ 12.059008 ]
 								}
 ,
 								"parentstyle" : "",
@@ -1898,8 +1914,8 @@
 , 							{
 								"name" : "newobjYellow-2",
 								"default" : 								{
-									"fontsize" : [ 12.059008 ],
-									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
+									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
+									"fontsize" : [ 12.059008 ]
 								}
 ,
 								"parentstyle" : "",
@@ -1956,9 +1972,9 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 45.896271, 125.0, 90.0, 20.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 120.9263, 27.5, 60.0, 20.0 ],
+					"presentation_rect" : [ 79.52565, 27.5, 43.0, 20.0 ],
 					"style" : "",
-					"text" : "server v2"
+					"text" : "server"
 				}
 
 			}
@@ -1977,23 +1993,6 @@
 					"style" : "",
 					"text" : "rama gottfried, 2016",
 					"textcolor" : [ 0.317647, 0.654902, 0.976471, 1.0 ]
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"fontface" : 0,
-					"fontname" : "Arial",
-					"fontsize" : 20.0,
-					"id" : "obj-39",
-					"maxclass" : "comment",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 45.896271, 99.5, 138.0, 29.0 ],
-					"presentation" : 1,
-					"presentation_rect" : [ 5.125, 6.5, 138.0, 29.0 ],
-					"style" : "",
-					"text" : "E N V E L O P"
 				}
 
 			}
@@ -2023,7 +2022,7 @@
 							"major" : 7,
 							"minor" : 3,
 							"revision" : 1,
-							"architecture" : "x64",
+							"architecture" : "x86",
 							"modernui" : 1
 						}
 ,
@@ -2525,8 +2524,8 @@
 , 							{
 								"name" : "newobjYellow-1",
 								"default" : 								{
-									"fontsize" : [ 12.059008 ],
-									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
+									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
+									"fontsize" : [ 12.059008 ]
 								}
 ,
 								"parentstyle" : "",
@@ -2535,8 +2534,8 @@
 , 							{
 								"name" : "newobjYellow-2",
 								"default" : 								{
-									"fontsize" : [ 12.059008 ],
-									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
+									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
+									"fontsize" : [ 12.059008 ]
 								}
 ,
 								"parentstyle" : "",
@@ -2584,7 +2583,7 @@
 							"major" : 7,
 							"minor" : 3,
 							"revision" : 1,
-							"architecture" : "x64",
+							"architecture" : "x86",
 							"modernui" : 1
 						}
 ,
@@ -2750,7 +2749,7 @@
 							"major" : 7,
 							"minor" : 3,
 							"revision" : 1,
-							"architecture" : "x64",
+							"architecture" : "x86",
 							"modernui" : 1
 						}
 ,
@@ -2820,7 +2819,7 @@
 											"major" : 7,
 											"minor" : 3,
 											"revision" : 1,
-											"architecture" : "x64",
+											"architecture" : "x86",
 											"modernui" : 1
 										}
 ,
@@ -3084,7 +3083,7 @@
 											"major" : 7,
 											"minor" : 3,
 											"revision" : 1,
-											"architecture" : "x64",
+											"architecture" : "x86",
 											"modernui" : 1
 										}
 ,
@@ -3592,8 +3591,8 @@
 , 							{
 								"name" : "newobjYellow-1",
 								"default" : 								{
-									"fontsize" : [ 12.059008 ],
-									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
+									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
+									"fontsize" : [ 12.059008 ]
 								}
 ,
 								"parentstyle" : "",
@@ -3602,8 +3601,8 @@
 , 							{
 								"name" : "newobjYellow-2",
 								"default" : 								{
-									"fontsize" : [ 12.059008 ],
-									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
+									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
+									"fontsize" : [ 12.059008 ]
 								}
 ,
 								"parentstyle" : "",
@@ -3659,11 +3658,11 @@
 							"major" : 7,
 							"minor" : 3,
 							"revision" : 1,
-							"architecture" : "x64",
+							"architecture" : "x86",
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 704.0, 351.0, 146.0, 108.0 ],
+						"rect" : [ 541.0, 373.0, 146.0, 108.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 1,
 						"default_fontsize" : 12.0,
@@ -3742,7 +3741,7 @@
 											"major" : 7,
 											"minor" : 3,
 											"revision" : 1,
-											"architecture" : "x64",
+											"architecture" : "x86",
 											"modernui" : 1
 										}
 ,
@@ -4722,8 +4721,8 @@
 , 							{
 								"name" : "newobjYellow-1",
 								"default" : 								{
-									"fontsize" : [ 12.059008 ],
-									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
+									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
+									"fontsize" : [ 12.059008 ]
 								}
 ,
 								"parentstyle" : "",
@@ -4732,8 +4731,8 @@
 , 							{
 								"name" : "newobjYellow-2",
 								"default" : 								{
-									"fontsize" : [ 12.059008 ],
-									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
+									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
+									"fontsize" : [ 12.059008 ]
 								}
 ,
 								"parentstyle" : "",
@@ -4770,11 +4769,11 @@
 							"major" : 7,
 							"minor" : 3,
 							"revision" : 1,
-							"architecture" : "x64",
+							"architecture" : "x86",
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 703.0, 241.0, 149.0, 108.0 ],
+						"rect" : [ 540.0, 263.0, 149.0, 108.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 1,
 						"default_fontsize" : 12.0,
@@ -4827,7 +4826,7 @@
 											"major" : 7,
 											"minor" : 3,
 											"revision" : 1,
-											"architecture" : "x64",
+											"architecture" : "x86",
 											"modernui" : 1
 										}
 ,
@@ -5790,8 +5789,8 @@
 , 							{
 								"name" : "newobjYellow-1",
 								"default" : 								{
-									"fontsize" : [ 12.059008 ],
-									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
+									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
+									"fontsize" : [ 12.059008 ]
 								}
 ,
 								"parentstyle" : "",
@@ -5800,8 +5799,8 @@
 , 							{
 								"name" : "newobjYellow-2",
 								"default" : 								{
-									"fontsize" : [ 12.059008 ],
-									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
+									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
+									"fontsize" : [ 12.059008 ]
 								}
 ,
 								"parentstyle" : "",
@@ -5844,7 +5843,7 @@
 							"major" : 7,
 							"minor" : 3,
 							"revision" : 1,
-							"architecture" : "x64",
+							"architecture" : "x86",
 							"modernui" : 1
 						}
 ,
@@ -6557,7 +6556,7 @@
 					"destination" : [ "obj-94", 15 ],
 					"disabled" : 0,
 					"hidden" : 0,
-					"midpoints" : [ 552.757111, 494.0, 367.569871, 494.0 ],
+					"midpoints" : [ 552.75708, 494.0, 367.569885, 494.0 ],
 					"source" : [ "obj-15", 15 ]
 				}
 
@@ -6567,7 +6566,7 @@
 					"destination" : [ "obj-94", 14 ],
 					"disabled" : 0,
 					"hidden" : 0,
-					"midpoints" : [ 545.890444, 494.0, 359.535097, 494.0 ],
+					"midpoints" : [ 545.890442, 494.0, 359.535095, 494.0 ],
 					"source" : [ "obj-15", 14 ]
 				}
 
@@ -6577,7 +6576,7 @@
 					"destination" : [ "obj-94", 13 ],
 					"disabled" : 0,
 					"hidden" : 0,
-					"midpoints" : [ 539.023778, 494.0, 351.500324, 494.0 ],
+					"midpoints" : [ 539.023804, 494.0, 351.500336, 494.0 ],
 					"source" : [ "obj-15", 13 ]
 				}
 
@@ -6587,7 +6586,7 @@
 					"destination" : [ "obj-94", 12 ],
 					"disabled" : 0,
 					"hidden" : 0,
-					"midpoints" : [ 532.157111, 494.0, 343.46555, 494.0 ],
+					"midpoints" : [ 532.157104, 494.0, 343.465546, 494.0 ],
 					"source" : [ "obj-15", 12 ]
 				}
 
@@ -6597,7 +6596,7 @@
 					"destination" : [ "obj-94", 11 ],
 					"disabled" : 0,
 					"hidden" : 0,
-					"midpoints" : [ 525.290444, 494.0, 335.430776, 494.0 ],
+					"midpoints" : [ 525.290466, 494.0, 335.430786, 494.0 ],
 					"source" : [ "obj-15", 11 ]
 				}
 
@@ -6607,7 +6606,7 @@
 					"destination" : [ "obj-94", 10 ],
 					"disabled" : 0,
 					"hidden" : 0,
-					"midpoints" : [ 518.423778, 494.0, 327.396002, 494.0 ],
+					"midpoints" : [ 518.423767, 494.0, 327.395996, 494.0 ],
 					"source" : [ "obj-15", 10 ]
 				}
 
@@ -6617,7 +6616,7 @@
 					"destination" : [ "obj-94", 9 ],
 					"disabled" : 0,
 					"hidden" : 0,
-					"midpoints" : [ 511.557111, 494.0, 319.361228, 494.0 ],
+					"midpoints" : [ 511.557098, 494.0, 319.361237, 494.0 ],
 					"source" : [ "obj-15", 9 ]
 				}
 
@@ -6627,7 +6626,7 @@
 					"destination" : [ "obj-94", 8 ],
 					"disabled" : 0,
 					"hidden" : 0,
-					"midpoints" : [ 504.690444, 494.0, 311.326455, 494.0 ],
+					"midpoints" : [ 504.69043, 494.0, 311.326447, 494.0 ],
 					"source" : [ "obj-15", 8 ]
 				}
 
@@ -6637,7 +6636,7 @@
 					"destination" : [ "obj-94", 7 ],
 					"disabled" : 0,
 					"hidden" : 0,
-					"midpoints" : [ 497.823778, 494.0, 303.291681, 494.0 ],
+					"midpoints" : [ 497.823792, 494.0, 303.291687, 494.0 ],
 					"source" : [ "obj-15", 7 ]
 				}
 
@@ -6647,7 +6646,7 @@
 					"destination" : [ "obj-94", 6 ],
 					"disabled" : 0,
 					"hidden" : 0,
-					"midpoints" : [ 490.957111, 494.0, 295.256907, 494.0 ],
+					"midpoints" : [ 490.957123, 494.0, 295.256897, 494.0 ],
 					"source" : [ "obj-15", 6 ]
 				}
 
@@ -6657,7 +6656,7 @@
 					"destination" : [ "obj-94", 5 ],
 					"disabled" : 0,
 					"hidden" : 0,
-					"midpoints" : [ 484.090444, 494.0, 287.222133, 494.0 ],
+					"midpoints" : [ 484.090454, 494.0, 287.222137, 494.0 ],
 					"source" : [ "obj-15", 5 ]
 				}
 
@@ -6667,7 +6666,7 @@
 					"destination" : [ "obj-94", 4 ],
 					"disabled" : 0,
 					"hidden" : 0,
-					"midpoints" : [ 477.223778, 494.0, 279.187359, 494.0 ],
+					"midpoints" : [ 477.223785, 494.0, 279.187347, 494.0 ],
 					"source" : [ "obj-15", 4 ]
 				}
 
@@ -6677,7 +6676,7 @@
 					"destination" : [ "obj-94", 3 ],
 					"disabled" : 0,
 					"hidden" : 0,
-					"midpoints" : [ 470.357111, 494.0, 271.152585, 494.0 ],
+					"midpoints" : [ 470.357117, 494.0, 271.152588, 494.0 ],
 					"source" : [ "obj-15", 3 ]
 				}
 
@@ -6687,7 +6686,7 @@
 					"destination" : [ "obj-94", 2 ],
 					"disabled" : 0,
 					"hidden" : 0,
-					"midpoints" : [ 463.490444, 494.0, 263.117812, 494.0 ],
+					"midpoints" : [ 463.490448, 494.0, 263.117798, 494.0 ],
 					"source" : [ "obj-15", 2 ]
 				}
 
@@ -6697,7 +6696,7 @@
 					"destination" : [ "obj-94", 1 ],
 					"disabled" : 0,
 					"hidden" : 0,
-					"midpoints" : [ 456.623778, 494.0, 255.083038, 494.0 ],
+					"midpoints" : [ 456.623779, 494.0, 255.083038, 494.0 ],
 					"source" : [ "obj-15", 1 ]
 				}
 
@@ -7352,158 +7351,164 @@
 ,
 		"dependency_cache" : [ 			{
 				"name" : "env.o.accum.maxpat",
-				"bootpath" : "~/Documents/Max 7/Packages/EnvelopLive/patchers/util",
+				"bootpath" : "~/Documents/Max 7/Packages/EnvelopForLive/patchers/util",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "o.io.dsp.settings.maxpat",
-				"bootpath" : "~/Documents/Max 7/Packages/EnvelopLive/patchers/util",
+				"bootpath" : "~/Documents/Max 7/Packages/EnvelopForLive/patchers/util",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "env.16src_3o_fx.maxpat",
-				"bootpath" : "~/Documents/Max 7/Packages/EnvelopLive/patchers/source",
+				"bootpath" : "~/Documents/Max 7/Packages/EnvelopForLive/patchers/source",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "env.16_receive~.maxpat",
-				"bootpath" : "~/Documents/Max 7/Packages/EnvelopLive/patchers/util",
+				"bootpath" : "~/Documents/Max 7/Packages/EnvelopForLive/patchers/util",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "env.vdelay.maxpat",
-				"bootpath" : "~/Documents/Max 7/Packages/EnvelopLive/patchers/source",
+				"bootpath" : "~/Documents/Max 7/Packages/EnvelopForLive/patchers/source",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "vdelay4.gendsp",
-				"bootpath" : "~/Documents/Max 7/Packages/EnvelopLive/code",
+				"bootpath" : "~/Documents/Max 7/Packages/EnvelopForLive/code",
 				"type" : "gDSP",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "env.fx.rack.maxpat",
-				"bootpath" : "~/Documents/Max 7/Packages/EnvelopLive/patchers/fx/src",
+				"bootpath" : "~/Documents/Max 7/Packages/EnvelopForLive/patchers/fx/src",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "env.fx.delay.maxpat",
-				"bootpath" : "~/Documents/Max 7/Packages/EnvelopLive/patchers/fx/src/delay8",
+				"bootpath" : "~/Documents/Max 7/Packages/EnvelopForLive/patchers/fx/src/delay8",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "env.16_send~.maxpat",
-				"bootpath" : "~/Documents/Max 7/Packages/EnvelopLive/patchers/util",
+				"bootpath" : "~/Documents/Max 7/Packages/EnvelopForLive/patchers/util",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "o.granudelay.8~.maxpat",
-				"bootpath" : "~/Documents/Max 7/Packages/EnvelopLive/patchers/fx/src/delay8",
+				"bootpath" : "~/Documents/Max 7/Packages/EnvelopForLive/patchers/fx/src/delay8",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "granudelay.8.gendsp",
-				"bootpath" : "~/Documents/Max 7/Packages/EnvelopLive/code",
+				"bootpath" : "~/Documents/Max 7/Packages/EnvelopForLive/code",
 				"type" : "gDSP",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "o.doc.handler.maxpat",
-				"bootpath" : "~/Documents/Max 7/Packages/EnvelopLive/patchers/util",
+				"bootpath" : "~/Documents/Max 7/Packages/EnvelopForLive/patchers/util",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "m158.loadbang.maxpat",
-				"bootpath" : "~/Documents/Max 7/Packages/EnvelopLive/patchers/util",
+				"bootpath" : "~/Documents/Max 7/Packages/EnvelopForLive/patchers/util",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "multi-filter.gendsp",
-				"bootpath" : "~/Documents/Max 7/Packages/EnvelopLive/code",
+				"bootpath" : "~/Documents/Max 7/Packages/EnvelopForLive/code",
 				"type" : "gDSP",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "multimode.biquad.gendsp",
-				"bootpath" : "~/Documents/Max 7/Packages/EnvelopLive/code",
+				"bootpath" : "~/Documents/Max 7/Packages/EnvelopForLive/code",
 				"type" : "gDSP",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "env.fx.rev.source.maxpat",
-				"bootpath" : "~/Documents/Max 7/Packages/EnvelopLive/patchers/fx/src/reverb",
+				"bootpath" : "~/Documents/Max 7/Packages/EnvelopForLive/patchers/fx/src/reverb",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "env.1o_conv~.maxpat",
-				"bootpath" : "~/Documents/Max 7/Packages/EnvelopLive/patchers/fx/src/reverb",
+				"bootpath" : "~/Documents/Max 7/Packages/EnvelopForLive/patchers/fx/src/reverb",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "env.fx.example.maxpat",
-				"bootpath" : "~/Documents/Max 7/Packages/EnvelopLive/patchers/fx/src",
+				"bootpath" : "~/Documents/Max 7/Packages/EnvelopForLive/patchers/fx/src",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "env.src.filter.pan.maxpat",
-				"bootpath" : "~/Documents/Max 7/Packages/EnvelopLive/patchers/source",
+				"bootpath" : "~/Documents/Max 7/Packages/EnvelopForLive/patchers/source",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "env.decode.binaural.maxpat",
-				"bootpath" : "~/Documents/Max 7/Packages/EnvelopLive/patchers/decoders",
+				"bootpath" : "~/Documents/Max 7/Packages/EnvelopForLive/patchers/decoders",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "env.busfx.rack.maxpat",
-				"bootpath" : "~/Documents/Max 7/Packages/EnvelopLive/patchers/fx/bus",
+				"bootpath" : "~/Documents/Max 7/Packages/EnvelopForLive/patchers/fx/bus",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "env.busfx.late_reverb.maxpat",
-				"bootpath" : "~/Documents/Max 7/Packages/EnvelopLive/patchers/fx/bus",
+				"bootpath" : "~/Documents/Max 7/Packages/EnvelopForLive/patchers/fx/bus",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "env.conv.buffergen.maxpat",
-				"bootpath" : "~/Documents/Max 7/Packages/EnvelopLive/patchers/fx/src/reverb",
+				"bootpath" : "~/Documents/Max 7/Packages/EnvelopForLive/patchers/fx/src/reverb",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "env.busfx.reverb.poly.maxpat",
-				"bootpath" : "~/Documents/Max 7/Packages/EnvelopLive/patchers/fx/bus",
+				"bootpath" : "~/Documents/Max 7/Packages/EnvelopForLive/patchers/fx/bus",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "multi.connect.maxpat",
-				"bootpath" : "~/Documents/Max 7/Packages/EnvelopLive/patchers/util",
+				"bootpath" : "~/Documents/Max 7/Packages/EnvelopForLive/patchers/util",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "spat.multi-connect.js",
-				"bootpath" : "~/Documents/Max 7/Packages/EnvelopLive/code",
+				"bootpath" : "~/Documents/Max 7/Packages/EnvelopForLive/code",
 				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "201610_E4L_logo_w.png",
+				"bootpath" : "~/Documents/Max 7/Packages/EnvelopForLive/media",
+				"type" : "PNG ",
 				"implicit" : 1
 			}
 , 			{
@@ -7666,8 +7671,8 @@
 , 			{
 				"name" : "newobjYellow-1",
 				"default" : 				{
-					"fontsize" : [ 12.059008 ],
-					"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
+					"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
+					"fontsize" : [ 12.059008 ]
 				}
 ,
 				"parentstyle" : "",
@@ -7676,8 +7681,8 @@
 , 			{
 				"name" : "newobjYellow-2",
 				"default" : 				{
-					"fontsize" : [ 12.059008 ],
-					"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
+					"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
+					"fontsize" : [ 12.059008 ]
 				}
 ,
 				"parentstyle" : "",

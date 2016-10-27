@@ -2,7 +2,7 @@
 	"name" : "envelop",
 	"version" : 1,
 	"creationdate" : -738029395,
-	"modificationdate" : -734612462,
+	"modificationdate" : -734599057,
 	"viewrect" : [ 29.0, 70.0, 444.0, 731.0 ],
 	"autoorganize" : 1,
 	"hideprojectwindow" : 0,
@@ -27,6 +27,14 @@
 		}
 ,
 		"media" : 		{
+			"ENVELOP_logo-web_8_500x.jpg" : 			{
+				"kind" : "imagefile"
+			}
+,
+			"201610_E4L_logo_w.png" : 			{
+				"kind" : "imagefile"
+			}
+,
 			"greatHall_Wx06y12_441.wav" : 			{
 				"kind" : "audiofile"
 			}
