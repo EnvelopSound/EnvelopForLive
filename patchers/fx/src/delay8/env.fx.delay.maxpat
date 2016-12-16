@@ -5,7 +5,7 @@
 			"major" : 7,
 			"minor" : 3,
 			"revision" : 1,
-			"architecture" : "x64",
+			"architecture" : "x86",
 			"modernui" : 1
 		}
 ,
@@ -96,7 +96,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 648.919556, 449.0, 41.0, 22.0 ],
-					"presentation_rect" : [ 626.919556, 408.5, 0.0, 0.0 ],
 					"style" : "",
 					"text" : "$1 20"
 				}
@@ -149,7 +148,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 744.776733, 447.0, 41.0, 22.0 ],
-					"presentation_rect" : [ 722.776733, 406.5, 0.0, 0.0 ],
 					"style" : "",
 					"text" : "$1 20"
 				}
@@ -190,7 +188,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 697.300537, 447.0, 41.0, 22.0 ],
-					"presentation_rect" : [ 675.300537, 406.5, 0.0, 0.0 ],
 					"style" : "",
 					"text" : "$1 20"
 				}
@@ -484,15 +481,15 @@
 					"fontface" : 0,
 					"fontsize" : 12.0,
 					"id" : "obj-19",
-					"linecount" : 3,
+					"linecount" : 4,
 					"maxclass" : "o.compose",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 948.416626, 334.0, 131.0, 51.0 ],
-					"saved_bundle_data" : [ 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 99, 108, 101, 97, 114, 0, 0, 44, 105, 0, 0, 0, 0, 0, 1, 0, 0, 0, 16, 47, 114, 101, 115, 101, 116, 0, 0, 44, 105, 0, 0, 0, 0, 0, 1, 0, 0, 0, 20, 47, 110, 117, 109, 118, 111, 105, 99, 101, 115, 0, 0, 44, 105, 0, 0, 0, 0, 0, 32 ],
-					"saved_bundle_length" : 80,
-					"text" : "/clear : 1,\n/reset : 1,\n/numvoices : 32",
+					"patching_rect" : [ 948.416626, 334.0, 152.0, 65.0 ],
+					"saved_bundle_data" : [ 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 99, 108, 101, 97, 114, 0, 0, 44, 105, 0, 0, 0, 0, 0, 1, 0, 0, 0, 16, 47, 114, 101, 115, 101, 116, 0, 0, 44, 105, 0, 0, 0, 0, 0, 1, 0, 0, 0, 20, 47, 110, 117, 109, 118, 111, 105, 99, 101, 115, 0, 0, 44, 105, 0, 0, 0, 0, 0, 32, 0, 0, 0, 20, 47, 109, 97, 120, 100, 101, 108, 97, 121, 0, 0, 0, 44, 105, 0, 0, 0, 1, -44, -64 ],
+					"saved_bundle_length" : 104,
+					"text" : "/clear : 1,\n/reset : 1,\n/numvoices : 32,\n/maxdelay : 120000",
 					"textcolor" : [ 0.188, 0.188, 0.188, 1.0 ]
 				}
 
@@ -888,7 +885,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "signal" ],
-					"patching_rect" : [ 117.967216, 330.0, 53.0, 35.0 ],
+					"patching_rect" : [ 117.967216, 330.0, 56.0, 35.0 ],
 					"style" : "",
 					"text" : "phasor~ 10"
 				}
@@ -946,7 +943,7 @@
 							"major" : 7,
 							"minor" : 3,
 							"revision" : 1,
-							"architecture" : "x64",
+							"architecture" : "x86",
 							"modernui" : 1
 						}
 ,
@@ -1773,7 +1770,7 @@
 					"destination" : [ "obj-48", 7 ],
 					"disabled" : 0,
 					"hidden" : 0,
-					"midpoints" : [ 412.324339, 500.5, 642.621948, 500.5 ],
+					"midpoints" : [ 412.324341, 500.5, 642.621948, 500.5 ],
 					"source" : [ "obj-73", 7 ]
 				}
 
@@ -1783,7 +1780,7 @@
 					"destination" : [ "obj-48", 6 ],
 					"disabled" : 0,
 					"hidden" : 0,
-					"midpoints" : [ 364.84815, 504.5, 626.871948, 504.5 ],
+					"midpoints" : [ 364.848145, 504.5, 626.871948, 504.5 ],
 					"source" : [ "obj-73", 6 ]
 				}
 
@@ -1793,7 +1790,7 @@
 					"destination" : [ "obj-48", 5 ],
 					"disabled" : 0,
 					"hidden" : 0,
-					"midpoints" : [ 317.37196, 507.5, 611.121948, 507.5 ],
+					"midpoints" : [ 317.371948, 507.5, 611.121948, 507.5 ],
 					"source" : [ "obj-73", 5 ]
 				}
 
@@ -1803,7 +1800,7 @@
 					"destination" : [ "obj-48", 4 ],
 					"disabled" : 0,
 					"hidden" : 0,
-					"midpoints" : [ 269.895771, 510.5, 595.371948, 510.5 ],
+					"midpoints" : [ 269.895782, 510.5, 595.371948, 510.5 ],
 					"source" : [ "obj-73", 4 ]
 				}
 
@@ -1813,7 +1810,7 @@
 					"destination" : [ "obj-48", 3 ],
 					"disabled" : 0,
 					"hidden" : 0,
-					"midpoints" : [ 222.419581, 510.5, 579.621948, 510.5 ],
+					"midpoints" : [ 222.419586, 510.5, 579.621948, 510.5 ],
 					"source" : [ "obj-73", 3 ]
 				}
 
@@ -1823,7 +1820,7 @@
 					"destination" : [ "obj-48", 2 ],
 					"disabled" : 0,
 					"hidden" : 0,
-					"midpoints" : [ 174.943392, 510.5, 563.871948, 510.5 ],
+					"midpoints" : [ 174.94339, 510.5, 563.871948, 510.5 ],
 					"source" : [ "obj-73", 2 ]
 				}
 
@@ -1833,7 +1830,7 @@
 					"destination" : [ "obj-48", 1 ],
 					"disabled" : 0,
 					"hidden" : 0,
-					"midpoints" : [ 127.467202, 514.5, 548.121948, 514.5 ],
+					"midpoints" : [ 127.467201, 514.5, 548.121948, 514.5 ],
 					"source" : [ "obj-73", 1 ]
 				}
 
@@ -2247,43 +2244,43 @@
  ],
 		"dependency_cache" : [ 			{
 				"name" : "env.16_send~.maxpat",
-				"bootpath" : "~/Documents/Max 7/Packages/EnvelopLive/patchers/util",
+				"bootpath" : "~/Documents/Max 7/Packages/EnvelopForLive/patchers/util",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "o.granudelay.8~.maxpat",
-				"bootpath" : "~/Documents/Max 7/Packages/EnvelopLive/patchers/fx/delay8",
+				"bootpath" : "~/Documents/Max 7/Packages/EnvelopForLive/patchers/fx/src/delay8",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "granudelay.8.gendsp",
-				"bootpath" : "~/Documents/Max 7/Packages/EnvelopLive/patchers/fx/delay8",
+				"bootpath" : "~/Documents/Max 7/Packages/EnvelopForLive/code",
 				"type" : "gDSP",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "o.doc.handler.maxpat",
-				"bootpath" : "~/Documents/Max 7/Packages/CNMAT-M158/patchers/internal",
+				"bootpath" : "~/Documents/Max 7/Packages/EnvelopForLive/patchers/util",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "m158.loadbang.maxpat",
-				"bootpath" : "~/Documents/Max 7/Packages/CNMAT-M158/patchers/internal",
+				"bootpath" : "~/Documents/Max 7/Packages/EnvelopForLive/patchers/util",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "multi-filter.gendsp",
-				"bootpath" : "~/Documents/Max 7/Packages/EnvelopLive/patchers/fx/delay8",
+				"bootpath" : "~/Documents/Max 7/Packages/EnvelopForLive/code",
 				"type" : "gDSP",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "multimode.biquad.gendsp",
-				"bootpath" : "~/Documents/Max 7/Packages/CNMAT-M158/code",
+				"bootpath" : "~/Documents/Max 7/Packages/EnvelopForLive/code",
 				"type" : "gDSP",
 				"implicit" : 1
 			}
@@ -2403,8 +2400,8 @@
 , 			{
 				"name" : "newobjYellow-1",
 				"default" : 				{
-					"fontsize" : [ 12.059008 ],
-					"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
+					"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
+					"fontsize" : [ 12.059008 ]
 				}
 ,
 				"parentstyle" : "",
@@ -2413,8 +2410,8 @@
 , 			{
 				"name" : "newobjYellow-2",
 				"default" : 				{
-					"fontsize" : [ 12.059008 ],
-					"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
+					"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
+					"fontsize" : [ 12.059008 ]
 				}
 ,
 				"parentstyle" : "",
