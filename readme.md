@@ -3,7 +3,7 @@
 # Envelop for Live (E4L)
 Envelop for Live (E4L) is an open source audio production framework for spatial audio composition and performance. Envelop for Live combines Ableton Live as a front end and music production environment with a Max/MSP application as a standalone spatial effects processor and renderer. Envelop for Live is designed to be a highly modular, flexible platform for artists to compose and perform spatial audio, and for developers to create new kinds of audio effects for the Ambisonics domain.
 
-### [Check out the Installation Guide, User Guide, and Contribution Guidelines on Google Docs.](https://docs.google.com/document/d/1ayA9XAvvTq-W-Vpnzzqoxb9GY6YF2v4YHmnIoRy81vY)
+### [Check out the Installation Guide, User Guide, and Contribution Guidelines on Google Docs.](https://docs.google.com/document/d/1tc7bz0knWdPXBOBOPNuQGxPoIH_2_uSd34pQ7NT6d4U/)
 
 ### [Join the Facebook Group for questions, tips, etc.](https://www.facebook.com/groups/E4LUsers)
 
