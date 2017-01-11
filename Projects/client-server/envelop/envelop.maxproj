@@ -2,7 +2,7 @@
 	"name" : "envelop",
 	"version" : 1,
 	"creationdate" : -738029395,
-	"modificationdate" : -729265336,
+	"modificationdate" : -728057335,
 	"viewrect" : [ 29.0, 70.0, 444.0, 731.0 ],
 	"autoorganize" : 1,
 	"hideprojectwindow" : 0,
@@ -58,6 +58,14 @@
 		}
 ,
 		"externals" : 		{
+			"hb1_to_binaural~.mxo" : 			{
+				"kind" : "object"
+			}
+,
+			"hoa.pi.mxo" : 			{
+				"kind" : "object"
+			}
+,
 			"hoa.dac~.mxo" : 			{
 				"kind" : "object"
 			}
