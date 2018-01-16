@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 953.0, 202.0, 1335.0, 1097.0 ],
+		"rect" : [ 822.0, 186.0, 1335.0, 1097.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -378,7 +378,6 @@
 						"tags" : "",
 						"style" : "",
 						"subpatcher_template" : "Default Max 7",
-						"visible" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
 									"fontname" : "Arial",
@@ -8784,7 +8783,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 989.0, 615.0, 131.0, 21.0 ],
 					"style" : "",
-					"text" : "-45 0 -235 0 135 0 45 0"
+					"text" : "-45 0 -135 0 135 0 45 0"
 				}
 
 			}
