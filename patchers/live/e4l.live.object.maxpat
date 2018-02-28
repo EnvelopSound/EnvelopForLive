@@ -171,7 +171,7 @@
 					"patching_rect" : [ 25.0, 239.0, 64.0, 22.0 ],
 					"presentation_rect" : [ 25.0, 239.0, 64.0, 22.0 ],
 					"saved_object_attributes" : 					{
-						"_persistence" : 1
+						"_persistence" : 0
 					}
 ,
 					"style" : "",
