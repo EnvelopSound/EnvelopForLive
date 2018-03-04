@@ -38,27 +38,14 @@
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
 				"box" : 				{
-					"id" : "obj-1",
-					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 253.0, 444.0, 34.0, 22.0 ],
-					"presentation_rect" : [ 253.0, 444.0, 34.0, 22.0 ],
-					"style" : "",
-					"text" : "print"
-				}
-
-			}
-, 			{
-				"box" : 				{
 					"id" : "obj-61",
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 78.0, 425.0, 150.0, 20.0 ],
-					"presentation_rect" : [ 78.0, 425.0, 150.0, 20.0 ],
+					"patching_rect" : [ 78.0, 425.0, 119.0, 20.0 ],
+					"presentation_rect" : [ 78.0, 425.0, 119.0, 20.0 ],
 					"style" : "",
-					"text" : "input format \"id 13\""
+					"text" : "output format \"id 13\""
 				}
 
 			}
@@ -68,8 +55,8 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 78.0, 110.0, 150.0, 20.0 ],
-					"presentation_rect" : [ 78.0, 110.0, 150.0, 20.0 ],
+					"patching_rect" : [ 78.0, 110.0, 105.0, 20.0 ],
+					"presentation_rect" : [ 78.0, 110.0, 105.0, 20.0 ],
 					"style" : "",
 					"text" : "input format \"id 4\""
 				}
@@ -213,7 +200,7 @@
 					"patching_rect" : [ 43.0, 253.0, 64.0, 22.0 ],
 					"presentation_rect" : [ 43.0, 253.0, 64.0, 22.0 ],
 					"saved_object_attributes" : 					{
-						"_persistence" : 1
+						"_persistence" : 0
 					}
 ,
 					"style" : "",
@@ -310,17 +297,8 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-1", 0 ],
-					"order" : 0,
-					"source" : [ "obj-35", 1 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
 					"destination" : [ "obj-30", 0 ],
 					"midpoints" : [ 104.5, 349.0, 30.0, 349.0, 30.0, 176.0, 52.5, 176.0 ],
-					"order" : 1,
 					"source" : [ "obj-35", 1 ]
 				}
 
