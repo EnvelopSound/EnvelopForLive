@@ -1,2 +1,0 @@
-;max overdrive 1
-;dsp takeover 0
