@@ -38,13 +38,13 @@ By default, the E4L Master Bus device will use a Binaural decoder, which enables
 
 Now, create a new audio or instrument track. In the track's effect chain, add the **E4L Source Panner** device. This device takes a stereo input and encodes it into 16 channels of high order ambisonics. This device automatically detects the master bus and uses Max for Live's routing capabilities to send its output to the E4L Master Bus.
 
-Note that by default, adding this device automatically sets the track's audio output routing to "Sends Only." This is because E4L is already routing the ambisonics-domain audio behind the scenes. Sending the stereo output from this track would result in two copies of the audio. For advanced use cases, however, you may override the routing of the track output (which will route the stereo input signal, not the 16-channel surround signal).
+Note that by default, adding this device automatically sets the track's audio output routing to "Sends Only." This is because E4L is already routing the ambisonics-domain audio behind the scenes. Sending the stereo output from this track would result in two overlapping copies of the audio. For advanced use cases, you may override this setting and route the track output elsewhere (keep in mind that the track output can send only the stereo signal, not the 16-channel surround encoding).
 
-Repeat this process to build up your surround mix. You may use as many E4L Surround Panner devices as you like, on as many tracks as your CPU can handle!
+Repeat this process to build up your surround mix. You may use as many E4L Surround Panner devices as you like, on as many tracks as your CPU can handle.
 
 # History
 
-Version 1 of the Envelop for Live system was developed by Rama Gottfried, and is modeled on the architecture of Ircam-Spat combined with an odot port of Alex Harker's "Convolution Reverb Pro" Max For Live device adapted for use with B-Format impulse responses.
+Version 1 of the Envelop for Live system was developed by Rama Gottfried, and was modeled on the architecture of Ircam-Spat combined with an odot port of Alex Harker's "Convolution Reverb Pro" Max For Live device adapted for use with B-Format impulse responses.
 
 For more information on the signal processing architecture please see:
 * Jean-Marc Jot, *"Efficient models for reverberation and distance rendering in computer music and virtual audio reality"* IRCAM, 1997.
