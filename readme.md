@@ -46,9 +46,9 @@ Repeat this process to build up your surround mix. You may use as many E4L Surro
 Version 1 of the Envelop for Live system was developed by Rama Gottfried, and was modeled on the architecture of Ircam-Spat combined with an odot port of Alex Harker's "Convolution Reverb Pro" Max For Live device adapted for use with B-Format impulse responses.
 
 For more information on the signal processing architecture please see:
-* Jean-Marc Jot, *"Efficient models for reverberation and distance rendering in computer music and virtual audio reality"* IRCAM, 1997.
+* Jean-Marc Jot, *"Efficient models for reverberation and distance rendering in computer music and virtual audio reality"*, IRCAM, 1997.
 * Markus Noisternig, Thomas Musil, et. al., *"A 3D Real Time Rendering Engine for Binaural Sound Reproduction"*, ICAD, 2003.
-* Harker, Alexander and Tremblay, Pierre Alexandre *"The HISSTools Impulse Response Toolbox: Convolution for the Masses"*, ICMC, 2012.
+* Harker, Alexander and Tremblay, Pierre Alexandre, *"The HISSTools Impulse Response Toolbox: Convolution for the Masses"*, ICMC, 2012.
 
 For information on the CNMAT-odot system please see:
 * John MacCallum, Rama Gottfried, Ilya Rostovtsev, Jean Bresson, and Adrian Freed, *"Dynamic Message-Oriented Middleware with Open Sound Control and Odot"*, ICMC, 2015.
