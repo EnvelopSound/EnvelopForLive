@@ -38,13 +38,28 @@
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-5",
+					"maxclass" : "newobj",
+					"numinlets" : 3,
+					"numoutlets" : 3,
+					"outlettype" : [ "", "", "" ],
+					"patching_rect" : [ 523.0, 442.0, 106.0, 22.0 ],
+					"presentation_rect" : [ 523.0, 442.0, 106.0, 22.0 ],
+					"style" : "",
+					"text" : "routepass id reset"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-62",
 					"linecount" : 2,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 657.0, 436.5, 176.0, 33.0 ],
-					"presentation_rect" : [ 657.0, 436.5, 176.0, 33.0 ],
+					"patching_rect" : [ 657.0, 473.5, 176.0, 33.0 ],
+					"presentation_linecount" : 2,
+					"presentation_rect" : [ 657.0, 473.5, 176.0, 33.0 ],
 					"style" : "",
 					"text" : "Make sure we always get to the device track!"
 				}
@@ -58,6 +73,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 294.0, 107.0, 342.0, 74.0 ],
+					"presentation_linecount" : 5,
 					"presentation_rect" : [ 294.0, 107.0, 342.0, 74.0 ],
 					"style" : "",
 					"text" : "Max is good for a lot of things, but recursive programming isn't one of them. This slop-job attempts to recursively compound the mute and gain states of the device's full chain. We give up once we're 10 levels deep... if you're nesting E4L devices that deep, you're probably doing something wrong anyways."
@@ -71,8 +87,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "bang", "float" ],
-					"patching_rect" : [ 523.0, 517.0, 31.0, 22.0 ],
-					"presentation_rect" : [ 523.0, 517.0, 31.0, 22.0 ],
+					"patching_rect" : [ 523.0, 554.0, 31.0, 22.0 ],
+					"presentation_rect" : [ 523.0, 554.0, 31.0, 22.0 ],
 					"style" : "",
 					"text" : "t b f"
 				}
@@ -85,8 +101,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "float" ],
-					"patching_rect" : [ 22.0, 554.0, 31.0, 22.0 ],
-					"presentation_rect" : [ 22.0, 554.0, 31.0, 22.0 ],
+					"patching_rect" : [ 22.0, 591.0, 31.0, 22.0 ],
+					"presentation_rect" : [ 22.0, 591.0, 31.0, 22.0 ],
 					"style" : "",
 					"text" : "+ 0."
 				}
@@ -99,8 +115,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "float", "" ],
-					"patching_rect" : [ 523.0, 479.0, 165.0, 22.0 ],
-					"presentation_rect" : [ 523.0, 479.0, 165.0, 22.0 ],
+					"patching_rect" : [ 523.0, 520.0, 165.0, 22.0 ],
+					"presentation_rect" : [ 523.0, 520.0, 165.0, 22.0 ],
 					"style" : "",
 					"text" : "e4l.live.chain_mute_gain.sub"
 				}
@@ -113,8 +129,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 523.0, 442.0, 119.0, 22.0 ],
-					"presentation_rect" : [ 523.0, 442.0, 119.0, 22.0 ],
+					"patching_rect" : [ 523.0, 479.0, 119.0, 22.0 ],
+					"presentation_rect" : [ 523.0, 479.0, 119.0, 22.0 ],
 					"style" : "",
 					"text" : "e4l.live.device_track"
 				}
@@ -464,8 +480,8 @@
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 22.0, 597.0, 30.0, 30.0 ],
-					"presentation_rect" : [ 22.0, 597.0, 30.0, 30.0 ],
+					"patching_rect" : [ 22.0, 634.0, 30.0, 30.0 ],
+					"presentation_rect" : [ 22.0, 634.0, 30.0, 30.0 ],
 					"style" : ""
 				}
 
@@ -781,8 +797,23 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-53", 0 ],
+					"destination" : [ "obj-5", 0 ],
 					"source" : [ "obj-49", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-53", 0 ],
+					"source" : [ "obj-5", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-57", 0 ],
+					"midpoints" : [ 576.0, 470.0, 648.0, 470.0, 648.0, 510.0, 532.5, 510.0 ],
+					"source" : [ "obj-5", 1 ]
 				}
 
 			}
