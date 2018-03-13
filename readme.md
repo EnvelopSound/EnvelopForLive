@@ -27,6 +27,8 @@ $ git checkout live10
 
 The E4L Max for Live devices can all be found in the devices subfolder. You may wish to drag this folder into the "Places" section of the Live 10 browser to bookmark it.
 
+![Places](/doc/EnvelopForLive-Places.png) ![Places](/doc/EnvelopForLive-devices.png)
+
 ### Create the E4L Master Bus
 
 Create a new audio track. Add one of the **E4L Master Bus** device to this track. Note that the track will automatically be renamed to "E4L Master." It is recommended to leave this track name in place, though you may optionally rename it. This track and device will act as a receiver for ambisonics audio, and allow you to monitor the output of a decoder.
