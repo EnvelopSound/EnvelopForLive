@@ -33,7 +33,7 @@ The E4L Max for Live devices can all be found in the devices subfolder. You may 
 
 Create a new audio track. Add one of the **E4L Master Bus** device to this track. Note that the track will automatically be renamed to "E4L Master." It is recommended to leave this track name in place, though you may optionally rename it. This track and device will act as a receiver for ambisonics audio, and allow you to monitor the output of a decoder.
 
-![E4L Master Bus](/doc/E4L Master Bus.png)
+![E4L Master Bus](/doc/E4L-Master-Bus.png)
 
 By default, the E4L Master Bus device will use a Binaural decoder, which enables you to preview your spatial mix on a pair of headphones. Make sure that the "Monitor 1+2" switch is engaged. Input meters on the E4L Master Bus device provide a visual reference for whether the device is receiving input.
 
@@ -41,7 +41,7 @@ By default, the E4L Master Bus device will use a Binaural decoder, which enables
 
 Now, create a new audio or instrument track. In the track's effect chain, add the **E4L Source Panner** device. This device takes a stereo input and encodes it into 16 channels of high order ambisonics. This device automatically detects the master bus and uses Max for Live's routing capabilities to send its output to the E4L Master Bus.
 
-![E4L Source Panner](/doc/E4L Source Panner.png)
+![E4L Source Panner](/doc/E4L-Source-Panner.png)
 
 Note that by default, adding this device automatically sets the track's audio output routing to "Sends Only." This is because E4L is already routing the ambisonics-domain audio behind the scenes. Sending the stereo output from this track would result in two overlapping copies of the audio. For advanced use cases, you may override this setting and route the track output elsewhere (keep in mind that the track output can send only the stereo signal, not the 16-channel surround encoding).
 
