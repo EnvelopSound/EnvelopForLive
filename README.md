@@ -20,6 +20,7 @@ E4L makes use of the advanced routing capabilities in [Live 10](https://www.able
 ```Shell
 $ cd ~/Documents/Max\ 8/Packages/
 $ git clone https://github.com/EnvelopSound/EnvelopForLive.git
+$ cd EnvelopForLive
 $ git checkout live10
 ```
 
