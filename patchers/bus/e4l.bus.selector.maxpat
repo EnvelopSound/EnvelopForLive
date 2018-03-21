@@ -9,9 +9,9 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 1291.0, 268.0, 1142.0, 932.0 ],
+		"rect" : [ 1078.0, 236.0, 674.0, 1111.0 ],
 		"bglocked" : 0,
-		"openinpresentation" : 0,
+		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
 		"default_fontface" : 0,
 		"default_fontname" : "Arial",
@@ -28,8 +28,8 @@
 		"toolbars_unpinned_last_save" : 0,
 		"tallnewobj" : 0,
 		"boxanimatetime" : 200,
-		"enablehscroll" : 1,
-		"enablevscroll" : 1,
+		"enablehscroll" : 0,
+		"enablevscroll" : 0,
 		"devicewidth" : 0.0,
 		"description" : "",
 		"digest" : "",
@@ -38,140 +38,192 @@
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
 				"box" : 				{
-					"id" : "obj-1",
-					"maxclass" : "newobj",
+					"id" : "obj-24",
+					"maxclass" : "comment",
 					"numinlets" : 1,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 26.0, 429.0, 56.0, 22.0 ],
-					"presentation_rect" : [ 26.0, 429.0, 56.0, 22.0 ],
+					"numoutlets" : 0,
+					"patching_rect" : [ 413.0, 375.0, 115.0, 20.0 ],
+					"presentation_rect" : [ 413.0, 375.0, 115.0, 20.0 ],
 					"style" : "",
-					"text" : "deferlow"
+					"text" : "For sprite rendering"
 				}
 
 			}
 , 			{
 				"box" : 				{
-					"id" : "obj-33",
-					"maxclass" : "newobj",
+					"fontname" : "Ableton Sans Bold Regular",
+					"fontsize" : 9.5,
+					"id" : "obj-22",
+					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 26.0, 463.0, 81.0, 22.0 ],
-					"presentation_rect" : [ 26.0, 463.0, 81.0, 22.0 ],
+					"patching_rect" : [ 418.0, 471.0, 70.0, 18.0 ],
+					"presentation_rect" : [ 418.0, 471.0, 70.0, 18.0 ],
 					"style" : "",
-					"text" : "s e4l.bus.ack"
+					"text" : "16 · Chain ↓",
+					"textcolor" : [ 1.0, 0.709804, 0.196078, 1.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontname" : "Ableton Sans Bold Regular",
+					"fontsize" : 9.5,
+					"id" : "obj-21",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 417.0, 451.0, 72.0, 18.0 ],
+					"presentation_rect" : [ 417.0, 451.0, 72.0, 18.0 ],
+					"style" : "",
+					"text" : "↓ 1 · 2"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontname" : "Ableton Sans Bold Regular",
+					"fontsize" : 9.5,
+					"id" : "obj-19",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 417.0, 431.0, 72.0, 18.0 ],
+					"presentation_rect" : [ 417.0, 431.0, 72.0, 18.0 ],
+					"style" : "",
+					"text" : "16 · Master →"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontname" : "Ableton Sans Bold Regular",
+					"fontsize" : 9.5,
+					"id" : "obj-12",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 417.0, 411.0, 70.0, 18.0 ],
+					"presentation_rect" : [ 417.0, 411.0, 70.0, 18.0 ],
+					"style" : "",
+					"text" : "16 · Master ↓"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"angle" : 270.0,
+					"bgcolor" : [ 0.454902, 0.454902, 0.454902, 1.0 ],
+					"id" : "obj-3",
+					"maxclass" : "panel",
+					"mode" : 0,
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 413.0, 401.0, 75.0, 98.0 ],
+					"presentation_rect" : [ 413.0, 401.0, 75.0, 98.0 ],
+					"proportion" : 0.39,
+					"style" : ""
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-31",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "int" ],
+					"patching_rect" : [ 185.5, 446.0, 36.0, 22.0 ],
+					"presentation_rect" : [ 185.5, 446.0, 36.0, 22.0 ],
+					"style" : "",
+					"text" : "* -20"
 				}
 
 			}
 , 			{
 				"box" : 				{
 					"id" : "obj-28",
-					"maxclass" : "newobj",
-					"numinlets" : 2,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 45.5, 317.0, 137.0, 22.0 ],
-					"presentation_rect" : [ 45.5, 317.0, 137.0, 22.0 ],
-					"style" : "",
-					"text" : "e4l.live.object get name"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-27",
-					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 26.0, 248.0, 29.5, 22.0 ],
-					"presentation_rect" : [ 26.0, 248.0, 29.5, 22.0 ],
-					"style" : "",
-					"text" : "t l l"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-24",
-					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 45.5, 287.0, 119.0, 22.0 ],
-					"presentation_rect" : [ 45.5, 287.0, 119.0, 22.0 ],
-					"style" : "",
-					"text" : "e4l.live.device_track"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-23",
-					"maxclass" : "newobj",
+					"maxclass" : "message",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 26.0, 360.0, 39.0, 22.0 ],
-					"presentation_rect" : [ 26.0, 360.0, 39.0, 22.0 ],
+					"patching_rect" : [ 185.5, 475.0, 62.0, 22.0 ],
+					"presentation_rect" : [ 185.5, 475.0, 62.0, 22.0 ],
 					"style" : "",
-					"text" : "join 2"
+					"text" : "xoffset $1"
 				}
 
 			}
 , 			{
 				"box" : 				{
-					"id" : "obj-22",
-					"maxclass" : "newobj",
+					"id" : "obj-9",
+					"maxclass" : "toggle",
 					"numinlets" : 1,
 					"numoutlets" : 1,
-					"outlettype" : [ "bang" ],
-					"patching_rect" : [ 116.0, 175.0, 24.0, 22.0 ],
-					"presentation_rect" : [ 116.0, 175.0, 24.0, 22.0 ],
+					"outlettype" : [ "int" ],
+					"parameter_enable" : 1,
+					"patching_rect" : [ 67.0, 382.0, 24.0, 24.0 ],
+					"presentation_rect" : [ 67.0, 382.0, 24.0, 24.0 ],
+					"saved_attribute_attributes" : 					{
+						"valueof" : 						{
+							"parameter_invisible" : 1,
+							"parameter_initial" : [ 0 ],
+							"parameter_shortname" : "toggle",
+							"parameter_type" : 3,
+							"parameter_longname" : "toggle",
+							"parameter_initial_enable" : 1
+						}
+
+					}
+,
 					"style" : "",
-					"text" : "t b"
+					"varname" : "toggle"
 				}
 
 			}
 , 			{
 				"box" : 				{
-					"id" : "obj-21",
-					"maxclass" : "newobj",
-					"numinlets" : 2,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 26.0, 216.0, 40.0, 22.0 ],
-					"presentation_rect" : [ 26.0, 216.0, 40.0, 22.0 ],
-					"style" : "",
-					"text" : "zl.reg"
+					"annotation" : "Displays the routing state of the device. By default, stereo input is passed thru an E4L device and 16 channels of Ambisonics are sent to the Master Bus. When toggled, Ambisonics data is passed to another device on this track.",
+					"handoff" : "",
+					"hint" : "",
+					"hltcolor" : [ 0.0, 0.0, 0.0, 0.1 ],
+					"id" : "obj-2",
+					"maxclass" : "ubutton",
+					"numinlets" : 1,
+					"numoutlets" : 4,
+					"outlettype" : [ "bang", "bang", "", "int" ],
+					"patching_rect" : [ 171.0, 311.0, 42.0, 39.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 0.0, 4.0, 20.0, 165.0 ],
+					"rounded" : 8.0,
+					"varname" : "Routing"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-4",
+					"maxclass" : "fpic",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "jit_matrix" ],
+					"patching_rect" : [ 185.5, 508.0, 20.0, 170.0 ],
+					"pic" : "e4l-routing.png",
+					"presentation" : 1,
+					"presentation_rect" : [ 0.0, 0.0, 20.0, 171.0 ]
 				}
 
 			}
 , 			{
 				"box" : 				{
 					"id" : "obj-20",
-					"maxclass" : "newobj",
+					"maxclass" : "comment",
 					"numinlets" : 1,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 26.0, 395.0, 71.0, 22.0 ],
-					"presentation_rect" : [ 26.0, 395.0, 71.0, 22.0 ],
+					"numoutlets" : 0,
+					"patching_rect" : [ 114.5, 273.0, 233.0, 20.0 ],
+					"presentation_rect" : [ 114.5, 273.0, 233.0, 20.0 ],
 					"style" : "",
-					"text" : "prepend #1"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-19",
-					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "int", "" ],
-					"patching_rect" : [ 26.0, 108.0, 30.0, 22.0 ],
-					"presentation_rect" : [ 26.0, 108.0, 30.0, 22.0 ],
-					"style" : "",
-					"text" : "t 1 l"
+					"text" : "Ignore messages from this same device..."
 				}
 
 			}
@@ -179,13 +231,13 @@
 				"box" : 				{
 					"id" : "obj-18",
 					"maxclass" : "newobj",
-					"numinlets" : 2,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 116.0, 101.0, 55.0, 22.0 ],
-					"presentation_rect" : [ 116.0, 101.0, 55.0, 22.0 ],
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "int" ],
+					"patching_rect" : [ 67.0, 311.0, 24.0, 22.0 ],
+					"presentation_rect" : [ 67.0, 311.0, 24.0, 22.0 ],
 					"style" : "",
-					"text" : "route #1"
+					"text" : "t 1"
 				}
 
 			}
@@ -193,13 +245,27 @@
 				"box" : 				{
 					"id" : "obj-17",
 					"maxclass" : "newobj",
-					"numinlets" : 0,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 116.0, 67.0, 79.0, 22.0 ],
-					"presentation_rect" : [ 116.0, 67.0, 79.0, 22.0 ],
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "int" ],
+					"patching_rect" : [ 171.0, 227.0, 65.0, 22.0 ],
+					"presentation_rect" : [ 171.0, 227.0, 65.0, 22.0 ],
 					"style" : "",
-					"text" : "r e4l.bus.syn"
+					"text" : "unpack s i"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-16",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "" ],
+					"patching_rect" : [ 171.0, 122.0, 29.5, 22.0 ],
+					"presentation_rect" : [ 171.0, 122.0, 29.5, 22.0 ],
+					"style" : "",
+					"text" : "t l l"
 				}
 
 			}
@@ -207,27 +273,123 @@
 				"box" : 				{
 					"id" : "obj-15",
 					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "int" ],
+					"patching_rect" : [ 190.5, 188.0, 65.0, 22.0 ],
+					"presentation_rect" : [ 190.5, 188.0, 65.0, 22.0 ],
+					"style" : "",
+					"text" : "unpack s i"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-14",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 5.0, 273.0, 61.0, 20.0 ],
+					"presentation_rect" : [ 5.0, 273.0, 61.0, 20.0 ],
+					"style" : "",
+					"text" : "device_id"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-13",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 9.0, 227.0, 53.0, 20.0 ],
+					"presentation_rect" : [ 9.0, 227.0, 53.0, 20.0 ],
+					"style" : "",
+					"text" : "track_id"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-11",
+					"maxclass" : "newobj",
 					"numinlets" : 2,
+					"numoutlets" : 2,
+					"outlettype" : [ "bang", "" ],
+					"patching_rect" : [ 67.0, 272.0, 40.0, 22.0 ],
+					"presentation_rect" : [ 67.0, 272.0, 40.0, 22.0 ],
+					"style" : "",
+					"text" : "sel -1"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-8",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 116.0, 142.0, 54.0, 22.0 ],
-					"presentation_rect" : [ 116.0, 142.0, 54.0, 22.0 ],
+					"patching_rect" : [ 67.0, 122.0, 89.0, 22.0 ],
+					"presentation_rect" : [ 67.0, 122.0, 89.0, 22.0 ],
 					"style" : "",
-					"text" : "gate 1 0"
+					"text" : "r e4l.bus.insert"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-7",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "" ],
+					"patching_rect" : [ 67.0, 227.0, 52.0, 22.0 ],
+					"presentation_rect" : [ 67.0, 227.0, 52.0, 22.0 ],
+					"style" : "",
+					"text" : "route -1"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-6",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 190.5, 159.0, 119.0, 22.0 ],
+					"presentation_rect" : [ 190.5, 159.0, 119.0, 22.0 ],
+					"style" : "",
+					"text" : "e4l.live.device_track"
 				}
 
 			}
 , 			{
 				"box" : 				{
 					"comment" : "",
-					"id" : "obj-8",
+					"id" : "obj-5",
 					"index" : 0,
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 26.0, 67.0, 30.0, 30.0 ],
-					"presentation_rect" : [ 26.0, 67.0, 30.0, 30.0 ],
+					"patching_rect" : [ 171.0, 78.0, 30.0, 30.0 ],
+					"presentation_rect" : [ 171.0, 78.0, 30.0, 30.0 ],
+					"style" : ""
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"comment" : "",
+					"id" : "obj-1",
+					"index" : 0,
+					"maxclass" : "outlet",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 67.0, 446.0, 30.0, 30.0 ],
+					"presentation_rect" : [ 67.0, 446.0, 30.0, 30.0 ],
 					"style" : ""
 				}
 
@@ -238,10 +400,10 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 22.0, 40.0, 342.0, 20.0 ],
-					"presentation_rect" : [ 22.0, 40.0, 342.0, 20.0 ],
+					"patching_rect" : [ 22.0, 40.0, 351.0, 20.0 ],
+					"presentation_rect" : [ 22.0, 40.0, 351.0, 20.0 ],
 					"style" : "",
-					"text" : "Receives 16-channel ambisonics audio on this device's inputs."
+					"text" : "Utility to select whether an E4L device outputs to a bus or chain."
 				}
 
 			}
@@ -253,121 +415,130 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 22.0, 16.0, 111.0, 22.0 ],
-					"presentation_rect" : [ 22.0, 16.0, 111.0, 22.0 ],
+					"patching_rect" : [ 22.0, 16.0, 116.0, 22.0 ],
+					"presentation_rect" : [ 22.0, 16.0, 116.0, 22.0 ],
 					"style" : "",
-					"text" : "e4l.bus.receive"
+					"text" : "e4l.bus.selector"
 				}
 
 			}
  ],
 		"lines" : [ 			{
 				"patchline" : 				{
-					"destination" : [ "obj-33", 0 ],
-					"source" : [ "obj-1", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-22", 0 ],
-					"source" : [ "obj-15", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
 					"destination" : [ "obj-18", 0 ],
-					"source" : [ "obj-17", 0 ]
+					"source" : [ "obj-11", 1 ]
 				}
 
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-15", 1 ],
+					"destination" : [ "obj-7", 1 ],
+					"source" : [ "obj-15", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-17", 0 ],
+					"source" : [ "obj-16", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-6", 0 ],
+					"source" : [ "obj-16", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-11", 1 ],
+					"source" : [ "obj-17", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-9", 0 ],
 					"source" : [ "obj-18", 0 ]
 				}
 
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-15", 0 ],
-					"midpoints" : [ 35.5, 137.0, 125.5, 137.0 ],
-					"source" : [ "obj-19", 0 ]
+					"destination" : [ "obj-9", 0 ],
+					"source" : [ "obj-2", 0 ]
 				}
 
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-21", 0 ],
-					"source" : [ "obj-19", 1 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-1", 0 ],
-					"source" : [ "obj-20", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-27", 0 ],
-					"source" : [ "obj-21", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-21", 0 ],
-					"source" : [ "obj-22", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-20", 0 ],
-					"source" : [ "obj-23", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-28", 0 ],
-					"source" : [ "obj-24", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-23", 0 ],
-					"source" : [ "obj-27", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-24", 0 ],
-					"source" : [ "obj-27", 1 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-23", 1 ],
+					"destination" : [ "obj-4", 0 ],
 					"source" : [ "obj-28", 0 ]
 				}
 
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-19", 0 ],
+					"destination" : [ "obj-28", 0 ],
+					"source" : [ "obj-31", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-16", 0 ],
+					"source" : [ "obj-5", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-15", 0 ],
+					"source" : [ "obj-6", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-11", 0 ],
+					"source" : [ "obj-7", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-7", 0 ],
 					"source" : [ "obj-8", 0 ]
 				}
 
 			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-1", 0 ],
+					"order" : 1,
+					"source" : [ "obj-9", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-31", 0 ],
+					"order" : 0,
+					"source" : [ "obj-9", 0 ]
+				}
+
+			}
  ],
+		"parameters" : 		{
+			"obj-9" : [ "toggle", "toggle", 0 ],
+			"parameterbanks" : 			{
+
+			}
+
+		}
+,
 		"dependency_cache" : [ 			{
 				"name" : "e4l.live.device_track.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/EnvelopForLive/patchers/live",
@@ -380,6 +551,13 @@
 				"bootpath" : "~/Documents/Max 8/Packages/EnvelopForLive/patchers/live",
 				"patcherrelativepath" : "../live",
 				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "e4l-routing.png",
+				"bootpath" : "~/Documents/Max 8/Packages/EnvelopForLive/media",
+				"patcherrelativepath" : "../../media",
+				"type" : "PNG ",
 				"implicit" : 1
 			}
  ],
