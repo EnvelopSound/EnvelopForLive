@@ -394,7 +394,8 @@ function ypr(yaw, pitch, roll)
 		// Z1
 		outlet(0, 3, 2, 2, (r9_zy[2][2] * r9_x[2][2]));
 	}
-//	outlet(0, 3, "jit_matrix", x_at3.name);
+
+	outlet(0, "done");
 }
 
 init();

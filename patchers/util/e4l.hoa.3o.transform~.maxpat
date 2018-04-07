@@ -38,6 +38,34 @@
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-55",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "" ],
+					"patching_rect" : [ 12.5, 224.0, 29.5, 22.0 ],
+					"presentation_rect" : [ 12.5, 224.0, 29.5, 22.0 ],
+					"style" : "",
+					"text" : "t l l"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"comment" : "matrix~ outputs per order, prefixed by number of coefficients",
+					"id" : "obj-54",
+					"index" : 0,
+					"maxclass" : "outlet",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 924.384644, 279.0, 30.0, 30.0 ],
+					"presentation_rect" : [ 924.384644, 279.0, 30.0, 30.0 ],
+					"style" : ""
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-49",
 					"maxclass" : "newobj",
 					"numinlets" : 2,
@@ -1778,8 +1806,8 @@
 					"numinlets" : 5,
 					"numoutlets" : 5,
 					"outlettype" : [ "", "", "", "", "" ],
-					"patching_rect" : [ 23.0, 180.0, 190.0, 22.0 ],
-					"presentation_rect" : [ 23.0, 180.0, 190.0, 22.0 ],
+					"patching_rect" : [ 12.5, 165.153839, 190.0, 22.0 ],
+					"presentation_rect" : [ 12.5, 165.153839, 190.0, 22.0 ],
 					"style" : "",
 					"text" : "routepass ypr order weights ramp"
 				}
@@ -1792,8 +1820,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 23.0, 116.0, 83.0, 22.0 ],
-					"presentation_rect" : [ 23.0, 116.0, 83.0, 22.0 ],
+					"patching_rect" : [ 12.5, 101.153839, 83.0, 22.0 ],
+					"presentation_rect" : [ 12.5, 101.153839, 83.0, 22.0 ],
 					"style" : "",
 					"text" : "ypr $1 0 0"
 				}
@@ -1808,8 +1836,8 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 23.0, 81.0, 50.0, 22.0 ],
-					"presentation_rect" : [ 23.0, 81.0, 50.0, 22.0 ],
+					"patching_rect" : [ 12.5, 66.153839, 50.0, 22.0 ],
+					"presentation_rect" : [ 12.5, 66.153839, 50.0, 22.0 ],
 					"style" : ""
 				}
 
@@ -1821,8 +1849,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 23.0, 225.846161, 150.0, 22.0 ],
-					"presentation_rect" : [ 23.0, 225.846161, 150.0, 22.0 ],
+					"patching_rect" : [ 12.5, 198.0, 150.0, 22.0 ],
+					"presentation_rect" : [ 12.5, 198.0, 150.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"filename" : "e4l_mtx_ambi_rot.js",
 						"parameter_enable" : 0
@@ -1854,8 +1882,8 @@
 					"numinlets" : 4,
 					"numoutlets" : 4,
 					"outlettype" : [ "", "", "", "" ],
-					"patching_rect" : [ 23.0, 260.0, 100.0, 22.0 ],
-					"presentation_rect" : [ 23.0, 260.0, 100.0, 22.0 ],
+					"patching_rect" : [ 23.0, 270.0, 100.0, 22.0 ],
+					"presentation_rect" : [ 23.0, 270.0, 100.0, 22.0 ],
 					"style" : "",
 					"text" : "route 3 5 7"
 				}
@@ -3123,6 +3151,22 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-45", 0 ],
+					"source" : [ "obj-55", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"color" : [ 0.990427, 0.501057, 0.032876, 1.0 ],
+					"destination" : [ "obj-54", 0 ],
+					"midpoints" : [ 22.0, 251.42308, 933.884644, 251.42308 ],
+					"source" : [ "obj-55", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-29", 2 ],
 					"source" : [ "obj-6", 0 ]
 				}
@@ -3172,7 +3216,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-45", 0 ],
+					"destination" : [ "obj-55", 0 ],
 					"source" : [ "obj-9", 0 ]
 				}
 
