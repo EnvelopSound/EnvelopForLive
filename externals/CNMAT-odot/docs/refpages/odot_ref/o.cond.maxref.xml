@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet href="./_c74_ref.xsl" type="text/xsl"?>
+
+<c74object name="o.cond" module="odot">
+
+	<digest>
+		Route an odot bundle out an outlet based on the results of an expression
+	</digest>
+
+	<description>
+		o.cond creates one outlet for each expression separated by a comma. The bundle will come out the outlet that corresponds to the first expression that evaluates to true or non-zero.
+	</description>
+
+	<!--METADATA-->
+	<metadatalist>
+		<metadata name="author">CNMAT</metadata>
+		<metadata name="tag">odot</metadata>
+		<metadata name="tag">odot objects</metadata>
+	</metadatalist>
+
+	<!--INLETS-->
+	<inletlist>
+		<inlet id="0" type="FullPacket">
+			<digest>
+				odot bundle
+			</digest>
+			<description>
+				An odot bundle to evaluate expressions with.
+			</description>
+		</inlet>
+	</inletlist>
+
+	<!--OUTLETS-->
+	<outletlist>
+		<outlet id="0" type="FullPacket">
+			<digest>
+				odot bundle if the first expression evaluates to true or non-zero
+			</digest>
+			<description>
+				The incoming odot bundle if the first expression evaluates to true or non-zero.
+			</description>
+		</outlet>
+		<outlet id="1--" type="FullPacket">
+			<digest>
+				odot bundle if the second expression evaluates to true or non-zero 
+			</digest>
+			<description>
+				The incoming odot bundle if the second expression evaluates to true or non-zero, etc...
+			</description>
+		</outlet>
+		<outlet id="Last" type="FullPacket">
+			<digest>
+				odot bundle if none of the expressions evaluated to true or non-zero
+			</digest>
+			<description>
+				The incoming odot bundle if none of the expressions evaluated to true or non-zero.
+			</description>
+		</outlet>
+	</outletlist>
+
+	<!--ARGUMENTS-->
+	<objarglist>
+		<objarg name="expressions" optional="1" type="comma-separated-string">
+			<digest>
+				Comma-separated expressions to be evaluated
+			</digest>
+			<description>
+				A set of comma-separated expressions to be evaluated with incoming bundles. Due to the nature of Max objects, quotes needed by the expressions need to be explicitly escaped (\" instead of ").
+			</description>
+		</objarg>
+	</objarglist>
+
+	<!--MESSAGES-->
+	<methodlist>
+		<method name="FullPacket [variable]">
+			<arglist />
+			<digest>
+				odot bundle to perform expressions on
+			</digest>
+			<description>
+				An odot bundle to perform expression on. o.cond will evaluate expressions left-to-right. The first expressions that evaluates to true will produce output. The remaining expressions will not be evaluated.
+			</description>
+		</method>
+		<method name="bang">
+			<arglist />
+			<digest>
+				Perform the expressions using an empty bundle as input
+			</digest>
+			<description>
+				Perform the expressions using an empty bundle as input.
+			</description>
+		</method>
+		<method name="dictionary [variable]">
+			<arglist />
+			<digest>
+				A Max dictionary to be evaluated
+			</digest>
+			<description>
+				o.if converts a Max dictionary to an odot bundle and processes it as a FullPacket.
+			</description>
+		</method>
+		<method name="doc">
+			<arglist />
+			<digest>
+				Output an odot bundle containing the documentation of the object
+			</digest>
+			<description>
+				Outputs an odot bundle containing object name, short and long descriptions of object operation, inlet and outlet information, and see also (where available).
+			</description>
+		</method>
+		<method name="doc-cat">
+			<arglist />
+			<digest>
+				Output an odot bundle containing documentation categories
+			</digest>
+			<description>
+				Outputs an odot bundle containing all of the categories of the odot expression language. An optional argument for the particular category will output sub-categories of available documentation (e.g. "doc-cat /math/power").
+			</description>
+		</method>
+		<method name="doc-category">
+			<arglist />
+			<digest>
+				Output an odot bundle containing documentation categories
+			</digest>
+			<description>
+				Outputs an odot bundle containing all of the categories of the odot expression language. An optional argument for the particular category will output sub-categories of available documentation (e.g. "doc-category /math/power").
+			</description>
+		</method>
+		<method name="doc-func">
+			<arglist />
+			<digest>
+				Output an odot bundle containing documentation for a particular function
+			</digest>
+			<description>
+				Outputs an odot bundle containing the detailed information about a particular function in the odot expression language. For a list of functions in a category, use "doc-cat [category]", for a list of categories, use "doc-cat" without arguments. For example, "doc-func exp" will output detailed information about the "exp" function in /math/power category.
+			</description>
+		</method>
+		<method name="doc-function">
+			<arglist />
+			<digest>
+				Output an odot bundle containing documentation for functions
+			</digest>
+			<description>
+				Outputs an odot bundle containing the detailed information about a particular function in the odot expression language. For a list of functions in a category, use "doc-category [category]", for a list of categories, use "doc-category" without arguments. For example, "doc-function exp" will output detailed information about the "exp" function in /math/power category.
+			</description>
+		</method>
+		<method name="post-ast">
+			<arglist />
+			<digest>
+				Print Abstract Syntax Tree to the Max window
+			</digest>
+			<description>
+				Prints a LISP-like expression of the abstract syntax tree of the expressions to the Max window.
+			</description>
+		</method>
+		<method name="version">
+			<arglist />
+			<digest>
+				Get current version information
+			</digest>
+			<description>
+				Prints the current odot build version to the Max Window.
+			</description>
+		</method>
+	</methodlist>
+
+	<!--DISCUSSION-->
+	<discussion>
+		o.cond creates a dedicated outlet for each of the comma-separated expressions provided as its arguments. Upon receiving an odot bundle, o.cond evaluates expressions left-to-right, producing output as soon as the expression evaluates to true or non-zero. Expressions to the right of the one producing output are not evaluated and no output is produced. If none of the expressions produce true or non-zero, the incoming bundle is output from the delegation (right-most) outlet.
+	</discussion>
+
+	<!--SEEALSO-->
+	<seealsolist>
+		<seealso name="o.expr.codebox" />
+		<seealso name="o.if" />
+	</seealsolist>
+
+	<misc name = "Input">
+		<entry name ="Inlet 1 (FullPacket)">
+			<description>
+				An odot bundle used in evaluating expressions.
+			</description>
+		</entry>
+	</misc>
+
+	<misc name = "Output">
+		<entry name ="Outlet 1 (FullPacket)">
+			<description>
+				The input bundle if the first expression is true (FullPacket).
+			</description>
+		</entry>
+		<entry name ="Outlet 2 (FullPacket)">
+			<description>
+				The input bundle if the second expression is true (FullPacket), etc...
+			</description>
+		</entry>
+		<entry name ="Outlet Last (FullPacket)">
+			<description>
+				The input bundle if none of the expressions evaluate to true or non-zero (FullPacket).
+			</description>
+		</entry>
+	</misc>
+
+	<misc name = "Discussion">
+		<entry name ="More details">
+			<description>
+			</description>
+		</entry>
+		<entry name ="Keywords">
+			<description>
+				odot, address, bundle
+			</description>
+		</entry>
+	</misc>
+
+</c74object>

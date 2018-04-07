@@ -1,0 +1,31 @@
+{
+	"definitions" : [ 		{
+			"default" : [ 1, 1, 1, 1 ],
+			"class" : "o.compose",
+			"attr" : "background_color",
+			"label" : "Background Color",
+			"style" : "rgba"
+		}
+, 		{
+			"default" : [ 0.29, 0.31, 0.302, 1 ],
+			"class" : "o.compose",
+			"attr" : "default_color",
+			"label" : "Default Color",
+			"style" : "rgba"
+		}
+, 		{
+			"default" : [ 0.76, 0.23, 0.239, 1 ],
+			"class" : "o.compose",
+			"attr" : "error_color",
+			"label" : "Error Color",
+			"style" : "rgba"
+		}
+, 		{
+			"default" : [ 0.29, 0.31, 0.302, 1 ],
+			"class" : "o.compose",
+			"attr" : "flash_color",
+			"label" : "Flash Color",
+			"style" : "rgba"
+		}
+ ]
+}

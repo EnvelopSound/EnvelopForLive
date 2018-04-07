@@ -1,0 +1,184 @@
+{
+  "o.append": {
+    "digest": "Append an OSC address to every OSC address in a bundle",
+    "module": "max",
+    "category": [
+      "O."
+    ]
+  },
+  "o.change": {
+    "digest": "Output an OSC bundle if it changes",
+    "module": "max",
+    "category": [
+      "O."
+    ]
+  },
+  "o.collect": {
+    "digest": "Collect OSC messages to be bundled together",
+    "module": "max",
+    "category": [
+      "O."
+    ]
+  },
+  "o.compose": {
+    "digest": "Create OSC bundles from text",
+    "module": "max",
+    "category": [
+      "O."
+    ]
+  },
+  "o.cond": {
+    "digest": "Route an OSC packet out an outlet based on the results of multiple expressions",
+    "module": "max",
+    "category": [
+      "O."
+    ]
+  },
+  "o.dict": {
+    "digest": "Convert an OSC bundle to a Max dictionary",
+    "module": "max",
+    "category": [
+      "O."
+    ]
+  },
+  "o.difference": {
+    "digest": "Output an OSC bundle containing the difference between two bundles",
+    "module": "max",
+    "category": [
+      "O."
+    ]
+  },
+  "o.display": {
+    "digest": "Display incoming OSC bundles",
+    "module": "max",
+    "category": [
+      "O."
+    ]
+  },
+  "o.edge~": {
+    "digest": "Report transitions between 0 and non-zero",
+    "module": "max",
+    "category": [
+      "O."
+    ]
+  },
+  "o.explode": {
+    "digest": "Explode address hierarchies into nested bundles",
+    "module": "max",
+    "category": [
+      "O."
+    ]
+  },
+  "o.expr.codebox": {
+    "digest": "Evaluate a C-like expression containing OSC addresses",
+    "module": "max",
+    "category": [
+      "O."
+    ]
+  },
+  "o.flatten": {
+    "digest": "Flatten the address hierarchy in nested bundles",
+    "module": "max",
+    "category": [
+      "O."
+    ]
+  },
+  "o.if": {
+    "digest": "Route an OSC packet based on the results of an expression",
+    "module": "max",
+    "category": [
+      "O."
+    ]
+  },
+  "o.intersection": {
+    "digest": "Output a bundle containing the intersection of messages between two bundles",
+    "module": "max",
+    "category": [
+      "O."
+    ]
+  },
+  "o.listenumerate": {
+    "digest": "Iterate over a list at a specified OSC address",
+    "module": "max",
+    "category": [
+      "O."
+    ]
+  },
+  "o.messageiterate": {
+    "digest": "Iterate over the messages contained in a bundle",
+    "module": "max",
+    "category": [
+      "O."
+    ]
+  },
+  "o.pack": {
+    "digest": "Bind Max data to OSC addresses",
+    "module": "max",
+    "category": [
+      "O."
+    ]
+  },
+  "o.prepend": {
+    "digest": "Prepend an OSC address to every OSC address in a bundle",
+    "module": "max",
+    "category": [
+      "O."
+    ]
+  },
+  "o.print": {
+    "digest": "Print an OSC packet to the Max window",
+    "module": "max",
+    "category": [
+      "O."
+    ]
+  },
+  "o.printbytes": {
+    "digest": "Print an OSC packet to the Max window as a sequence of bytes",
+    "module": "max",
+    "category": [
+      "O."
+    ]
+  },
+  "o.route": {
+    "digest": "Dispatch OSC messages according to an address hierarchy stripping off the portion of the address that matched",
+    "module": "max",
+    "category": [
+      "O."
+    ]
+  },
+    "o.schedule": {
+    "digest": "Deadline Scheduler for OSC packets using OSC timetags",
+    "module": "max",
+    "category": [
+      "O."
+    ]
+  },
+  "o.select": {
+    "digest": "Dispatch OSC messages according to an address hierarchy preserving the address",
+    "module": "max",
+    "category": [
+      "O."
+    ]
+  },
+  "o.timetag": {
+    "digest": "Bind a timetag to an address",
+    "module": "max",
+    "category": [
+      "O."
+    ]
+  },
+  "o.union": {
+    "digest": "Output a bundle containing the union of all messages between two bundles",
+    "module": "max",
+    "category": [
+      "O."
+    ]
+  },
+  "o.var": {
+    "digest": "Store a bundle and bang it out later",
+    "module": "max",
+    "category": [
+      "O."
+    ]
+  }
+}

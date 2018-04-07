@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet href="./_c74_ref.xsl" type="text/xsl"?>
+
+<c74object name="o.print" module="odot">
+
+	<digest>
+		Print an OSC packet to the Max window
+	</digest>
+
+	<description>
+		o.print prints the contents of an OSC packet to the Max window and passes the packet through its outlet unaltered.
+	</description>
+
+	<!--METADATA-->
+	<metadatalist>
+		<metadata name="author">CNMAT</metadata>
+		<metadata name="tag">odot</metadata>
+		<metadata name="tag">odot objects</metadata>
+	</metadatalist>
+
+	<!--INLETS-->
+	<inletlist>
+		<inlet id="0" type="FullPacket">
+			<digest>
+				odot bundle
+			</digest>
+			<description>
+				The odot bundle to be printed.
+			</description>
+		</inlet>
+	</inletlist>
+
+	<!--OUTLETS-->
+	<outletlist>
+		<outlet id="0" type="FullPacket">
+			<digest>
+				odot bundle
+			</digest>
+			<description>
+				The incoming odot bundle, untouched.
+			</description>
+		</outlet>
+	</outletlist>
+
+	<!--ARGUMENTS-->
+	<objarglist>
+		<objarg name="label" optional="1" type="symbol">
+			<digest>
+				A label to use
+			</digest>
+			<description>
+				Similar to the "print" object in Max, o.print allows the user to customize its output with a label. An instance of "o.print yo" will display "yo:" in the Max window next to its print-out.
+			</description>
+		</objarg>
+	</objarglist>
+
+	<!--MESSAGES-->
+	<methodlist>
+		<method name="FullPacket [variable]">
+			<arglist />
+			<digest>
+				An odot bundle to be printed.
+			</digest>
+			<description>
+				o.print will pretty-print the contents of an odot bundle to the Max window and will pass-through the input unchanged.
+			</description>
+		</method>
+		<method name="anything [variable]">
+			<arglist />
+			<digest>
+				Anything to be printed
+			</digest>
+			<description>
+				o.print will print anything passed to it to the Max window and will pass-through the input unchanged.
+			</description>
+		</method>
+		<method name="dictionary [variable]">
+			<arglist />
+			<digest>
+				A Max dictionary to be printed
+			</digest>
+			<description>
+				o.print will convert the dictionary into an odot bundle, print the contents of the odotified dictionary to the Max window, and will output the odot bundle. (Note: o.print will not pass the dictionaries through!)
+			</description>
+		</method>
+		<method name="doc">
+			<arglist />
+			<digest>
+				Output an odot bundle containing the documentation of the object
+			</digest>
+			<description>
+				Outputs an odot bundle containing object name, short and long descriptions of object operation, inlet and outlet information, and see also (where available).
+			</description>
+		</method>
+		<method name="float">
+			<arglist />
+			<digest>
+				A floating point number to be printed
+			</digest>
+			<description>
+				o.print will print a floating point number passed to it to the Max window and will pass-through the input unchanged.
+			</description>
+		</method>
+		<method name="int">
+			<arglist />
+			<digest>
+				An integer to be printed
+			</digest>
+			<description>
+				o.print will print an integer passed to it to the Max window and will pass-through the input unchanged.
+			</description>
+		</method>
+		<method name="list">
+			<arglist />
+			<digest>
+				A list of Max items to be printed
+			</digest>
+			<description>
+				o.print will print a list of non-dictionary Max items passed to it to the Max window and will pass-through the input unchanged.
+			</description>
+		</method>
+		<method name="version">
+			<arglist />
+			<digest>
+				Get current version information
+			</digest>
+			<description>
+				Prints the current odot build version to the Max Window.
+			</description>
+		</method>
+	</methodlist>
+
+	<!--DISCUSSION-->
+	<discussion>
+		o.print is a useful tool for debugging your work with odot.
+	</discussion>
+
+	<!--SEEALSO-->
+	<seealsolist>
+		<seealso name="o.printbytes" />
+		<seealso name="o.display" />
+	</seealsolist>
+
+	<misc name = "Input">
+		<entry name ="Inlet 1 (FullPacket)">
+			<description>
+				An odot bundle to print. (Also supports ints, floats, symbols, lists, and dictionaries).
+			</description>
+		</entry>
+	</misc>
+
+	<misc name = "Output">
+		<entry name ="Outlet 1 (FullPacket)">
+			<description>
+				The input (unaltered).
+			</description>
+		</entry>
+	</misc>
+
+	<misc name = "Discussion">
+		<entry name ="More details">
+			<description>
+				o.print is a useful tool for debugging your work with odot.
+			</description>
+		</entry>
+		<entry name ="Keywords">
+			<description>
+				odot, address, bundle
+			</description>
+		</entry>
+	</misc>
+
+</c74object>

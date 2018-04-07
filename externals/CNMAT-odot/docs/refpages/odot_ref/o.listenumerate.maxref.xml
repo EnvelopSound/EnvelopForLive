@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet href="./_c74_ref.xsl" type="text/xsl"?>
+
+<c74object name="o.listenumerate" module="odot">
+
+	<digest>
+		Iterate over a list at a user-defined OSC address
+	</digest>
+
+	<description>
+		o.listenumerate enumerates the values of a list at an OSC packet and outputs them out one at a time.
+	</description>
+
+	<!--METADATA-->
+	<metadatalist>
+		<metadata name="author">CNMAT</metadata>
+		<metadata name="tag">odot</metadata>
+		<metadata name="tag">odot objects</metadata>
+	</metadatalist>
+
+	<!--INLETS-->
+	<inletlist>
+		<inlet id="0" type="FullPacket">
+			<digest>
+				odot bundle
+			</digest>
+			<description>
+				The bundle containing an address for enumeration.
+			</description>
+		</inlet>
+	</inletlist>
+
+	<!--OUTLETS-->
+	<outletlist>
+		<outlet id="0" type="FullPacket">
+			<digest>
+				Enumerated bundles
+			</digest>
+			<description>
+				o.listenumerate generates bundles containing the value, index, length, and address of the incoming list and outputs them as fast as possible (similar to the built-in uzi object).
+			</description>
+		</outlet>
+		<outlet id="1" type="FullPacket">
+			<digest>
+				Delegation outlet -- unmatched data
+			</digest>
+			<description>
+				Addresses unmatched by the o.listenumerate argument are output as an odot bundle out of the delegation (right-most) outlet.
+			</description>
+		</outlet>
+	</outletlist>
+
+	<!--ARGUMENTS-->
+	<objarglist>
+		<objarg name="address" optional="0" type="symbol">
+			<digest>
+				An address of the list to enumerate
+			</digest>
+			<description>
+				An address of the list to enumerate
+			</description>
+		</objarg>
+	</objarglist>
+
+	<!--MESSAGES-->
+	<methodlist>
+		<method name="FullPacket [variable]">
+			<arglist />
+			<digest>
+				A bundle containing an address to be enumerated
+			</digest>
+			<description>
+				o.listenumerate generates bundles containing the value, index, length, and address of the incoming list and outputs them as fast as possible (similar to the built-in uzi object).
+			</description>
+		</method>
+		<method name="anything [variable]">
+			<arglist />
+			<digest>
+				A Max OSC message to be enumerated
+			</digest>
+			<description>
+				o.listenumerate converts the Max message into an odot bundle and processes the bundle as a FullPacket.
+			</description>
+		</method>
+		<method name="dictionary [variable]">
+			<arglist />
+			<digest>
+				o.listenumerate converts the Max dictionary into an odot bundle and processes the bundle as a FullPacket.
+			</digest>
+			<description>
+			</description>
+		</method>
+		<method name="doc">
+			<arglist />
+			<digest>
+				Output an odot bundle containing the documentation of the object
+			</digest>
+			<description>
+				Outputs an odot bundle containing object name, short and long descriptions of object operation, inlet and outlet information, and see also (where available).
+			</description>
+		</method>
+		<method name="version">
+			<arglist />
+			<digest>
+				Get current version information.
+			</digest>
+			<description>
+				Prints the current odot build version to the Max Window.
+			</description>
+		</method>
+	</methodlist>
+
+	<!--DISCUSSION-->
+	<discussion>
+		o.listenumerate provides an uzi-like behavior using lists bounded to addresses. Individual items of the list are converted to individual odot bundles that are output from the left outlet as quickly as possible. These bundles contain:
+		<ul>
+			<li>/value -- data of an item in the list</li>
+			<li>/address -- the address the value was bound to</li>
+			<li>/index -- the index of the item in the list (enumerated from 0)</li>
+			<li>/length -- the length of the list</li>
+		</ul>
+		Due to enumeration from 0, the last item of the list will have the index that is one less than the length of the list.
+	</discussion>
+
+	<!--SEEALSO-->
+	<seealsolist>
+		<seealso name="o.overview" />
+	</seealsolist>
+
+	<misc name = "Input">
+		<entry name ="Inlet 1 (FullPacket)">
+			<description>
+				An odot bundle containing an address to enumerate.
+			</description>
+		</entry>
+	</misc>
+
+	<misc name = "Output">
+		<entry name ="Outlet 1 (FullPacket)">
+			<description>
+				Enumerated odot bundles (FullPacket).
+			</description>
+		</entry>
+		<entry name ="Outlet 2 (FullPacket)">
+			<description>
+				Delegation outlet -- unmatched addresses delivered as a bundle.
+			</description>
+		</entry>
+	</misc>
+
+	<misc name = "Discussion">
+		<entry name ="More details">
+			<description>
+				o.listenumerate provides an uzi-like behavior using lists bounded to addresses. Individual items of the list are converted to individual odot bundles that are output from the left outlet as quickly as possible. These bundles contain:
+				<ul>
+					<li>/value -- data of an item in the list</li>
+					<li>/address -- the address the value was bound to</li>
+					<li>/index -- the index of the item in the list (enumerated from 0)</li>
+					<li>/length -- the length of the list</li>
+				</ul>
+				Due to enumeration from 0, the last item of the list will have the index that is one less than the length of the list.
+			</description>
+		</entry>
+		<entry name ="Keywords">
+			<description>
+				odot, address, bundle
+			</description>
+		</entry>
+	</misc>
+
+</c74object>

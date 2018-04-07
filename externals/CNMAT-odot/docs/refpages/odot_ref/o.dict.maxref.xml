@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet href="./_c74_ref.xsl" type="text/xsl"?>
+
+<c74object name="o.dict" module="odot">
+
+	<digest>
+		Convert an odot bundle to a Max dictionary
+	</digest>
+
+	<description>
+		o.dict takes an odot bundle and turns it into a Max dictionary.
+	</description>
+
+	<!--METADATA-->
+	<metadatalist>
+		<metadata name="author">CNMAT</metadata>
+		<metadata name="tag">odot</metadata>
+		<metadata name="tag">odot objects</metadata>
+	</metadatalist>
+
+	<!--INLETS-->
+	<inletlist>
+		<inlet id="0" type="FullPacket">
+			<digest>
+				odot bundle
+			</digest>
+			<description>
+				An odot bundle to be converted to a Max dictionary
+			</description>
+		</inlet>
+	</inletlist>
+
+	<!--OUTLETS-->
+	<outletlist>
+		<outlet id="0" type="dictionary">
+			<digest>
+				Max dictionary
+			</digest>
+			<description>
+				A Max dictionary created from an odot bundle
+			</description>
+		</outlet>
+	</outletlist>
+
+	<!--MESSAGES-->
+	<methodlist>
+		<method name="FullPacket [variable]">
+			<arglist />
+			<digest>
+				odot bundle to convert to a dictionary
+			</digest>
+			<description>
+				An odot bundle sent to an instance of o.dict will be converted to a Max dictionary and can be understood by the Max "dict" objects. Unlike other odot objects, o.dict does not transcode from Max dictionaries to odot.
+			</description>
+		</method>
+		<method name="doc">
+			<arglist />
+			<digest>
+				Output an odot bundle containing the documentation of the object
+			</digest>
+			<description>
+				Outputs an odot bundle containing object name, short and long descriptions of object operation, inlet and outlet information, and see also (where available).
+			</description>
+		</method>
+		<method name="version">
+			<arglist />
+			<digest>
+				Get current version information.
+			</digest>
+			<description>
+				Prints the current odot build version to the Max Window.
+			</description>
+		</method>
+	</methodlist>
+
+	<!--DISCUSSION-->
+	<discussion>
+		o.dict is used to transcode from odot to Max dictionaries. Max dictionaries work with JavaScript and can be used to store large datasets between sessions (similar to o.compose and coll). Data sent out of JavaScript processes as dictionaries can be fed into any odot objects for seamless transcoding to odot.
+	</discussion>
+
+	<!--SEEALSO-->
+	<seealsolist>
+		<seealso name="o.overview" />
+	</seealsolist>
+
+	<misc name = "Input">
+		<entry name ="Inlet 1 (FullPacket)">
+			<description>
+				An odot bundle to convert to a dictionary.
+			</description>
+		</entry>
+	</misc>
+
+	<misc name = "Output">
+		<entry name ="Outlet 1 (dictionary)">
+			<description>
+				The resulting dictionary.
+			</description>
+		</entry>
+	</misc>
+
+	<misc name = "Discussion">
+		<entry name ="More details">
+			<description>
+				o.dict is used to transcode from odot to Max dictionaries. Max dictionaries work with JavaScript and can be used to store large datasets between sessions (similar to o.compose and coll). Data sent out of JavaScript processes as dictionaries can be fed into any odot objects for seamless transcoding to odot.
+			</description>
+		</entry>
+		<entry name ="Keywords">
+			<description>
+				odot, address, bundle
+			</description>
+		</entry>
+	</misc>
+
+</c74object>

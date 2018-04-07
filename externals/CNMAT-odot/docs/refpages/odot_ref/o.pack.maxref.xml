@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet href="./_c74_ref.xsl" type="text/xsl"?>
+
+<c74object name="o.pack" module="odot">
+
+	<digest>
+		Bind data to addresses
+	</digest>
+
+	<description>
+		o.pack takes a OSC addresses as arguments and creates an inlet for each one.  Anything sent into an inlet is bound to the corresponding address. Output is triggered when data is recieved in the leftmost inlet.
+	</description>
+
+	<!--METADATA-->
+	<metadatalist>
+		<metadata name="author">CNMAT</metadata>
+		<metadata name="tag">odot</metadata>
+		<metadata name="tag">odot objects</metadata>
+	</metadatalist>
+
+	<!--INLETS-->
+	<inletlist>
+		<inlet id="0" type="anything">
+			<digest>
+				Max data (triggers output)
+			</digest>
+			<description>
+				Max and odot data passed to an o.pack inlet will be bound to an address specified by the corresponding argument. Left inlet is hot, the rest are cold.
+			</description>
+		</inlet>
+		<inlet id="1" type="anything">
+			<digest>
+				Max data (no output)
+			</digest>
+			<description>
+				Max and odot data passed to an o.pack inlet will be bound to an address specified by the corresponding argument. Left inlet is hot, the rest are cold.
+			</description>
+		</inlet>
+	</inletlist>
+
+	<!--OUTLETS-->
+	<outletlist>
+		<outlet id="0" type="FullPacket">
+			<digest>
+				OSC packet containing incoming data bound to OSC addresses
+			</digest>
+			<description>
+				The hot inlet of o.pack will output an odot bundle containing all of the addresses indicated by its arguments. The most recent data passed to each of the inlets will be bound to addresses. If no data has been passed to any of the inlets, the address will be included in the bundle without a binding.
+			</description>
+		</outlet>
+	</outletlist>
+
+	<!--ARGUMENTS-->
+	<objarglist>
+		<objarg name="argument" optional="1" type="OSC">
+			<digest>
+				OSC address to bind data to
+			</digest>
+			<description>
+				Each argument for o.pack is an OSC address. The object will create dedicated inlets for each of its arguments. Data (numbers, symbols, lists, and even odot bundles) passed to the inlets will be bound to the OSC address specified by the corresponding argument.
+			</description>
+		</objarg>
+	</objarglist>
+
+	<!--MESSAGES-->
+	<methodlist>
+		<method name="FullPacket [variable]">
+			<arglist />
+			<digest>
+				Bind an odot bundle to an address
+			</digest>
+			<description>
+				An odot bundle passed to an inlet of o.pack will be bound to an address as a subbundle. For example, passing { /bar : 1, /boo : 2. } to an instance of "o.pack /foo" will output { /foo : { /bar : 1, /boo : 2. } }
+			</description>
+		</method>
+		<method name="anything [variable]">
+			<arglist />
+			<digest>
+				Bind a symbol to an address
+			</digest>
+			<description>
+				A Max symbol passed to an inlet of o.pack will be bound to an address as a string. For example, passing "pickles" to an instance of "o.pack /foo" will output { /foo : "pickles" }
+			</description>
+		</method>
+		<method name="bang">
+			<arglist />
+			<digest>
+				Output the current bindings stored in the object
+			</digest>
+			<description>
+				Bang causes output without altering the bundle constructed by passing data to o.pack.
+			</description>
+		</method>
+		<method name="dictionary">
+			<arglist />
+			<digest>
+				Bind an odot bundle version of a dictionary to an address
+			</digest>
+			<description>
+				A dictionary passed to an inlet of o.pack will be converted to an odot bundle and bound to an address as a subbundle. For example, passing { bar : 1, boo : 2. } to an instance of "o.pack /foo" will output { /foo : { /bar : 1, /boo : 2. } }
+			</description>
+		</method>
+		<method name="doc">
+			<arglist />
+			<digest>
+				Output an odot bundle containing the documentation of the object
+			</digest>
+			<description>
+				Outputs an odot bundle containing object name, short and long descriptions of object operation, inlet and outlet information, and see also (where available).
+			</description>
+		</method>
+		<method name="float">
+			<arglist />
+			<digest>
+				Bind a floating-point number to an address
+			</digest>
+			<description>
+				A Max float passed to an inlet of o.pack will be bound to an address. For example, passing 3.14159 to an instance of "o.pack /foo" will output { /foo : 3.14159 }
+			</description>
+		</method>
+		<method name="int">
+			<arglist />
+			<digest>
+				A Max integer passed to an inlet of o.pack will be bound to an address. For example, passing 42 to an instance of "o.pack /foo" will output { /foo : 42 }
+			</digest>
+			<description>
+			</description>
+		</method>
+		<method name="list">
+			<arglist />
+			<digest>
+				Bind a list of numbers or symbols to an address
+			</digest>
+			<description>
+				A Max list passed to an inlet of o.pack will be bound to an address. For example, passing "42 3.14159 pickles" to an instance of "o.pack /foo" will output { /foo : [42, 3.14159, "pickles"] }
+			</description>
+		</method>
+		<method name="set">
+			<arglist />
+			<digest>
+				Set the address corresponding to an inlet
+			</digest>
+			<description>
+				A set message, followed by an OSC address will set the address that data will be bound to. This operation causes no ouput.
+			</description>
+		</method>
+		<method name="version">
+			<arglist />
+			<digest>
+				Get current version information.
+			</digest>
+			<description>
+				Prints the current odot build version to the Max Window.
+			</description>
+		</method>
+	</methodlist>
+
+	<!--DISCUSSION-->
+	<discussion>
+		o.pack is responsible for moving Max data to odot. While it shares some conceptual similarities with the built-in "pack" object in Max, o.pack does the necessary transcoding to ensure that all of the incoming data is bound to the human-readable addresses. 
+	</discussion>
+
+	<!--SEEALSO-->
+	<seealsolist>
+		<seealso name="o.route" />
+	</seealsolist>
+
+	<misc name = "Input">
+		<entry name ="Inlet 1 (anything)">
+			<description>
+				Max data to be bound to an OSC address
+			</description>
+		</entry>
+	</misc>
+
+	<misc name = "Output">
+		<entry name ="Outlet 1 (FullPacket)">
+			<description>
+				The resulting odot bundle (FullPacket).
+			</description>
+		</entry>
+	</misc>
+
+	<misc name = "Discussion">
+		<entry name ="More details">
+			<description>
+				o.pack is responsible for moving Max data to odot. While it shares some conceptual similarities with the built-in "pack" object in Max, o.pack does the necessary transcoding to ensure that all of the incoming data is bound to the human-readable addresses. 
+			</description>
+		</entry>
+		<entry name ="Keywords">
+			<description>
+				odot, address, bundle
+			</description>
+		</entry>
+	</misc>
+
+</c74object>

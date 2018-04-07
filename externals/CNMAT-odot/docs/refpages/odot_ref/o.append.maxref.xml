@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet href="./_c74_ref.xsl" type="text/xsl"?>
+
+<c74object name="o.append" module="odot">
+
+	<digest>
+		Append an OSC address to every OSC address in an odot bundle
+	</digest>
+
+	<description>
+		o.append takes an OSC address as an argument and appends it to every address in an incoming odot bundle.
+	</description>
+
+	<!--METADATA-->
+	<metadatalist>
+		<metadata name="author">CNMAT</metadata>
+		<metadata name="tag">odot</metadata>
+		<metadata name="tag">odot objects</metadata>
+	</metadatalist>
+
+	<!--INLETS-->
+	<inletlist>
+		<inlet id="0" type="FullPacket">
+			<digest>
+				odot bundle
+			</digest>
+			<description>
+				An odot bundle whose addresses are in need of appending
+			</description>
+		</inlet>
+	</inletlist>
+
+	<!--OUTLETS-->
+	<outletlist>
+		<outlet id="0" type="FullPacket">
+			<digest>
+				odot bundle with updated addresses
+			</digest>
+			<description>
+				The resulting bundle with updated addresses
+			</description>
+		</outlet>
+	</outletlist>
+
+	<!--ARGUMENTS-->
+	<objarglist>
+		<objarg name="address" optional="1" type="symbol">
+			<digest>
+				OSC address to append
+			</digest>
+			<description>
+				This address will be appended to every address in the incoming bundle.
+			</description>
+		</objarg>
+	</objarglist>
+
+	<!--MESSAGES-->
+	<methodlist>
+		<method name="FullPacket [variable]">
+			<arglist />
+			<digest>
+				The OSC packet that the object's address argument will be appended to.
+			</digest>
+			<description>
+				Performs and outputs the append operation on each of the addresses in the incoming odot bundle.
+			</description>
+		</method>
+		<method name="anything [variable]">
+			<arglist />
+			<digest>
+				A Max message containing OSC addresses and values to be transcoded to an odot bundle
+			</digest>
+			<description>
+				Converts the incoming Max message to an odot bundle, and performs the FullPacket operation of the object.
+			</description>
+		</method>
+		<method name="dictionary [variable]">
+			<arglist />
+			<digest>
+				A Max dictionary to be transcoded to an odot bundle
+			</digest>
+			<description>
+				Converts the incoming Max dictionary to an odot bundle, and performs the FullPacket operation of the object.
+			</description>
+		</method>
+		<method name="doc">
+			<arglist />
+			<digest>
+				Output an odot bundle containing the documentation of the object
+			</digest>
+			<description>
+				Outputs an odot bundle containing object name, short and long descriptions of object operation, inlet and outlet information, and see also (where available).
+			</description>
+		</method>
+		<method name="set [variable]">
+			<arglist />
+			<digest>
+				Set the address to be appended
+			</digest>
+			<description>
+				Sets the address to be appended to incoming odot bundles.
+			</description>
+		</method>
+		<method name="version">
+			<arglist />
+			<digest>
+				Get current version information
+			</digest>
+			<description>
+				Prints the current odot build version to the Max Window.
+			</description>
+		</method>
+	</methodlist>
+
+	<!--DISCUSSION-->
+	<discussion>
+		This object is similar to the Max built-in object "append", except that it operates on the addresses of the odot variables. That is, an instance of o.append /foo will append /foo to every address of an incoming bundle. For example, given { /bar : 1, /boo : 2 }, the result of passing that bundle to the o.append example above will be { /bar/foo : 1, /boo/foo : 2 }.
+	</discussion>
+
+	<!--SEEALSO-->
+	<seealsolist>
+		<seealso name="o.prepend" />
+		<seealso name="prepend" />
+		<seealso name="append" />
+	</seealsolist>
+
+	<misc name = "Input">
+		<entry name ="Inlet 1 (FullPacket)">
+			<description>
+				An odot bundle to operate on.
+			</description>
+		</entry>
+	</misc>
+
+	<misc name = "Output">
+		<entry name ="Outlet 1 (FullPacket)">
+			<description>
+				The resulting odot bundle (FullPacket).
+			</description>
+		</entry>
+	</misc>
+
+	<misc name = "Discussion">
+		<entry name ="More details">
+			<description>
+				This object is similar to the Max built-in object "append", except that it operates on the addresses of the odot variables. That is, o.append /foo will append /foo to all addresses of an incoming bundle. For example, given { /bar : 1, /boo : 2 }, the result of passing that bundle to o.append will be { /bar/foo : 1, /boo/foo : 2 }.
+			</description>
+		</entry>
+		<entry name ="Keywords">
+			<description>
+				odot, append, address, bundle
+			</description>
+		</entry>
+	</misc>
+
+</c74object>

@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet href="./_c74_ref.xsl" type="text/xsl"?>
+
+<c74object name="o.var" module="odot">
+
+	<digest>
+		Store a bundle and bang it out later
+	</digest>
+
+	<description>
+		o.var copies an OSC packet and stores it for later use. Since FullPacket messages are references to data stored in memory, objects wishing to store a packet must make a copy of it rather than just save the FullPacket message. Use o.var or o.compose to store a packet, not zl reg or any other normal Max object.
+	</description>
+
+	<!--METADATA-->
+	<metadatalist>
+		<metadata name="author">CNMAT</metadata>
+		<metadata name="tag">odot</metadata>
+		<metadata name="tag">odot objects</metadata>
+	</metadatalist>
+
+	<!--INLETS-->
+	<inletlist>
+		<inlet id="0" type="INLET_TYPE">
+			<digest>
+				odot bundle stored and output
+			</digest>
+			<description>
+				An odot bundle to be stored and output immediately.
+			</description>
+		</inlet>
+		<inlet id="1" type="INLET_TYPE">
+			<digest>
+				odot bundle stored without output
+			</digest>
+			<description>
+				An odot bundle to be stored without output.
+			</description>
+		</inlet>
+	</inletlist>
+
+	<!--OUTLETS-->
+	<outletlist>
+		<outlet id="0" type="FullPacket">
+			<digest>
+				odot bundle
+			</digest>
+			<description>
+				Stored odot bundle.
+			</description>
+		</outlet>
+	</outletlist>
+
+	<!--MESSAGES-->
+	<methodlist>
+		<method name="FullPacket [variable]">
+			<arglist />
+			<digest>
+				Provide a bundle for storage
+			</digest>
+			<description>
+				odot bundles sent to the right inlet are stored without output. Bundles sent to the left inlet and stored and output immediately.
+			</description>
+		</method>
+		<method name="anything [variable]">
+			<arglist />
+			<digest>
+				Max OSC message
+			</digest>
+			<description>
+				A Max OSC message is converted into an odot bundle and is processed as a FullPacket.
+			</description>
+		</method>
+		<method name="bang">
+			<arglist />
+			<digest>
+				Output the current contents
+			</digest>
+			<description>
+				A bang message outputs the last bundle sent to the object (either left or right inlets).
+			</description>
+		</method>
+		<method name="clear">
+			<arglist />
+			<digest>
+				Clear the currently stored bundle
+			</digest>
+			<description>
+				Clear the currently stored bundle.
+			</description>
+		</method>
+		<method name="dictionary">
+			<arglist />
+			<digest>
+				Max dictionary
+			</digest>
+			<description>
+				o.var converts a Max dictionary into an odot bundle and processes it as a FullPacket.
+			</description>
+		</method>
+		<method name="doc">
+			<arglist />
+			<digest>
+				Output an odot bundle containing the documentation of the object
+			</digest>
+			<description>
+				Outputs an odot bundle containing object name, short and long descriptions of object operation, inlet and outlet information, and see also (where available).
+			</description>
+		</method>
+		<method name="version">
+			<arglist />
+			<digest>
+				Get current version information.
+			</digest>
+			<description>
+				Prints the current odot build version to the Max Window.
+			</description>
+		</method>
+	</methodlist>
+
+	<!--DISCUSSION-->
+	<discussion>
+		o.var is similar to the built in "float" or "int" objects in Max. It stores odot bundles for later using left (hot) and right (cold) inlets. The stored bundle can be retrieved at any time using a "bang" message to the object.
+	</discussion>
+
+	<!--SEEALSO-->
+	<seealsolist>
+		<seealso name="zl reg" />
+	</seealsolist>
+
+	<misc name = "Input">
+		<entry name ="Inlet 1 (FullPacket)">
+			<description>
+				An odot bundle to store and output.
+			</description>
+		</entry>
+		<entry name ="Inlet 2 (FullPacket)">
+			<description>
+				An odot bundle to store without output.
+			</description>
+		</entry>
+	</misc>
+
+	<misc name = "Output">
+		<entry name ="Outlet 1 (FullPacket)">
+			<description>
+				Stored odot bundle (FullPacket).
+			</description>
+		</entry>
+	</misc>
+
+	<misc name = "Discussion">
+		<entry name ="More details">
+			<description>
+				o.var is similar to the built in "float" or "int" objects in Max. It stores odot bundles for later using left (hot) and right (cold) inlets. The stored bundle can be retrieved at any time using a "bang" message to the object.
+			</description>
+		</entry>
+		<entry name ="Keywords">
+			<description>
+				odot, address, bundle
+			</description>
+		</entry>
+	</misc>
+
+</c74object>

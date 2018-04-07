@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet href="./_c74_ref.xsl" type="text/xsl"?>
+
+<c74object name="o.if" module="odot">
+
+	<digest>
+		Route an OSC packet based on the results of an expression
+	</digest>
+
+	<description>
+		o.if routs the incoming bundle out the left outlet if the result of the expression is true or non-zero, and out the right outlet otherwise.
+	</description>
+
+	<!--METADATA-->
+	<metadatalist>
+		<metadata name="author">CNMAT</metadata>
+		<metadata name="tag">odot</metadata>
+		<metadata name="tag">odot objects</metadata>
+	</metadatalist>
+
+	<!--INLETS-->
+	<inletlist>
+		<inlet id="0" type="FullPacket">
+			<digest>
+				odot bundle
+			</digest>
+			<description>
+				An odot bundle to perform a conditional expression on.
+			</description>
+		</inlet>
+	</inletlist>
+
+	<!--OUTLETS-->
+	<outletlist>
+		<outlet id="0" type="FullPacket">
+			<digest>
+				Input, if expression evaluates to true or non-zero
+			</digest>
+			<description>
+				The input, if the conditional expression evaluates to true or non-zero
+			</description>
+		</outlet>
+		<outlet id="1" type="FullPacket">
+			<digest>
+				Input, if the conditional expression evaluates to false or zero
+			</digest>
+			<description>
+				The input, if the conditional expression evaluates to false or zero.
+			</description>
+		</outlet>
+	</outletlist>
+
+	<!--ARGUMENTS-->
+	<objarglist>
+		<objarg name="expression" optional="1" type="string">
+			<digest>
+				odot expression
+			</digest>
+			<description>
+				An expression yielding true or false.
+			</description>
+		</objarg>
+	</objarglist>
+
+	<!--MESSAGES-->
+	<methodlist>
+		<method name="FullPacket [variable]">
+			<arglist />
+			<digest>
+				odot bundle to perform expression on
+			</digest>
+			<description>
+				An odot bundle to perform expression on. If the expression evaluates to true or non-zero, it is output from the left outlet. Otherwise, the expression is output from the right outlet.
+			</description>
+		</method>
+		<method name="bang">
+			<arglist />
+			<digest>
+				Perform the expression using an empty bundle as input
+			</digest>
+			<description>
+				Perform the expression using an empty bundle as input.
+			</description>
+		</method>
+		<method name="dictionary [variable]">
+			<arglist />
+			<digest>
+				A Max dictionary to be evaluated
+			</digest>
+			<description>
+				o.if converts a Max dictionary to an odot bundle and processes it as a FullPacket.
+			</description>
+		</method>
+		<method name="doc">
+			<arglist />
+			<digest>
+				Output an odot bundle containing the documentation of the object
+			</digest>
+			<description>
+				Outputs an odot bundle containing object name, short and long descriptions of object operation, inlet and outlet information, and see also (where available).
+			</description>
+		</method>
+		<method name="doc-cat">
+			<arglist />
+			<digest>
+				Output an odot bundle containing documentation categories
+			</digest>
+			<description>
+				Outputs an odot bundle containing all of the categories of the odot expression language. An optional argument for the particular category will output sub-categories of available documentation (e.g. "doc-cat /math/power").
+			</description>
+		</method>
+		<method name="doc-category">
+			<arglist />
+			<digest>
+				Output an odot bundle containing documentation categories
+			</digest>
+			<description>
+				Outputs an odot bundle containing all of the categories of the odot expression language. An optional argument for the particular category will output sub-categories of available documentation (e.g. "doc-category /math/power").
+			</description>
+		</method>
+		<method name="doc-func">
+			<arglist />
+			<digest>
+				Output an odot bundle containing documentation for a particular function
+			</digest>
+			<description>
+				Outputs an odot bundle containing the detailed information about a particular function in the odot expression language. For a list of functions in a category, use "doc-cat [category]", for a list of categories, use "doc-cat" without arguments. For example, "doc-func exp" will output detailed information about the "exp" function in /math/power category.
+			</description>
+		</method>
+		<method name="doc-function">
+			<arglist />
+			<digest>
+				Output an odot bundle containing documentation for functions
+			</digest>
+			<description>
+				Outputs an odot bundle containing the detailed information about a particular function in the odot expression language. For a list of functions in a category, use "doc-category [category]", for a list of categories, use "doc-category" without arguments. For example, "doc-function exp" will output detailed information about the "exp" function in /math/power category.
+			</description>
+		</method>
+		<method name="post-ast">
+			<arglist />
+			<digest>
+				Print Abstract Syntax Tree to the Max window
+			</digest>
+			<description>
+				Prints a LISP-like expression of the abstract syntax tree of the expression to the Max window.
+			</description>
+		</method>
+		<method name="version">
+			<arglist />
+			<digest>
+				Get current version information
+			</digest>
+			<description>
+				Prints the current odot build version to the Max Window.
+			</description>
+		</method>
+	</methodlist>
+
+	<!--DISCUSSION-->
+	<discussion>
+		o.if provides odot programmer with conditional flow semantics. Upon receiving a bundle, o.if uses that bundle's addresses and data as the context for evaluating the expression. If the result of experession is true or non-zero, the bundle is output out of the left outlet. Otherwise, it is output from the right outlet. o.if is used to route data to the appropriate patches based on some state variables in the data.
+	</discussion>
+
+	<!--SEEALSO-->
+	<seealsolist>
+		<seealso name="o.cond" />
+		<seealso name="o.expr.codebox" />
+		<seealso name="if" />
+	</seealsolist>
+
+	<misc name = "Input">
+		<entry name ="Inlet 1 (FullPacket)">
+			<description>
+				An odot bundle to evaluate using the conditional expression.
+			</description>
+		</entry>
+	</misc>
+
+	<misc name = "Output">
+		<entry name ="Outlet 1 (FullPacket)">
+			<description>
+				The incoming odot bundle, if the expression returns true or non-zero (FullPacket).
+			</description>
+		</entry>
+		<entry name ="Outlet 2 (FullPacket)">
+			<description>
+				The incoming odot bundle, if the expression returns false or zero (FullPacket).
+			</description>
+		</entry>
+	</misc>
+
+	<misc name = "Discussion">
+		<entry name ="More details">
+			<description>
+				o.if provides odot programmer with conditional flow semantics. Upon receiving a bundle, o.if uses that bundle's addresses and data as the context for evaluating the expression. If the result of experession is true or non-zero, the bundle is output out of the left outlet. Otherwise, it is output from the right outlet. o.if is used to route data to the appropriate patches based on some state variables in the data.
+			</description>
+		</entry>
+		<entry name ="Keywords">
+			<description>
+				odot, address, bundle
+			</description>
+		</entry>
+	</misc>
+
+</c74object>
