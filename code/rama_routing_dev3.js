@@ -21,6 +21,8 @@ var busDevices = [];
 var trackNameCount = [];
 var deviceNameCount = [];
 
+var busOrChain = "chain";
+
 // device change on this track
 // check for chained devces here
 function devicechange_callback(args)
@@ -35,8 +37,8 @@ function devicechange_callback(args)
 
 		for( var i = 2; i < args.length; i += 2 )
 		{
-            post("iter", args[i],'\n');
-			if( getnext )
+            //post("iter", args[i],'\n');
+			if( getnext && next_device != -1 )
 			{
 				next_device = args[i];
 				api_q.id = next_device;
@@ -48,7 +50,14 @@ function devicechange_callback(args)
 		            next_device_inputs[iidx] = inputs[i];
 		            iidx++;
 		        }
+
 				post("next device inputs", next_device_inputs, '\n');
+
+				if( busOrChain == "chain" )
+				{
+
+				}
+
 			}
 			else if( args[i] == this_device_id )
 			{
@@ -63,7 +72,6 @@ function devicechange_callback(args)
 		}
 	}
 }
-
 
 function setbus( nameArg )
 {
