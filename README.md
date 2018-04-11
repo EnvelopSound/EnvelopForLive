@@ -44,9 +44,11 @@ Now, create a new audio or instrument track. In the track's effect chain, add th
 
 ![E4L Source Panner](/doc/E4L-Source-Panner.png)
 
-Note that by default, adding this device automatically sets the track's audio output routing to "Sends Only." This is because E4L is already routing the ambisonics-domain audio behind the scenes. Sending the stereo output from this track would result in two overlapping copies of the audio. For advanced use cases, you may override this setting and route the track output elsewhere (keep in mind that the track output can send only the stereo signal, not the 16-channel surround encoding).
+Note that by default, adding this device automatically sets the track's audio output routing to "Sends Only." This is because E4L is already routing the ambisonics-domain audio behind the scenes. Sending the stereo output from this track would result in two overlapping copies of the audio. For advanced use cases, you may override this setting and route the track output elsewhere (keep in mind that the track output sends only the stereo signal, not the 16-channel surround encoding).
 
 Repeat this process to build up your surround mix. You may use as many E4L Surround Panner devices as you like, on as many tracks as your CPU can handle.
+
+For more in-depth documentation and tutorials, see the [Envelop For Live Wiki](https://github.com/EnvelopSound/EnvelopForLive/wiki).
 
 # History
 
