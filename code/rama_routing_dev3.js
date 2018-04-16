@@ -1,4 +1,4 @@
-var obj_track, obj_device, obj_routing_dest;
+var obj_track, obj_device, obj_routing_dest, obj_channels;
 var api_q, api_q2;
 
 var this_device_id = -1;
@@ -23,6 +23,36 @@ var deviceNameCount = [];
 
 var busOrChain = "chain";
 
+// this is all kind of almost working, but I realize now it's flawed
+// the problem is that to set the channel you need the dict/objects
+// currently I'm storing the channel ids, from audio_inputs/outputs, but really it needs
+// to be the object
+/**
+		should be something like:
+
+		lookupArray[ "uniqueTrackName.uniqueDeviceName" ] = {
+				routing_type: { id: 0, name: foo },
+				routing_channels : [ { id: 1, display_name: foo }, { id: 2, display_name: foo }, ... ]
+		};
+
+		an array of full assignment values that can be used to quickly rewire everything
+
+		probably will end up going back to Task() object defered iteration to deal with this
+*/
+
+
+function chainToNextDevice()
+{
+	post(obj_routing_dest.get("available_routing_types"), num_outputs, '\n');
+	for(var i = 0; i < num_outputs; i++ )
+	{
+		api_q.id = outputIDs[i];
+		post( "foo", api_q.info, '\n' );
+		//api_q.set("routing_type");
+
+	}
+}
+
 // device change on this track
 // check for chained devces here
 function devicechange_callback(args)
@@ -38,7 +68,7 @@ function devicechange_callback(args)
 		for( var i = 2; i < args.length; i += 2 )
 		{
             //post("iter", args[i],'\n');
-			if( getnext && next_device != -1 )
+			if( getnext )
 			{
 				next_device = args[i];
 				api_q.id = next_device;
@@ -55,7 +85,7 @@ function devicechange_callback(args)
 
 				if( busOrChain == "chain" )
 				{
-
+					chainToNextDevice();
 				}
 
 			}
@@ -151,6 +181,28 @@ function routing_callback(args)
 	}
 }
 
+function routing_callback2(args)
+{
+	if( args[0] == "id")
+		return;
+
+	var obj = args[1];
+    var types = obj["available_routing_types"];
+
+	var idx = 0;
+	for( var i in types )
+	{
+		var send_name = types[i]["display_name"];
+		var send_id = types[i]["identifier"];
+
+		api_q.id = send_id;
+		post("ch", api_q.get("available_routing_channels"), '\n' );
+
+	}
+
+}
+
+
 function active_callback(args)
 {
 //	post(uniquenum, "callback called with arguments:", args, "\n");
@@ -173,20 +225,6 @@ function bang()
 		obj_device.property = "is_active";
 	}
 
-	obj_track = new LiveAPI( devicechange_callback, "this_device canonical_parent" );
-	if ( obj_track )
-	{
-		this_track_id = obj_track.id;
-
-		outlet(0, "trackid", "track_pipe_" + this_track_id );
-
-		obj_track.property = "devices";
-	}
-
-	this_track_name = obj_track.get("name");
-	this_device_name = obj_device.get("name");
-	post("track ", this_track_id, this_track_name, '\n');
-	post("device ", this_device_id, this_device_name, '\n');
 
 	//post(obj_track.info, '\n');
 
@@ -209,8 +247,27 @@ function bang()
 		idx++;
 	}
 
+	obj_channels = new LiveAPI( routing_callback2, "id " + outputIDs[0] );
+	obj_channels.property = "available_routing_types";
+
 // only need to do callback for one audio output because they all have the same options
  	obj_routing_dest = new LiveAPI( routing_callback, "id " + outputIDs[0] );
 	obj_routing_dest.property = "available_routing_types";
+
+
+	obj_track = new LiveAPI( devicechange_callback, "this_device canonical_parent" );
+	if ( obj_track )
+	{
+		this_track_id = obj_track.id;
+
+		outlet(0, "trackid", "track_pipe_" + this_track_id );
+
+		obj_track.property = "devices";
+	}
+
+	this_track_name = obj_track.get("name");
+	this_device_name = obj_device.get("name");
+	post("track ", this_track_id, this_track_name, '\n');
+	post("device ", this_device_id, this_device_name, '\n');
 
 }
