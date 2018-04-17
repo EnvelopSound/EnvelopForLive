@@ -15,14 +15,14 @@ outlets = 1;
 
 // Colors
 
-var background_rgb = [0, 0, 0, 0];
+var background_rgb = [0, 0, 0, 0.];
 var curve_rgb = [0.278431, 0.839216, 1, 1];
 var curve_inactive_rgb = [0.6, 0.6, 0.6, 1];
 var handle_rgbs = [[0.00, 1.00, 0.64, 1], [0.00, 0.93, 0.00, 1], [1.00, 0.85, 0.00, 1]];
 var handle_inactive_rgb = [0.8, 0.8, 0.8, 1];
 var handle_text_rgb = [0, 0, 0, 1];
 var marker_rgb = [0.5, 0.5, 0.5, 0.8];
-var label_rgb = [0.8, 0.8, 0.8, 0.8];
+var label_rgb = [0.5, 0.5, 0.5, 1];
 
 var draw_handles = 1;
 
@@ -499,7 +499,7 @@ function paint()
         for (i = 0; i < freq_labels.length / 2; i++)
         {
             var measure = text_measure((i + 1).toString());
-            move_to(freq2x(freq_labels[i * 2]) + 2, freq_label_line + 2 + measure[1] * 0.65);
+            move_to(freq2x(freq_labels[i * 2]) + 2, freq_label_line + 2 + measure[1] * 0.2);
             show_text(freq_labels[i * 2 + 1]);
         }
 
