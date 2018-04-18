@@ -9,7 +9,9 @@ Envelop for Live (E4L) is an open source audio production framework for spatial 
 
 E4L makes use of the advanced routing capabilities in [Live 10](https://www.ableton.com/en/live/) and [Max for Live](https://www.ableton.com/en/live/max-for-live/). Before continuing, make sure that you have installed both of these programs.
 
-## For Users: Download
+## Installation
+
+### For Users: Download
 
 * Download the [latest release &rarr;](https://github.com/EnvelopSound/EnvelopForLive/releases/download/10.0.0/Envelop.for.Live.10.0.0.zip)
 * Unzip the file and place the **Envelop for Live** folder in a good location on your hard drive
@@ -18,7 +20,7 @@ For easy access, you may wish to bookmark the **Envelop for Live** folder in the
 
 ![Places](/doc/E4L-Places-Add.png)
 
-## For Developers: Clone Repository
+### For Developers: Clone Repository
 
 ```Shell
 $ cd ~/Documents/Max\ 8/Packages/
@@ -27,6 +29,8 @@ $ cd EnvelopForLive
 ```
 
 The E4L Max for Live devices can all be found in the devices subfolder. You will need to load the devices and work out of this directory.
+
+## First Steps
 
 ### Create the E4L Master Bus
 
@@ -45,5 +49,7 @@ Now, create a new audio or instrument track. In the track's effect chain, add th
 Note that by default, adding this device automatically sets the track's audio output routing to "Sends Only." This is because E4L is already routing the Ambisonics-domain audio behind the scenes. Sending the stereo output from this track would result in two overlapping copies of the audio. For advanced use cases, you may override this setting and route the track output elsewhere (keep in mind that the track output sends only the stereo signal, not the 16-channel surround encoding).
 
 Repeat this process to build up your surround mix. You may use as many E4L Surround Panner devices as you like, on as many tracks as your CPU can handle.
+
+## Learn More
 
 For more in-depth documentation and tutorials, see the [Envelop for Live Wiki](https://github.com/EnvelopSound/EnvelopForLive/wiki).
