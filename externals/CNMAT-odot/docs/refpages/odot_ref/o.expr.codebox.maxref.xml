@@ -1,0 +1,451 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet href="./_c74_ref.xsl" type="text/xsl"?>
+
+<c74object name="o.expr.codebox" module="odot">
+
+	<digest>
+		Evaluate a C-like expression containing OSC addresses
+	</digest>
+
+	<description>
+		When it reveives a packet, o.expr substitutes any OSC addresses contained in the expression for the values to which they are bound in the incoming packet.  The expression is then evaluated and the resulting bundle, containing any side effects of the expression, is output.
+	</description>
+
+	<!--METADATA-->
+	<metadatalist>
+		<metadata name="author">CNMAT</metadata>
+		<metadata name="tag">odot</metadata>
+		<metadata name="tag">odot objects</metadata>
+	</metadatalist>
+
+	<!--INLETS-->
+	<inletlist>
+		<inlet id="0" type="FullPacket">
+			<digest>
+				odot bundle
+			</digest>
+			<description>
+				An odot bundle to perform an expression on.
+			</description>
+		</inlet>
+	</inletlist>
+
+	<!--OUTLETS-->
+	<outletlist>
+		<outlet id="0" type="FullPacket">
+			<digest>
+				Results of an expression
+			</digest>
+			<description>
+				Results of an odot expression.
+			</description>
+		</outlet>
+		<outlet id="1" type="NULL">
+			<digest>
+				NULL
+			</digest>
+			<description>
+				NULL - does nothing.
+			</description>
+		</outlet>
+	</outletlist>
+
+	<!--MESSAGES-->
+	<methodlist>
+		<method name="FullPacket [variable]">
+			<arglist />
+			<digest>
+				odot bundle to perform expression on
+			</digest>
+			<description>
+				An odot bundle to perform expression on. Expression results are unioned together into a new odot bundle and passed out of the left outlet.
+			</description>
+		</method>
+		<method name="bang">
+			<arglist />
+			<digest>
+				Perform the expression using an empty bundle as input
+			</digest>
+			<description>
+				Perform the expression using an empty bundle as input.
+			</description>
+		</method>
+		<method name="dictionary [variable]">
+			<arglist />
+			<digest>
+				A Max dictionary to be evaluated
+			</digest>
+			<description>
+				o.if converts a Max dictionary to an odot bundle and processes it as a FullPacket.
+			</description>
+		</method>
+		<method name="doc">
+			<arglist />
+			<digest>
+				Output an odot bundle containing the documentation of the object
+			</digest>
+			<description>
+				Outputs an odot bundle containing object name, short and long descriptions of object operation, inlet and outlet information, and see also (where available).
+			</description>
+		</method>
+		<method name="doc-cat">
+			<arglist />
+			<digest>
+				Output an odot bundle containing documentation categories
+			</digest>
+			<description>
+				Outputs an odot bundle containing all of the categories of the odot expression language. An optional argument for the particular category will output sub-categories of available documentation (e.g. "doc-cat /math/power").
+			</description>
+		</method>
+		<method name="doc-category">
+			<arglist />
+			<digest>
+				Output an odot bundle containing documentation categories
+			</digest>
+			<description>
+				Outputs an odot bundle containing all of the categories of the odot expression language. An optional argument for the particular category will output sub-categories of available documentation (e.g. "doc-category /math/power").
+			</description>
+		</method>
+		<method name="doc-func">
+			<arglist />
+			<digest>
+				Output an odot bundle containing documentation for a particular function
+			</digest>
+			<description>
+				Outputs an odot bundle containing the detailed information about a particular function in the odot expression language. For a list of functions in a category, use "doc-cat [category]", for a list of categories, use "doc-cat" without arguments. For example, "doc-func exp" will output detailed information about the "exp" function in /math/power category.
+			</description>
+		</method>
+		<method name="doc-function">
+			<arglist />
+			<digest>
+				Output an odot bundle containing documentation for functions
+			</digest>
+			<description>
+				Outputs an odot bundle containing the detailed information about a particular function in the odot expression language. For a list of functions in a category, use "doc-category [category]", for a list of categories, use "doc-category" without arguments. For example, "doc-function exp" will output detailed information about the "exp" function in /math/power category.
+			</description>
+		</method>
+		<method name="post-ast">
+			<arglist />
+			<digest>
+				Print Abstract Syntax Tree to the Max window
+			</digest>
+			<description>
+				Prints a LISP-like expression of the abstract syntax tree of the expression to the Max window.
+			</description>
+		</method>
+		<method name="select">
+			<arglist />
+			<digest>
+				Select all contents
+			</digest>
+			<description>
+				Selects all textual content within the o.expr.codebox. May be used to copy/paste the o.expr.codebox contents from a locked patcher.
+			</description>
+		</method>
+		<method name="version">
+			<arglist />
+			<digest>
+				Get current version information
+			</digest>
+			<description>
+				Prints the current odot build version to the Max Window.
+			</description>
+		</method>
+	</methodlist>
+
+	<!--DISCUSSION-->
+	<discussion>
+		o.expr.codebox is the primary mechanism for data transformations in an odot system. When it reveives a bundle, o.expr substitutes any addresses contained in the expression for the values to which they are bound in the incoming bundle. The expression is then evaluated and the resulting bundle, containing any side effects of the expression, is output.
+	</discussion>
+
+	<!--SEEALSO-->
+	<seealsolist>
+		<seealso name="o.if" />
+		<seealso name="o.cond" />
+		<seealso name="expr" />
+	</seealsolist>
+
+	<misc name = "Input">
+		<entry name ="Inlet 1 (FullPacket)">
+			<description>
+				An odot bundle to perform expressions on.
+			</description>
+		</entry>
+	</misc>
+
+	<misc name = "Output">
+		<entry name ="Outlet 1 (FullPacket)">
+			<description>
+				The results of an expression (FullPacket).
+			</description>
+		</entry>
+	</misc>
+
+	<misc name = "Discussion">
+		<entry name ="More details">
+			<description>
+				o.expr.codebox is the primary mechanism for data transformations in an odot system. When it reveives a bundle, o.expr substitutes any addresses contained in the expression for the values to which they are bound in the incoming bundle. The expression is then evaluated and the resulting bundle, containing any side effects of the expression, is output.
+			</description>
+		</entry>
+		<entry name ="Keywords">
+			<description>
+				odot, address, bundle
+			</description>
+		</entry>
+	</misc>
+
+	<misc name ="Functions">
+		<!-- note: these function docs are pasted in from doc generator patch -->
+		<entry name ="math operator arithmetic"><description>
+	<m>+</m><tab></tab>Add<br /><tab></tab><codeexample>/result = /arg1 + /arg2</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>left operand: number, list, string, OSC address (required)</li><li>right operand: number, list, string, OSC address (required)</li></ol><br />
+	<m>-</m><tab></tab>Subtract<br /><tab></tab><codeexample>/result = /arg1 - /arg2</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>left operand: number, list, string, OSC address (required)</li><li>right operand: number, list, string, OSC address (required)</li></ol><br />
+	<m>*</m><tab></tab>Multiply<br /><tab></tab><codeexample>/result = /arg1 * /arg2</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>left operand: number, list, OSC address (required)</li><li>right operand: number, list, OSC address (required)</li></ol><br />
+	<m>/</m><tab></tab>Divide<br /><tab></tab><codeexample>/result = /arg1 / /arg2</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>left operand: number, list, OSC address (required)</li><li>right operand: number, list, OSC address (required)</li></ol><br />
+	<m>%</m><tab></tab>Modulo<br /><tab></tab><codeexample>/result = /arg1 % /arg2</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>left operand: number, list, OSC address (required)</li><li>right operand: number, list, OSC address (required)</li></ol><br />
+	<m>++</m><tab></tab>Increment<br /><tab></tab><codeexample>/result = /arg1++</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>argument to be incremented: OSC address (required)</li></ol><br />
+	<m>--</m><tab></tab>Decrement<br /><tab></tab><codeexample>/result = /arg1--</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>argument to be decremented: OSC address (required)</li></ol><br />
+	<m>+=</m><tab></tab>Add and assign<br /><tab></tab><codeexample>/result = /arg1 += /arg2</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>left operand: OSC address (required)</li><li>right operand: number, list, string, OSC address, boolean (required)</li></ol><br />
+	<m>-=</m><tab></tab>Subtract and assign<br /><tab></tab><codeexample>/result = /arg1 -= /arg2</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>left operand: OSC address (required)</li><li>right operand: number, list, OSC address (required)</li></ol><br />
+	<m>*=</m><tab></tab>Multiply and assign<br /><tab></tab><codeexample>/result = /arg1 *= /arg2</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>left operand: OSC address (required)</li><li>right operand: number, list, OSC address (required)</li></ol><br />
+	<m>/=</m><tab></tab>Divide and assign<br /><tab></tab><codeexample>/result = /arg1 /= /arg2</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>left operand: OSC address (required)</li><li>right operand: number, list, OSC address (required)</li></ol><br />
+	<m>%=</m><tab></tab>Modulo and assign<br /><tab></tab><codeexample>/result = /arg1 %= /arg2</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>left operand: OSC address (required)</li><li>right operand: number, list, OSC address (required)</li></ol><br />
+</description></entry>
+<entry name ="math operator relational"><description>
+	<m>&lt;</m><tab></tab>Less than<br /><tab></tab><codeexample>/result = /arg1 &lt; /arg2</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>left operand: number, list, string, OSC address (required)</li><li>right operand: number, list, string, OSC address (required)</li></ol><br />
+	<m>&lt;=</m><tab></tab>Less than or equal to<br /><tab></tab><codeexample>/result = /arg1 &lt;= /arg2</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>left operand: number, list, string, OSC address (required)</li><li>right operand: number, list, string, OSC address (required)</li></ol><br />
+	<m>&gt;</m><tab></tab>Greater than<br /><tab></tab><codeexample>/result = /arg1 &gt; /arg2</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>left operand: number, list, string, OSC address (required)</li><li>right operand: number, list, string, OSC address (required)</li></ol><br />
+	<m>&gt;=</m><tab></tab>Greater than or equal to<br /><tab></tab><codeexample>/result = /arg1 &gt;= /arg2</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>left operand: number, list, string, OSC address (required)</li><li>right operand: number, list, string, OSC address (required)</li></ol><br />
+	<m>==</m><tab></tab>Equal<br /><tab></tab><codeexample>/result = /arg1 == /arg2</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>left operand: number, list, string, OSC address (required)</li><li>right operand: number, list, string, OSC address (required)</li></ol><br />
+	<m>!=</m><tab></tab>Not equal<br /><tab></tab><codeexample>/result = /arg1 != /arg2</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>left operand: number, list, string, OSC address (required)</li><li>right operand: number, list, string, OSC address (required)</li></ol><br />
+	<m>??</m><tab></tab>Null coalescing operator, returns the left operand if it exists, otherwise it returns the right.<br /><tab></tab><codeexample>/result = /arg1 ?? /arg2</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>left operand: OSC address (required)</li><li>right operand: number, list, string, OSC address (required)</li></ol><br />
+</description></entry>
+<entry name ="math operator logical"><description>
+	<m>&amp;</m><tab></tab>Logical and<br /><tab></tab><codeexample>/result = /arg1 &amp; /arg2</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>left operand: number, list, OSC address (required)</li><li>right operand: number, list, OSC address (required)</li></ol><br />
+	<m>|</m><tab></tab>Logical or<br /><tab></tab><codeexample>/result = /arg1 | /arg2</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>left operand: number, list, OSC address (required)</li><li>right operand: number, list, OSC address (required)</li></ol><br />
+	<m>&amp;&amp;</m><tab></tab>Logical short-circuit and<br /><tab></tab><codeexample>/result = /arg1 &amp;&amp; /arg2</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>left operand: number, list, OSC address (required)</li><li>right operand: number, list, OSC address (required)</li></ol><br />
+	<m>||</m><tab></tab>Logical short-circuit or<br /><tab></tab><codeexample>/result = /arg1 || /arg2</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>left operand: number, list, OSC address (required)</li><li>right operand: number, list, OSC address (required)</li></ol><br />
+	<m>!</m><tab></tab>Logical not<br /><tab></tab><codeexample>/result = !/arg1</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>argument: number, list, OSC address (required)</li></ol><br />
+</description></entry>
+<entry name ="math operator assignment"><description>
+	<m>=</m><tab></tab>Assignment<br /><tab></tab><codeexample>/result = /arg1</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>left operand: OSC address (required)</li><li>right operand: number, list, string, OSC address, boolean (required)</li></ol><br />
+	<m>++</m><tab></tab>Increment<br /><tab></tab><codeexample>/result = /arg1++</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>argument to be incremented: OSC address (required)</li></ol><br />
+	<m>--</m><tab></tab>Decrement<br /><tab></tab><codeexample>/result = /arg1--</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>argument to be decremented: OSC address (required)</li></ol><br />
+	<m>+=</m><tab></tab>Add and assign<br /><tab></tab><codeexample>/result = /arg1 += /arg2</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>left operand: OSC address (required)</li><li>right operand: number, list, string, OSC address, boolean (required)</li></ol><br />
+	<m>-=</m><tab></tab>Subtract and assign<br /><tab></tab><codeexample>/result = /arg1 -= /arg2</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>left operand: OSC address (required)</li><li>right operand: number, list, OSC address (required)</li></ol><br />
+	<m>*=</m><tab></tab>Multiply and assign<br /><tab></tab><codeexample>/result = /arg1 *= /arg2</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>left operand: OSC address (required)</li><li>right operand: number, list, OSC address (required)</li></ol><br />
+	<m>/=</m><tab></tab>Divide and assign<br /><tab></tab><codeexample>/result = /arg1 /= /arg2</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>left operand: OSC address (required)</li><li>right operand: number, list, OSC address (required)</li></ol><br />
+	<m>%=</m><tab></tab>Modulo and assign<br /><tab></tab><codeexample>/result = /arg1 %= /arg2</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>left operand: OSC address (required)</li><li>right operand: number, list, OSC address (required)</li></ol><br />
+</description></entry>
+<entry name ="math arithmetic"><description>
+	<m>add</m><tab></tab>Add<br /><tab></tab><codeexample>/result = add(/arg1, /arg2)</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>arg 1: number, list, string, OSC address (required)</li><li>arg 2: number, list, string, OSC address (required)</li></ol><br />
+	<m>sub</m><tab></tab>Subtract<br /><tab></tab><codeexample>/result = sub(/arg1, /arg2)</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>arg 1: number, list, string, OSC address (required)</li><li>arg 2: number, list, string, OSC address (required)</li></ol><br />
+	<m>mul</m><tab></tab>Multiply<br /><tab></tab><codeexample>/result = mul(/arg1, /arg2)</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>arg 1: number, list, string, OSC address (required)</li><li>arg 2: number, list, string, OSC address (required)</li></ol><br />
+	<m>div</m><tab></tab>Add<br /><tab></tab><codeexample>/result = div(/arg1, /arg2)</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>arg 1: number, list, string, OSC address (required)</li><li>arg 2: number, list, string, OSC address (required)</li></ol><br />
+	<m>lt</m><tab></tab>Less than<br /><tab></tab><codeexample>/result = lt(/arg1, /arg2)</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>arg 1: number, list, string, OSC address (required)</li><li>arg 2: number, list, string, OSC address (required)</li></ol><br />
+	<m>le</m><tab></tab>Less than or equal<br /><tab></tab><codeexample>/result = lte(/arg1, /arg2)</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>arg 1: number, list, string, OSC address (required)</li><li>arg 2: number, list, string, OSC address (required)</li></ol><br />
+	<m>gt</m><tab></tab>Greater than<br /><tab></tab><codeexample>/result = gt(/arg1, /arg2)</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>arg 1: number, list, string, OSC address (required)</li><li>arg 2: number, list, string, OSC address (required)</li></ol><br />
+	<m>ge</m><tab></tab>Greater than or equal<br /><tab></tab><codeexample>/result = ge(/arg1, /arg2)</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>arg 1: number, list, string, OSC address (required)</li><li>arg 2: number, list, string, OSC address (required)</li></ol><br />
+	<m>eq</m><tab></tab>Equality<br /><tab></tab><codeexample>/result = eq(/arg1, /arg2)</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>arg 1: number, list, string, OSC address (required)</li><li>arg 2: number, list, string, OSC address (required)</li></ol><br />
+	<m>ne</m><tab></tab>Not equal<br /><tab></tab><codeexample>/result = ne(/arg1, /arg2)</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>arg 1: number, list, string, OSC address (required)</li><li>arg 2: number, list, string, OSC address (required)</li></ol><br />
+	<m>and</m><tab></tab>Logical and<br /><tab></tab><codeexample>/result = and(/arg1, /arg2)</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>arg 1: number, list, OSC address (required)</li><li>arg 2: number, list, OSC address (required)</li></ol><br />
+	<m>or</m><tab></tab>Logical or<br /><tab></tab><codeexample>/result = or(/arg1, /arg2)</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>arg 1: number, list, OSC address (required)</li><li>arg 2: number, list, OSC address (required)</li></ol><br />
+	<m>andalso</m><tab></tab>Logical short-circuit and<br /><tab></tab><codeexample>/result = andalso(/arg1, /arg2)</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>arg 1: number, list, OSC address (required)</li><li>arg 2: number, list, OSC address (required)</li></ol><br />
+	<m>orelse</m><tab></tab>Logical short-circuit or<br /><tab></tab><codeexample>/result = orelse(/arg1, /arg2)</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>arg 1: number, list, OSC address (required)</li><li>arg 2: number, list, OSC address (required)</li></ol><br />
+	<m>mod</m><tab></tab>Modulo<br /><tab></tab><codeexample>/result = mod(/arg1, /arg2)</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>arg 1: number, list, OSC address (required)</li><li>arg 2: number, list, OSC address (required)</li></ol><br />
+	<m>plus1</m><tab></tab>Add one and return the result without altering the argument<br /><tab></tab><codeexample>/result = plus1(/arg1)</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>arg: number, list, OSC address (required)</li></ol><br />
+	<m>minus1</m><tab></tab>Subtract one and return the result without altering the argument.<br /><tab></tab><codeexample>/result = minus1(/arg1)</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>arg: number, list, OSC address (required)</li></ol><br />
+	<m>abs</m><tab></tab>Absolute value<br /><tab></tab><codeexample>/result = abs(/arg1)</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>x: number, list, OSC address (required)</li></ol><br />
+	<m>ceil</m><tab></tab>Ceiling--round up to the nearest integer<br /><tab></tab><codeexample>/result = ceil(/arg1)</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>x: number, list, OSC address (required)</li></ol><br />
+	<m>floor</m><tab></tab>Round down to the nearest integer<br /><tab></tab><codeexample>/result = floor(/arg1)</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>x: number, list, OSC address (required)</li></ol><br />
+	<m>fmod</m><tab></tab>Floating-point remainder<br /><tab></tab><codeexample>/result = fmod(/arg1, /arg2)</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>x: number, list, OSC address (required)</li><li>y: number, list, OSC address (required)</li></ol><br />
+	<m>remainder</m><tab></tab>Remainder function (r = x - ny where y is non-zero and n is the integral value nearest x/y)<br /><tab></tab><codeexample>/result = remainder(/arg1, /arg2)</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>x: number, list, OSC address (required)</li><li>y: number, list, OSC address (required)</li></ol><br />
+	<m>round</m><tab></tab>Round to nearest integral value<br /><tab></tab><codeexample>/result = round(/arg1)</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>x: number, list, OSC address (required)</li></ol><br />
+	<m>mod</m><tab></tab>Modulo<br /><tab></tab><codeexample>/result = mod(/arg1, /arg2)</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>arg 1: number, list, OSC address (required)</li><li>arg 2: number, list, OSC address (required)</li></ol><br />
+	<m>product</m><tab></tab>Product of all the elements of a list<br /><tab></tab><codeexample>/result = product(/arg1)</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>argument (list): number, list, OSC address (required)</li></ol><br />
+	<m>sum</m><tab></tab>Sum all the elements of a list<br /><tab></tab><codeexample>/result = sum(/arg1)</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>argument (list): number, list, OSC address (required)</li></ol><br />
+	<m>cumsum</m><tab></tab>Cumulative sum<br /><tab></tab><codeexample>/result = cumsum(/arg1)</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>argument (list): number, list, OSC address (required)</li></ol><br />
+	<m>dot</m><tab></tab>Dot product of arg1 and arg2<br /><tab></tab><codeexample>/result = dot(/arg1, /arg2)</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>list 1: number, list, OSC address (required)</li><li>list 2: number, list, OSC address (required)</li></ol><br />
+	<m>cross</m><tab></tab>Cross product of arg1 and arg2<br /><tab></tab><codeexample>/result = cross(/arg1, /arg2)</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>list 1: number, list, OSC address (required)</li><li>list 2: number, list, OSC address (required)</li></ol><br />
+	<m>det</m><tab></tab>Determinant of a square matrix represented as a list of rows (det(row1, row2, ..., rowN))<br /><tab></tab><codeexample>/result = det(/arg1, /arg2)</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>list 1: list, OSC address (required)</li><li>list 2: list, OSC address (required)</li></ol><br />
+	<m>sign</m><tab></tab>Sign function--returns -1 if &lt;arg1&gt; &lt; 0, 0 if &lt;arg1&gt; == 0, and 1 if &lt;arg1&gt; &gt; 1<br /><tab></tab><codeexample>/result = sign(/arg1)</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>x: number, list, OSC address (required)</li></ol><br />
+</description></entry>
+<entry name ="math trigonometric"><description>
+	<m>acos</m><tab></tab>Arc cosine<br /><tab></tab><codeexample>/result = acos(/arg1)</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>x: number, list, OSC address (required)</li></ol><br />
+	<m>asin</m><tab></tab>Arc sine<br /><tab></tab><codeexample>/result = asin(/arg1)</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>x: number, list, OSC address (required)</li></ol><br />
+	<m>atan</m><tab></tab>Arc tangent<br /><tab></tab><codeexample>/result = atan(/arg1)</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>x: number, list, OSC address (required)</li></ol><br />
+	<m>atan2</m><tab></tab>Arc tangent of y/x (arg1/arg2)<br /><tab></tab><codeexample>/result = atan2(/arg1, /arg2)</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>y: number, list, OSC address (required)</li><li>x: number, list, OSC address (required)</li></ol><br />
+	<m>cos</m><tab></tab>Cosine<br /><tab></tab><codeexample>/result = cos(/arg1)</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>x: number, list, OSC address (required)</li></ol><br />
+	<m>cosh</m><tab></tab>Hyperbolic cosine<br /><tab></tab><codeexample>/result = cosh(/arg1)</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>x: number, list, OSC address (required)</li></ol><br />
+	<m>sin</m><tab></tab>Sine<br /><tab></tab><codeexample>/result = sin(/arg1)</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>x: number, list, OSC address (required)</li></ol><br />
+	<m>sinh</m><tab></tab>Hyperbolic sine<br /><tab></tab><codeexample>/result = sinh(/arg1)</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>x: number, list, OSC address (required)</li></ol><br />
+	<m>tan</m><tab></tab>Tangent<br /><tab></tab><codeexample>/result = tan(/arg1)</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>x: number, list, OSC address (required)</li></ol><br />
+	<m>tanh</m><tab></tab>Hyperbolic tangent<br /><tab></tab><codeexample>/result = tanh(/arg1)</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>x: number, list, OSC address (required)</li></ol><br />
+	<m>acosh</m><tab></tab>Inverse hyperbolic cosine<br /><tab></tab><codeexample>/result = acosh(/arg1)</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>x: number, list, OSC address (required)</li></ol><br />
+	<m>asinh</m><tab></tab>Inverse hyperbolic sine<br /><tab></tab><codeexample>/result = asinh(/arg1)</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>x: number, list, OSC address (required)</li></ol><br />
+	<m>atanh</m><tab></tab>Inverse hyperbolic tangent<br /><tab></tab><codeexample>/result = atanh(/arg1)</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>x: number, list, OSC address (required)</li></ol><br />
+</description></entry>
+<entry name ="math power"><description>
+	<m>exp</m><tab></tab>Exponential function<br /><tab></tab><codeexample>/result = exp(/arg1)</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>x: number, list, OSC address (required)</li></ol><br />
+	<m>log</m><tab></tab>Natural logarithm<br /><tab></tab><codeexample>/result = log(/arg1)</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>x: number, list, OSC address (required)</li></ol><br />
+	<m>log10</m><tab></tab>Base 10 logarithm<br /><tab></tab><codeexample>/result = log10(/arg1)</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>x: number, list, OSC address (required)</li></ol><br />
+	<m>pow</m><tab></tab>Power<br /><tab></tab><codeexample>/result = pow(/arg1, /arg2)</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>x: number, list, OSC address (required)</li><li>y: number, list, OSC address (required)</li></ol><br />
+	<m>sqrt</m><tab></tab>Square root<br /><tab></tab><codeexample>/result = sqrt(/arg1)</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>x: number, list, OSC address (required)</li></ol><br />
+	<m>cbrt</m><tab></tab>Cube root<br /><tab></tab><codeexample>/result = cbrt(/arg1)</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>x: number, list, OSC address (required)</li></ol><br />
+	<m>expm1</m><tab></tab>Exponential function (e^x - 1)<br /><tab></tab><codeexample>/result = expm1(/arg1)</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>x: number, list, OSC address (required)</li></ol><br />
+	<m>ilogb</m><tab></tab>Unbiased exponent<br /><tab></tab><codeexample>/result = ilogb(/arg1)</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>x: number, list, OSC address (required)</li></ol><br />
+	<m>logb</m><tab></tab>Radix-independent exponent<br /><tab></tab><codeexample>/result = logb(/arg1)</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>x: number, list, OSC address (required)</li></ol><br />
+</description></entry>
+<entry name ="math conversion"><description>
+	<m>clip</m><tab></tab>Clip the data between arg2 and arg3<br /><tab></tab><codeexample>/result = clip(/arg1, /arg2, /arg3)</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>value(s) to be clipped: number, list, OSC address (required)</li><li>min: number, OSC address (required)</li><li>max: number, OSC address (required)</li></ol><br />
+	<m>scale</m><tab></tab>Scale arg1 from arg2:arg3 to arg4:arg5<br /><tab></tab><codeexample>/result = scale(/arg1, /arg2, /arg3, /arg4, /arg5)</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>value(s) to be scaled: number, list, OSC address (required)</li><li>input min: number, OSC address (required)</li><li>input max: number, OSC address (required)</li><li>output min: number, OSC address (required)</li><li>output max: number, OSC address (required)</li></ol><br />
+	<m>mtof</m><tab></tab>MIDI note number to frequency.  Optional arg2 sets base.<br /><tab></tab><codeexample>/result = mtof(/arg1)</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>midi note number: number, list, OSC address (required)</li><li>base (default = 440): number, OSC address (optional)</li></ol><br />
+	<m>ftom</m><tab></tab>Frequency to MIDI. Optional arg2 sets base.<br /><tab></tab><codeexample>/result = ftom(/arg1)</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>frequency in Hz.: number, list, OSC address (required)</li><li>base (default = 440): number, OSC address (optional)</li></ol><br />
+</description></entry>
+<entry name ="math specialfunction"><description>
+	<m>erf</m><tab></tab>Error function (see http://pubs.opengroup.org/onlinepubs/007908799/xsh/erf.html)<br /><tab></tab><codeexample>/result = erf(/arg1)</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>x: number, list, OSC address (required)</li></ol><br />
+	<m>erfc</m><tab></tab>Complementary error function (see http://pubs.opengroup.org/onlinepubs/007908799/xsh/erf.html)<br /><tab></tab><codeexample>/result = erfc(/arg1)</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>x: number, list, OSC address (required)</li></ol><br />
+	<m>gamma</m><tab></tab>Log gamma function (same as "lgamma")<br /><tab></tab><codeexample>/result = gamma(/arg1)</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>x: number, list, OSC address (required)</li></ol><br />
+	<m>hypot</m><tab></tab>Euclidean distance<br /><tab></tab><codeexample>/result = hypot(/arg1, /arg2)</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>x: number, list, OSC address (required)</li><li>y: number, list, OSC address (required)</li></ol><br />
+	<m>j0</m><tab></tab>0th Bessel function of the first kind<br /><tab></tab><codeexample>/result = j0(/arg1)</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>x: number, list, OSC address (required)</li></ol><br />
+	<m>j1</m><tab></tab>1st Bessel function of the first kind<br /><tab></tab><codeexample>/result = j1(/arg1)</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>x: number, list, OSC address (required)</li></ol><br />
+	<m>jn</m><tab></tab>nth Bessel function of the first kind<br /><tab></tab><codeexample>/result = jn(/arg1, /arg2)</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>n: number, list, OSC address (required)</li><li>x: number, list, OSC address (required)</li></ol><br />
+	<m>lgamma</m><tab></tab>Log gamma function (same as "gamma")<br /><tab></tab><codeexample>/result = lgamma(/arg1)</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>x: number, list, OSC address (required)</li></ol><br />
+	<m>y0</m><tab></tab>0th Bessel function of the second kind<br /><tab></tab><codeexample>/result = y0(/arg1)</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>x: number, list, OSC address (required)</li></ol><br />
+	<m>y1</m><tab></tab>1st Bessel function of the second kind<br /><tab></tab><codeexample>/result = y1(/arg1)</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>x: number, list, OSC address (required)</li></ol><br />
+	<m>yn</m><tab></tab>nth Bessel function of the second kind<br /><tab></tab><codeexample>/result = yn(/arg1, /arg2)</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>n: number, list, OSC address (required)</li><li>x: number, list, OSC address (required)</li></ol><br />
+	<m>identity</m><tab></tab>Returns its argument<br /><tab></tab><codeexample>/result = identity(/arg1)</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>argument: number, list, string, OSC address, boolean (required)</li></ol><br />
+</description></entry>
+<entry name ="math constant"><description>
+	<m>nextafter</m><tab></tab>Next representable double-precision floating-point number<br /><tab></tab><codeexample>/result = nextafter(/arg1)</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>x: number, list, OSC address (required)</li></ol><br />
+	<m>pi</m><tab></tab>pi: 3.14159...<br /><tab></tab><codeexample>/result = pi()</codeexample><br /><br />
+	<m>twopi</m><tab></tab>2 * pi: 6.28318...<br /><tab></tab><codeexample>/result = twopi()</codeexample><br /><br />
+	<m>halfpi</m><tab></tab>pi / 2: 1.57079...<br /><tab></tab><codeexample>/result = halfpi()</codeexample><br /><br />
+	<m>quarterpi</m><tab></tab>pi / 4: 0.78539...<br /><tab></tab><codeexample>/result = quarterpi()</codeexample><br /><br />
+	<m>oneoverpi</m><tab></tab>1 / pi: 0.31830...<br /><tab></tab><codeexample>/result = oneoverpi()</codeexample><br /><br />
+	<m>twooverpi</m><tab></tab>2 / pi: 0.63661...<br /><tab></tab><codeexample>/result = twooverpi()</codeexample><br /><br />
+	<m>degtorad</m><tab></tab>Multiply by angle to get radians (0.017453...)<br /><tab></tab><codeexample>/result = degtorad()</codeexample><br /><br />
+	<m>radtodeg</m><tab></tab>Multiply by angle in radians to get degrees (57.29578...)<br /><tab></tab><codeexample>/result = radtodeg()</codeexample><br /><br />
+	<m>e</m><tab></tab>e: 2.718282...<br /><tab></tab><codeexample>/result = e()</codeexample><br /><br />
+	<m>lntwo</m><tab></tab>ln 2: 0.69314...<br /><tab></tab><codeexample>/result = lntwo()</codeexample><br /><br />
+	<m>lnten</m><tab></tab>ln 10: 2.30258...<br /><tab></tab><codeexample>/result = lnten()</codeexample><br /><br />
+	<m>logtwoe</m><tab></tab>log(2 * e): 1.44269...<br /><tab></tab><codeexample>/result = logtwoe()</codeexample><br /><br />
+	<m>logtene</m><tab></tab>log(10 * e): 0.43420...<br /><tab></tab><codeexample>/result = logtene()</codeexample><br /><br />
+	<m>sqrttwo</m><tab></tab>sqrt(2): 1.41421...<br /><tab></tab><codeexample>/result = sqrttwo()</codeexample><br /><br />
+	<m>sqrthalf</m><tab></tab>sqrt(0.5): 0.70710...<br /><tab></tab><codeexample>/result = sqrthalf()</codeexample><br /><br />
+</description></entry>
+<entry name ="vector"><description>
+	<m>nth</m><tab></tab>Get an element of a list (same as [[ ]])<br /><tab></tab><codeexample>/result = nth(/arg1, /arg2)</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>argument (list): number, list, OSC address (required)</li><li>index: number, list, OSC address (required)</li></ol><br />
+	<m>assign_to_index</m><tab></tab>Assign &lt;arg3&gt; to the indexes &lt;arg2&gt; of the address &lt;arg1&gt;<br /><tab></tab><codeexample>/result = assign_to_index(/arg1, /arg2, /arg3)</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>assignment target: OSC address (required)</li><li>index(es): number, list, OSC address (required)</li><li>value(s): number, list, string, OSC address (required)</li></ol><br />
+	<m>reverse</m><tab></tab>Reverse the order of the elements of a list<br /><tab></tab><codeexample>/result = reverse(/arg1)</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>argument (list): number, list, OSC address (required)</li></ol><br />
+	<m>rev</m><tab></tab>Reverse the order of the elements of a list<br /><tab></tab><codeexample>/result = rev(/arg1)</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>argument (list): number, list, OSC address (required)</li></ol><br />
+	<m>sort</m><tab></tab>Sort the elements of a list<br /><tab></tab><codeexample>/result = sort(/arg1)</codeexample><br /><li>List to be sorted: number, list, string, OSC address, boolean (required)</li><br />
+	<m>sortidx</m><tab></tab>Sort the elements of a list and return the indexes corresponding to the original list<br /><tab></tab><codeexample>/result = sortIndex(/arg1)</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>List to be sorted: number, list, string, OSC address, boolean (required)</li></ol><br />
+	<m>list</m><tab></tab>Assemble the arguments into a list.<br /><tab></tab><codeexample>/result = list(/arg1, /arg2)</codeexample><br /><br />
+	<m>nfill</m><tab></tab>Make a list of &lt;arg1&gt; copies of &lt;arg2&gt;.  &lt;arg2&gt; is optional and defaults to 0<br /><tab></tab><codeexample>/result = nfill(/arg1, /arg2)</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>number of items: number, OSC address (required)</li><li>value (default = 0): number, string, OSC address (optional)</li></ol><br />
+	<m>aseq</m><tab></tab>Arithmetic progression from &lt;arg1&gt; to &lt;arg2&gt; in &lt;arg3&gt; steps.  &lt;arg3&gt; is optional and defaults to 1<br /><tab></tab><codeexample>/result = aseq(/arg1, /arg2, /arg3)</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>min: number, OSC address (required)</li><li>max: number, OSC address (required)</li><li>step (default = 1): number, OSC address (optional)</li></ol><br />
+	<m>interleave</m><tab></tab>Interleave two or more lists<br /><tab></tab><codeexample>/result = interleave(/arg1, /arg2)</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>list 1: list, OSC address (required)</li><li>list 2: list, OSC address (required)</li></ol><br />
+	<m>first</m><tab></tab>Get the first element of a list.<br /><tab></tab><codeexample>/result = first(/arg1)</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>list: list, OSC address (required)</li></ol><br />
+	<m>last</m><tab></tab>Get the last element of a list.<br /><tab></tab><codeexample>/result = last(/arg1)</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>list: list, OSC address (required)</li></ol><br />
+	<m>rest</m><tab></tab>Get everything after the first element of a list.<br /><tab></tab><codeexample>/result = rest(/arg1)</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>list: list, OSC address (required)</li></ol><br />
+	<m>butlast</m><tab></tab>Get everything but the last element of a list.<br /><tab></tab><codeexample>/result = butlast(/arg1)</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>list: list, OSC address (required)</li></ol><br />
+	<m>map</m><tab></tab>Map arguments onto a function and return the result as a list.<br /><tab></tab><codeexample>/result = map(/arg1, /arg2)</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>Function or function name: string, OSC address, function (required)</li><li>OSC address or list: number, list, string, OSC address, boolean (required)</li></ol><br />
+	<m>lreduce</m><tab></tab>Combine the elements of a list using a left-associative binary operation.<br /><tab></tab><codeexample>/result = reduce(/arg1, /arg2)</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>Function or function name: string, OSC address, function (required)</li><li>OSC address or list to reduce: number, list, string, OSC address, boolean (required)</li><li>Start value: number, list, string, OSC address, boolean (optional)</li></ol><br />
+	<m>rreduce</m><tab></tab>Combine the elements of a list using a right-associative binary operation.<br /><tab></tab><codeexample>/result = reduce(/arg1, /arg2)</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>Function or function name: string, OSC address, function (required)</li><li>OSC address or list to reduce: number, list, string, OSC address, boolean (required)</li><li>Start value: number, list, string, OSC address, boolean (optional)</li></ol><br />
+</description></entry>
+<entry name ="statistics"><description>
+	<m>length</m><tab></tab>Get the length of a list<br /><tab></tab><codeexample>/result = length(/arg1)</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>argument (list): number, list, OSC address (required)</li></ol><br />
+	<m>avg</m><tab></tab>The average of a list (same as mean)<br /><tab></tab><codeexample>/result = avg(/arg1)</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>argument (list): number, list, OSC address (required)</li></ol><br />
+	<m>mean</m><tab></tab>The average of a list (same as avg)<br /><tab></tab><codeexample>/result = mean(/arg1)</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>argument (list): number, list, OSC address (required)</li></ol><br />
+	<m>median</m><tab></tab>Median of a list of values<br /><tab></tab><codeexample>/result = median(/arg1)</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>argument (list): number, list, OSC address (required)</li></ol><br />
+	<m>l2norm</m><tab></tab>Norm of the argument<br /><tab></tab><codeexample>/result = l2norm(/arg1)</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>argument (list): number, list, OSC address (required)</li></ol><br />
+	<m>min</m><tab></tab>Minimum value of the arguments<br /><tab></tab><codeexample>/result = min(/arg1)</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>argument (list): number, list, OSC address (required)</li></ol><br />
+	<m>max</m><tab></tab>Maximum value of the arguments<br /><tab></tab><codeexample>/result = max(/arg1)</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>argument (list): number, list, OSC address (required)</li></ol><br />
+	<m>range</m><tab></tab>Range of the arguments<br /><tab></tab><codeexample>/result = range(/arg1)</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>argument (list): number, list, OSC address (required)</li></ol><br />
+	<m>extrema</m><tab></tab>Min and max of the arguments<br /><tab></tab><codeexample>/result = extrema(/arg1)</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>argument (list): number, list, OSC address (required)</li></ol><br />
+</description></entry>
+<entry name ="string function"><description>
+	<m>add</m><tab></tab>Add<br /><tab></tab><codeexample>/result = add(/arg1, /arg2)</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>arg 1: number, list, string, OSC address (required)</li><li>arg 2: number, list, string, OSC address (required)</li></ol><br />
+	<m>sub</m><tab></tab>Subtract<br /><tab></tab><codeexample>/result = sub(/arg1, /arg2)</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>arg 1: number, list, string, OSC address (required)</li><li>arg 2: number, list, string, OSC address (required)</li></ol><br />
+	<m>lt</m><tab></tab>Less than<br /><tab></tab><codeexample>/result = lt(/arg1, /arg2)</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>arg 1: number, list, string, OSC address (required)</li><li>arg 2: number, list, string, OSC address (required)</li></ol><br />
+	<m>le</m><tab></tab>Less than or equal<br /><tab></tab><codeexample>/result = lte(/arg1, /arg2)</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>arg 1: number, list, string, OSC address (required)</li><li>arg 2: number, list, string, OSC address (required)</li></ol><br />
+	<m>gt</m><tab></tab>Greater than<br /><tab></tab><codeexample>/result = gt(/arg1, /arg2)</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>arg 1: number, list, string, OSC address (required)</li><li>arg 2: number, list, string, OSC address (required)</li></ol><br />
+	<m>ge</m><tab></tab>Greater than or equal<br /><tab></tab><codeexample>/result = ge(/arg1, /arg2)</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>arg 1: number, list, string, OSC address (required)</li><li>arg 2: number, list, string, OSC address (required)</li></ol><br />
+	<m>eq</m><tab></tab>Equality<br /><tab></tab><codeexample>/result = eq(/arg1, /arg2)</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>arg 1: number, list, string, OSC address (required)</li><li>arg 2: number, list, string, OSC address (required)</li></ol><br />
+	<m>ne</m><tab></tab>Not equal<br /><tab></tab><codeexample>/result = ne(/arg1, /arg2)</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>arg 1: number, list, string, OSC address (required)</li><li>arg 2: number, list, string, OSC address (required)</li></ol><br />
+	<m>strlen</m><tab></tab>Get length of string(s).<br /><tab></tab><codeexample>/result = strlen(/arg1)</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>String, or list of strings: list, string, OSC address (required)</li></ol><br />
+	<m>strchar</m><tab></tab>Get one or more characters from string as new string.<br /><tab></tab><codeexample>/result = strchar(/arg1, /arg2)</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>Index, or list of indexes of characters.: number, list (required)</li><li>String, or list of strings: list, string, OSC address (required)</li></ol><br />
+	<m>strfind</m><tab></tab>Get first index corresponding to each instance of the sub-string found in the source string.<br /><tab></tab><codeexample>/result = strfind(/arg1, /arg2)</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>Sub-string to look for: string, OSC address (required)</li><li>String to search for sub-string: string, OSC address (required)</li></ol><br />
+	<m>strcmp</m><tab></tab>Compare two strings.<br /><tab></tab><codeexample>/result = strcmp(/arg1, /arg2)</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>String 1: string, OSC address (required)</li><li>String 2: string, OSC address (required)</li><li>Number of characters to compare: number, OSC address (optional)</li></ol><br />
+	<m>split</m><tab></tab>Split a string at a separator.<br /><tab></tab><codeexample>/result = split("/", /arg1)</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>Separator: string, OSC address (required)</li><li>String: string, OSC address (required)</li></ol><br />
+	<m>join</m><tab></tab>Join multiple strings with a separator.<br /><tab></tab><codeexample>/result = join("/", /arg1)</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>Separator: string, OSC address (required)</li><li>String: string, OSC address (required)</li></ol><br />
+</description></entry>
+<entry name ="string operator"><description>
+	<m>+</m><tab></tab>Add<br /><tab></tab><codeexample>/result = /arg1 + /arg2</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>left operand: number, list, string, OSC address (required)</li><li>right operand: number, list, string, OSC address (required)</li></ol><br />
+	<m>-</m><tab></tab>Subtract<br /><tab></tab><codeexample>/result = /arg1 - /arg2</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>left operand: number, list, string, OSC address (required)</li><li>right operand: number, list, string, OSC address (required)</li></ol><br />
+	<m>&lt;</m><tab></tab>Less than<br /><tab></tab><codeexample>/result = /arg1 &lt; /arg2</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>left operand: number, list, string, OSC address (required)</li><li>right operand: number, list, string, OSC address (required)</li></ol><br />
+	<m>&lt;=</m><tab></tab>Less than or equal to<br /><tab></tab><codeexample>/result = /arg1 &lt;= /arg2</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>left operand: number, list, string, OSC address (required)</li><li>right operand: number, list, string, OSC address (required)</li></ol><br />
+	<m>&gt;</m><tab></tab>Greater than<br /><tab></tab><codeexample>/result = /arg1 &gt; /arg2</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>left operand: number, list, string, OSC address (required)</li><li>right operand: number, list, string, OSC address (required)</li></ol><br />
+	<m>&gt;=</m><tab></tab>Greater than or equal to<br /><tab></tab><codeexample>/result = /arg1 &gt;= /arg2</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>left operand: number, list, string, OSC address (required)</li><li>right operand: number, list, string, OSC address (required)</li></ol><br />
+	<m>==</m><tab></tab>Equal<br /><tab></tab><codeexample>/result = /arg1 == /arg2</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>left operand: number, list, string, OSC address (required)</li><li>right operand: number, list, string, OSC address (required)</li></ol><br />
+	<m>!=</m><tab></tab>Not equal<br /><tab></tab><codeexample>/result = /arg1 != /arg2</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>left operand: number, list, string, OSC address (required)</li><li>right operand: number, list, string, OSC address (required)</li></ol><br />
+</description></entry>
+<entry name ="predicate"><description>
+	<m>bound</m><tab></tab>True if the address exists and has data bound to it, false otherwise.<br /><tab></tab><codeexample>/result = bound(/arg1)</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>OSC address: OSC address (required)</li></ol><br />
+	<m>exists</m><tab></tab>True if the address exists (regardless of whether it has data bound to it.<br /><tab></tab><codeexample>/result = exists(/arg1)</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>OSC address: expression, OSC address (required)</li></ol><br />
+	<m>emptybundle</m><tab></tab>True if the bundle is empty, false otherwise.<br /><tab></tab><codeexample>/result = emptybundle()</codeexample><br /><br />
+</description></entry>
+<entry name ="conditional"><description>
+	<m>if</m><tab></tab>Conditionally execute &lt;arg2&gt; or optional &lt;arg3&gt; based on the result of &lt;arg1&gt;<br /><tab></tab><codeexample>/result = if(/arg1, /arg2, /arg3)</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>test: number, boolean (required)</li><li>then: number, list, string, OSC address, boolean (required)</li><li>else: number, list, string, OSC address, boolean (optional)</li></ol><br />
+</description></entry>
+<entry name ="core"><description>
+	<m>.</m><tab></tab>Extract a message from a nested bundle.<br /><tab></tab><codeexample>/bundle./member</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>The address of a message containing a nested bundle: string, OSC address (required)</li><li>The address of the message to extract from the nested bundle.: string, OSC address (required)</li></ol><br />
+	<m>assign</m><tab></tab>Assignment<br /><tab></tab><codeexample>assign(/result, /arg2)</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>arg 1: OSC address (required)</li><li>arg 2: number, list, string, OSC address, boolean (required)</li></ol><br />
+	<m>getaddresses</m><tab></tab>Returns a list of all addresses in the bundle.<br /><tab></tab><codeexample>/result = getaddresses()</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>A bundle to get the addresses from: OSC address (optional)</li></ol><br />
+	<m>delete</m><tab></tab>Remove the message with the corresponding address from the bundle.<br /><tab></tab><codeexample>/result = delete(/arg1)</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>OSC address to be deleted: OSC address (required)</li></ol><br />
+	<m>getmsgcount</m><tab></tab>Returns the number of messages in the bundle.<br /><tab></tab><codeexample>/result = getmsgcount()</codeexample><br /><br />
+	<m>eval</m><tab></tab>Evaluate an expression bound to an OSC address.<br /><tab></tab><codeexample>/result = eval(/arg1)</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>OSC address or expression: string, OSC address (required)</li></ol><br />
+	<m>tokenize</m><tab></tab>Tokenize an expression<br /><tab></tab><codeexample>/result = tokenize(/arg1)</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>OSC address or expression: string, OSC address (required)</li></ol><br />
+	<m>prog1</m><tab></tab>Execute a sequence of expressions and return the first one.<br /><tab></tab><codeexample>/result = prog1(/arg1)</codeexample><br /><li>expression to be evaluated: number, list, string, OSC address, boolean (required)</li><br />
+	<m>prog2</m><tab></tab>Execute a sequence of expressions and return the second one.<br /><tab></tab><codeexample>/result = prog2(/arg1)</codeexample><br /><li>expression to be evaluated: number, list, string, OSC address, boolean (required)</li><br />
+	<m>progn</m><tab></tab>Execute a sequence of expressions and return the last one.<br /><tab></tab><codeexample>/result = progn(/arg1)</codeexample><br /><li>expression to be evaluated: number, list, string, OSC address, boolean (required)</li><br />
+	<m>apply</m><tab></tab>Apply a function to arguments.<br /><tab></tab><codeexample>/result = apply(/arg1, /arg2)</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>Function or function name: string, OSC address, function (required)</li><li>Argument: number, list, string, OSC address, boolean (required)</li></ol><br />
+	<m>quote</m><tab></tab>Prevent the evaluation of &lt;arg1&gt;.<br /><tab></tab><codeexample>/result = quote(/arg1)</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>argument: number, list, string, OSC address, boolean (required)</li></ol><br />
+	<m>value</m><tab></tab>Return the value associated with the argument.<br /><tab></tab><codeexample>/result = value(/arg1)</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>argument: OSC address (required)</li></ol><br />
+	<m>lambda</m><tab></tab>Anonymous function<br /><tab></tab><codeexample></codeexample><br /><br />
+	<m>gettimetag</m><tab></tab>Get the timetag from the OSC bundle header.<br /><tab></tab><codeexample>/timetag = gettimetag()</codeexample><br /><br />
+	<m>settimetag</m><tab></tab>Put a timetag in the header of the OSC bundle.<br /><tab></tab><codeexample>settimetag(/time)</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>time to place in the header: string, OSC address (required)</li></ol><br />
+	<m>getbundlemember</m><tab></tab>Extract a message from a nested bundle.<br /><tab></tab><codeexample>getbundlemember(/bundle, /member)</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>The address of a message containing a nested bundle: string, OSC address (required)</li><li>The address of the message to extract from the nested bundle.: string, OSC address (required)</li></ol><br />
+	<m>assigntobundlemember</m><tab></tab>Assign a value to an address contained in a named nested bundle.<br /><tab></tab><codeexample>assigntobundlemember(/bundle, /member, /val)</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>The address of a message containing a nested bundle: string, OSC address (required)</li><li>The address of the message to extract from the nested bundle.: string, OSC address (required)</li><li>The value to assign.: string, OSC address (required)</li></ol><br />
+	<m>imu</m><tab></tab>Sensor fusion....<br /><tab></tab><codeexample>imu(/imu_values, /quaternion)</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>The imu data with optional temperature in the final position of the list: OSC address (required)</li><li>The quaternion.: OSC address (required)</li></ol><br />
+	<m>float32</m><tab></tab>Cast to float32<br /><tab></tab><codeexample>/result = float32(/arg1)</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>argument to be converted: number, list, OSC address (required)</li></ol><br />
+	<m>float64</m><tab></tab>Cast to float64<br /><tab></tab><codeexample>/result = float64(/arg1)</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>argument to be converted: number, list, OSC address (required)</li></ol><br />
+	<m>int8</m><tab></tab>Cast to int8<br /><tab></tab><codeexample>/result = int8(/arg1)</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>argument to be converted: number, list, OSC address (required)</li></ol><br />
+	<m>char</m><tab></tab>Cast to char (int8)<br /><tab></tab><codeexample>/result = char(/arg1)</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>argument to be converted: number, list, OSC address (required)</li></ol><br />
+	<m>int16</m><tab></tab>Cast to int16<br /><tab></tab><codeexample>/result = int16(/arg1)</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>argument to be converted: number, list, OSC address (required)</li></ol><br />
+	<m>int32</m><tab></tab>Cast to int32<br /><tab></tab><codeexample>/result = int32(/arg1)</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>argument to be converted: number, list, OSC address (required)</li></ol><br />
+	<m>int64</m><tab></tab>Cast to int64<br /><tab></tab><codeexample>/result = int64(/arg1)</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>argument to be converted: number, list, OSC address (required)</li></ol><br />
+	<m>uint8</m><tab></tab>Cast to uint8<br /><tab></tab><codeexample>/result = uint8(/arg1)</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>argument to be converted: number, list, OSC address (required)</li></ol><br />
+	<m>uint16</m><tab></tab>Cast to uint16<br /><tab></tab><codeexample>/result = uint16(/arg1)</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>argument to be converted: number, list, OSC address (required)</li></ol><br />
+	<m>uint32</m><tab></tab>Cast to uint32<br /><tab></tab><codeexample>/result = uint32(/arg1)</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>argument to be converted: number, list, OSC address (required)</li></ol><br />
+	<m>uint64</m><tab></tab>Cast to uint64<br /><tab></tab><codeexample>/result = uint64(/arg1)</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>argument to be converted: number, list, OSC address (required)</li></ol><br />
+	<m>bool</m><tab></tab>Cast to bool<br /><tab></tab><codeexample>/result = bool(/arg1)</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>argument to be converted: number, list, OSC address (required)</li></ol><br />
+	<m>string</m><tab></tab>Cast to string<br /><tab></tab><codeexample>/result = string(/arg1)</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>argument to be converted: number, list, OSC address (required)</li></ol><br />
+	<m>blob</m><tab></tab>Cast to blob<br /><tab></tab><codeexample>/result = blob(/arg1)</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>argument to be converted: number, list, OSC address (required)</li></ol><br />
+	<m>cast</m><tab></tab>Cast<br /><tab></tab><codeexample>/result = cast(/arg1, /arg2)</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>typetag(s): list, string, OSC address (required)</li><li>argument(s) to be converted: number, list, OSC address (required)</li></ol><br />
+	<m>typetags</m><tab></tab>Get the typetags associated with &lt;arg1&gt; as a list of int8s<br /><tab></tab><codeexample>/result = typetags(/arg1)</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>address of message to get typetags from: OSC address (required)</li></ol><br />
+	<m>hton32</m><tab></tab>convert a 32-bit integer from host to network byte order.<br /><tab></tab><codeexample>/result = hton32(/arg1)</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>argument to be converted: number, list, OSC address (required)</li></ol><br />
+	<m>ntoh32</m><tab></tab>convert a 32-bit integer from network to host byte order.<br /><tab></tab><codeexample>/result = ntoh32(/arg1)</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>argument to be converted: number, list, OSC address (required)</li></ol><br />
+	<m>hton64</m><tab></tab>convert a 64-bit integer from host to network byte order.<br /><tab></tab><codeexample>/result = hton64(/arg1)</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>argument to be converted: number, list, OSC address (required)</li></ol><br />
+	<m>ntoh64</m><tab></tab>convert a 64-bit integer from network to host byte order.<br /><tab></tab><codeexample>/result = ntoh64(/arg1)</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>argument to be converted: number, list, OSC address (required)</li></ol><br />
+	<m>readstring</m><tab></tab>Converts the contents of a string to an expression.<br /><tab></tab><codeexample>/result = readstring(/arg1)</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>String or address: string, OSC address (required)</li></ol><br />
+	<m>strtotime</m><tab></tab>Converts the contents of a string to a timetag.<br /><tab></tab><codeexample>/result = strtotime(/arg1)</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>String: string (required)</li></ol><br />
+	<m>match</m><tab></tab>matches the pattern(s) in arg 1 against the string(s) in arg 2.<br /><tab></tab><codeexample>/result = match(/arg1, /arg2)</codeexample><br /><tab></tab>Arguments:<br /><ol type="1"><li>String: list, string (required)</li><li>String: list, string (required)</li></ol><br />
+</description></entry>
+
+
+
+	</misc>
+
+
+
+</c74object>

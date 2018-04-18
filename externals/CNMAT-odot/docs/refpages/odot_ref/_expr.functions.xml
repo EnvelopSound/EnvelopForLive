@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?> <misc name="Functions">
+<entry name ="math operator arithmetic"><description>
+	<m>+</m> : Add<br /> 
+	<m>-</m> : Subtract<br /> 
+	<m>*</m> : Multiply<br /> 
+	<m>/</m> : Divide<br /> 
+	<m>%</m> : Modulo<br /> 
+	<m>++</m> : Increment<br /> 
+	<m>--</m> : Decrement<br /> 
+	<m>+=</m> : Add and assign<br /> 
+	<m>-=</m> : Subtract and assign<br /> 
+	<m>*=</m> : Multiply and assign<br /> 
+	<m>/=</m> : Divide and assign<br /> 
+	<m>%=</m> : Modulo and assign<br /> 
+</description></entry>
+<entry name ="math operator relational"><description>
+	<m>&lt;</m> : Less than<br /> 
+	<m>&lt;=</m> : Less than or equal to<br /> 
+	<m>&gt;</m> : Greater than<br /> 
+	<m>&gt;=</m> : Greater than or equal to<br /> 
+	<m>==</m> : Equal<br /> 
+	<m>!=</m> : Not equal<br /> 
+	<m>??</m> : Null coalescing operator, returns the left operand if it exists, otherwise it returns the right.<br /> 
+</description></entry>
+<entry name ="math operator logical"><description>
+	<m>&amp;</m> : Logical and<br /> 
+	<m>|</m> : Logical or<br /> 
+	<m>&amp;&amp;</m> : Logical short-circuit and<br /> 
+	<m>||</m> : Logical short-circuit or<br /> 
+	<m>!</m> : Logical not<br /> 
+</description></entry>
+<entry name ="math operator assignment"><description>
+	<m>=</m> : Assignment<br /> 
+	<m>++</m> : Increment<br /> 
+	<m>--</m> : Decrement<br /> 
+	<m>+=</m> : Add and assign<br /> 
+	<m>-=</m> : Subtract and assign<br /> 
+	<m>*=</m> : Multiply and assign<br /> 
+	<m>/=</m> : Divide and assign<br /> 
+	<m>%=</m> : Modulo and assign<br /> 
+</description></entry>
+<entry name ="math arithmetic"><description>
+	<m>add</m> : Add<br /> 
+	<m>sub</m> : Subtract<br /> 
+	<m>mul</m> : Multiply<br /> 
+	<m>div</m> : Add<br /> 
+	<m>lt</m> : Less than<br /> 
+	<m>le</m> : Less than or equal<br /> 
+	<m>gt</m> : Greater than<br /> 
+	<m>ge</m> : Greater than or equal<br /> 
+	<m>eq</m> : Equality<br /> 
+	<m>ne</m> : Not equal<br /> 
+	<m>and</m> : Logical and<br /> 
+	<m>or</m> : Logical or<br /> 
+	<m>andalso</m> : Logical short-circuit and<br /> 
+	<m>orelse</m> : Logical short-circuit or<br /> 
+	<m>mod</m> : Modulo<br /> 
+	<m>plus1</m> : Add one and return the result without altering the argument<br /> 
+	<m>minus1</m> : Subtract one and return the result without altering the argument.<br /> 
+	<m>abs</m> : Absolute value<br /> 
+	<m>ceil</m> : Ceiling--round up to the nearest integer<br /> 
+	<m>floor</m> : Round down to the nearest integer<br /> 
+	<m>fmod</m> : Floating-point remainder<br /> 
+	<m>remainder</m> : Remainder function (r = x - ny where y is non-zero and n is the integral value nearest x/y)<br /> 
+	<m>round</m> : Round to nearest integral value<br /> 
+	<m>mod</m> : Modulo<br /> 
+	<m>product</m> : Product of all the elements of a list<br /> 
+	<m>sum</m> : Sum all the elements of a list<br /> 
+	<m>cumsum</m> : Cumulative sum<br /> 
+	<m>dot</m> : Dot product of arg1 and arg2<br /> 
+	<m>cross</m> : Cross product of arg1 and arg2<br /> 
+	<m>det</m> : Determinant of a square matrix represented as a list of rows (det(row1, row2, ..., rowN))<br /> 
+	<m>sign</m> : Sign function--returns -1 if &lt;arg1&gt; &lt; 0, 0 if &lt;arg1&gt; == 0, and 1 if &lt;arg1&gt; &gt; 1<br /> 
+</description></entry>
+<entry name ="math trigonometric"><description>
+	<m>acos</m> : Arc cosine<br /> 
+	<m>asin</m> : Arc sine<br /> 
+	<m>atan</m> : Arc tangent<br /> 
+	<m>atan2</m> : Arc tangent of y/x (arg1/arg2)<br /> 
+	<m>cos</m> : Cosine<br /> 
+	<m>cosh</m> : Hyperbolic cosine<br /> 
+	<m>sin</m> : Sine<br /> 
+	<m>sinh</m> : Hyperbolic sine<br /> 
+	<m>tan</m> : Tangent<br /> 
+	<m>tanh</m> : Hyperbolic tangent<br /> 
+	<m>acosh</m> : Inverse hyperbolic cosine<br /> 
+	<m>asinh</m> : Inverse hyperbolic sine<br /> 
+	<m>atanh</m> : Inverse hyperbolic tangent<br /> 
+</description></entry>
+<entry name ="math power"><description>
+	<m>exp</m> : Exponential function<br /> 
+	<m>log</m> : Natural logarithm<br /> 
+	<m>log10</m> : Base 10 logarithm<br /> 
+	<m>pow</m> : Power<br /> 
+	<m>sqrt</m> : Square root<br /> 
+	<m>cbrt</m> : Cube root<br /> 
+	<m>expm1</m> : Exponential function (e^x - 1)<br /> 
+	<m>ilogb</m> : Unbiased exponent<br /> 
+	<m>logb</m> : Radix-independent exponent<br /> 
+</description></entry>
+<entry name ="math conversion"><description>
+	<m>clip</m> : Clip the data between arg2 and arg3<br /> 
+	<m>scale</m> : Scale arg1 from arg1:arg2 to arg3:arg4<br /> 
+	<m>mtof</m> : MIDI note number to frequency.  Optional arg2 sets base.<br /> 
+	<m>ftom</m> : Frequency to MIDI. Optional arg2 sets base.<br /> 
+</description></entry>
+<entry name ="math specialfunction"><description>
+	<m>erf</m> : Error function (see http://pubs.opengroup.org/onlinepubs/007908799/xsh/erf.html)<br /> 
+	<m>erfc</m> : Complementary error function (see http://pubs.opengroup.org/onlinepubs/007908799/xsh/erf.html)<br /> 
+	<m>gamma</m> : Log gamma function (same as "lgamma")<br /> 
+	<m>hypot</m> : Euclidean distance<br /> 
+	<m>j0</m> : 0th Bessel function of the first kind<br /> 
+	<m>j1</m> : 1st Bessel function of the first kind<br /> 
+	<m>jn</m> : nth Bessel function of the first kind<br /> 
+	<m>lgamma</m> : Log gamma function (same as "gamma")<br /> 
+	<m>y0</m> : 0th Bessel function of the second kind<br /> 
+	<m>y1</m> : 1st Bessel function of the second kind<br /> 
+	<m>yn</m> : nth Bessel function of the second kind<br /> 
+	<m>identity</m> : Returns its argument<br /> 
+</description></entry>
+<entry name ="math constant"><description>
+	<m>nextafter</m> : Next representable double-precision floating-point number<br /> 
+	<m>pi</m> : pi: 3.14159...<br /> 
+	<m>twopi</m> : 2 * pi: 6.28318...<br /> 
+	<m>halfpi</m> : pi / 2: 1.57079...<br /> 
+	<m>quarterpi</m> : pi / 4: 0.78539...<br /> 
+	<m>oneoverpi</m> : 1 / pi: 0.31830...<br /> 
+	<m>twooverpi</m> : 2 / pi: 0.63661...<br /> 
+	<m>degtorad</m> : Multiply by angle to get radians (0.017453...)<br /> 
+	<m>radtodeg</m> : Multiply by angle in radians to get degrees (57.29578...)<br /> 
+	<m>e</m> : e: 2.718282...<br /> 
+	<m>lntwo</m> : ln 2: 0.69314...<br /> 
+	<m>lnten</m> : ln 10: 2.30258...<br /> 
+	<m>logtwoe</m> : log(2 * e): 1.44269...<br /> 
+	<m>logtene</m> : log(10 * e): 0.43420...<br /> 
+	<m>sqrttwo</m> : sqrt(2): 1.41421...<br /> 
+	<m>sqrthalf</m> : sqrt(0.5): 0.70710...<br /> 
+</description></entry>
+<entry name ="vector"><description>
+	<m>nth</m> : Get an element of a list (same as [[ ]])<br /> 
+	<m>assign_to_index</m> : Assign &lt;arg3&gt; to the indexes &lt;arg2&gt; of the address &lt;arg1<br /> 
+	<m>reverse</m> : Reverse the order of the elements of a list<br /> 
+	<m>rev</m> : Reverse the order of the elements of a list<br /> 
+	<m>sort</m> : Sort the elements of a list<br /> 
+	<m>sortidx</m> : Sort the elements of a list and return the indexes corresponding to the original list<br /> 
+	<m>list</m> : Assemble the arguments into a list.<br /> 
+	<m>nfill</m> : Make a list of &lt;arg1&gt; copies of &lt;arg2&gt;.  &lt;arg2&gt; is optional and defaults to 0<br /> 
+	<m>aseq</m> : Arithmetic progression from &lt;arg1&gt; to &lt;arg2&gt; in &lt;arg3&gt; steps.  &lt;arg3&gt; is optional and defaults to 1<br /> 
+	<m>interleave</m> : Interleave two or more lists<br /> 
+	<m>first</m> : Get the first element of a list.<br /> 
+	<m>last</m> : Get the last element of a list.<br /> 
+	<m>rest</m> : Get everything after the first element of a list.<br /> 
+	<m>butlast</m> : Get everything but the last element of a list.<br /> 
+	<m>map</m> : Map arguments onto a function and return the result as a list.<br /> 
+	<m>lreduce</m> : Combine the elements of a list using a left-associative binary operation.<br /> 
+	<m>rreduce</m> : Combine the elements of a list using a right-associative binary operation.<br /> 
+</description></entry>
+<entry name ="statistics"><description>
+	<m>length</m> : Get the length of a list<br /> 
+	<m>avg</m> : The average of a list (same as mean)<br /> 
+	<m>mean</m> : The average of a list (same as avg)<br /> 
+	<m>median</m> : Median of a list of values<br /> 
+	<m>l2norm</m> : Norm of the argument<br /> 
+	<m>min</m> : Minimum value of the arguments<br /> 
+	<m>max</m> : Maximum value of the arguments<br /> 
+	<m>range</m> : Range of the arguments<br /> 
+	<m>extrema</m> : Min and max of the arguments<br /> 
+</description></entry>
+<entry name ="string function"><description>
+	<m>add</m> : Add<br /> 
+	<m>sub</m> : Subtract<br /> 
+	<m>lt</m> : Less than<br /> 
+	<m>le</m> : Less than or equal<br /> 
+	<m>gt</m> : Greater than<br /> 
+	<m>ge</m> : Greater than or equal<br /> 
+	<m>eq</m> : Equality<br /> 
+	<m>ne</m> : Not equal<br /> 
+	<m>strcmp</m> : Compare two strings.<br /> 
+	<m>split</m> : Split a string at a separator.<br /> 
+	<m>join</m> : Join multiple strings with a separator.<br /> 
+</description></entry>
+<entry name ="string operator"><description>
+	<m>+</m> : Add<br /> 
+	<m>-</m> : Subtract<br /> 
+	<m>&lt;</m> : Less than<br /> 
+	<m>&lt;=</m> : Less than or equal to<br /> 
+	<m>&gt;</m> : Greater than<br /> 
+	<m>&gt;=</m> : Greater than or equal to<br /> 
+	<m>==</m> : Equal<br /> 
+	<m>!=</m> : Not equal<br /> 
+</description></entry>
+<entry name ="predicate"><description>
+	<m>bound</m> : True if the address exists and has data bound to it, false otherwise.<br /> 
+	<m>exists</m> : True if the address exists (regardless of whether it has data bound to it.<br /> 
+	<m>emptybundle</m> : True if the bundle is empty, false otherwise.<br /> 
+</description></entry>
+<entry name ="conditional"><description>
+	<m>if</m> : Conditionally execute &lt;arg2&gt; or optional &lt;arg3&gt; based on the result of &lt;arg1<br /> 
+</description></entry>
+<entry name ="core"><description>
+	<m>.</m> : Extract a message from a nested bundle.<br /> 
+	<m>assign</m> : Assignment<br /> 
+	<m>getaddresses</m> : Returns a list of all addresses in the bundle.<br /> 
+	<m>delete</m> : Remove the message with the corresponding address from the bundle.<br /> 
+	<m>getmsgcount</m> : Returns the number of messages in the bundle.<br /> 
+	<m>eval</m> : Evaluate an expression bound to an OSC address.<br /> 
+	<m>tokenize</m> : Tokenize an expression<br /> 
+	<m>prog1</m> : Execute a sequence of expressions and return the first one.<br /> 
+	<m>prog2</m> : Execute a sequence of expressions and return the second one.<br /> 
+	<m>progn</m> : Execute a sequence of expressions and return the last one.<br /> 
+	<m>apply</m> : Apply a function to arguments.<br /> 
+	<m>quote</m> : Prevent the evaluation of &lt;arg1&gt;.<br /> 
+	<m>value</m> : Return the value associated with the argument.<br /> 
+	<m>lambda</m> : Anonymous function<br /> 
+	<m>gettimetag</m> : Get the timetag from the OSC bundle header.<br /> 
+	<m>settimetag</m> : Put a timetag in the header of the OSC bundle.<br /> 
+	<m>getbundlemember</m> : Extract a message from a nested bundle.<br /> 
+	<m>assigntobundlemember</m> : Assign a value to an address contained in a named nested bundle.<br /> 
+	<m>imu</m> : Sensor fusion....<br /> 
+	<m>float32</m> : Cast to float32<br /> 
+	<m>float64</m> : Cast to float64<br /> 
+	<m>int8</m> : Cast to int8<br /> 
+	<m>char</m> : Cast to char (int8)<br /> 
+	<m>int16</m> : Cast to int16<br /> 
+	<m>int32</m> : Cast to int32<br /> 
+	<m>int64</m> : Cast to int64<br /> 
+	<m>uint8</m> : Cast to uint8<br /> 
+	<m>uint16</m> : Cast to uint16<br /> 
+	<m>uint32</m> : Cast to uint32<br /> 
+	<m>uint64</m> : Cast to uint64<br /> 
+	<m>bool</m> : Cast to bool<br /> 
+	<m>string</m> : Cast to string<br /> 
+	<m>blob</m> : Cast to blob<br /> 
+	<m>cast</m> : Cast<br /> 
+	<m>typetags</m> : Get the typetags associated with &lt;arg1&gt; as a list of int8s<br /> 
+	<m>hton32</m> : convert a 32-bit integer from host to network byte order.<br /> 
+	<m>ntoh32</m> : convert a 32-bit integer from network to host byte order.<br /> 
+	<m>hton64</m> : convert a 64-bit integer from host to network byte order.<br /> 
+	<m>ntoh64</m> : convert a 64-bit integer from network to host byte order.<br /> 
+	<m>readstring</m> : Converts the contents of a string to an expression.<br /> 
+	<m>strtotime</m> : Converts the contents of a string to a timetag.<br /> 
+	<m>match</m> : matches the pattern(s) in arg 1 against the string(s) in arg 2.<br /> 
+</entry>
+</misc> 

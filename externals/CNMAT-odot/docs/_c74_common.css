@@ -1,0 +1,569 @@
+/*
+	Copyright (c) 2012 Cycling '74
+
+	Permission is hereby granted, free of charge, to any person obtaining a copy of this software 
+	and associated documentation files (the "Software"), to deal in the Software without restriction, 
+	including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, 
+	and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, 
+	subject to the following conditions:
+
+	The above copyright notice and this permission notice shall be included in all copies 
+	or substantial portions of the Software.
+
+	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, 
+	INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. 
+	IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, 
+	WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE 
+	OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+*/
+
+
+/* basestyle is used for the vignette body text, but does not appear to
+* affect tutorials or reference
+*/
+.basestyle {
+    font-size: 10pt;
+    font-family: Georgia;
+    font-weight: normal;
+	margin: 0em;
+	padding: 15px 15px;
+}
+
+/* this is italics */
+em {
+    display:inline;
+    font-size: 10pt;
+    font-style: italic;
+}
+
+/* this is bold */
+strong {
+    display:inline;
+    font-size: 10pt;
+    font-weight: bold;
+}
+
+
+/* header1 is the title style of a vignette, for example in docintro it
+* is Max 5 Help and Documentation
+*/
+.header1 {
+    font-family: "Lucida Sans Unicode", "Lucida Sans", "Lucida Grande", Verdana, sans-serif;
+    font-size:14pt;
+    font-weight: bold;
+    padding-bottom: 12px;
+}
+
+/* header2 is the subhead style of a vignette -- this applies to links in this style */
+/* trying: "Lucida Sans Unicode", "Lucida Sans", "Lucida Grande", Verdana, sans-serif */
+.header2 {
+    font-family: "Lucida Sans Unicode", "Lucida Sans", "Lucida Grande", Verdana, sans-serif;
+    font-size:11pt;
+    font-weight: bold;
+    padding-top: 2px;
+    padding-bottom: 7px;
+}
+
+/* header3 is the sub-subhead style of a vignette -- this applies to links in this style */
+/* trying: "Lucida Sans Unicode", "Lucida Sans", "Lucida Grande", Verdana, sans-serif */
+.header3 {
+    font-family: "Lucida Sans Unicode", "Lucida Sans", "Lucida Grande", Verdana, sans-serif;
+    font-size:10pt;
+    font-weight: bold;
+    font-style: italic;
+    padding-top: 2px;
+    padding-bottom: 7px;
+}
+
+/* this style is used for the body text in a vignette / tutorial */
+.bodytext {
+    padding-bottom: 10px;
+}
+
+/* this style is used for a single line of code text in a vignette / tutorial */
+pre {
+	font-family: "Courier", "Monaco", mono-spaced;
+	white-space:pre;
+	width:auto;
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+/* this style is used for the text in a side bar (such as in docintro) */
+.sidebartext {
+    padding: 14px;
+	float: right;
+	border: 1px solid #ccc;
+	background: #eef;
+	font-size: 9.5pt;
+	width: 27%;
+	margin-left: 15px;
+}
+
+/* have not found where this style applies */
+.boxedtext {
+    border: 1px solid #DDD;
+    margin-bottom: 14px;
+}
+
+.bodytextss {
+  
+}
+
+/* this style is used for bulleted lists, setting the margin and inset */
+ul {
+    margin: 0px;
+    padding: 0px 15px;
+	list-style-type: disc;
+	list-style-position: outside;
+}
+
+/* this style sets the space between the items in a bulleted list in a vignette */
+li {
+    padding-bottom: 8px;
+}
+
+/* this used for call-out boxes in vignettes */
+.bluebox {
+    border: 1px solid #DDD;
+    padding: 15px 15px 0px 15px;
+    background-color: #DFF;
+}
+
+/* This is tied to the illustration style which is used in the ported
+* MSP and (Jitter?) tutorials. I have changed it to work with the
+* images as traditionally displayed 
+*/
+.imagebox {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-style: italic;
+    margin-bottom: 12px;
+}
+
+/* caption is for example captions */
+.caption {
+    font-style: italic;
+    text-align: center;
+    font-size: 9.5pt;
+    padding-bottom: 10px;
+}
+
+/* nor this */
+.detail {
+    border: 1px solid #CCC;
+    padding: 15px 15px 0px 15px;
+    background-color: #EEE;
+}
+
+/* nor this */
+.bullet {
+    padding: 15px 15px 0px 15px;
+}
+
+.tab {
+  text-indent:10px;
+}
+
+.sup {
+    font-size: smaller;
+    vertical-align: baseline;
+    position: relative;
+    bottom: 0.33em;
+}
+
+.sub {
+    font-size: smaller;
+    vertical-align: baseline;
+    position: relative;
+    bottom: -0.25em;
+}
+
+.message {
+  background-color: #DDD;
+  <!-- padding-left: 1em; -->
+  padding-right: 0em;
+  <!-- border: 1px solid #DDD; -->
+  font-weight: normal;
+}
+
+body{
+	font-family: Georgia;
+	padding: 10px;
+	font-size: 10pt;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: "Lucida Sans Unicode", "Lucida Sans", "Lucida Grande", Verdana, sans-serif;
+	padding: 0;
+}
+
+/* Document Title 
+ * This is the object name in a reference page
+ * Bottom margin is negative to move the positioning of the digest upward 
+ * without modifying the digest class (since the digest class is used in other places)
+ */
+h1 {
+	font-size: 19pt;
+	margin-bottom: -10px;
+}
+
+/* Section Header -- this is Description, Arguments, Messages in a 
+ * reference page */
+h2 {
+	margin-top: 9px;
+	margin-bottom: 2px;
+	font-size: 11pt;
+}
+
+/* Subsection Header 
+ * this is the word "Legacy"(!)
+*/
+h3 {
+/*  margin-top: 10;
+  margin-bottom: 5;
+       border: solid 1px gray;
+       background-color: silver;
+       padding: 0.1em;
+  font-weight: bold;
+  font-size: 100%;
+*/
+  font-size: 11pt;
+  color: #446;
+  border: solid 1px #DDD;
+  background-color: #EEF;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+h4 {
+  color: #44F;
+  border: solid 1px #DDD;
+  background-color: #EEE;
+}
+
+a {
+	color: #55c;
+	font-family: "Lucida Sans Unicode", "Lucida Sans", "Lucida Grande", Verdana, sans-serif;
+	/*font-size: 90%;*/
+}
+
+/* a.objectname does not appear to be used in reference pages */
+a.objectname {
+	color: black;
+	font-weight: normal;
+}
+
+/* p.digest is the one-line description of an object below its name
+ * in a reference page -- but where does it get this font?
+*/
+p.digest {
+	font-size: 10pt;
+	font-style: italic;
+}
+
+/* sets information about the message list on a reference page
+* the last margin number was -3 but I (ddz) think it looks better at 0
+* it sets the left margin
+* the first margin number is the top margin, don't see anything that the
+* second number does -- the third number sets the bottom of the table margin
+* can't see an effect of padding being non-zero
+*/
+table{
+	width: 100%;
+	margin: 0 0 0 0;
+	padding: 0;
+	border-collapse: collapse;
+}
+
+/* cannot find how th applies to a reference page */
+th{
+	text-align: left;
+	font-style: italic;
+	font-weight: normal;
+	font-size: 10pt;
+	border-bottom: 1px solid #999;	
+	margin: 0;
+	padding: 2px;
+	padding-top: 4px;
+}
+
+/* td is the font for the first two columns of the message list table
+* the first column being the message name, the second being input [int] etc.
+*/
+
+td{
+	vertical-align: top;
+	margin-top: 0;
+	/*padding-top: 0;*/
+	padding: 0 10px 0 0;
+	border-top: 1px solid #ddd;
+	/*background-color: #eee;*/
+	font-family: "Lucida Sans Unicode", "Lucida Sans", "Lucida Grande", Verdana, sans-serif;
+	font-size: 9.5pt;
+}
+
+/* td.description is the description of each message in the message table
+*/
+td.description{
+	font-family: Georgia;
+	font-size: 9.5pt;
+	padding-bottom: 3px;
+	padding-top: 2px;
+	font-style: normal;
+}
+
+/* td.liveapi is the document basestyle. We use it when making a custom table 
+ * using classical table tags (created for rsu/live.api)
+ */
+td.liveapi{
+	font-family: Georgia;
+	font-size: 9.5pt;
+	padding-bottom: 3px;
+	padding-top: 2px;
+	font-style: normal;
+}
+
+td.i{
+font-style: italic;
+}
+
+/* cannot find how .objectname applies to a reference page -- is this o? */
+.objectname {
+	;
+}
+
+/* .messagename is used for showing a message name such as int within a 
+* paragraph in a reference page. That's why its display is "inline" Is this m?
+*/
+
+.messagename {
+	display: inline;
+	font-family: "Lucida Sans Unicode", "Lucida Sans", "Lucida Grande", Verdana, sans-serif;
+	/*font-weight: bold;*/
+	font-size: 9.5pt;
+}
+
+/* cannot find how .attrname applies to a reference page -- is this a? */
+.attrname {
+	font-style: italic;
+}
+
+/* cannot find how .inletname applies to a reference page */
+.inletname {
+	display: inline;
+	font-family: "Lucida Sans Unicode", "Lucida Sans", "Lucida Grande", Verdana, sans-serif;
+	font-weight: normal;
+	font-size: 9.5pt;
+}
+
+.defaultval {
+	font-style: italic;
+	font-size: smaller;
+}
+
+#inlet_section table{
+	;
+}
+
+
+#outlet_section{
+	;
+}
+
+
+#argument_section th.description{
+	width: 65%;
+}
+#argument_section td.description{
+	width: 65%;
+}
+
+#argument_section td.optional{
+	width: 5%;
+}
+
+
+#method_section th.description{
+	width: 65%;
+}
+#method_section td.description{
+	width: 65%;
+}
+
+
+#attr_section th.description{
+	width: 65%;
+}
+#attr_section td.description{
+	width: 65%;
+}
+
+.arglist_arg{
+	/* 	in the original XSLT it had a <br/> at the end of each one.
+		What to do here?
+	*/
+}
+
+
+#examples_section {
+	;
+}
+
+#seealso_section th.name {
+	width: 30%;
+}
+
+/* misc_section .messagename is the style for a message name in a description
+* in the Output sections in a reference page.
+*/
+ 
+#misc_section .messagename{
+	/*font-size: 100%;*/
+}
+
+/* misc_section is the specification of the description of output in a 
+* reference page
+*/
+#misc_section{
+	font-size: 9.5pt;
+}
+
+/* misc_section .outputmessage is the kind of output you see, i.e., "bang" in the
+* output section in a reference page
+*/
+#misc_section .outputmessage {
+	text-align: left;
+	font-style: italic;
+	font-size: 10pt;
+	font-weight: normal;
+	border-bottom: 1px solid #999;	
+	margin: 0;
+	padding: 2px;
+}
+
+/* misc_section .description is the normal description text on the 
+*  reference page. We're reiterating the 9.5pt for combinations of 
+*  (for example) outputmessage + description on the same line
+*/
+#misc_section .description {
+	font-style: normal;
+	font-size: 9.5pt;
+	font-weight: normal;
+}
+/* cannot determine what misc_section .name does */
+#misc_section .name {
+	;
+}
+
+/* cannot determine what misc_section .digest does -- perhaps there is no digest content? */
+#misc_section .digest{
+	;		/* inherits some stuff from the normal digest class*/
+}
+
+#mop_section{
+	;
+}
+
+#ob3d_section{
+	;
+}
+
+/* presumably this is for the jargon tag -- is that implemented? */
+.jargon {
+    border: 1px solid #999;
+    color:red;
+}
+
+/* cannot get this to do anything reference-wise, maybe "t" is for tutorial? */        
+.theader {
+    border: 1px solid #CCC;
+    padding: 0px 15px 0px 15px;
+    background-color: #EEE;
+}
+
+/* cannot get this to do anything */        
+.tentry {
+    border: 1px solid #CCC;
+    padding: 0px 15px 0px 15px;
+}
+
+.noframe {
+  padding: 0px 0px;
+}
+/*
+	Can use the following for doing tables with appearance that alternates by row
+*/
+/*
+.row_odd {
+	background: #eee;
+}
+
+.row_even {
+	background: #ced;
+}
+
+.row_odd_nested {
+	background: #dec;
+}
+
+.row_even_nested {
+	background: #ecd;
+}
+*/
+
+.searchresults li p{
+	margin-top: 0;
+	margin-bottom: 0;
+	padding-top: 0;
+	padding-bottom: 0;
+	font-size: smaller;
+}
+
+#liveapi_section {
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+
+#liveapi_section h3 {
+	margin-top: 0px;
+	margin-bottom: 0px;
+	font-size: 13pt;
+	color: #446;
+	background-color: #EEE;
+	border: solid 1px #DDD;
+	margin-top: 0;
+	margin-bottom: 4px;
+}
+
+#liveapi_section h4 {
+	color: #446;
+	background-color: #EEF;
+	margin-top: 8px;
+	margin-bottom: 0px;
+}
+
+#liveapi_section .path {
+	margin-top: 8px;
+	margin-left: 16px;
+	vertical-align: top;
+	padding: 0 10px 0 0;
+	border-top: 1px solid #ddd;
+	font-family: "Lucida Sans Unicode", "Lucida Sans", "Lucida Grande", Verdana, sans-serif;
+	font-size: 9.5pt;
+}
+
+#liveapi_section th {
+	padding-left: 16px;
+}
+
+#liveapi_section td {
+	padding-left: 16px;
+}
+
+#liveapi_section .none {
+	margin-top: 8px;
+	margin-left: 16px;
+}
+

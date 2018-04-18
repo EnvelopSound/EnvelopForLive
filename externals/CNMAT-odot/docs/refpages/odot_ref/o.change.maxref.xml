@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet href="./_c74_ref.xsl" type="text/xsl"?>
+
+<c74object name="o.change" module="odot">
+
+	<digest>
+		Output a bundle if it changes
+	</digest>
+
+	<description>
+		o.change passes a bundle through if it is different from the last bundle that it received.  Any change including reordering the contents will cause the bundle to be passed through.
+	</description>
+
+	<!--METADATA-->
+	<metadatalist>
+		<metadata name="author">CNMAT</metadata>
+		<metadata name="tag">odot</metadata>
+		<metadata name="tag">odot objects</metadata>
+	</metadatalist>
+
+	<!--INLETS-->
+	<inletlist>
+		<inlet id="0" type="FullPacket">
+			<digest>
+				odot bundle
+			</digest>
+			<description>
+				An odot bundle to evaluate for changes.
+			</description>
+		</inlet>
+		<inlet id="0" type="FullPacket">
+			<digest>
+				odot bundle to compare against
+			</digest>
+			<description>
+				Set an odot bundle without evaluating it against the previously received bundle.
+			</description>
+		</inlet>
+	</inletlist>
+
+	<!--OUTLETS-->
+	<outletlist>
+		<outlet id="0" type="FullPacket">
+			<digest>
+				odot bundle
+			</digest>
+			<description>
+				Input, if the input differs from the previous input.
+			</description>
+		</outlet>
+		<outlet id="1" type="FullPacket">
+			<digest>
+				odot bundle to compare against
+			</digest>
+			<description>
+				Input, if the input is the same as the previous input.
+			</description>
+		</outlet>
+	</outletlist>
+
+	<!--MESSAGES-->
+	<methodlist>
+		<method name="FullPacket [variable]">
+			<arglist />
+			<digest>
+				odot bundle to be evaluated
+			</digest>
+			<description>
+				Each incoming odot bundle is compared with a previously received bundle. If the two are the same, the input is routed to the right outlet. If the two differ, the input is routed to the left outlet.
+			</description>
+		</method>
+		<method name="dictionary [variable]">
+			<arglist />
+			<digest>
+				A Max dictionary to be transcoded to an odot bundle
+			</digest>
+			<description>
+				Converts the incoming Max dictionary to an odot bundle, and performs the FullPacket operation of the object.
+			</description>
+		</method>
+		<method name="doc">
+			<arglist />
+			<digest>
+				Output an odot bundle containing the documentation of the object
+			</digest>
+			<description>
+				Outputs an odot bundle containing object name, short and long descriptions of object operation, inlet and outlet information, and see also (where available).
+			</description>
+		</method>
+		<method name="version">
+			<arglist />
+			<digest>
+				Get current version information.
+			</digest>
+			<description>
+				Prints the current odot build version to the Max Window.
+			</description>
+		</method>
+	</methodlist>
+
+	<!--DISCUSSION-->
+	<discussion>
+	</discussion>
+
+	<!--SEEALSO-->
+	<seealsolist>
+		<seealso name="change" />
+	</seealsolist>
+
+	<misc name = "Input">
+		<entry name ="Inlet 1 (FullPacket)">
+			<description>
+				An odot bundle to operate on.
+			</description>
+		</entry>
+	</misc>
+
+	<misc name = "Output">
+		<entry name ="Outlet 1 (FullPacket)">
+			<description>
+				The resulting odot bundle (FullPacket).
+			</description>
+		</entry>
+	</misc>
+
+	<misc name = "Discussion">
+		<entry name ="More details">
+			<description>
+			</description>
+		</entry>
+		<entry name ="Keywords">
+			<description>
+				odot, address, bundle
+			</description>
+		</entry>
+	</misc>
+
+</c74object>
