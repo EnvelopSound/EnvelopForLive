@@ -11,9 +11,8 @@ E4L makes use of the advanced routing capabilities in [Live 10](https://www.able
 
 ## For Users: Download
 
-* Download https://github.com/EnvelopSound/EnvelopForLive/archive/live10.zip &rarr;
-* Unzip the file `EnvelopForLive-live10.zip`
-* Copy the entire `EnvelopForLive-live10` folder into your `~/Documents/Max 8/Packages` folder
+* Download https://github.com/EnvelopSound/EnvelopForLive/releases/download/10.0.0/Envelop.for.Live.10.0.0.zip &rarr;
+* Unzip the file `EnvelopEnvelop.for.Live.10.0.0.zip`
 
 ## For Developers: Clone Repository
 
@@ -21,10 +20,7 @@ E4L makes use of the advanced routing capabilities in [Live 10](https://www.able
 $ cd ~/Documents/Max\ 8/Packages/
 $ git clone https://github.com/EnvelopSound/EnvelopForLive.git
 $ cd EnvelopForLive
-$ git checkout live10
 ```
-
-## Using the Software
 
 The E4L Max for Live devices can all be found in the devices subfolder. You may wish to drag this folder into the "Places" section of the Live 10 browser to bookmark it.
 
