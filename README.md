@@ -7,12 +7,16 @@ Envelop for Live (E4L) is an open source audio production framework for spatial 
 
 # Getting Started
 
-E4L makes use of the advanced routing capabilities in [Live 10](https://www.ableton.com/en/live/) and [Max for Live](https://www.ableton.com/en/live/max-for-live/). Before continuing, make sure that you have purchased and installed both of these packages.
+E4L makes use of the advanced routing capabilities in [Live 10](https://www.ableton.com/en/live/) and [Max for Live](https://www.ableton.com/en/live/max-for-live/). Before continuing, make sure that you have installed both of these programs.
 
 ## For Users: Download
 
 * Download the [latest release &rarr;](https://github.com/EnvelopSound/EnvelopForLive/releases/download/10.0.0/Envelop.for.Live.10.0.0.zip)
-* Unzip the file `EnvelopEnvelop.for.Live.10.0.0.zip`
+* Unzip the file and place the **Envelop for Live** folder in a good location on your hard drive
+
+For easy access, you may wish to bookmark the **Envelop for Live** folder in the Places section of Ableton Live. Do this by dragging and dropping the folder, or using the "Add Folder..." button.
+
+![Places](/doc/E4L-Places-Add.png)
 
 ## For Developers: Clone Repository
 
@@ -22,17 +26,15 @@ $ git clone https://github.com/EnvelopSound/EnvelopForLive.git
 $ cd EnvelopForLive
 ```
 
-The E4L Max for Live devices can all be found in the devices subfolder. You may wish to drag this folder into the "Places" section of the Live 10 browser to bookmark it.
-
-![Places](/doc/EnvelopForLive-Places.png) ![Browser](/doc/EnvelopForLive-devices.png)
+The E4L Max for Live devices can all be found in the devices subfolder. You will need to load the devices and work out of this directory.
 
 ### Create the E4L Master Bus
 
-Create a new audio track. Add one of the **E4L Master Bus** device to this track. Note that the track will automatically be renamed to "E4L Master." It is recommended to leave this track name in place, though you may optionally rename it. This track and device will act as a receiver for ambisonics audio, and allow you to monitor the output of a decoder.
+Create a new audio track. Add one of the **E4L Master Bus** device to this track. Note that the track will automatically be renamed to "E4L Master." It is recommended to leave this track name in place, though you may optionally rename it. This track and device will act as a receiver for Ambisonics audio, and allow you to monitor the output of a decoder.
 
 ![E4L Master Bus](/doc/E4L-Master-Bus.png)
 
-By default, the E4L Master Bus device will use a Binaural decoder, which enables you to preview your spatial mix on a pair of headphones. Make sure that the "Monitor 1+2" switch is engaged. Input meters on the E4L Master Bus device provide a visual reference for whether the device is receiving input.
+By default, the E4L Master Bus device will use a Binaural decoder, which enables you to preview your spatial mix on a pair of headphones. Make sure that the **Monitor 1+2** switch is engaged. Input meters on the E4L Master Bus device provide a visual reference for whether the device is receiving input.
 
 ### Add source tracks
 
