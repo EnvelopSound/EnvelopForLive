@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 1464.0, 386.0, 898.0, 743.0 ],
+		"rect" : [ 1029.0, 280.0, 898.0, 743.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -37,6 +37,20 @@
 		"style" : "",
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
+				"box" : 				{
+					"id" : "obj-7",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "int" ],
+					"patching_rect" : [ 213.0, 404.0, 145.0, 22.0 ],
+					"presentation_rect" : [ 213.0, 404.0, 145.0, 22.0 ],
+					"style" : "",
+					"text" : "e4l.live.count_aux_inputs"
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"id" : "obj-47",
 					"maxclass" : "newobj",
@@ -66,69 +80,13 @@
 			}
 , 			{
 				"box" : 				{
-					"id" : "obj-45",
-					"maxclass" : "newobj",
-					"numinlets" : 2,
-					"numoutlets" : 1,
-					"outlettype" : [ "int" ],
-					"patching_rect" : [ 213.0, 494.0, 29.5, 22.0 ],
-					"presentation_rect" : [ 213.0, 494.0, 29.5, 22.0 ],
-					"style" : "",
-					"text" : "/ 2"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-44",
-					"maxclass" : "newobj",
-					"numinlets" : 2,
-					"numoutlets" : 1,
-					"outlettype" : [ "int" ],
-					"patching_rect" : [ 213.0, 463.0, 29.5, 22.0 ],
-					"presentation_rect" : [ 213.0, 463.0, 29.5, 22.0 ],
-					"style" : "",
-					"text" : "- 2"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-41",
-					"maxclass" : "newobj",
-					"numinlets" : 2,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 213.0, 432.0, 39.0, 22.0 ],
-					"presentation_rect" : [ 213.0, 432.0, 39.0, 22.0 ],
-					"style" : "",
-					"text" : "zl.len"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-40",
-					"maxclass" : "newobj",
-					"numinlets" : 2,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 213.0, 401.0, 175.0, 22.0 ],
-					"presentation_rect" : [ 213.0, 401.0, 175.0, 22.0 ],
-					"style" : "",
-					"text" : "e4l.live.object get audio_inputs"
-				}
-
-			}
-, 			{
-				"box" : 				{
 					"id" : "obj-30",
 					"maxclass" : "newobj",
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 213.0, 371.0, 40.0, 22.0 ],
-					"presentation_rect" : [ 213.0, 371.0, 40.0, 22.0 ],
+					"patching_rect" : [ 213.0, 377.0, 40.0, 22.0 ],
+					"presentation_rect" : [ 213.0, 377.0, 40.0, 22.0 ],
 					"style" : "",
 					"text" : "zl.reg"
 				}
@@ -239,8 +197,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 73.5, 229.0, 147.0, 22.0 ],
-					"presentation_rect" : [ 73.5, 229.0, 147.0, 22.0 ],
+					"patching_rect" : [ 73.5, 228.0, 147.0, 22.0 ],
+					"presentation_rect" : [ 73.5, 228.0, 147.0, 22.0 ],
 					"style" : "",
 					"text" : "e4l.live.object get devices"
 				}
@@ -267,8 +225,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 235.5, 229.0, 195.0, 22.0 ],
-					"presentation_rect" : [ 235.5, 229.0, 195.0, 22.0 ],
+					"patching_rect" : [ 235.5, 228.0, 195.0, 22.0 ],
+					"presentation_rect" : [ 235.5, 228.0, 195.0, 22.0 ],
 					"style" : "",
 					"text" : "e4l.live.object get has_audio_input"
 				}
@@ -337,8 +295,8 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 22.0, 16.0, 162.0, 22.0 ],
-					"presentation_rect" : [ 22.0, 16.0, 162.0, 22.0 ],
+					"patching_rect" : [ 22.0, 16.0, 144.0, 22.0 ],
+					"presentation_rect" : [ 22.0, 16.0, 144.0, 22.0 ],
 					"style" : "",
 					"text" : "e4l.bus.chain_index"
 				}
@@ -362,7 +320,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-13", 1 ],
-					"midpoints" : [ 42.0, 372.0, 133.0, 372.0 ],
+					"midpoints" : [ 42.0, 370.0, 133.0, 370.0 ],
 					"source" : [ "obj-11", 1 ]
 				}
 
@@ -434,7 +392,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-40", 0 ],
+					"destination" : [ "obj-7", 0 ],
 					"source" : [ "obj-30", 0 ]
 				}
 
@@ -443,34 +401,6 @@
 				"patchline" : 				{
 					"destination" : [ "obj-8", 0 ],
 					"source" : [ "obj-4", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-41", 0 ],
-					"source" : [ "obj-40", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-44", 0 ],
-					"source" : [ "obj-41", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-45", 0 ],
-					"source" : [ "obj-44", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-28", 1 ],
-					"source" : [ "obj-45", 0 ]
 				}
 
 			}
@@ -505,6 +435,13 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-28", 1 ],
+					"source" : [ "obj-7", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-6", 0 ],
 					"source" : [ "obj-8", 1 ]
 				}
@@ -534,6 +471,13 @@
 			}
 , 			{
 				"name" : "e4l.live.object.maxpat",
+				"bootpath" : "~/Documents/Max 8/Packages/EnvelopForLive/patchers/live",
+				"patcherrelativepath" : "../live",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "e4l.live.count_aux_inputs.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/EnvelopForLive/patchers/live",
 				"patcherrelativepath" : "../live",
 				"type" : "JSON",
