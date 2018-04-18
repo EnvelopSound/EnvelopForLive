@@ -11,7 +11,7 @@ E4L makes use of the advanced routing capabilities in [Live 10](https://www.able
 
 ## For Users: Download
 
-* Download https://github.com/EnvelopSound/EnvelopForLive/releases/download/10.0.0/Envelop.for.Live.10.0.0.zip &rarr;
+* Download the [latest release &rarr;](https://github.com/EnvelopSound/EnvelopForLive/releases/download/10.0.0/Envelop.for.Live.10.0.0.zip)
 * Unzip the file `EnvelopEnvelop.for.Live.10.0.0.zip`
 
 ## For Developers: Clone Repository
@@ -40,20 +40,8 @@ Now, create a new audio or instrument track. In the track's effect chain, add th
 
 ![E4L Source Panner](/doc/E4L-Source-Panner.png)
 
-Note that by default, adding this device automatically sets the track's audio output routing to "Sends Only." This is because E4L is already routing the ambisonics-domain audio behind the scenes. Sending the stereo output from this track would result in two overlapping copies of the audio. For advanced use cases, you may override this setting and route the track output elsewhere (keep in mind that the track output sends only the stereo signal, not the 16-channel surround encoding).
+Note that by default, adding this device automatically sets the track's audio output routing to "Sends Only." This is because E4L is already routing the Ambisonics-domain audio behind the scenes. Sending the stereo output from this track would result in two overlapping copies of the audio. For advanced use cases, you may override this setting and route the track output elsewhere (keep in mind that the track output sends only the stereo signal, not the 16-channel surround encoding).
 
 Repeat this process to build up your surround mix. You may use as many E4L Surround Panner devices as you like, on as many tracks as your CPU can handle.
 
-For more in-depth documentation and tutorials, see the [Envelop For Live Wiki](https://github.com/EnvelopSound/EnvelopForLive/wiki).
-
-# History
-
-Version 1 of the Envelop for Live system was developed by Rama Gottfried, and was modeled on the architecture of Ircam-Spat combined with an odot port of Alex Harker's "Convolution Reverb Pro" Max For Live device adapted for use with B-Format impulse responses.
-
-For more information on the signal processing architecture please see:
-* Jean-Marc Jot, *"Efficient models for reverberation and distance rendering in computer music and virtual audio reality"*, IRCAM, 1997.
-* Markus Noisternig, Thomas Musil, et. al., *"A 3D Real Time Rendering Engine for Binaural Sound Reproduction"*, ICAD, 2003.
-* Harker, Alexander and Tremblay, Pierre Alexandre, *"The HISSTools Impulse Response Toolbox: Convolution for the Masses"*, ICMC, 2012.
-
-For information on the CNMAT-odot system please see:
-* John MacCallum, Rama Gottfried, Ilya Rostovtsev, Jean Bresson, and Adrian Freed, *"Dynamic Message-Oriented Middleware with Open Sound Control and Odot"*, ICMC, 2015.
+For more in-depth documentation and tutorials, see the [Envelop for Live Wiki](https://github.com/EnvelopSound/EnvelopForLive/wiki).
