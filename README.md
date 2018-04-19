@@ -39,7 +39,7 @@ Create a new audio track. Add one of the **E4L Master Bus** device to this track
 
 ![E4L Master Bus](/doc/E4L-Master-Bus.png)
 
-By default, the E4L Master Bus device will use a Binaural decoder, which enables you to preview your spatial mix on a pair of headphones. Make sure that the **Monitor 1+2** switch is engaged. Input meters on the E4L Master Bus device provide a visual reference for whether the device is receiving input.
+By default, the **E4L Master Bus** device will use a **Binaural** decoder, which enables you to preview your spatial mix on a pair of headphones. Make sure that the **Monitor 1+2** switch is engaged. Input meters on the **E4L Master Bus** device provide a visual reference for whether the device is receiving input.
 
 ### Add source tracks
 
@@ -47,9 +47,9 @@ Now, create a new audio or instrument track. In the track's effect chain, add th
 
 ![E4L Source Panner](/doc/E4L-Source-Panner.png)
 
-Note that by default, adding this device automatically sets the track's audio output routing to "Sends Only." This is because E4L is already routing the Ambisonics-domain audio behind the scenes. Sending the stereo output from this track would result in two overlapping copies of the audio. For advanced use cases, you may override this setting and route the track output elsewhere (keep in mind that the track output sends only the stereo signal, not the 16-channel surround encoding).
+Note that by default, adding this device automatically sets the track's audio output routing to _Sends Only_. This is because E4L is already routing the Ambisonics-domain audio behind the scenes. Sending the stereo output from this track would result in two overlapping copies of the audio. For advanced use cases, you may override this setting and route the track output elsewhere (keep in mind that the track output sends only the stereo signal, not the 16-channel surround encoding).
 
-Repeat this process to build up your surround mix. You may use as many E4L Surround Panner devices as you like, on as many tracks as your CPU can handle.
+Repeat this process to build up your surround mix. You may use as many **E4L Source Panner** devices as you like, on as many tracks as your CPU can handle.
 
 ## Learn More
 
