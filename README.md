@@ -4,6 +4,7 @@ Envelop for Live (E4L) is an open source audio production framework for spatial 
 
 * [Join the Facebook Group for questions, tips, etc.](https://www.facebook.com/groups/E4LUsers)
 * [Sign up for the Envelop email newsletter](http://www.envelop.us/connect/)
+* [Learn more on the Envelop for Live Wiki](https://github.com/EnvelopSound/EnvelopForLive/wiki)
 
 # Getting Started
 
