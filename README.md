@@ -33,6 +33,10 @@ The E4L Max for Live devices can all be found in the devices subfolder. You will
 
 ## First Steps
 
+The following intro video offers a quick overview of the Envelop for Live software.
+
+[![Envelop for Live Software Intro](http://img.youtube.com/vi/iAHzJJhJVSQ/0.jpg)](http://www.youtube.com/watch?v=iAHzJJhJVSQ "Envelop for Live Software Intro")
+
 ### Create the E4L Master Bus
 
 Create a new audio track. Add one of the **E4L Master Bus** device to this track. Note that the track will automatically be renamed to "E4L Master." It is recommended to leave this track name in place, though you may optionally rename it. This track and device will act as a receiver for Ambisonics audio, and allow you to monitor the output of a decoder.
@@ -41,7 +45,7 @@ Create a new audio track. Add one of the **E4L Master Bus** device to this track
 
 By default, the **E4L Master Bus** device will use a **Binaural** decoder, which enables you to preview your spatial mix on a pair of headphones. Make sure that the **Monitor 1+2** switch is engaged. Input meters on the **E4L Master Bus** device provide a visual reference for whether the device is receiving input.
 
-### Add source tracks
+### Add Source Tracks
 
 Now, create a new audio or instrument track. In the track's effect chain, add the **E4L Source Panner** device. This device takes a stereo input and encodes it into 16 channels of high order ambisonics. This device automatically detects the master bus and uses Max for Live's routing capabilities to send its output to the E4L Master Bus.
 
