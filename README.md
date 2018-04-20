@@ -33,7 +33,7 @@ The E4L Max for Live devices can all be found in the devices subfolder. You will
 
 ## First Steps
 
-The following intro video offers a quick overview of the Envelop for Live software.
+The following [intro video](http://www.youtube.com/watch?v=iAHzJJhJVSQ) offers a quick overview of the Envelop for Live software.
 
 [![Envelop for Live Software Intro](http://img.youtube.com/vi/iAHzJJhJVSQ/0.jpg)](http://www.youtube.com/watch?v=iAHzJJhJVSQ "Envelop for Live Software Intro")
 
