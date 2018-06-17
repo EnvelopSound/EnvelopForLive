@@ -77,8 +77,8 @@ function newMatrix( n, m )
 function ypr(yaw, pitch, roll)
 {
 	rho_z = yaw * pi_over_180;
-	rho_y = pitch * pi_over_180;
-	rho_x = roll * pi_over_180;
+	rho_y = -roll * pi_over_180;
+	rho_x = pitch * pi_over_180;
 
 	cz = Math.cos(rho_z);
 	sz = Math.sin(rho_z);
@@ -319,11 +319,11 @@ function ypr(yaw, pitch, roll)
 
 		for(i=0; i<4; i++)
 		{
-			outlet(0, 5, i, 0, (r9_zy[i][0] * r9_x[0 ][0] + r9_zy[i][3] * r9_x[3][0] + r9_zy[i][4] * r9_x[4][0]));
+			outlet(0, 5, i, 0, (r9_zy[i][0] * r9_x[0][0] + r9_zy[i][3] * r9_x[3][0] + r9_zy[i][4] * r9_x[4][0]));
 			outlet(0, 5, i, 1, (r9_zy[i][1] * r9_x[1][1] + r9_zy[i][2] * r9_x[2][1]));
 			outlet(0, 5, i, 2, (r9_zy[i][1] * r9_x[1][2] + r9_zy[i][2] * r9_x[2][2]));
-			outlet(0, 5, i, 3, (r9_zy[i][0] * r9_x[0 ][3] + r9_zy[i][3] * r9_x[3][3] + r9_zy[i][4] * r9_x[4][3]));
-			outlet(0, 5, i, 4, (r9_zy[i][0] * r9_x[0 ][4] + r9_zy[i][3] * r9_x[3][4] + r9_zy[i][4] * r9_x[4][4]));
+			outlet(0, 5, i, 3, (r9_zy[i][0] * r9_x[0][3] + r9_zy[i][3] * r9_x[3][3] + r9_zy[i][4] * r9_x[4][3]));
+			outlet(0, 5, i, 4, (r9_zy[i][0] * r9_x[0][4] + r9_zy[i][3] * r9_x[3][4] + r9_zy[i][4] * r9_x[4][4]));
 		}
 
 		outlet(0, 5, 4, 0, (r9_zy[4][0] * r9_x[0][0] + r9_zy[4][4] * r9_x[4][0]));

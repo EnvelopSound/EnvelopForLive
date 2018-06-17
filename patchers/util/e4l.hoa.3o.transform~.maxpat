@@ -9,7 +9,9 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 199.0, 79.0, 988.0, 674.0 ],
+		"rect" : [ 115.0, 93.0, 988.0, 674.0 ],
+		"bgcolor" : [ 0.898039, 0.898039, 0.898039, 1 ],
+		"editing_bgcolor" : [ 0.898039, 0.898039, 0.898039, 1 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -141,6 +143,8 @@
 						}
 ,
 						"rect" : [ 63.0, 104.0, 640.0, 480.0 ],
+						"bgcolor" : [ 0.898039, 0.898039, 0.898039, 1 ],
+						"editing_bgcolor" : [ 0.898039, 0.898039, 0.898039, 1 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -310,6 +314,8 @@
 						}
 ,
 						"rect" : [ 63.0, 104.0, 640.0, 480.0 ],
+						"bgcolor" : [ 0.898039, 0.898039, 0.898039, 1 ],
+						"editing_bgcolor" : [ 0.898039, 0.898039, 0.898039, 1 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -479,6 +485,8 @@
 						}
 ,
 						"rect" : [ 63.0, 104.0, 640.0, 480.0 ],
+						"bgcolor" : [ 0.898039, 0.898039, 0.898039, 1 ],
+						"editing_bgcolor" : [ 0.898039, 0.898039, 0.898039, 1 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -662,6 +670,7 @@
 						}
 ,
 						"rect" : [ 200.0, 571.0, 600.0, 450.0 ],
+						"bgcolor" : [ 0.898039, 0.898039, 0.898039, 1 ],
 						"editing_bgcolor" : [ 0.9, 0.9, 0.9, 1.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
@@ -1173,6 +1182,7 @@
 						}
 ,
 						"rect" : [ 200.0, 571.0, 600.0, 450.0 ],
+						"bgcolor" : [ 0.898039, 0.898039, 0.898039, 1 ],
 						"editing_bgcolor" : [ 0.9, 0.9, 0.9, 1.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
@@ -1432,6 +1442,7 @@
 						}
 ,
 						"rect" : [ 200.0, 571.0, 600.0, 450.0 ],
+						"bgcolor" : [ 0.898039, 0.898039, 0.898039, 1 ],
 						"editing_bgcolor" : [ 0.9, 0.9, 0.9, 1.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
@@ -2493,6 +2504,8 @@
 						}
 ,
 						"rect" : [ 63.0, 104.0, 640.0, 480.0 ],
+						"bgcolor" : [ 0.898039, 0.898039, 0.898039, 1 ],
+						"editing_bgcolor" : [ 0.898039, 0.898039, 0.898039, 1 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -2668,7 +2681,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-30", 5 ],
+					"destination" : [ "obj-30", 1 ],
 					"source" : [ "obj-10", 0 ]
 				}
 
@@ -2682,7 +2695,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-30", 1 ],
+					"destination" : [ "obj-30", 5 ],
 					"source" : [ "obj-12", 0 ]
 				}
 
@@ -2801,7 +2814,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-52", 6 ],
+					"destination" : [ "obj-52", 4 ],
 					"source" : [ "obj-30", 5 ]
 				}
 
@@ -2829,7 +2842,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-52", 4 ],
+					"destination" : [ "obj-52", 6 ],
 					"source" : [ "obj-30", 1 ]
 				}
 
