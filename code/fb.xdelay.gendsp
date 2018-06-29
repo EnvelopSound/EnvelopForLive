@@ -82,7 +82,7 @@
 			}
 , 			{
 				"box" : 				{
-					"code" : "Delay d1(samplerate*3);\r\nDelay d2(samplerate*3);\r\nHistory count(0), t1(100), t2(200) ;\r\n\r\nfb = in3;\r\ndel_samps = mstosamps(in2);\r\n\r\nfade_len = mstosamps(300);\r\nphase_scale = pi / fade_len;\r\n\r\nphase = count * phase_scale;\r\na1 = abs(cos(phase));\r\na2 = 1 - a1;\r\n\r\nif( a1 < 0.0001 && t1 != del_samps )\r\n{\r\n\tt1 = del_samps;\r\n}\r\nelse if( a2 < 0.0001 && t2 != del_samps )\r\n{\r\n\tt2 = del_samps;\r\n}\r\n\r\nx = a1 * d1.read(t1) + a2 * d2.read(t2);\r\n\r\nout1 = x;\r\n//( phase == 0 ) ? a1-1 : 1;\r\n\r\n\r\nd1.write(tanh(in1 * 0.5 + x * fb));\r\nd2.write(tanh(in1 * 0.5 + x * fb));\r\n\r\n\r\ncount += 1;\r\n\r\nif( count > fade_len) \r\n\tcount = 0;\r\n",
+					"code" : "Delay d1(samplerate*3);\r\nDelay d2(samplerate*3);\r\nHistory count(0), t1(100), t2(200) ;\r\n\r\nfb = in3;\r\ndel_samps = mstosamps(in2);\r\n\r\nfade_len = mstosamps(300);\r\nphase_scale = pi / fade_len;\r\n\r\nphase = count * phase_scale;\r\na1 = abs(cos(phase));\r\na2 = 1 - a1;\r\n\r\nif( a1 < 0.0001 && t1 != del_samps )\r\n{\r\n\tt1 = del_samps;\r\n}\r\nelse if( a2 < 0.0001 && t2 != del_samps )\r\n{\r\n\tt2 = del_samps;\r\n}\r\n\r\nx = a1 * d1.read(t1) + a2 * d2.read(t2);\r\n\r\nout1 = x;\r\n//( phase == 0 ) ? a1-1 : 1;\r\n\r\n\r\nd1.write(tanh(d1.read(t1) * fb + in1 ));\r\nd2.write(tanh(d2.read(t2) * fb + in1 ));\r\n\r\n\r\ncount += 1;\r\n\r\nif( count > fade_len) \r\n\tcount = 0;\r\n",
 					"fontface" : 0,
 					"fontname" : "Arial",
 					"fontsize" : 12.0,
