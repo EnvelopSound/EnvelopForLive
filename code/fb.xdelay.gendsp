@@ -10,7 +10,7 @@
 		}
 ,
 		"rect" : [ 208.0, 79.0, 731.0, 716.0 ],
-		"bgcolor" : [ 0.898039, 0.898039, 0.898039, 1.0 ],
+		"bgcolor" : [ 0.898039, 0.898039, 0.898039, 1 ],
 		"editing_bgcolor" : [ 0.9, 0.9, 0.9, 1.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
@@ -45,8 +45,8 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 424.0, 14.0, 28.0, 22.0 ],
-					"presentation_rect" : [ 424.0, 14.0, 28.0, 22.0 ],
+					"patching_rect" : [ 351.0, 14.0, 28.0, 22.0 ],
+					"presentation_rect" : [ 351.0, 14.0, 28.0, 22.0 ],
 					"style" : "",
 					"text" : "in 3"
 				}
@@ -73,8 +73,8 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 264.0, 14.0, 28.0, 22.0 ],
-					"presentation_rect" : [ 264.0, 14.0, 28.0, 22.0 ],
+					"patching_rect" : [ 191.0, 14.0, 28.0, 22.0 ],
+					"presentation_rect" : [ 191.0, 14.0, 28.0, 22.0 ],
 					"style" : "",
 					"text" : "in 2"
 				}
@@ -82,7 +82,7 @@
 			}
 , 			{
 				"box" : 				{
-					"code" : "Delay d1(samplerate*3);\r\nDelay d2(samplerate*3);\r\nHistory count(0), t1(100), t2(200) ;\r\n\r\nfb = in3;\r\ndel_samps = mstosamps(in2);\r\n\r\nfade_len = mstosamps(300);\r\nphase_scale = pi / fade_len;\r\n\r\nphase = count * phase_scale;\r\na1 = abs(cos(phase));\r\na2 = 1 - a1;\r\n\r\nif( a1 < 0.0001 && t1 != del_samps )\r\n{\r\n\tt1 = del_samps;\r\n}\r\nelse if( a2 < 0.0001 && t2 != del_samps )\r\n{\r\n\tt2 = del_samps;\r\n}\r\n\r\nx = a1 * d1.read(t1) + a2 * d2.read(t2);\r\n\r\nout1 = x;\r\n//( phase == 0 ) ? a1-1 : 1;\r\n\r\n\r\nd1.write(tanh(d1.read(t1) * fb + in1 ));\r\nd2.write(tanh(d2.read(t2) * fb + in1 ));\r\n\r\n\r\ncount += 1;\r\n\r\nif( count > fade_len) \r\n\tcount = 0;\r\n",
+					"code" : "Delay d1(samplerate*3);\r\nDelay d2(samplerate*3);\r\nHistory count(0), t1(100), t2(200) ;\r\n\r\nfb = in3;\r\ndel_samps = mstosamps(in2);\r\n\r\nfade_len = mstosamps(in3);\r\nphase_scale = pi / fade_len;\r\n\r\nphase = count * phase_scale;\r\na1 = abs(cos(phase));\r\na2 = 1 - a1;\r\n\r\nif( a1 < 0.0001 && t1 != del_samps )\r\n{\r\n\tt1 = del_samps;\r\n}\r\nelse if( a2 < 0.0001 && t2 != del_samps )\r\n{\r\n\tt2 = del_samps;\r\n}\r\n\r\nx = a1 * d1.read(t1) + a2 * d2.read(t2);\r\n\r\nout1 = x;\r\n//( phase == 0 ) ? a1-1 : 1;\r\n\r\n\r\nd1.write(tanh(x * fb + in1 ));\r\nd2.write(tanh(x * fb + in1 ));\r\n\r\n\r\ncount += 1;\r\n\r\nif( count > fade_len) \r\n\tcount = 0;\r\n",
 					"fontface" : 0,
 					"fontname" : "Arial",
 					"fontsize" : 12.0,
