@@ -43,10 +43,10 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "signal" ],
-					"patching_rect" : [ 559.0, 315.0, 76.0, 22.0 ],
-					"presentation_rect" : [ 559.0, 315.0, 76.0, 22.0 ],
+					"patching_rect" : [ 559.0, 315.0, 75.0, 22.0 ],
+					"presentation_rect" : [ 559.0, 315.0, 75.0, 22.0 ],
 					"style" : "",
-					"text" : "*~ 0.565685"
+					"text" : "*~ 1.264911"
 				}
 
 			}
@@ -57,10 +57,10 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "signal" ],
-					"patching_rect" : [ 344.200012, 315.0, 76.0, 22.0 ],
-					"presentation_rect" : [ 344.200012, 315.0, 76.0, 22.0 ],
+					"patching_rect" : [ 344.200012, 315.0, 75.0, 22.0 ],
+					"presentation_rect" : [ 344.200012, 315.0, 75.0, 22.0 ],
 					"style" : "",
-					"text" : "*~ 0.565685"
+					"text" : "*~ 1.264911"
 				}
 
 			}
@@ -70,10 +70,10 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 646.0, 315.0, 62.0, 20.0 ],
-					"presentation_rect" : [ 646.0, 315.0, 62.0, 20.0 ],
+					"patching_rect" : [ 646.0, 315.0, 63.0, 20.0 ],
+					"presentation_rect" : [ 646.0, 315.0, 63.0, 20.0 ],
 					"style" : "",
-					"text" : "sqrt(8) / 5"
+					"text" : "sqrt(8 / 5)"
 				}
 
 			}
@@ -128,7 +128,7 @@
 					"patching_rect" : [ 415.799988, 171.0, 76.0, 22.0 ],
 					"presentation_rect" : [ 415.799988, 171.0, 76.0, 22.0 ],
 					"style" : "",
-					"text" : "*~ 0.209631"
+					"text" : "*~ 1.185854"
 				}
 
 			}
@@ -142,7 +142,7 @@
 					"patching_rect" : [ 487.399994, 204.0, 76.0, 22.0 ],
 					"presentation_rect" : [ 487.399994, 204.0, 76.0, 22.0 ],
 					"style" : "",
-					"text" : "*~ 0.209631"
+					"text" : "*~ 1.185854"
 				}
 
 			}
@@ -152,10 +152,10 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 507.0, 231.0, 75.0, 20.0 ],
-					"presentation_rect" : [ 507.0, 231.0, 75.0, 20.0 ],
+					"patching_rect" : [ 507.0, 231.0, 76.0, 20.0 ],
+					"presentation_rect" : [ 507.0, 231.0, 76.0, 20.0 ],
 					"style" : "",
-					"text" : "sqrt(45) / 32"
+					"text" : "sqrt(45 / 32)"
 				}
 
 			}
@@ -1173,7 +1173,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 22.0, 16.0, 162.0, 22.0 ],
-					"presentation_linecount" : 2,
 					"presentation_rect" : [ 22.0, 16.0, 162.0, 22.0 ],
 					"style" : "",
 					"text" : "e4l.ambix.tobformat"
