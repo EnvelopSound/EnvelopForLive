@@ -43,7 +43,7 @@ The following [intro video](http://www.youtube.com/watch?v=iAHzJJhJVSQ) offers a
 
 Create a new audio track. Add one of the **E4L Master Bus** device to this track. Note that the track will automatically be renamed to "E4L Master." It is recommended to leave this track name in place, though you may optionally rename it. This track and device will act as a receiver for Ambisonics audio, and allow you to monitor the output of a decoder.
 
-![E4L Master Bus](/doc/E4L-Master-Bus.png)
+<img src="/EnvelopSound/EnvelopForLive/wiki/media/E4L-Master-Bus.png" alt="E4L Master Bus" height="188" />
 
 By default, the **E4L Master Bus** device will use a **Binaural** decoder, which enables you to preview your spatial mix on a pair of headphones. Make sure that the **Monitor 1+2** switch is engaged. Input meters on the **E4L Master Bus** device provide a visual reference for whether the device is receiving input.
 
