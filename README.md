@@ -51,7 +51,7 @@ By default, the **E4L Master Bus** device will use a **Binaural** decoder, which
 
 Now, create a new audio or instrument track. In the track's effect chain, add the **E4L Source Panner** device. This device takes a stereo input and encodes it into 16 channels of high order ambisonics. This device automatically detects the master bus and uses Max for Live's routing capabilities to send its output to the E4L Master Bus.
 
-![E4L Source Panner](/doc/E4L-Source-Panner.png)
+<img src="/doc/E4L-Source-Panner.png" alt="E4L Source Panner" height="188" />
 
 Note that by default, adding this device automatically sets the track's audio output routing to _Sends Only_. This is because E4L is already routing the Ambisonics-domain audio behind the scenes. Sending the stereo output from this track would result in two overlapping copies of the audio. For advanced use cases, you may override this setting and route the track output elsewhere (keep in mind that the track output sends only the stereo signal, not the 16-channel surround encoding).
 
