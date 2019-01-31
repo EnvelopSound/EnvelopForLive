@@ -60,3 +60,4 @@ Repeat this process to build up your surround mix. You may use as many **E4L Sou
 ## Learn More
 
 For more in-depth documentation and tutorials, see the [Envelop for Live Wiki](https://github.com/EnvelopSound/EnvelopForLive/wiki).
+
