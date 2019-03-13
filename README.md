@@ -1,6 +1,6 @@
 ![Logo](doc/E4L-banner.png)
 
-[Envelop](http://envelop.us) is a non-profit organization that amplifies the connective power of music through immersive listening spaces and open source spatial audio software. Three-dimensional experiences of sound and music bring people together, catalyzing shared moments of inspiration, empathy and wonder.
+[Envelop](http://envelop.us) is a nonprofit organization that amplifies the connective power of music through immersive listening spaces and open source spatial audio software. Three-dimensional experiences of sound and music bring people together, catalyzing shared moments of inspiration, empathy and wonder.
 
 Envelop for Live (E4L) is an open source audio production framework for spatial audio composition and performance. Envelop for Live operates within the music production environment of Ableton Live 10 and Max for Live. Envelop for Live is designed to be a highly modular, flexible platform for artists to compose and perform spatial audio, and for developers to create new kinds of audio effects for the Ambisonics domain.
 
@@ -11,6 +11,8 @@ Envelop for Live (E4L) is an open source audio production framework for spatial 
 # Getting Started
 
 E4L makes use of the advanced routing capabilities in [Live 10](https://www.ableton.com/en/live/) and [Max for Live](https://www.ableton.com/en/live/max-for-live/). Before continuing, make sure that you have installed both of these programs.
+
+Please note that E4L is not officially supported on Windows. Max for Live is technically cross-platform, but some Windows users have reported issues with sporadic crashing and project corruption. We recommend working with macOS if possible. If experimenting with Windows, we encourage making regular backups and copies of project files.
 
 ## Installation
 
