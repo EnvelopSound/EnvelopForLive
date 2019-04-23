@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 352.0, 155.0, 1136.0, 1006.0 ],
+		"rect" : [ 1050.0, 181.0, 1136.0, 1006.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -47,9 +47,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 18.0, 48.0, 178.0, 297.0 ],
-					"presentation_linecount" : 46,
-					"text" : "Supports parallel B-format playback and AmbiX input from E4L.\n\nAudio Input/Output devices should be set to MOTU 16A at 48kHZ.\n\nOutput channel order is as follows, to match LA4X wiring (one amplifier for each side of octagon, wired near to far):\n\nLA4X 192.168.1.100\n1 - right front\n2 - right mid-front\n3 - right mid-rear\n4 - right rear\n\nLA4X 192.168.1.101\n5 - left front\n6 - left mid-front\n7 - left mid-rear\n8 - left rear\n\nLA SB15P\n9 - subwoofer",
-					"textjustification" : 0
+					"text" : "Supports parallel B-format playback and AmbiX input from E4L.\n\nAudio Input/Output devices should be set to MOTU 16A at 48kHZ.\n\nOutput channel order is as follows, to match LA4X wiring (one amplifier for each side of octagon, wired near to far):\n\nLA4X 192.168.1.100\n1 - right front\n2 - right mid-front\n3 - right mid-rear\n4 - right rear\n\nLA4X 192.168.1.101\n5 - left front\n6 - left mid-front\n7 - left mid-rear\n8 - left rear\n\nLA SB15P\n9 - subwoofer"
 				}
 
 			}
@@ -62,9 +60,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 18.0, 24.0, 89.0, 20.0 ],
-					"presentation_linecount" : 2,
-					"text" : "Envelop Octet",
-					"textjustification" : 0
+					"text" : "Envelop Octet"
 				}
 
 			}
@@ -77,10 +73,8 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 590.5999755859375, 394.0, 132.0, 40.0 ],
-					"presentation_linecount" : 9,
-					"text" : "Subwoofer draws directly from W channel with gain and crossover applied",
-					"textjustification" : 0
+					"patching_rect" : [ 590.5999755859375, 394.0, 133.0, 40.0 ],
+					"text" : "Subwoofer draws directly from W channel with gain and crossover applied"
 				}
 
 			}
@@ -147,7 +141,7 @@
 							}
 , 							{
 								"key" : 6,
-								"value" : [ "aed", 6, -62.5, 0.0, 1.0 ]
+								"value" : [ "aed", 6, -67.5, 0.0, 1.0 ]
 							}
 , 							{
 								"key" : 7,
@@ -211,14 +205,14 @@
 					"relative" : 1,
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
-							"parameter_initial" : [ 0.0 ],
 							"parameter_shortname" : "Sub Gain",
 							"parameter_type" : 0,
 							"parameter_unitstyle" : 4,
 							"parameter_linknames" : 1,
 							"parameter_mmin" : -70.0,
 							"parameter_longname" : "live.gain~[2]",
-							"parameter_mmax" : 6.0
+							"parameter_mmax" : 6.0,
+							"parameter_initial" : [ 0.0 ]
 						}
 
 					}
@@ -241,14 +235,14 @@
 					"relative" : 1,
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
-							"parameter_initial" : [ 0.0 ],
 							"parameter_shortname" : "B-Format Gain",
 							"parameter_type" : 0,
 							"parameter_unitstyle" : 4,
 							"parameter_linknames" : 1,
 							"parameter_mmin" : -70.0,
 							"parameter_longname" : "live.gain~[3]",
-							"parameter_mmax" : 6.0
+							"parameter_mmax" : 6.0,
+							"parameter_initial" : [ 0.0 ]
 						}
 
 					}
@@ -267,7 +261,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 219.5, 399.5, 64.0, 29.0 ],
-					"presentation_linecount" : 2,
 					"text" : "Main\nDecode",
 					"textjustification" : 2
 				}
@@ -381,13 +374,13 @@
 					"relative" : 1,
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
-							"parameter_initial" : [ 0.0 ],
 							"parameter_shortname" : "Output Gain",
 							"parameter_type" : 0,
 							"parameter_unitstyle" : 4,
 							"parameter_mmin" : -70.0,
 							"parameter_longname" : "live.gain~[1]",
-							"parameter_mmax" : 6.0
+							"parameter_mmax" : 6.0,
+							"parameter_initial" : [ 0.0 ]
 						}
 
 					}
@@ -488,14 +481,14 @@
 					"relative" : 1,
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
-							"parameter_initial" : [ 0.0 ],
 							"parameter_shortname" : "Ambix Gain",
 							"parameter_type" : 0,
 							"parameter_unitstyle" : 4,
 							"parameter_linknames" : 1,
 							"parameter_mmin" : -70.0,
 							"parameter_longname" : "live.gain~",
-							"parameter_mmax" : 6.0
+							"parameter_mmax" : 6.0,
+							"parameter_initial" : [ 0.0 ]
 						}
 
 					}
@@ -1356,8 +1349,8 @@
 , 			{
 				"name" : "newobjYellow-1",
 				"default" : 				{
-					"fontsize" : [ 12.059008 ],
-					"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
+					"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
+					"fontsize" : [ 12.059008 ]
 				}
 ,
 				"parentstyle" : "",
@@ -1366,8 +1359,8 @@
 , 			{
 				"name" : "newobjYellow-2",
 				"default" : 				{
-					"fontsize" : [ 12.059008 ],
-					"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
+					"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
+					"fontsize" : [ 12.059008 ]
 				}
 ,
 				"parentstyle" : "",
