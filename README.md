@@ -8,6 +8,8 @@ Envelop for Live (E4L) is an open source audio production framework for spatial 
 * [Sign up for the Envelop email newsletter](http://www.envelop.us/connect/)
 * [Learn more on the Envelop for Live Wiki](https://github.com/EnvelopSound/EnvelopForLive/wiki)
 
+***E4L is free to use — but it takes time, energy, and resources to create and maintain. If you find these tools useful, please consider making a donation to support the Envelop nonprofit organization: https://www.envelop.us/membership-donations***
+
 # Getting Started
 
 E4L makes use of the advanced routing capabilities in [Live 10](https://www.ableton.com/en/live/) and [Max for Live](https://www.ableton.com/en/live/max-for-live/). Before continuing, make sure that you have installed both of these programs.
