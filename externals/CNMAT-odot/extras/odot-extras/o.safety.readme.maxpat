@@ -4,12 +4,12 @@
 		"appversion" : 		{
 			"major" : 7,
 			"minor" : 3,
-			"revision" : 4,
-			"architecture" : "x64",
+			"revision" : 5,
+			"architecture" : "x86",
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 238.0, 79.0, 1000.0, 785.0 ],
+		"rect" : [ 68.0, 89.0, 1000.0, 785.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -36,7 +36,8 @@
 		"tags" : "",
 		"style" : "",
 		"subpatcher_template" : "Default Max 7",
-		"showontab" : 1,
+		"showrootpatcherontab" : 0,
+		"showontab" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
 					"id" : "obj-8",
@@ -48,12 +49,12 @@
 						"appversion" : 						{
 							"major" : 7,
 							"minor" : 3,
-							"revision" : 4,
-							"architecture" : "x64",
+							"revision" : 5,
+							"architecture" : "x86",
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 238.0, 105.0, 1000.0, 759.0 ],
+						"rect" : [ 0.0, 26.0, 1000.0, 759.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -287,8 +288,8 @@
 						"appversion" : 						{
 							"major" : 7,
 							"minor" : 3,
-							"revision" : 4,
-							"architecture" : "x64",
+							"revision" : 5,
+							"architecture" : "x86",
 							"modernui" : 1
 						}
 ,
@@ -380,7 +381,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 125.0, 616.0, 221.0, 22.0 ],
 									"style" : "",
-									"text" : "FullPacket 72 140734742409232"
+									"text" : "FullPacket 72 1549021200"
 								}
 
 							}
@@ -433,7 +434,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 85.5, 350.0, 259.0, 22.0 ],
 									"style" : "",
-									"text" : "/subbundle/1 FullPacket 72 105553226336428"
+									"text" : "/subbundle/1 FullPacket 72 110069932"
 								}
 
 							}
@@ -442,8 +443,8 @@
 									"id" : "obj-8",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
-									"numoutlets" : 2,
-									"outlettype" : [ "", "" ],
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
 									"patching_rect" : [ 360.0, 285.0, 135.0, 22.0 ],
 									"style" : "",
 									"text" : "o.atomize /subbundle/1"
@@ -471,7 +472,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 138.0, 241.0, 221.0, 22.0 ],
 									"style" : "",
-									"text" : "FullPacket 212 140734742411232"
+									"text" : "FullPacket 212 1549023200"
 								}
 
 							}
@@ -574,8 +575,8 @@
 						"appversion" : 						{
 							"major" : 7,
 							"minor" : 3,
-							"revision" : 4,
-							"architecture" : "x64",
+							"revision" : 5,
+							"architecture" : "x86",
 							"modernui" : 1
 						}
 ,
@@ -654,7 +655,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 125.0, 557.0, 221.0, 22.0 ],
 									"style" : "",
-									"text" : "FullPacket 72 140734742409680"
+									"text" : "FullPacket 72 1549021648"
 								}
 
 							}
@@ -707,7 +708,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 138.0, 345.0, 221.0, 22.0 ],
 									"style" : "",
-									"text" : "FullPacket 72 107202420406188"
+									"text" : "FullPacket 72 36698028"
 								}
 
 							}
@@ -745,7 +746,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 138.0, 241.0, 221.0, 22.0 ],
 									"style" : "",
-									"text" : "FullPacket 212 140734742411232"
+									"text" : "FullPacket 212 1549023200"
 								}
 
 							}
@@ -841,12 +842,12 @@
 						"appversion" : 						{
 							"major" : 7,
 							"minor" : 3,
-							"revision" : 4,
-							"architecture" : "x64",
+							"revision" : 5,
+							"architecture" : "x86",
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 0.0, 26.0, 1000.0, 759.0 ],
+						"rect" : [ 68.0, 115.0, 1000.0, 759.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -971,7 +972,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 164.0, 443.0, 212.0, 22.0 ],
 									"style" : "",
-									"text" : "FullPacket 84 140734797740128"
+									"text" : "FullPacket 84 1604352096"
 								}
 
 							}
@@ -1028,7 +1029,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 122.0, 378.0, 212.0, 22.0 ],
 									"style" : "",
-									"text" : "FullPacket 84 140734742398880"
+									"text" : "FullPacket 84 -1074224112"
 								}
 
 							}
@@ -1097,7 +1098,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 147.0, 135.0, 212.0, 22.0 ],
 									"style" : "",
-									"text" : "FullPacket 40 106652632445760"
+									"text" : "FullPacket 40 1831114928"
 								}
 
 							}
@@ -1375,7 +1376,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 237.0, 276.0, 212.0, 22.0 ],
 					"style" : "",
-					"text" : "FullPacket 40 106652632445760"
+					"text" : "FullPacket 40 1884674160"
 				}
 
 			}
@@ -1458,10 +1459,6 @@
 			}
 , 			{
 				"name" : "o.route.mxo",
-				"type" : "iLaX"
-			}
-, 			{
-				"name" : "o.atomize.mxo",
 				"type" : "iLaX"
 			}
 , 			{

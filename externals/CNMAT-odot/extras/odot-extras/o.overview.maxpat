@@ -2,14 +2,15 @@
 	"patcher" : 	{
 		"fileversion" : 1,
 		"appversion" : 		{
-			"major" : 7,
-			"minor" : 3,
+			"major" : 8,
+			"minor" : 1,
 			"revision" : 4,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 89.0, 79.0, 1317.0, 715.0 ],
+		"classnamespace" : "box",
+		"rect" : [ 89.0, 79.0, 1317.0, 724.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -36,7 +37,60 @@
 		"tags" : "",
 		"style" : "",
 		"subpatcher_template" : "",
+		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
+				"box" : 				{
+					"fontname" : "Arial",
+					"fontsize" : 12.0,
+					"id" : "obj-23",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 668.0, 696.0, 365.0, 20.0 ],
+					"text" : "Convert a bundle to conform to the 1.0 specification"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-22",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 648.0, 843.0, 150.0, 20.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontname" : "Arial",
+					"fontsize" : 12.0,
+					"id" : "obj-7",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 550.0, 696.0, 118.0, 22.0 ],
+					"text" : "o.downcast"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontname" : "Arial",
+					"fontsize" : 12.0,
+					"hidden" : 1,
+					"id" : "obj-6",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "" ],
+					"patching_rect" : [ 1079.0, 744.0, 211.0, 22.0 ],
+					"text" : "o.autodoc_overview @obj o.downcast"
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"fontname" : "Arial",
 					"fontsize" : 12.0,
@@ -47,7 +101,6 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 1126.0, 573.0, 196.0, 22.0 ],
-					"style" : "",
 					"text" : "o.autodoc_overview @obj o.edge~"
 				}
 
@@ -62,7 +115,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 550.0, 512.0, 118.0, 22.0 ],
-					"style" : "",
 					"text" : "o.edge~"
 				}
 
@@ -76,7 +128,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 668.0, 512.0, 365.0, 20.0 ],
-					"style" : "",
 					"text" : "Report transitions between 0 and non-zero"
 				}
 
@@ -92,7 +143,6 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 1126.0, 680.0, 181.0, 22.0 ],
-					"style" : "",
 					"text" : "o.autodoc_overview @obj o.dict"
 				}
 
@@ -107,7 +157,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 550.0, 664.0, 118.0, 22.0 ],
-					"style" : "",
 					"text" : "o.dict"
 				}
 
@@ -121,7 +170,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 668.0, 664.0, 365.0, 20.0 ],
-					"style" : "",
 					"text" : "Convert an OSC bundle to a Max dictionary"
 				}
 
@@ -135,7 +183,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 668.0, 360.0, 365.0, 20.0 ],
-					"style" : "",
 					"text" : "Display incoming OSC bundles"
 				}
 
@@ -150,7 +197,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 550.0, 360.0, 118.0, 22.0 ],
-					"style" : "",
 					"text" : "o.display"
 				}
 
@@ -166,7 +212,6 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 1070.0, 336.0, 199.0, 22.0 ],
-					"style" : "",
 					"text" : "o.autodoc_overview @obj o.display"
 				}
 
@@ -181,7 +226,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 24.0, 360.0, 118.0, 22.0 ],
-					"style" : "",
 					"text" : "o.append"
 				}
 
@@ -195,7 +239,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 142.0, 360.0, 362.0, 20.0 ],
-					"style" : "",
 					"text" : "Append an OSC address to every OSC address in a bundle"
 				}
 
@@ -211,7 +254,6 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ -230.5, 408.0, 202.0, 22.0 ],
-					"style" : "",
 					"text" : "o.autodoc_overview @obj o.append"
 				}
 
@@ -226,8 +268,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ -242.0, 213.815796, 257.0, 22.0 ],
-					"style" : "",
+					"patching_rect" : [ -242.0, 213.815796000000006, 257.0, 22.0 ],
 					"text" : "o.autodoc_overview @obj o.listenumerate /foo"
 				}
 
@@ -242,7 +283,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 1064.0, 5.0, 206.0, 49.0 ],
-					"style" : "",
 					"text" : "o. overview"
 				}
 
@@ -256,7 +296,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 142.0, 240.0, 362.0, 20.0 ],
-					"style" : "",
 					"text" : "Iterate over a list at a user-defined OSC address"
 				}
 
@@ -271,7 +310,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 24.0, 240.0, 118.0, 22.0 ],
-					"style" : "",
 					"text" : "o.listenumerate"
 				}
 
@@ -285,7 +323,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 550.0, 624.0, 227.0, 27.0 ],
-					"style" : "",
 					"text" : "Casting"
 				}
 
@@ -301,7 +338,6 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 1126.0, 600.0, 233.0, 22.0 ],
-					"style" : "",
 					"text" : "o.autodoc_overview @obj o.schedule /foo"
 				}
 
@@ -316,7 +352,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 550.0, 544.0, 118.0, 22.0 ],
-					"style" : "",
 					"text" : "o.schedule"
 				}
 
@@ -330,7 +365,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 668.0, 544.0, 365.0, 20.0 ],
-					"style" : "",
 					"text" : "Deadline Scheduler  for OSC packets using OSC timetags"
 				}
 
@@ -346,7 +380,6 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 1126.0, 624.0, 225.0, 22.0 ],
-					"style" : "",
 					"text" : "o.autodoc_overview @obj o.timetag /foo"
 				}
 
@@ -361,7 +394,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 550.0, 575.0, 118.0, 22.0 ],
-					"style" : "",
 					"text" : "o.timetag"
 				}
 
@@ -375,7 +407,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 668.0, 575.0, 365.0, 20.0 ],
-					"style" : "",
 					"text" : "Bind a timetag to an address"
 				}
 
@@ -389,7 +420,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 550.0, 472.0, 227.0, 27.0 ],
-					"style" : "",
 					"text" : "Timing"
 				}
 
@@ -404,8 +434,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ -230.5, 502.005737, 204.0, 22.0 ],
-					"style" : "",
+					"patching_rect" : [ -230.5, 502.005737000000011, 204.0, 22.0 ],
 					"text" : "o.autodoc_overview @obj o.explode"
 				}
 
@@ -419,8 +448,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 24.0, 452.684204, 118.0, 22.0 ],
-					"style" : "",
+					"patching_rect" : [ 24.0, 452.684204000000022, 118.0, 22.0 ],
 					"text" : "o.explode"
 				}
 
@@ -433,8 +461,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 142.0, 452.684204, 362.0, 20.0 ],
-					"style" : "",
+					"patching_rect" : [ 142.0, 452.684204000000022, 362.0, 20.0 ],
 					"text" : "Explode address hierarchies into nested bundles"
 				}
 
@@ -449,8 +476,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ -230.5, 471.577026, 195.0, 22.0 ],
-					"style" : "",
+					"patching_rect" : [ -230.5, 471.577025999999989, 195.0, 22.0 ],
 					"text" : "o.autodoc_overview @obj o.flatten"
 				}
 
@@ -464,8 +490,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 24.0, 420.684204, 118.0, 22.0 ],
-					"style" : "",
+					"patching_rect" : [ 24.0, 420.684204000000022, 118.0, 22.0 ],
 					"text" : "o.flatten"
 				}
 
@@ -478,8 +503,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 142.0, 420.684204, 362.0, 20.0 ],
-					"style" : "",
+					"patching_rect" : [ 142.0, 420.684204000000022, 362.0, 20.0 ],
 					"text" : "Flatten the address hierarchy in nested bundles"
 				}
 
@@ -494,7 +518,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 552.0, 120.0, 118.0, 22.0 ],
-					"style" : "",
 					"text" : "o.gather"
 				}
 
@@ -508,7 +531,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 670.0, 120.0, 365.0, 20.0 ],
-					"style" : "",
 					"text" : "Group messages that match a list of arguments."
 				}
 
@@ -524,7 +546,6 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 846.0, -264.0, 196.0, 22.0 ],
-					"style" : "",
 					"text" : "o.autodoc_overview @obj o.gather"
 				}
 
@@ -539,7 +560,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 24.0, 608.0, 118.0, 22.0 ],
-					"style" : "",
 					"text" : "o.difference"
 				}
 
@@ -553,7 +573,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 142.0, 608.0, 362.0, 20.0 ],
-					"style" : "",
 					"text" : "Output a bundle containing the difference between two bundles"
 				}
 
@@ -568,8 +587,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ -230.5, 607.16626, 215.0, 22.0 ],
-					"style" : "",
+					"patching_rect" : [ -230.5, 607.166259999999966, 215.0, 22.0 ],
 					"text" : "o.autodoc_overview @obj o.difference"
 				}
 
@@ -584,7 +602,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 24.0, 576.0, 118.0, 22.0 ],
-					"style" : "",
 					"text" : "o.intersection"
 				}
 
@@ -599,7 +616,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 142.0, 568.0, 362.0, 33.0 ],
-					"style" : "",
 					"text" : "Output a bundle containing the intersection of messages between two bundles"
 				}
 
@@ -614,8 +630,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ -230.5, 573.969849, 224.0, 22.0 ],
-					"style" : "",
+					"patching_rect" : [ -230.5, 573.969848999999954, 224.0, 22.0 ],
 					"text" : "o.autodoc_overview @obj o.intersection"
 				}
 
@@ -630,7 +645,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 24.0, 544.0, 118.0, 22.0 ],
-					"style" : "",
 					"text" : "o.union"
 				}
 
@@ -645,7 +659,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 142.0, 536.0, 366.0, 33.0 ],
-					"style" : "",
 					"text" : "Output a bundle containing the union of all messages between two bundles"
 				}
 
@@ -660,8 +673,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ -230.5, 540.773438, 192.0, 22.0 ],
-					"style" : "",
+					"patching_rect" : [ -230.5, 540.773438000000056, 192.0, 22.0 ],
 					"text" : "o.autodoc_overview @obj o.union"
 				}
 
@@ -674,8 +686,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 24.0, 508.684204, 227.0, 27.0 ],
-					"style" : "",
+					"patching_rect" : [ 24.0, 508.684204000000022, 227.0, 27.0 ],
 					"text" : "Set Operations on Bundles"
 				}
 
@@ -690,7 +701,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 24.0, 392.0, 118.0, 22.0 ],
-					"style" : "",
 					"text" : "o.prepend"
 				}
 
@@ -704,7 +714,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 142.0, 392.0, 362.0, 20.0 ],
-					"style" : "",
 					"text" : "Prepend an OSC address to every OSC address in a bundle"
 				}
 
@@ -719,8 +728,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ -230.5, 435.577026, 206.0, 22.0 ],
-					"style" : "",
+					"patching_rect" : [ -230.5, 435.577025999999989, 206.0, 22.0 ],
 					"text" : "o.autodoc_overview @obj o.prepend"
 				}
 
@@ -734,7 +742,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 24.0, 320.0, 387.0, 27.0 ],
-					"style" : "",
 					"text" : "Operations on Addresses and Bundle Structure"
 				}
 
@@ -749,7 +756,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 550.0, 424.0, 118.0, 22.0 ],
-					"style" : "",
 					"text" : "o.printbytes"
 				}
 
@@ -763,7 +769,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 668.0, 424.0, 365.0, 20.0 ],
-					"style" : "",
 					"text" : "Print an OSC packet to the Max window as a sequence of bytes"
 				}
 
@@ -778,8 +783,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 1070.0, 399.644348, 214.0, 22.0 ],
-					"style" : "",
+					"patching_rect" : [ 1070.0, 399.644347999999979, 214.0, 22.0 ],
 					"text" : "o.autodoc_overview @obj o.printbytes"
 				}
 
@@ -794,7 +798,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 550.0, 392.0, 118.0, 22.0 ],
-					"style" : "",
 					"text" : "o.print"
 				}
 
@@ -808,7 +811,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 668.0, 392.0, 365.0, 20.0 ],
-					"style" : "",
 					"text" : "Print an OSC packet to the Max window"
 				}
 
@@ -824,7 +826,6 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 1070.0, 368.0, 186.0, 22.0 ],
-					"style" : "",
 					"text" : "o.autodoc_overview @obj o.print"
 				}
 
@@ -838,7 +839,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 550.0, 320.0, 227.0, 27.0 ],
-					"style" : "",
 					"text" : "Printing and Debugging"
 				}
 
@@ -854,7 +854,6 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ -215.0, -4.392822, 179.0, 22.0 ],
-					"style" : "",
 					"text" : "o.autodoc_overview @obj o.var"
 				}
 
@@ -869,7 +868,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 24.0, 120.0, 118.0, 22.0 ],
-					"style" : "",
 					"text" : "o.var"
 				}
 
@@ -883,7 +881,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 142.0, 120.0, 362.0, 20.0 ],
-					"style" : "",
 					"text" : "Store a bundle and bang it out later"
 				}
 
@@ -898,7 +895,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 550.0, 272.0, 118.0, 22.0 ],
-					"style" : "",
 					"text" : "o.change"
 				}
 
@@ -912,7 +908,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 670.0, 272.0, 365.0, 20.0 ],
-					"style" : "",
 					"text" : "Output a bundle if it changes"
 				}
 
@@ -928,7 +923,6 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 1070.0, 247.0, 202.0, 22.0 ],
-					"style" : "",
 					"text" : "o.autodoc_overview @obj o.change"
 				}
 
@@ -943,7 +937,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 550.0, 240.0, 118.0, 22.0 ],
-					"style" : "",
 					"text" : "o.cond"
 				}
 
@@ -958,7 +951,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 670.0, 232.0, 365.0, 33.0 ],
-					"style" : "",
 					"text" : "Route an OSC packet out an outlet based on the results of an expression"
 				}
 
@@ -974,7 +966,6 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 1070.0, 210.0, 232.0, 22.0 ],
-					"style" : "",
 					"text" : "o.autodoc_overview @obj o.cond /a == /b"
 				}
 
@@ -989,7 +980,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 550.0, 208.0, 118.0, 22.0 ],
-					"style" : "",
 					"text" : "o.if"
 				}
 
@@ -1003,7 +993,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 670.0, 208.0, 365.0, 20.0 ],
-					"style" : "",
 					"text" : "Route an OSC packet based on the results of an expression"
 				}
 
@@ -1019,7 +1008,6 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 1070.0, 175.0, 212.0, 22.0 ],
-					"style" : "",
 					"text" : "o.autodoc_overview @obj o.if /a == /b"
 				}
 
@@ -1033,7 +1021,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 552.0, 168.0, 227.0, 27.0 ],
-					"style" : "",
 					"text" : "Conditional Execution"
 				}
 
@@ -1047,8 +1034,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 24.0, 206.815796, 118.0, 22.0 ],
-					"style" : "",
+					"patching_rect" : [ 24.0, 206.815796000000006, 118.0, 22.0 ],
 					"text" : "o.expr.codebox"
 				}
 
@@ -1061,8 +1047,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 142.0, 205.815796, 362.0, 20.0 ],
-					"style" : "",
+					"patching_rect" : [ 142.0, 205.815796000000006, 362.0, 20.0 ],
 					"text" : "Evaluate a C-like expression containing OSC addresses"
 				}
 
@@ -1078,7 +1063,6 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ -242.0, 144.0, 233.0, 22.0 ],
-					"style" : "",
 					"text" : "o.autodoc_overview @obj o.expr.codebox"
 				}
 
@@ -1092,7 +1076,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 24.0, 168.0, 227.0, 27.0 ],
-					"style" : "",
 					"text" : "Expressions and Mapping"
 				}
 
@@ -1107,7 +1090,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 552.0, 88.0, 118.0, 22.0 ],
-					"style" : "",
 					"text" : "o.select"
 				}
 
@@ -1122,7 +1104,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 670.0, 80.0, 365.0, 33.0 ],
-					"style" : "",
 					"text" : "Dispatch OSC messages according to an address hierarchy preserving the address"
 				}
 
@@ -1138,7 +1119,6 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 847.0, -304.0, 194.0, 22.0 ],
-					"style" : "",
 					"text" : "o.autodoc_overview @obj o.select"
 				}
 
@@ -1153,7 +1133,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 552.0, 56.0, 118.0, 22.0 ],
-					"style" : "",
 					"text" : "o.route"
 				}
 
@@ -1168,7 +1147,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 670.0, 48.0, 365.0, 33.0 ],
-					"style" : "",
 					"text" : "Dispatch OSC messages according to an address hierarchy stripping off the portion of the address that matched"
 				}
 
@@ -1184,7 +1162,6 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 847.0, -336.0, 190.0, 22.0 ],
-					"style" : "",
 					"text" : "o.autodoc_overview @obj o.route"
 				}
 
@@ -1199,7 +1176,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 24.0, 88.0, 118.0, 22.0 ],
-					"style" : "",
 					"text" : "o.pack"
 				}
 
@@ -1213,7 +1189,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 142.0, 88.0, 362.0, 20.0 ],
-					"style" : "",
 					"text" : "Bind data to addresses"
 				}
 
@@ -1229,7 +1204,6 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ -215.0, -33.0, 211.0, 22.0 ],
-					"style" : "",
 					"text" : "o.autodoc_overview @obj o.pack /foo"
 				}
 
@@ -1244,7 +1218,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 24.0, 272.0, 118.0, 22.0 ],
-					"style" : "",
 					"text" : "o.collect"
 				}
 
@@ -1258,7 +1231,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 142.0, 272.0, 362.0, 20.0 ],
-					"style" : "",
 					"text" : "Collect OSC messages to be bundled together"
 				}
 
@@ -1274,7 +1246,6 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ -242.0, 304.0, 196.0, 22.0 ],
-					"style" : "",
 					"text" : "o.autodoc_overview @obj o.collect"
 				}
 
@@ -1289,7 +1260,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 24.0, 56.0, 118.0, 22.0 ],
-					"style" : "",
 					"text" : "o.compose"
 				}
 
@@ -1303,7 +1273,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 142.0, 56.0, 362.0, 20.0 ],
-					"style" : "",
 					"text" : "Create OSC bundles from text"
 				}
 
@@ -1319,7 +1288,6 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ -215.0, -64.0, 211.0, 22.0 ],
-					"style" : "",
 					"text" : "o.autodoc_overview @obj o.compose"
 				}
 
@@ -1333,7 +1301,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 552.0, 16.0, 227.0, 27.0 ],
-					"style" : "",
 					"text" : "Routing and Dispatch"
 				}
 
@@ -1347,7 +1314,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 24.0, 16.0, 286.0, 27.0 ],
-					"style" : "",
 					"text" : "OSC Packet Creation and Storage"
 				}
 
@@ -1362,8 +1328,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 416.5, 815.552612, 138.0, 22.0 ],
-					"style" : "",
+					"patching_rect" : [ 416.5, 815.552611999999954, 138.0, 22.0 ],
 					"text" : "sprintf load %s.maxhelp"
 				}
 
@@ -1379,7 +1344,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 416.5, 839.0, 53.0, 22.0 ],
-					"style" : "",
 					"text" : "pcontrol"
 				}
 
@@ -1835,6 +1799,14 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-28", 0 ],
+					"hidden" : 1,
+					"source" : [ "obj-7", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-72", 1 ],
 					"hidden" : 1,
 					"source" : [ "obj-71", 0 ]
@@ -2020,22 +1992,22 @@
  ],
 		"dependency_cache" : [ 			{
 				"name" : "o.autodoc_overview.maxpat",
-				"bootpath" : "~/Documents/dev-lib/CNMAT-odot/patchers/utils",
-				"patcherrelativepath" : "../../patchers/utils",
+				"bootpath" : "~/Documents/Max 8/Packages/CNMAT-odot/patchers/utils",
+				"patcherrelativepath" : "../../../../../Documents/Max 8/Packages/CNMAT-odot/patchers/utils",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "o.gather.maxpat",
-				"bootpath" : "~/Documents/dev-lib/CNMAT-odot/patchers/namespace",
-				"patcherrelativepath" : "../../patchers/namespace",
+				"bootpath" : "~/Documents/Max 8/Packages/CNMAT-odot/patchers/namespace",
+				"patcherrelativepath" : "../../../../../Documents/Max 8/Packages/CNMAT-odot/patchers/namespace",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "o.righttoleft.maxpat",
-				"bootpath" : "~/Documents/dev-lib/CNMAT-odot/patchers/ordering",
-				"patcherrelativepath" : "../../patchers/ordering",
+				"bootpath" : "~/Documents/Max 8/Packages/CNMAT-odot/patchers/ordering",
+				"patcherrelativepath" : "../../../../../Documents/Max 8/Packages/CNMAT-odot/patchers/ordering",
 				"type" : "JSON",
 				"implicit" : 1
 			}
@@ -2137,6 +2109,10 @@
 			}
 , 			{
 				"name" : "o.edge~.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "o.downcast.mxo",
 				"type" : "iLaX"
 			}
  ],

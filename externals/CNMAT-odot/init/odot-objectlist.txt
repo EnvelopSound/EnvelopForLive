@@ -6,6 +6,7 @@ max oblist "odot objects" o.cond;
 max oblist "odot objects" o.dict;
 max oblist "odot objects" o.difference;
 max oblist "odot objects" o.display;
+max oblist "odot objects" o.downcast;
 max oblist "odot objects" o.edge~;
 max oblist "odot objects" o.explode;
 max oblist "odot objects" o.expr.codebox;
