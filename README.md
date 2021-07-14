@@ -35,7 +35,7 @@ $ git clone https://github.com/EnvelopSound/EnvelopForLive.git
 $ cd EnvelopForLive
 ```
 
-The E4L Max for Live devices can all be found in the devices subfolder. You will need to load the devices and work out of this directory.
+The E4L Max for Live devices can all be found in the devices subfolder. You will need to load the devices and work out of this directory. Note that E4L uses components of the [CNMAT odot](https://github.com/CNMAT/CNMAT-odot) package, please install this directly via the Max Package Manager.
 
 ## First Steps
 
