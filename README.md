@@ -20,7 +20,7 @@ Please note that E4L is not officially supported on Windows. Max for Live is tec
 
 ### For Users: Download
 
-* Download the [latest release &rarr;](https://github.com/EnvelopSound/EnvelopForLive/releases/download/10.0.0/Envelop.for.Live.10.0.0.zip)
+* Download the [latest release &rarr;](https://github.com/EnvelopSound/EnvelopForLive/releases/download/11.0.0/Envelop.for.Live.11.0.0.zip)
 * Unzip the file and place the **Envelop for Live** folder in a good location on your hard drive
 
 For easy access, you may wish to bookmark the **Envelop for Live** folder in the Places section of Ableton Live. Do this by dragging and dropping the folder, or using the "Add Folder..." button.
