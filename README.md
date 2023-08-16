@@ -37,9 +37,9 @@ $ cd EnvelopForLive
 
 The E4L Max for Live devices can all be found in the devices subfolder. You will need to load the devices and work out of this directory. Note that E4L uses components of the [ICST Ambisonics](https://www.zhdk.ch/forschung/icst/software-downloads-5379/downloads-ambisonics-externals-for-maxmsp-5381), [HISSTools Impulse Response Toolbox]([ICST Ambisonics](https://www.zhdk.ch/forschung/icst/software-downloads-5379/downloads-ambisonics-externals-for-maxmsp-5381)), and [CNMAT odot](https://github.com/CNMAT/CNMAT-odot) packages, please install these directly via the Max Package Manager.
 
-Open the Max Package Manager via the File menu (File | Show Package Manager) and then search for "ICST Ambisonics", "HISSTools", and "odot".
+Open the Max Package Manager via the File menu (File | Show Package Manager) and then search for `ICST Ambisonics`, `HISSTools`, and `odot`.
 
-<img src="/doc/MaxPackage-odot.png" alt="Max Package odot" height="257" /> <img src="/doc/MaxPackage-ICST.png" alt="Max Package ICST Ambisonics" height="257" />
+<img src="/doc/MaxPackage-ICST.png" alt="Max Package ICST Ambisonics" height="257" /> <img src="/doc/MaxPackage-odot.png" alt="Max Package odot" height="257" />
 
 ## First Steps
 
