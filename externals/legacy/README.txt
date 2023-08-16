@@ -1,0 +1,1 @@
+The externals in this folder are retained for legacy support. They do not presently run on Apple Silicon.
