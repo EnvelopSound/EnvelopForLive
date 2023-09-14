@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 1175.0, 683.0, 945.0, 694.0 ],
+		"rect" : [ 1467.0, 701.0, 945.0, 694.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -317,7 +317,7 @@
 					"parameter_enable" : 1,
 					"patching_rect" : [ 125.0, 158.0, 22.0, 39.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 2.0, 29.0, 14.0 ],
+					"presentation_rect" : [ 0.0, 5.0, 29.0, 14.0 ],
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
 							"parameter_enum" : [ "Off", "On" ],
@@ -325,7 +325,7 @@
 							"parameter_initial" : [ 0 ],
 							"parameter_initial_enable" : 1,
 							"parameter_linknames" : 1,
-							"parameter_longname" : "Active-#1",
+							"parameter_longname" : "#1-Active",
 							"parameter_mmax" : 1.0,
 							"parameter_modmax" : 1.0,
 							"parameter_modmode" : 4,
@@ -338,7 +338,7 @@
 ,
 					"text" : "#1",
 					"texton" : "#1",
-					"varname" : "Active-#1"
+					"varname" : "#1-Active"
 				}
 
 			}
@@ -373,7 +373,7 @@
 							"parameter_initial" : [ 1.0 ],
 							"parameter_initial_enable" : 1,
 							"parameter_linknames" : 1,
-							"parameter_longname" : "Radius-#1",
+							"parameter_longname" : "#1-Radius",
 							"parameter_mmax" : 1.0,
 							"parameter_modmode" : 2,
 							"parameter_order" : 3,
@@ -386,7 +386,7 @@
 					}
 ,
 					"showname" : 0,
-					"varname" : "Radius-#1"
+					"varname" : "#1-Radius"
 				}
 
 			}
@@ -402,14 +402,14 @@
 					"parameter_enable" : 1,
 					"patching_rect" : [ 261.25, 158.0, 27.0, 43.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 1.0, 74.0, 27.0, 43.0 ],
+					"presentation_rect" : [ 1.0, 78.0, 27.0, 43.0 ],
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
 							"parameter_annotation_name" : "Elevation",
 							"parameter_initial" : [ 0.0 ],
 							"parameter_initial_enable" : 1,
 							"parameter_linknames" : 1,
-							"parameter_longname" : "Elevation-#1",
+							"parameter_longname" : "#1-Elevation",
 							"parameter_mmax" : 90.0,
 							"parameter_mmin" : -90.0,
 							"parameter_modmode" : 2,
@@ -424,7 +424,7 @@
 ,
 					"showname" : 0,
 					"triangle" : 1,
-					"varname" : "Elevation-#1"
+					"varname" : "#1-Elevation"
 				}
 
 			}
@@ -441,14 +441,14 @@
 					"parameter_enable" : 1,
 					"patching_rect" : [ 162.583327999999995, 158.0, 27.0, 43.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 1.0, 19.0, 27.0, 43.0 ],
+					"presentation_rect" : [ 1.0, 26.0, 27.0, 43.0 ],
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
 							"parameter_annotation_name" : "Azimuth",
 							"parameter_initial" : [ 0.0 ],
 							"parameter_initial_enable" : 1,
 							"parameter_linknames" : 1,
-							"parameter_longname" : "Azimuth-#1",
+							"parameter_longname" : "#1-Azimuth",
 							"parameter_mmax" : 180.0,
 							"parameter_mmin" : -180.0,
 							"parameter_modmode" : 2,
@@ -463,7 +463,7 @@
 ,
 					"showname" : 0,
 					"triangle" : 1,
-					"varname" : "Azimuth-#1"
+					"varname" : "#1-Azimuth"
 				}
 
 			}
@@ -924,10 +924,10 @@
 			}
  ],
 		"parameters" : 		{
-			"obj-102" : [ "Radius-#1", "Radius", 3 ],
-			"obj-18" : [ "Azimuth-#1", "Azim", 1 ],
-			"obj-28" : [ "Elevation-#1", "Elev", 2 ],
-			"obj-38" : [ "Active-#1", "Active", 4 ],
+			"obj-102" : [ "#1-Radius", "Radius", 3 ],
+			"obj-18" : [ "#1-Azimuth", "Azim", 1 ],
+			"obj-28" : [ "#1-Elevation", "Elev", 2 ],
+			"obj-38" : [ "#1-Active", "Active", 4 ],
 			"parameterbanks" : 			{
 				"0" : 				{
 					"index" : 0,
