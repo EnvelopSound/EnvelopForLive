@@ -189,7 +189,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 764.0, 692.0, 52.0, 22.0 ],
+					"patching_rect" : [ 775.0, 694.0, 52.0, 22.0 ],
 					"text" : "gate 1 0"
 				}
 
@@ -225,7 +225,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 764.0, 641.0, 52.0, 22.0 ],
+					"patching_rect" : [ 790.0, 662.0, 52.0, 22.0 ],
 					"text" : "gate 1 0"
 				}
 
@@ -248,7 +248,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 764.0, 773.0, 35.0, 20.0 ],
+					"patching_rect" : [ 775.0, 775.0, 35.0, 20.0 ],
 					"text" : "OSC"
 				}
 
@@ -261,7 +261,7 @@
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 764.0, 732.0, 30.0, 30.0 ]
+					"patching_rect" : [ 775.0, 734.0, 30.0, 30.0 ]
 				}
 
 			}
