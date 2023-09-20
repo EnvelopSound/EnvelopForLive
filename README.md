@@ -20,7 +20,7 @@ Please note that E4L is not officially supported on Windows. Max for Live is tec
 
 ### For Users: Download
 
-* Download the [latest release &rarr;](https://github.com/EnvelopSound/EnvelopForLive/releases/download/11.0.0/Envelop.for.Live.11.0.0.zip)
+* Download the [latest release &rarr;](https://github.com/EnvelopSound/EnvelopForLive/releases/download/11.3.4/Envelop.for.Live.11.3.4.zip)
 * Unzip the file and place the **Envelop for Live** folder in a good location on your hard drive
 
 For easy access, you may wish to bookmark the **Envelop for Live** folder in the Places section of Ableton Live. Do this by dragging and dropping the folder, or using the "Add Folder..." button.
@@ -35,11 +35,11 @@ $ git clone https://github.com/EnvelopSound/EnvelopForLive.git
 $ cd EnvelopForLive
 ```
 
-The E4L Max for Live devices can all be found in the devices subfolder. You will need to load the devices and work out of this directory. Note that E4L uses components of the [CNMAT odot](https://github.com/CNMAT/CNMAT-odot) and [ICST Ambisonics](https://www.zhdk.ch/forschung/icst/software-downloads-5379/downloads-ambisonics-externals-for-maxmsp-5381) packages, please install these directly via the Max Package Manager.
+The E4L Max for Live devices can all be found in the devices subfolder. You will need to load the devices and work out of this directory. Note that E4L uses components of the [ICST Ambisonics](https://www.zhdk.ch/forschung/icst/software-downloads-5379/downloads-ambisonics-externals-for-maxmsp-5381), [HISSTools Impulse Response Toolbox]([ICST Ambisonics](https://www.zhdk.ch/forschung/icst/software-downloads-5379/downloads-ambisonics-externals-for-maxmsp-5381)), and [CNMAT odot](https://github.com/CNMAT/CNMAT-odot) packages, please install these directly via the Max Package Manager.
 
-Open the Max Package Manager via the File menu (File | Show Package Manager) and then search for "odot" and "ICST Ambisonics"
+Open the Max Package Manager via the File menu (File | Show Package Manager) and then search for `ICST Ambisonics`, `HISSTools`, and `odot`.
 
-<img src="/doc/MaxPackage-odot.png" alt="Max Package odot" height="257" /> <img src="/doc/MaxPackage-ICST.png" alt="Max Package ICST Ambisonics" height="257" />
+<img src="/doc/MaxPackage-ICST.png" alt="Max Package ICST Ambisonics" height="257" /> <img src="/doc/MaxPackage-odot.png" alt="Max Package odot" height="257" />
 
 ## First Steps
 
