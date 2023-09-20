@@ -12,7 +12,7 @@ Envelop for Live (E4L) is an open source audio production framework for spatial 
 
 # Getting Started
 
-E4L makes use of the advanced routing capabilities in [Live 10+](https://www.ableton.com/en/live/) and [Max for Live](https://www.ableton.com/en/live/max-for-live/). Before continuing, make sure that you have installed both of these programs.
+E4L makes use of the advanced routing capabilities in [Live 11](https://www.ableton.com/en/live/) and [Max for Live](https://www.ableton.com/en/live/max-for-live/). Before continuing, make sure that you have installed both of these programs. E4L is tested running with the bundled version of Max (version 8.5.5 as of Live 11.3.11), running in native mode (not via Rosetta).
 
 Please note that E4L is not officially supported on Windows. Max for Live is technically cross-platform, but some Windows users have reported issues with sporadic crashing and project corruption. We recommend working with macOS if possible. If experimenting with Windows, we encourage making regular backups and copies of project files.
 
@@ -20,7 +20,7 @@ Please note that E4L is not officially supported on Windows. Max for Live is tec
 
 ### For Users: Download
 
-* Download the [latest release &rarr;](https://github.com/EnvelopSound/EnvelopForLive/releases/download/11.3.4/Envelop.for.Live.11.3.4.zip)
+* Download the [latest release &rarr;](https://github.com/EnvelopSound/EnvelopForLive/releases/download/11.3.11/Envelop.for.Live.11.3.11.zip)
 * Unzip the file and place the **Envelop for Live** folder in a good location on your hard drive
 
 For easy access, you may wish to bookmark the **Envelop for Live** folder in the Places section of Ableton Live. Do this by dragging and dropping the folder, or using the "Add Folder..." button.
