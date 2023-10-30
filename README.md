@@ -1,20 +1,26 @@
 ![Logo](doc/E4L-banner.png)
 
-[Envelop](http://envelop.us) is a nonprofit organization that amplifies the connective power of music through immersive listening spaces and open source spatial audio software. Three-dimensional experiences of sound and music bring people together, catalyzing shared moments of inspiration, empathy and wonder.
+The nonprofit mission of [Envelop](http://envelop.us) is to connect and inspire community through immersive listening. Our [listening spaces](https://envelop.us/page/listening-spaces) envelop the audience in pristine 3D sound, amplifying the power of music and nurturing our ability to listen together.
 
-Envelop for Live (E4L) is an open source audio production framework for spatial audio composition and performance. Envelop for Live operates within the music production environment of Ableton Live 10+ and Max for Live. Envelop for Live is designed to be a highly modular, flexible platform for artists to compose and perform spatial audio, and for developers to create new kinds of audio effects for the Ambisonics domain.
+E4L (Envelop for Live) is an open-source spatial audio production toolkit that allows artists to produce and perform unforgettable events in our listening spaces, or explore their own DIY projects. E4L operates within Ableton Live 11 Suite / Max for Live and is designed to be a flexible platform for artists to compose with immersive sound. E4L’s modular design also allows developers to create unique audio effects for the Ambisonics domain.
 
-* [Join the Facebook Group for questions, tips, etc.](https://www.facebook.com/groups/E4LUsers)
-* [Sign up for the Envelop email newsletter](http://www.envelop.us/connect/)
-* [Learn more on the Envelop for Live Wiki](https://github.com/EnvelopSound/EnvelopForLive/wiki)
+E4L takes significant time and resources to develop and maintain, but we share it for free, relying on your donations to keep it alive. We believe access to creativity should not be gated solely by large corporations, so we’ve built a collective cornerstone for the future of immersive music.
 
-***E4L is free to use — but it takes time, energy, and resources to create and maintain. If you find these tools useful, please consider making a donation to support the Envelop nonprofit organization: https://www.envelop.us/membership-donations***
+Help us sustain E4L by contributing to Envelop &mdash; [become an Envelop Member or donor, or contribute any amount to our nonprofit](https://envelop.us/memberships).
+
+* [Visit our website](https://envelop.us/)
+* [Donate to Envelop](https://envelop.us/memberships)
+* [Submit your music for Envelop events](https://envelop.us/page/submit-music)
+* [Create an Envelop Account to join our newsletter](https://envelop.us/auth)
+* [Join the E4L Facebook Group for questions, tips, etc.](https://www.facebook.com/groups/E4LUsers)
 
 # Getting Started
 
 E4L makes use of the advanced routing capabilities in [Live 11](https://www.ableton.com/en/live/) and [Max for Live](https://www.ableton.com/en/live/max-for-live/). Before continuing, make sure that you have installed both of these programs. E4L is tested running with the bundled version of Max (version 8.5.5 as of Live 11.3.11), running in native mode (not via Rosetta).
 
 Please note that E4L is not officially supported on Windows. Max for Live is technically cross-platform, but some Windows users have reported issues with sporadic crashing and project corruption. We recommend working with macOS if possible. If experimenting with Windows, we encourage making regular backups and copies of project files.
+
+[Learn more on the Envelop for Live Wiki &rarr;](https://github.com/EnvelopSound/EnvelopForLive/wiki)
 
 ## Installation
 
@@ -35,7 +41,7 @@ $ git clone https://github.com/EnvelopSound/EnvelopForLive.git
 $ cd EnvelopForLive
 ```
 
-The E4L Max for Live devices can all be found in the devices subfolder. You will need to load the devices and work out of this directory. Note that E4L uses components of the [ICST Ambisonics](https://www.zhdk.ch/forschung/icst/software-downloads-5379/downloads-ambisonics-externals-for-maxmsp-5381), [HISSTools Impulse Response Toolbox]([ICST Ambisonics](https://www.zhdk.ch/forschung/icst/software-downloads-5379/downloads-ambisonics-externals-for-maxmsp-5381)), and [CNMAT odot](https://github.com/CNMAT/CNMAT-odot) packages, please install these directly via the Max Package Manager.
+The E4L Max for Live devices can all be found in the devices subfolder. You will need to load the devices and work out of this directory. Note that E4L uses components of the [ICST Ambisonics](https://www.zhdk.ch/forschung/icst/software-downloads-5379/downloads-ambisonics-externals-for-maxmsp-5381), [HISSTools Impulse Response Toolbox](https://github.com/HISSTools/HISSTools_Impulse_Response_Toolbox), and [CNMAT odot](https://github.com/CNMAT/CNMAT-odot) packages, please install these directly via the Max Package Manager.
 
 Open the Max Package Manager via the File menu (File | Show Package Manager) and then search for `ICST Ambisonics`, `HISSTools`, and `odot`.
 
