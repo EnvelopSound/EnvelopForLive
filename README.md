@@ -2,7 +2,7 @@
 
 The nonprofit mission of [Envelop](http://envelop.us) is to connect and inspire community through immersive listening. Our [listening spaces](https://envelop.us/page/listening-spaces) envelop the audience in pristine 3D sound, amplifying the power of music and nurturing our ability to listen together.
 
-E4L (Envelop for Live) is an open-source spatial audio production toolkit that allows artists to produce and perform unforgettable events in our listening spaces, or explore their own DIY projects. E4L operates within Ableton Live 11 Suite / Max for Live and is designed to be a flexible platform for artists to compose with immersive sound. E4L’s modular design also allows developers to create unique audio effects for the Ambisonics domain.
+E4L (Envelop for Live) is an open-source spatial audio production toolkit that allows artists to produce and perform unforgettable events in Envelop listening spaces, or explore their own DIY projects. E4L operates within Ableton Live Suite (10-11+) and is designed to be a flexible platform for artists to compose with immersive sound. E4L’s modular design also allows developers to create unique audio effects for the Ambisonics domain.
 
 E4L takes significant time and resources to develop and maintain, but we share it for free, relying on your donations to keep it alive. We believe access to creativity should not be gated solely by large corporations, so we’ve built a collective cornerstone for the future of immersive music.
 
