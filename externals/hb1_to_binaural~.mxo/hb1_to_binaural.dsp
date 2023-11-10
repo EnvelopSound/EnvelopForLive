@@ -1,3 +1,5 @@
+declare filename "hb1_to_binaural.dsp";
+declare name "hb1_to_binaural";
 // Horizontal B-format Ambisonic (WXY) to Binaural Rendering using spherical head HRIRs
 // Note: HRIRs computed for 48 kHz sample rate
 declare name		"B2Binaural 48kHz";
@@ -39,7 +41,33 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
 /*
+
+B-format to Binaural
+--------------------
+
+Eric Benjamin <ebenj@pacbell.net>
+Aaron Heller <heller@ai.sri.com>
+
+Some time ago we created a first-order Ambisonic to binaural
+transcoder plug-in. It was not a purpose-built converter but rather an
+offshoot of the binaural testing of ambisonic reproduction systems
+that we have been conducting. We have occasionally used a spherical
+head model in order to calculate the associated ITDs and ILDs
+associated with a particular arrangement of loudspeakers. This is
+essentially the same thing as using the paradigm of a virtual head in
+a virtual loudspeaker array. When we listened to the resultant impulse
+responses, they sounded fairly good. There is the limitation that it
+is presently first-order and horizontal only and works at 48 kHz
+sample rate only. We've wrapped those impulse responses in simple
+convolver plugin written in Faust and provide precompiled VST versions
+of the plugin. It can be compiled for other architectures using the
+online Faust compiler. We include an Ambisonic panner and pink noise
+source that can be used for testing.  If you use it, we'd appreciate
+hearing back from you as to how it worked.
+
+
 References for Spherical head HRIRs
+-----------------------------------
 
 [1] C. Brown and R. O. Duda, "A structural model for binaural sound synthesis," IEEE Transactions on Speech and Audio Processing, vol. 6, no. 5, pp. 476–488 (September 1998).
 
