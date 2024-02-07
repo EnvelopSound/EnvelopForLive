@@ -4,13 +4,13 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 5,
-			"revision" : 5,
+			"revision" : 6,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 1467.0, 701.0, 1250.0, 908.0 ],
+		"rect" : [ 273.0, 169.0, 1250.0, 908.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -39,6 +39,18 @@
 		"subpatcher_template" : "",
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
+				"box" : 				{
+					"id" : "obj-50",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 678.0, 430.0, 105.0, 22.0 ],
+					"text" : "e4l.lx.aed.admosc"
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"id" : "obj-76",
 					"maxclass" : "newobj",
@@ -124,24 +136,12 @@
 			}
 , 			{
 				"box" : 				{
-					"id" : "obj-69",
-					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 1,
-					"outlettype" : [ "float" ],
-					"patching_rect" : [ 590.0, 394.0, 111.0, 22.0 ],
-					"text" : "e4l.lx.azim.admosc"
-				}
-
-			}
-, 			{
-				"box" : 				{
 					"id" : "obj-68",
 					"maxclass" : "newobj",
 					"numinlets" : 3,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 590.0, 428.0, 68.0, 22.0 ],
+					"patching_rect" : [ 678.0, 403.0, 68.0, 22.0 ],
 					"text" : "pak 0. 0. 1."
 				}
 
@@ -165,7 +165,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 590.0, 462.0, 131.0, 22.0 ],
+					"patching_rect" : [ 537.0, 430.0, 131.0, 22.0 ],
 					"text" : "sprintf /adm/obj/%i/aed"
 				}
 
@@ -177,7 +177,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "bang" ],
-					"patching_rect" : [ 848.0, 414.0, 71.0, 22.0 ],
+					"patching_rect" : [ 848.0, 438.0, 71.0, 22.0 ],
 					"text" : "metro 5000"
 				}
 
@@ -516,18 +516,6 @@
 					"outlettype" : [ "bang", "float" ],
 					"patching_rect" : [ 465.75, 285.0, 29.5, 22.0 ],
 					"text" : "t b f"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-41",
-					"maxclass" : "newobj",
-					"numinlets" : 3,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 243.75, 367.0, 71.0, 22.0 ],
-					"text" : "clip -90. 90."
 				}
 
 			}
@@ -1070,7 +1058,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 5,
-							"revision" : 5,
+							"revision" : 6,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -1581,7 +1569,8 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-69", 0 ],
+					"destination" : [ "obj-68", 0 ],
+					"midpoints" : [ 215.333327999999995, 396.0, 687.5, 390.0 ],
 					"order" : 0,
 					"source" : [ "obj-39", 0 ]
 				}
@@ -1604,16 +1593,10 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-41", 0 ],
-					"source" : [ "obj-40", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
 					"destination" : [ "obj-68", 1 ],
+					"midpoints" : [ 253.25, 394.0, 712.0, 394.0 ],
 					"order" : 0,
-					"source" : [ "obj-41", 0 ]
+					"source" : [ "obj-40", 0 ]
 				}
 
 			}
@@ -1621,7 +1604,7 @@
 				"patchline" : 				{
 					"destination" : [ "obj-95", 3 ],
 					"order" : 1,
-					"source" : [ "obj-41", 0 ]
+					"source" : [ "obj-40", 0 ]
 				}
 
 			}
@@ -1713,6 +1696,13 @@
 				"patchline" : 				{
 					"destination" : [ "obj-58", 0 ],
 					"source" : [ "obj-49", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-67", 1 ],
+					"source" : [ "obj-50", 0 ]
 				}
 
 			}
@@ -1846,15 +1836,8 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-67", 1 ],
+					"destination" : [ "obj-50", 0 ],
 					"source" : [ "obj-68", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-68", 0 ],
-					"source" : [ "obj-69", 0 ]
 				}
 
 			}
@@ -1956,6 +1939,13 @@
 		}
 ,
 		"dependency_cache" : [ 			{
+				"name" : "e4l.lx.aed.admosc.maxpat",
+				"bootpath" : "~/Documents/Max 8/Packages/EnvelopForLive/patchers/lx",
+				"patcherrelativepath" : "../lx",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
 				"name" : "e4l.lx.azim.admosc.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/EnvelopForLive/patchers/lx",
 				"patcherrelativepath" : "../lx",
@@ -1964,6 +1954,13 @@
 			}
 , 			{
 				"name" : "e4l.panner.azim.mod.maxpat",
+				"bootpath" : "~/Documents/Max 8/Packages/EnvelopForLive/patchers/panner",
+				"patcherrelativepath" : ".",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "e4l.panner.elev.mod.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/EnvelopForLive/patchers/panner",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
