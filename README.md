@@ -75,3 +75,8 @@ Repeat this process to build up your surround mix. You may use as many **E4L Sou
 
 For more in-depth documentation and tutorials, see the [Envelop for Live Wiki](https://github.com/EnvelopSound/EnvelopForLive/wiki).
 
+## Licensing
+
+Envelop for Live is generally made available under the [GPLv2 License](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html). These means that you are free to modify and use Envelop for Live in your own projects, so long as they are compatible with the GPL.
+
+Certain subsystems of Envelop are made available under the [LGPLv2 License](https://www.gnu.org/licenses/old-licenses/lgpl-2.1.en.html), specifically the re-usable patcher components in the `bus` and `live` subdirectories. These components may be freely reused to create tools which can interoperate with E4L's routing system, without your project needing to comply with the broader GPL restrictions.
