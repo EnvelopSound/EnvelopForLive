@@ -10,19 +10,19 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			MenSLZudlXSo0pvCw1ao1HMLbHE=
+			zNLQGcP4zcCVxTq80LnyqHcavSM=
 			</data>
 			<key>requirement</key>
-			<string>cdhash H"31e9d22d9b9d9574a8d29bc2c356a8d4730b6c71"</string>
+			<string>cdhash H"ccd2d019c3f8cdc095c53abcd0b9f2a8771abd23"</string>
 		</dict>
 		<key>MacOS/hb1_to_binaural~.x86_64</key>
 		<dict>
 			<key>cdhash</key>
 			<data>
-			S+/N6e+y7LeJTSAqzY9fjovvzq8=
+			0ybQ5UI7OCo+0LkmfXpRUZsFY/g=
 			</data>
 			<key>requirement</key>
-			<string>cdhash H"7ccc77374206ab5cfba42b43eca7792d73a4dc3d" or cdhash H"4befcde9efb2ecb7894d202acd8f5f8e8befceaf"</string>
+			<string>cdhash H"72b3a424a27d37bd9a635458c706b30ddf8fb015" or cdhash H"d326d0e5423b382a3ed0b9267d7a51519b0563f8"</string>
 		</dict>
 	</dict>
 	<key>rules</key>

@@ -2,10 +2,10 @@
 author: "AmbisonicDecoderToolkit"
 copyright: "(c) Aaron J. Heller and Eric M. Benjamin, 2013"
 license: "BSD 3-Clause License"
-name: "hb1_to_binaural", "B2Binaural 48kHz"
+name: "B2Binaural 48kHz"
 version: "1.1"
-Code generated with Faust 2.68.1 (https://faust.grame.fr)
-Compilation options: -a /usr/local/Cellar/faust/2.68.1_1/share/faust/max-msp/max-msp64.cpp -lang cpp -i -ct 1 -cn hb1_to_binaural -es 1 -mcd 16 -uim -double -ftz 0
+Code generated with Faust 2.72.14 (https://faust.grame.fr)
+Compilation options: -a /usr/local/Cellar/faust/2.72.14_1/share/faust/max-msp/max-msp64.cpp -lang cpp -i -ct 1 -cn hb1_to_binaural -es 1 -mcd 16 -mdd 1024 -mdy 33 -double -ftz 0
 ------------------------------------------------------------ */
 
 #ifndef  __hb1_to_binaural_H__
@@ -144,12 +144,12 @@ Compilation options: -a /usr/local/Cellar/faust/2.68.1_1/share/faust/max-msp/max
 #define __export__
 
 // Version as a global string
-#define FAUSTVERSION "2.68.1"
+#define FAUSTVERSION "2.72.14"
 
 // Version as separated [major,minor,patch] values
 #define FAUSTMAJORVERSION 2
-#define FAUSTMINORVERSION 68
-#define FAUSTPATCHVERSION 1
+#define FAUSTMINORVERSION 72
+#define FAUSTPATCHVERSION 14
 
 // Use FAUST_API for code that is part of the external API but is also compiled in faust and libfaust
 // Use LIBFAUST_API for code that is compiled in faust and libfaust
@@ -851,7 +851,6 @@ static bool parseJson(const char*& p,
 #include <map>
 #include <string>
 #include <algorithm>
-#include <regex>
 
 
 /*******************************************************************************
@@ -884,9 +883,16 @@ class FAUST_API PathBuilder {
          * @param src
          * @return modified string
          */
-        std::string remove0x00(const std::string& src) const
+        std::string remove0x00(const std::string& src_aux) const
         {
-            return std::regex_replace(src, std::regex("/0x00"), "");
+            std::string src = src_aux;
+            std::string from = "/0x00";
+            std::string to = "";
+            size_t pos = std::string::npos;
+            while ((pos = src.find(from)) && (pos != std::string::npos)) {
+                src = src.replace(pos, from.length(), to);
+            }
+            return src;
         }
     
         /**
@@ -1013,7 +1019,7 @@ class FAUST_API PathBuilder {
         virtual ~PathBuilder() {}
     
         // Return true for the first level of groups
-        bool pushLabel(const std::string& label) { fControlsLevel.push_back(label); return fControlsLevel.size() == 1;}
+        bool pushLabel(const std::string& label) { fControlsLevel.push_back(label); return fControlsLevel.size() == 1; }
     
         // Return true for the last level of groups
         bool popLabel() { fControlsLevel.pop_back(); return fControlsLevel.size() == 0; }
@@ -1228,6 +1234,10 @@ class FAUST_API dsp {
         /**
          * DSP instance computation, to be called with successive in/out audio buffers.
          *
+         * Note that by default inputs and outputs buffers are supposed to be distinct memory zones,
+         * so one cannot safely write compute(count, inputs, inputs).
+         * The -inpl compilation option can be used for that, but only in scalar mode for now.
+         *
          * @param count - the number of frames to compute
          * @param inputs - the input audio buffers as an array of non-interleaved FAUSTFLOAT samples (eiher float, double or quad)
          * @param outputs - the output audio buffers as an array of non-interleaved FAUSTFLOAT samples (eiher float, double or quad)
@@ -1236,9 +1246,11 @@ class FAUST_API dsp {
         virtual void compute(int count, FAUSTFLOAT** inputs, FAUSTFLOAT** outputs) = 0;
     
         /**
-         * DSP instance computation: alternative method to be used by subclasses.
+         * Alternative DSP instance computation method for use by subclasses, incorporating an additional `date_usec` parameter,
+         * which specifies the timestamp of the first sample in the audio buffers.
          *
-         * @param date_usec - the timestamp in microsec given by audio driver.
+         * @param date_usec - the timestamp in microsec given by audio driver. By convention timestamp of -1 means 'no timestamp conversion',
+         * events already have a timestamp expressed in frames.
          * @param count - the number of frames to compute
          * @param inputs - the input audio buffers as an array of non-interleaved FAUSTFLOAT samples (either float, double or quad)
          * @param outputs - the output audio buffers as an array of non-interleaved FAUSTFLOAT samples (either float, double or quad)
@@ -1951,10 +1963,13 @@ class dsp_crossfader: public dsp_binary_combiner {
 #define __dsp_algebra_api__
 
 /**
- * DSP algebra API
- * Each operation takes two DSP and a optional Layout and Label parameters, returns the combined DSPs,
+ * DSP algebra API allowing to combine DSPs using the 5 operators Faust block algebra and an additional crossfader combiner.
+ * The two arguments GUI are composed in a group, either kVerticalGroup, kHorizontalGroup or kTabGroup with a label.
+ *
+ * Each operation takes two DSP and a optional layout and label parameters, returns the combined DSPs,
  * or null if failure with an error message.
- * It includes methods to create sequencers, parallelizers, splitters, mergers, recursives, and crossfaders.
+ * 
+ * It includes methods to create sequencers, parallelizers, splitters, mergers, recursivers, and crossfaders.
  */
 
 /**
@@ -1966,7 +1981,7 @@ class dsp_crossfader: public dsp_binary_combiner {
  * @param dsp1 The first DSP module to combine
  * @param dsp2 The second DSP module to combine
  * @param error A reference to a string to store error messages (if any)
- * @param layout The layout for the user interface (default: kTabGroup)
+ * @param layout The layout for the combined user interface (default: kTabGroup)
  * @param label The label for the combiner (default: "Sequencer")
  * @return A pointer to the created DSP Sequencer, or nullptr if an error occurs
  */
@@ -1996,7 +2011,7 @@ static dsp* createDSPSequencer(dsp* dsp1, dsp* dsp2,
  * @param dsp1 The first DSP module to combine
  * @param dsp2 The second DSP module to combine
  * @param error A reference to a string to store error messages (if any)
- * @param layout The layout for the user interface (default: kTabGroup)
+ * @param layout The layout for the combined user interface (default: kTabGroup)
  * @param label The label for the combiner (default: "Parallelizer")
  * @return A pointer to the created DSP Parallelizer, or nullptr if an error occurs
  */
@@ -2017,7 +2032,7 @@ static dsp* createDSPParallelizer(dsp* dsp1, dsp* dsp2,
  * @param dsp1 The first DSP module to combine
  * @param dsp2 The second DSP module to combine
  * @param error A reference to a string to store error messages (if any)
- * @param layout The layout for the user interface (default: kTabGroup)
+ * @param layout The layout for the combined user interface (default: kTabGroup)
  * @param label The label for the combiner (default: "Splitter")
  * @return A pointer to the created DSP Splitter, or nullptr if an error occurs
  */
@@ -2053,7 +2068,7 @@ static dsp* createDSPSplitter(dsp* dsp1, dsp* dsp2, std::string& error, Layout l
  * @param dsp1 The first DSP module to combine
  * @param dsp2 The second DSP module to combine
  * @param error A reference to a string to store error messages (if any)
- * @param layout The layout for the user interface (default: kTabGroup)
+ * @param layout The layout for the combined user interface (default: kTabGroup)
  * @param label The label for the combiner (default: "Merger")
  * @return A pointer to the created DSP Merger, or nullptr if an error occurs
  */
@@ -2092,7 +2107,7 @@ static dsp* createDSPMerger(dsp* dsp1, dsp* dsp2,
  * @param dsp1 The first DSP module to combine
  * @param dsp2 The second DSP module to combine
  * @param error A reference to a string to store error messages (if any)
- * @param layout The layout for the user interface (default: kTabGroup)
+ * @param layout The layout for the combined user interface (default: kTabGroup)
  * @param label The label for the combiner (default: "Recursiver")
  * @return A pointer to the created DSP Recursiver, or nullptr if an error occurs
  */
@@ -2134,7 +2149,7 @@ static dsp* createDSPRecursiver(dsp* dsp1, dsp* dsp2,
  * @param dsp1 The first DSP module to combine
  * @param dsp2 The second DSP module to combine
  * @param error A reference to a string to store error messages (if any)
- * @param layout The layout for the user interface (default: kTabGroup)
+ * @param layout The layout for the combined user interface (default: kTabGroup)
  * @param label The label for the crossfade slider (default: "Crossfade")
  * @return A pointer to the created DSP Crossfader, or nullptr if an error occurs
  */
@@ -2809,9 +2824,9 @@ class dsp_up_sampler : public sr_sampler<FILTER> {
 
 // Create a UP/DS + Filter adapted DSP
 template <typename REAL>
-dsp* createSRAdapter(dsp* DSP, int ds = 0, int us = 0, int filter = 0)
+dsp* createSRAdapter(dsp* DSP, std::string& error, int ds = 0, int us = 0, int filter = 0)
 {
-    if (ds > 0) {
+    if (ds >= 2) {
         switch (filter) {
             case 0:
                 if (ds == 2) {
@@ -2827,8 +2842,7 @@ dsp* createSRAdapter(dsp* DSP, int ds = 0, int us = 0, int filter = 0)
                 } else if (ds == 32) {
                     return new dsp_down_sampler<Identity<Double<1,1>, 32>>(DSP);
                 } else {
-                    fprintf(stderr, "ERROR : ds factor type must be in [2..32] range\n");
-                    assert(false);
+                    error = "ERROR : ds factor type must be in [2..32] range\n";
                     return nullptr;
                 }
             case 1:
@@ -2845,8 +2859,7 @@ dsp* createSRAdapter(dsp* DSP, int ds = 0, int us = 0, int filter = 0)
                 } else if (ds == 32) {
                     return new dsp_down_sampler<LowPass3<Double<45,100>, 32, REAL>>(DSP);
                 } else {
-                    fprintf(stderr, "ERROR : ds factor type must be in [2..32] range\n");
-                    assert(false);
+                    error = "ERROR : ds factor type must be in [2..32] range\n";
                     return nullptr;
                 }
             case 2:
@@ -2863,8 +2876,7 @@ dsp* createSRAdapter(dsp* DSP, int ds = 0, int us = 0, int filter = 0)
                 } else if (ds == 32) {
                     return new dsp_down_sampler<LowPass4<Double<45,100>, 32, REAL>>(DSP);
                 } else {
-                    fprintf(stderr, "ERROR : ds factor type must be in [2..32] range\n");
-                    assert(false);
+                    error = "ERROR : ds factor type must be in [2..32] range\n";
                     return nullptr;
                 }
             case 3:
@@ -2881,8 +2893,7 @@ dsp* createSRAdapter(dsp* DSP, int ds = 0, int us = 0, int filter = 0)
                 } else if (ds == 32) {
                     return new dsp_down_sampler<LowPass3e<Double<45,100>, 32, REAL>>(DSP);
                 } else {
-                    fprintf(stderr, "ERROR : ds factor type must be in [2..32] range\n");
-                    assert(false);
+                    error = "ERROR : ds factor type must be in [2..32] range\n";
                     return nullptr;
                 }
             case 4:
@@ -2899,16 +2910,14 @@ dsp* createSRAdapter(dsp* DSP, int ds = 0, int us = 0, int filter = 0)
                 } else if (ds == 32) {
                     return new dsp_down_sampler<LowPass6e<Double<45,100>, 32, REAL>>(DSP);
                 } else {
-                    fprintf(stderr, "ERROR : ds factor type must be in [2..32] range\n");
-                    assert(false);
+                    error = "ERROR : ds factor type must be in [2..32] range\n";
                     return nullptr;
                 }
             default:
-                fprintf(stderr, "ERROR : filter type must be in [0..4] range\n");
-                assert(false);
+                error = "ERROR : filter type must be in [0..4] range\n";
                 return nullptr;
         }
-    } else if (us > 0) {
+    } else if (us >= 2) {
         
         switch (filter) {
             case 0:
@@ -2925,8 +2934,7 @@ dsp* createSRAdapter(dsp* DSP, int ds = 0, int us = 0, int filter = 0)
                 } else if (us == 32) {
                     return new dsp_up_sampler<Identity<Double<1,1>, 32>>(DSP);
                 } else {
-                    fprintf(stderr, "ERROR : us factor type must be in [2..32] range\n");
-                    assert(false);
+                    error = "ERROR : us factor type must be in [2..32] range\n";
                     return nullptr;
                 }
             case 1:
@@ -2943,8 +2951,7 @@ dsp* createSRAdapter(dsp* DSP, int ds = 0, int us = 0, int filter = 0)
                 } else if (us == 32) {
                     return new dsp_up_sampler<LowPass3<Double<45,100>, 32, REAL>>(DSP);
                 } else {
-                    fprintf(stderr, "ERROR : us factor type must be in [2..32] range\n");
-                    assert(false);
+                    error = "ERROR : us factor type must be in [2..32] range\n";
                     return nullptr;
                 }
             case 2:
@@ -2961,8 +2968,7 @@ dsp* createSRAdapter(dsp* DSP, int ds = 0, int us = 0, int filter = 0)
                 } else if (us == 32) {
                     return new dsp_up_sampler<LowPass4<Double<45,100>, 32, REAL>>(DSP);
                 } else {
-                    fprintf(stderr, "ERROR : us factor type must be in [2..32] range\n");
-                    assert(false);
+                    error = "ERROR : us factor type must be in [2..32] range\n";
                     return nullptr;
                 }
             case 3:
@@ -2979,8 +2985,7 @@ dsp* createSRAdapter(dsp* DSP, int ds = 0, int us = 0, int filter = 0)
                 } else if (us == 32) {
                     return new dsp_up_sampler<LowPass3e<Double<45,100>, 32, REAL>>(DSP);
                 } else {
-                    fprintf(stderr, "ERROR : us factor type must be in [2..32] range\n");
-                    assert(false);
+                    error = "ERROR : us factor type must be in [2..32] range\n";
                     return nullptr;
                 }
             case 4:
@@ -2997,13 +3002,11 @@ dsp* createSRAdapter(dsp* DSP, int ds = 0, int us = 0, int filter = 0)
                 } else if (us == 32) {
                     return new dsp_up_sampler<LowPass6e<Double<45,100>, 32, REAL>>(DSP);
                 } else {
-                    fprintf(stderr, "ERROR : us factor type must be in [2..32] range\n");
-                    assert(false);
+                    error = "ERROR : us factor type must be in [2..32] range\n";
                     return nullptr;
                 }
             default:
-                fprintf(stderr, "ERROR : filter type must be in [0..4] range\n");
-                assert(false);
+                error = "ERROR : filter type must be in [0..4] range\n";
                 return nullptr;
         }
     } else {
@@ -7429,6 +7432,8 @@ struct Soundfile {
         delete[] fOffset;
     }
 
+    typedef std::vector<std::string> Directories;
+    
 } POST_PACKED_STRUCTURE;
 
 /*
@@ -7442,7 +7447,7 @@ class SoundfileReader {
     int fDriverSR;
    
     // Check if a soundfile exists and return its real path_name
-    std::string checkFile(const std::vector<std::string>& sound_directories, const std::string& file_name)
+    std::string checkFile(const Soundfile::Directories& sound_directories, const std::string& file_name)
     {
         if (checkFile(file_name)) {
             return file_name;
@@ -7584,7 +7589,7 @@ class SoundfileReader {
     }
 
     // Check if all soundfiles exist and return their real path_name
-    std::vector<std::string> checkFiles(const std::vector<std::string>& sound_directories,
+    std::vector<std::string> checkFiles(const Soundfile::Directories& sound_directories,
                                         const std::vector<std::string>& file_name_list)
     {
         std::vector<std::string> path_name_list;
@@ -7648,7 +7653,7 @@ struct JuceReader : public SoundfileReader {
         if (file.existsAsFile()) {
             return true;
         } else {
-            std::cerr << "ERROR : cannot open '" << path_name << "'" << std::endl;
+            //std::cerr << "ERROR : cannot open '" << path_name << "'" << std::endl;
             return false;
         }
     }
@@ -7705,42 +7710,7 @@ struct JuceReader : public SoundfileReader {
 #endif
 /**************************  END  JuceReader.h **************************/
 static JuceReader gReader;
-#elif defined(ESP32)
-/************************** BEGIN Esp32Reader.h **************************
- FAUST Architecture File
- Copyright (C) 2003-2022 GRAME, Centre National de Creation Musicale
- ---------------------------------------------------------------------
- This program is free software; you can redistribute it and/or modify
- it under the terms of the GNU Lesser General Public License as published by
- the Free Software Foundation; either version 2.1 of the License, or
- (at your option) any later version.
- 
- This program is distributed in the hope that it will be useful,
- but WITHOUT ANY WARRANTY; without even the implied warranty of
- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
- GNU Lesser General Public License for more details.
- 
- You should have received a copy of the GNU Lesser General Public License
- along with this program; if not, write to the Free Software
- Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
- 
- EXCEPTION : As a special exception, you may create a larger work
- that contains this FAUST architecture section and distribute
- that work under terms of your choice, so long as this FAUST
- architecture section is not modified.
- *************************************************************************/
-
-#ifndef FAUST_ESP32READER_H
-#define FAUST_ESP32READER_H
-
-#include <stdio.h>
-#include "esp_err.h"
-#include "esp_log.h"
-#include "esp_spi_flash.h"
-#include "esp_vfs_fat.h"
-#include "driver/sdspi_host.h"
-#include "sdmmc_cmd.h"
-
+#elif defined(DAISY) || defined(SUPERCOLLIDER)
 /************************** BEGIN WaveReader.h **************************
  FAUST Architecture File
  Copyright (C) 2003-2022 GRAME, Centre National de Creation Musicale
@@ -8083,8 +8053,14 @@ struct WaveReader : public SoundfileReader {
             float factor = 1.f/32767.f;
             for (int sample = 0; sample < soundfile->fLength[part]; sample++) {
                 short* frame = (short*)&reader.fWave->data[reader.fWave->block_align * sample];
-                for (int chan = 0; chan < reader.fWave->num_channels; chan++) {
-                    soundfile->fBuffers[chan][offset + sample] = frame[chan] * factor;
+                if (soundfile->fIsDouble) {
+                    for (int chan = 0; chan < reader.fWave->num_channels; chan++) {
+                        static_cast<double**>(soundfile->fBuffers)[chan][offset + sample] = frame[chan] * factor;
+                    }
+                } else {
+                    for (int chan = 0; chan < reader.fWave->num_channels; chan++) {
+                        static_cast<float**>(soundfile->fBuffers)[chan][offset + sample] = frame[chan] * factor;
+                    }
                 }
             }
         } else if (reader.fWave->bits_per_sample == 32) {
@@ -8098,6 +8074,43 @@ struct WaveReader : public SoundfileReader {
 
 #endif
 /**************************  END  WaveReader.h **************************/
+static WaveReader gReader;
+#elif defined(ESP32)
+/************************** BEGIN Esp32Reader.h **************************
+ FAUST Architecture File
+ Copyright (C) 2003-2022 GRAME, Centre National de Creation Musicale
+ ---------------------------------------------------------------------
+ This program is free software; you can redistribute it and/or modify
+ it under the terms of the GNU Lesser General Public License as published by
+ the Free Software Foundation; either version 2.1 of the License, or
+ (at your option) any later version.
+ 
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ GNU Lesser General Public License for more details.
+ 
+ You should have received a copy of the GNU Lesser General Public License
+ along with this program; if not, write to the Free Software
+ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+ 
+ EXCEPTION : As a special exception, you may create a larger work
+ that contains this FAUST architecture section and distribute
+ that work under terms of your choice, so long as this FAUST
+ architecture section is not modified.
+ *************************************************************************/
+
+#ifndef FAUST_ESP32READER_H
+#define FAUST_ESP32READER_H
+
+#include <stdio.h>
+#include "esp_err.h"
+#include "esp_log.h"
+#include "esp_spi_flash.h"
+#include "esp_vfs_fat.h"
+#include "driver/sdspi_host.h"
+#include "sdmmc_cmd.h"
+
 
 #define TAG "Esp32Reader"
 
@@ -8165,8 +8178,6 @@ struct Esp32Reader : public WaveReader {
 #endif // FAUST_ESP32READER_H
 /**************************  END  Esp32Reader.h **************************/
 static Esp32Reader gReader;
-#elif defined(DAISY)
-static WaveReader gReader;
 #elif defined(MEMORY_READER)
 /************************** BEGIN MemoryReader.h ************************
  FAUST Architecture File
@@ -8307,7 +8318,7 @@ static MemoryReader gReader;
 #ifndef __LibsndfileReader__
 #define __LibsndfileReader__
 
-#ifdef SAMPLERATE
+#ifdef _SAMPLERATE
 #include <samplerate.h>
 #endif
 #include <sndfile.h>
@@ -8446,18 +8457,17 @@ struct LibsndfileReader : public SoundfileReader {
             return false;
          }
          #endif
-         */
-        
-        std::ofstream ofs;
-        ofs.open(path_name, std::ios_base::in);
-        if (!ofs.is_open()) {
-            return false;
-        }
+        */
     
-        SF_INFO snd_info;
-        snd_info.format = 0;
-        SNDFILE* snd_file = sf_open(path_name.c_str(), SFM_READ, &snd_info);
-        return checkFileAux(snd_file, path_name);
+        std::ifstream ifs(path_name);
+        if (!ifs.is_open()) {
+            return false;
+        } else {
+            SF_INFO snd_info;
+            snd_info.format = 0;
+            SNDFILE* snd_file = sf_open(path_name.c_str(), SFM_READ, &snd_info);
+            return checkFileAux(snd_file, path_name);
+        }
     }
     
     bool checkFile(unsigned char* buffer, size_t length) override
@@ -8502,7 +8512,7 @@ struct LibsndfileReader : public SoundfileReader {
     {
         assert(snd_file);
         channels = int(snd_info.channels);
-    #ifdef SAMPLERATE
+    #ifdef _SAMPLERATE
         length = (isResampling(snd_info.samplerate)) ? ((double(snd_info.frames) * double(fDriverSR) / double(snd_info.samplerate)) + BUFFER_SIZE) : int(snd_info.frames);
     #else
         length = int(snd_info.frames);
@@ -8533,7 +8543,7 @@ struct LibsndfileReader : public SoundfileReader {
     {
         assert(snd_file);
         int channels = std::min<int>(max_chan, snd_info.channels);
-    #ifdef SAMPLERATE
+    #ifdef _SAMPLERATE
         if (isResampling(snd_info.samplerate)) {
             soundfile->fLength[part] = int(double(snd_info.frames) * double(fDriverSR) / double(snd_info.samplerate));
             soundfile->fSR[part] = fDriverSR;
@@ -8560,7 +8570,7 @@ struct LibsndfileReader : public SoundfileReader {
             reader = reinterpret_cast<sample_read>(sf_readf_float);
         }
         
-    #ifdef SAMPLERATE
+    #ifdef _SAMPLERATE
         // Resampling
         SRC_STATE* resampler = nullptr;
         float* src_buffer_out = nullptr;
@@ -8586,7 +8596,7 @@ struct LibsndfileReader : public SoundfileReader {
         
         do {
             nbf = reader(snd_file, buffer_in, BUFFER_SIZE);
-        #ifdef SAMPLERATE
+        #ifdef _SAMPLERATE
             // Resampling
             if  (isResampling(snd_info.samplerate)) {
                 int in_offset = 0;
@@ -8636,7 +8646,7 @@ struct LibsndfileReader : public SoundfileReader {
         } while (nbf == BUFFER_SIZE);
 		
         sf_close(snd_file);
-    #ifdef SAMPLERATE
+    #ifdef _SAMPLERATE
         if (resampler) src_delete(resampler);
     #endif
     }
@@ -8658,7 +8668,7 @@ class SoundUI : public SoundUIInterface
     protected:
     
         // The soundfile directories
-        std::vector<std::string> fSoundfileDir;
+        Soundfile::Directories fSoundfileDir;
         // Map to share loaded soundfiles
         std::map<std::string, std::shared_ptr<Soundfile>> fSoundfileMap;
         // The soundfile reader
@@ -8699,7 +8709,7 @@ class SoundUI : public SoundUIInterface
          *
          * @return the soundfile loader.
          */
-        SoundUI(const std::vector<std::string>& sound_directories, int sample_rate = -1, SoundfileReader* reader = nullptr, bool is_double = false)
+        SoundUI(const Soundfile::Directories& sound_directories, int sample_rate = -1, SoundfileReader* reader = nullptr, bool is_double = false)
         :fSoundfileDir(sound_directories)
         {
             fSoundReader = (reader)
@@ -8861,7 +8871,7 @@ using namespace std;
 
 class hb1_to_binaural : public dsp {
 	
- public:
+ private:
 	
 	int IOTA0;
 	double fVec0[256];
@@ -8874,11 +8884,11 @@ class hb1_to_binaural : public dsp {
 
 	void metadata(Meta* m) { 
 		m->declare("author", "AmbisonicDecoderToolkit");
-		m->declare("compile_options", "-a /usr/local/Cellar/faust/2.68.1_1/share/faust/max-msp/max-msp64.cpp -lang cpp -i -ct 1 -cn hb1_to_binaural -es 1 -mcd 16 -uim -double -ftz 0");
+		m->declare("compile_options", "-a /usr/local/Cellar/faust/2.72.14_1/share/faust/max-msp/max-msp64.cpp -lang cpp -i -ct 1 -cn hb1_to_binaural -es 1 -mcd 16 -mdd 1024 -mdy 33 -double -ftz 0");
 		m->declare("copyright", "(c) Aaron J. Heller and Eric M. Benjamin, 2013");
 		m->declare("filename", "hb1_to_binaural.dsp");
 		m->declare("license", "BSD 3-Clause License");
-		m->declare("name", "hb1_to_binaural");
+		m->declare("name", "B2Binaural 48kHz");
 		m->declare("version", "1.1");
 	}
 
@@ -8932,7 +8942,7 @@ class hb1_to_binaural : public dsp {
 	}
 	
 	virtual void buildUserInterface(UI* ui_interface) {
-		ui_interface->openVerticalBox("hb1_to_binaural");
+		ui_interface->openVerticalBox("B2Binaural 48kHz");
 		ui_interface->closeBox();
 	}
 	
@@ -8943,310 +8953,389 @@ class hb1_to_binaural : public dsp {
 		FAUSTFLOAT* output0 = outputs[0];
 		FAUSTFLOAT* output1 = outputs[1];
 		for (int i0 = 0; i0 < count; i0 = i0 + 1) {
-			double fTemp0 = double(input2[i0]);
+			double fTemp0 = double(input0[i0]);
 			fVec0[IOTA0 & 255] = fTemp0;
-			double fTemp1 = fVec0[(IOTA0 - 2) & 255];
-			double fTemp2 = double(input0[i0]);
+			double fTemp1 = fVec0[(IOTA0 - 86) & 255];
+			double fTemp2 = double(input2[i0]);
 			fVec1[IOTA0 & 255] = fTemp2;
-			double fTemp3 = double(input1[i0]);
-			fVec2[IOTA0 & 255] = fTemp3;
-			double fTemp4 = fTemp2 + fVec2[(IOTA0 - 16) & 255];
-			double fTemp5 = 0.00067138671875 * (fVec2[(IOTA0 - 102) & 255] + fVec2[(IOTA0 - 143) & 255] - (fVec1[(IOTA0 - 95) & 255] + fVec1[(IOTA0 - 107) & 255] - fVec1[(IOTA0 - 108) & 255]));
-			double fTemp6 = 0.00341796875 * fVec0[(IOTA0 - 65) & 255];
-			double fTemp7 = 0.003814697265625 * (fVec1[(IOTA0 - 31) & 255] + fVec2[(IOTA0 - 70) & 255]);
-			double fTemp8 = fVec2[(IOTA0 - 34) & 255];
-			double fTemp9 = fVec0[(IOTA0 - 18) & 255];
-			double fTemp10 = fVec1[(IOTA0 - 121) & 255] + (fVec2[(IOTA0 - 126) & 255] - (fVec2[(IOTA0 - 119) & 255] - fVec2[(IOTA0 - 121) & 255]) - fVec2[(IOTA0 - 128) & 255]);
-			double fTemp11 = fVec0[(IOTA0 - 120) & 255] - fVec0[(IOTA0 - 122) & 255];
-			double fTemp12 = fVec2[(IOTA0 - 84) & 255] - fVec2[(IOTA0 - 111) & 255];
-			double fTemp13 = fVec0[(IOTA0 - 132) & 255] - fVec0[(IOTA0 - 105) & 255];
-			double fTemp14 = fVec2[(IOTA0 - 11) & 255];
-			double fTemp15 = fVec0[(IOTA0 - 141) & 255];
-			double fTemp16 = fVec1[(IOTA0 - 88) & 255] + fVec1[(IOTA0 - 94) & 255] + (fVec2[(IOTA0 - 17) & 255] - fVec2[(IOTA0 - 33) & 255]);
-			double fTemp17 = fVec0[(IOTA0 - 4) & 255];
-			double fTemp18 = fVec0[(IOTA0 - 148) & 255];
-			double fTemp19 = fVec1[(IOTA0 - 93) & 255] - fVec1[(IOTA0 - 143) & 255] + fVec2[(IOTA0 - 4) & 255] + fVec2[(IOTA0 - 93) & 255];
-			double fTemp20 = fVec1[(IOTA0 - 106) & 255] + fVec1[(IOTA0 - 137) & 255] + fVec2[(IOTA0 - 86) & 255];
-			double fTemp21 = fVec0[(IOTA0 - 101) & 255];
-			double fTemp22 = 0.01171875 * fVec0[(IOTA0 - 22) & 255];
-			double fTemp23 = 0.0081787109375 * fVec0[(IOTA0 - 20) & 255];
-			double fTemp24 = 0.0013427734375 * (fVec1[(IOTA0 - 147) & 255] - fVec2[(IOTA0 - 71) & 255]);
-			double fTemp25 = 0.00494384765625 * fVec0[(IOTA0 - 16) & 255];
-			double fTemp26 = 0.0020751953125 * (fVec1[(IOTA0 - 5) & 255] + fVec2[(IOTA0 - 29) & 255]);
-			double fTemp27 = 0.002349853515625 * (fVec2[(IOTA0 - 23) & 255] - (fVec1[(IOTA0 - 18) & 255] - fVec1[(IOTA0 - 9) & 255] - fVec1[(IOTA0 - 98) & 255]));
-			double fTemp28 = 0.001861572265625 * (fVec2[(IOTA0 - 15) & 255] - fVec2[(IOTA0 - 79) & 255]);
-			double fTemp29 = 0.003143310546875 * fVec2[(IOTA0 - 78) & 255];
-			double fTemp30 = 0.005950927734375 * fVec2[(IOTA0 - 76) & 255];
-			double fTemp31 = 0.0037841796875 * fVec2[(IOTA0 - 72) & 255];
-			double fTemp32 = 0.002105712890625 * (fVec2[(IOTA0 - 19) & 255] - fVec2[(IOTA0 - 67) & 255]);
-			double fTemp33 = 0.003936767578125 * fVec2[(IOTA0 - 68) & 255];
-			double fTemp34 = 0.004486083984375 * fVec2[(IOTA0 - 64) & 255];
-			double fTemp35 = 0.004180908203125 * fVec2[(IOTA0 - 66) & 255];
-			double fTemp36 = 0.005401611328125 * fVec2[(IOTA0 - 60) & 255];
-			double fTemp37 = 0.006927490234375 * fVec2[(IOTA0 - 56) & 255];
-			double fTemp38 = 0.006072998046875 * fVec2[(IOTA0 - 58) & 255];
-			double fTemp39 = 0.00811767578125 * fVec2[(IOTA0 - 54) & 255];
-			double fTemp40 = 0.009796142578125 * fVec2[(IOTA0 - 52) & 255];
-			double fTemp41 = 0.012420654296875 * fVec2[(IOTA0 - 50) & 255];
-			double fTemp42 = 0.016845703125 * fVec2[(IOTA0 - 48) & 255];
-			double fTemp43 = 0.052093505859375 * fVec2[(IOTA0 - 44) & 255];
-			double fTemp44 = 0.025909423828125 * fVec2[(IOTA0 - 46) & 255];
-			double fTemp45 = 0.38751220703125 * fVec2[(IOTA0 - 41) & 255];
-			double fTemp46 = 0.315521240234375 * fVec2[(IOTA0 - 42) & 255];
-			double fTemp47 = 0.143341064453125 * fVec2[(IOTA0 - 39) & 255];
-			double fTemp48 = 0.047607421875 * fVec2[(IOTA0 - 36) & 255];
-			double fTemp49 = 0.000579833984375 * fVec1[(IOTA0 - 133) & 255];
-			double fTemp50 = 0.01849365234375 * fVec1[(IOTA0 - 62) & 255];
-			double fTemp51 = 0.05389404296875 * fVec1[(IOTA0 - 61) & 255];
-			double fTemp52 = 0.0594482421875 * fVec1[(IOTA0 - 60) & 255];
-			double fTemp53 = 0.041259765625 * fVec1[(IOTA0 - 59) & 255];
-			double fTemp54 = 0.076507568359375 * fVec1[(IOTA0 - 58) & 255];
-			double fTemp55 = 0.01544189453125 * fVec1[(IOTA0 - 56) & 255];
-			double fTemp56 = 0.089569091796875 * fVec1[(IOTA0 - 57) & 255];
-			double fTemp57 = 0.00628662109375 * fVec1[(IOTA0 - 54) & 255];
-			double fTemp58 = 0.002532958984375 * fVec1[(IOTA0 - 13) & 255];
-			double fTemp59 = fVec2[(IOTA0 - 145) & 255];
-			double fTemp60 = fVec0[(IOTA0 - 87) & 255] + fVec0[(IOTA0 - 89) & 255];
-			double fTemp61 = fVec1[(IOTA0 - 123) & 255] - fVec1[(IOTA0 - 124) & 255] + (fVec2[(IOTA0 - 75) & 255] + fVec2[(IOTA0 - 80) & 255] - fVec2[(IOTA0 - 117) & 255]);
-			double fTemp62 = fVec0[(IOTA0 - 53) & 255] + fVec0[(IOTA0 - 80) & 255] + fVec0[(IOTA0 - 86) & 255] - fVec0[(IOTA0 - 116) & 255];
-			double fTemp63 = fVec1[(IOTA0 - 3) & 255];
-			double fTemp64 = fVec0[(IOTA0 - 73) & 255];
-			double fTemp65 = fVec1[(IOTA0 - 139) & 255] + fVec2[(IOTA0 - 96) & 255] + fVec2[(IOTA0 - 149) & 255];
-			double fTemp66 = fVec0[(IOTA0 - 93) & 255] - fVec0[(IOTA0 - 51) & 255] + fVec0[(IOTA0 - 144) & 255];
-			double fTemp67 = fVec0[(IOTA0 - 126) & 255];
-			double fTemp68 = fVec1[(IOTA0 - 117) & 255] + (fVec2[(IOTA0 - 132) & 255] - (fVec2[(IOTA0 - 122) & 255] + fVec2[(IOTA0 - 125) & 255]));
-			double fTemp69 = fVec1[(IOTA0 - 72) & 255];
-			double fTemp70 = fVec0[(IOTA0 - 55) & 255] + fVec0[(IOTA0 - 69) & 255];
-			double fTemp71 = fVec1[(IOTA0 - 96) & 255];
-			double fTemp72 = fVec0[(IOTA0 - 153) & 255];
-			double fTemp73 = fVec1[(IOTA0 - 120) & 255] - (fVec1[(IOTA0 - 97) & 255] + fVec1[(IOTA0 - 99) & 255]) - (fVec2[(IOTA0 - 130) & 255] - (fVec2[(IOTA0 - 32) & 255] + fVec2[(IOTA0 - 123) & 255] + fVec2[(IOTA0 - 124) & 255]));
-			double fTemp74 = fVec0[(IOTA0 - 124) & 255] - (fVec0[(IOTA0 - 118) & 255] - (fVec0[(IOTA0 - 82) & 255] + fVec0[(IOTA0 - 84) & 255]));
-			double fTemp75 = fVec0[(IOTA0 - 6) & 255];
-			double fTemp76 = fVec2[(IOTA0 - 26) & 255];
-			double fTemp77 = fVec0[(IOTA0 - 90) & 255];
-			double fTemp78 = fVec1[(IOTA0 - 22) & 255] + fVec1[(IOTA0 - 101) & 255] - fVec1[(IOTA0 - 116) & 255] - fVec1[(IOTA0 - 127) & 255] + fVec1[(IOTA0 - 128) & 255] + (fVec2[(IOTA0 - 136) & 255] - (fVec2[(IOTA0 - 114) & 255] + fVec2[(IOTA0 - 131) & 255]));
-			double fTemp79 = 0.003692626953125 * fVec0[(IOTA0 - 67) & 255];
-			double fTemp80 = 0.994537353515625 * fVec0[(IOTA0 - 27) & 255];
-			double fTemp81 = 0.06201171875 * fVec0[(IOTA0 - 26) & 255];
-			double fTemp82 = 0.002410888671875 * (fVec2[(IOTA0 - 25) & 255] - fVec1[(IOTA0 - 10) & 255]);
-			double fTemp83 = 0.019989013671875 * fVec0[(IOTA0 - 24) & 255];
-			double fTemp84 = 0.001220703125 * (fVec1[(IOTA0 - 21) & 255] + fVec1[(IOTA0 - 145) & 255] + fVec2[(IOTA0 - 3) & 255]);
-			double fTemp85 = 0.00482177734375 * fVec1[(IOTA0 - 78) & 255];
-			double fTemp86 = 0.029937744140625 * fVec1[(IOTA0 - 44) & 255];
-			double fTemp87 = 0.21453857421875 * fVec1[(IOTA0 - 42) & 255];
-			double fTemp88 = 0.211029052734375 * fVec1[(IOTA0 - 41) & 255];
-			double fTemp89 = 0.53509521484375 * fVec1[(IOTA0 - 37) & 255];
-			double fTemp90 = 0.035369873046875 * fVec1[(IOTA0 - 35) & 255];
-			double fTemp91 = 0.01470947265625 * fVec1[(IOTA0 - 33) & 255];
-			double fTemp92 = 0.7164306640625 * fVec1[(IOTA0 - 27) & 255];
-			double fTemp93 = 0.032379150390625 * fVec1[(IOTA0 - 26) & 255];
-			double fTemp94 = 0.0042724609375 * fVec1[(IOTA0 - 24) & 255];
-			double fTemp95 = 0.00238037109375 * fVec2[(IOTA0 - 27) & 255];
-			double fTemp96 = 0.001922607421875 * (fVec1[(IOTA0 - 90) & 255] + fVec1[(IOTA0 - 92) & 255]);
-			double fTemp97 = 0.0018310546875 * (fVec1[(IOTA0 - 1) & 255] - fVec1[(IOTA0 - 87) & 255]);
-			double fTemp98 = 0.002716064453125 * fVec1[(IOTA0 - 84) & 255];
-			double fTemp99 = 0.00384521484375 * fVec1[(IOTA0 - 82) & 255];
-			double fTemp100 = 0.00433349609375 * fVec1[(IOTA0 - 80) & 255];
-			double fTemp101 = 0.00604248046875 * fVec1[(IOTA0 - 76) & 255];
-			double fTemp102 = 0.003997802734375 * fVec1[(IOTA0 - 74) & 255];
-			double fTemp103 = 0.00592041015625 * fVec1[(IOTA0 - 52) & 255];
-			double fTemp104 = 0.006500244140625 * fVec1[(IOTA0 - 50) & 255];
-			double fTemp105 = 0.00830078125 * fVec1[(IOTA0 - 48) & 255];
-			double fTemp106 = 0.002471923828125 * (fVec1[(IOTA0 - 11) & 255] + fVec1[(IOTA0 - 17) & 255]);
-			double fTemp107 = fVec0[(IOTA0 - 150) & 255] - fVec0[(IOTA0 - 131) & 255];
-			double fTemp108 = fVec2[(IOTA0 - 91) & 255];
-			double fTemp109 = fVec1[(IOTA0 - 151) & 255];
-			double fTemp110 = fTemp0 + fVec0[(IOTA0 - 70) & 255] + fVec0[(IOTA0 - 75) & 255];
-			double fTemp111 = fVec2[(IOTA0 - 94) & 255] - fVec1[(IOTA0 - 140) & 255];
-			double fTemp112 = fVec0[(IOTA0 - 119) & 255];
-			double fTemp113 = fVec1[(IOTA0 - 110) & 255] - (fVec2[(IOTA0 - 144) & 255] - (fVec2[(IOTA0 - 106) & 255] - fVec2[(IOTA0 - 105) & 255] + fVec2[(IOTA0 - 139) & 255]));
-			double fTemp114 = fVec0[(IOTA0 - 138) & 255];
-			double fTemp115 = fVec1[(IOTA0 - 46) & 255];
-			double fTemp116 = fVec0[(IOTA0 - 35) & 255];
-			double fTemp117 = fVec1[(IOTA0 - 77) & 255] + fVec2[(IOTA0 - 127) & 255];
-			double fTemp118 = fVec0[(IOTA0 - 106) & 255] + fVec0[(IOTA0 - 114) & 255];
-			double fTemp119 = fVec0[(IOTA0 - 8) & 255];
-			double fTemp120 = fVec1[(IOTA0 - 14) & 255] - fVec1[(IOTA0 - 15) & 255] + fVec1[(IOTA0 - 16) & 255];
-			double fTemp121 = fVec0[(IOTA0 - 97) & 255] - fVec0[(IOTA0 - 49) & 255];
-			double fTemp122 = fVec1[(IOTA0 - 89) & 255] + fVec1[(IOTA0 - 152) & 255] + fVec2[(IOTA0 - 14) & 255];
-			double fTemp123 = 0.00213623046875 * (fVec1[(IOTA0 - 19) & 255] - (fVec2[(IOTA0 - 22) & 255] + fVec2[(IOTA0 - 28) & 255]));
-			double fTemp124 = 0.002227783203125 * (fVec1[(IOTA0 - 7) & 255] + (fVec2[(IOTA0 - 21) & 255] - fVec2[(IOTA0 - 24) & 255]));
-			double fTemp125 = 0.004058837890625 * fVec2[(IOTA0 - 74) & 255];
-			double fTemp126 = fVec2[(IOTA0 - 88) & 255] - fTemp3 + fVec2[(IOTA0 - 151) & 255];
-			double fTemp127 = fVec0[(IOTA0 - 81) & 255];
-			double fTemp128 = 0.00244140625 * (fVec0[(IOTA0 - 47) & 255] - fVec0[(IOTA0 - 71) & 255]);
-			double fTemp129 = 0.002685546875 * (fVec0[(IOTA0 - 3) & 255] - fVec0[(IOTA0 - 66) & 255]);
-			double fTemp130 = 0.0201416015625 * (fVec0[(IOTA0 - 38) & 255] + fVec0[(IOTA0 - 56) & 255]);
-			double fTemp131 = 0.1446533203125 * fVec0[(IOTA0 - 57) & 255];
-			double fTemp132 = 0.088714599609375 * fVec0[(IOTA0 - 61) & 255];
-			double fTemp133 = 0.0035400390625 * fVec0[(IOTA0 - 63) & 255];
-			double fTemp134 = 0.023162841796875 * fVec0[(IOTA0 - 62) & 255];
-			double fTemp135 = 0.0733642578125 * fVec0[(IOTA0 - 59) & 255];
-			double fTemp136 = 0.1060791015625 * fVec0[(IOTA0 - 58) & 255];
-			double fTemp137 = 0.007781982421875 * fVec0[(IOTA0 - 50) & 255];
-			double fTemp138 = 0.00726318359375 * fVec0[(IOTA0 - 52) & 255];
-			double fTemp139 = 0.008697509765625 * fVec0[(IOTA0 - 48) & 255];
-			double fTemp140 = 0.00994873046875 * fVec0[(IOTA0 - 46) & 255];
-			double fTemp141 = 0.003326416015625 * fVec0[(IOTA0 - 45) & 255];
-			double fTemp142 = 0.005828857421875 * fVec0[(IOTA0 - 41) & 255];
-			double fTemp143 = 0.010467529296875 * fVec0[(IOTA0 - 21) & 255];
-			double fTemp144 = 0.004425048828125 * fVec0[(IOTA0 - 43) & 255];
-			double fTemp145 = 0.00762939453125 * fVec0[(IOTA0 - 39) & 255];
-			double fTemp146 = 0.0006103515625 * (fVec1[(IOTA0 - 103) & 255] + fVec1[(IOTA0 - 109) & 255] + fVec1[(IOTA0 - 134) & 255] + (fVec2[(IOTA0 - 146) & 255] - (fVec2[(IOTA0 - 104) & 255] - fVec2[(IOTA0 - 103) & 255] + fVec2[(IOTA0 - 141) & 255])));
-			double fTemp147 = 0.0040283203125 * fVec0[(IOTA0 - 11) & 255];
-			double fTemp148 = 0.016448974609375 * fVec0[(IOTA0 - 40) & 255];
-			double fTemp149 = 0.013671875 * fVec0[(IOTA0 - 42) & 255];
-			double fTemp150 = 0.011566162109375 * fVec0[(IOTA0 - 44) & 255];
-			double fTemp151 = 0.007904052734375 * fVec0[(IOTA0 - 19) & 255];
-			double fTemp152 = 0.005340576171875 * fVec0[(IOTA0 - 15) & 255];
-			double fTemp153 = 0.001434326171875 * (fVec2[(IOTA0 - 89) & 255] - fVec1[(IOTA0 - 149) & 255]);
-			double fTemp154 = 0.00634765625 * fVec0[(IOTA0 - 17) & 255];
-			double fTemp155 = 0.00457763671875 * fVec0[(IOTA0 - 13) & 255];
-			double fTemp156 = 0.00360107421875 * fVec0[(IOTA0 - 9) & 255];
-			double fTemp157 = 0.00042724609375 * (fVec2[(IOTA0 - 140) & 255] - (fVec2[(IOTA0 - 110) & 255] + fVec2[(IOTA0 - 135) & 255]));
-			double fTemp158 = 0.005889892578125 * fVec2[(IOTA0 - 55) & 255];
-			double fTemp159 = 0.00732421875 * fVec2[(IOTA0 - 53) & 255];
-			double fTemp160 = 0.009368896484375 * fVec2[(IOTA0 - 51) & 255];
-			double fTemp161 = 0.018402099609375 * fVec2[(IOTA0 - 47) & 255];
-			double fTemp162 = 0.031005859375 * fVec2[(IOTA0 - 45) & 255];
-			double fTemp163 = 0.074981689453125 * fVec2[(IOTA0 - 43) & 255];
-			double fTemp164 = 0.108306884765625 * fVec2[(IOTA0 - 40) & 255];
-			double fTemp165 = 0.069854736328125 * fVec2[(IOTA0 - 38) & 255];
-			double fTemp166 = 0.69757080078125 * fVec2[(IOTA0 - 37) & 255];
-			double fTemp167 = 0.00115966796875 * fVec1[(IOTA0 - 144) & 255];
-			double fTemp168 = 0.002044677734375 * (fVec1[(IOTA0 - 4) & 255] - fVec1[(IOTA0 - 100) & 255]);
-			double fTemp169 = 0.002288818359375 * (fVec1[(IOTA0 - 8) & 255] - fVec1[(IOTA0 - 70) & 255]);
-			double fTemp170 = 0.004730224609375 * fVec1[(IOTA0 - 71) & 255];
-			double fTemp171 = 0.00335693359375 * fVec1[(IOTA0 - 73) & 255];
-			double fTemp172 = 0.006134033203125 * fVec1[(IOTA0 - 69) & 255];
-			double fTemp173 = 0.008544921875 * fVec1[(IOTA0 - 65) & 255];
-			double fTemp174 = 0.017578125 * fVec1[(IOTA0 - 55) & 255];
-			double fTemp175 = 0.01885986328125 * fVec1[(IOTA0 - 53) & 255];
-			double fTemp176 = 0.090728759765625 * fVec1[(IOTA0 - 36) & 255];
-			double fTemp177 = 0.063262939453125 * fVec1[(IOTA0 - 30) & 255];
-			double fTemp178 = 0.001739501953125 * (fVec1[(IOTA0 - 75) & 255] + (fVec2[(IOTA0 - 87) & 255] - (fVec2[(IOTA0 - 13) & 255] - fVec2[(IOTA0 - 69) & 255])));
-			double fTemp179 = 0.126190185546875 * fVec0[(IOTA0 - 28) & 255];
-			double fTemp180 = 0.03118896484375 * fVec0[(IOTA0 - 25) & 255];
-			double fTemp181 = 0.065460205078125 * fVec0[(IOTA0 - 30) & 255];
-			double fTemp182 = 0.02496337890625 * fVec0[(IOTA0 - 29) & 255];
-			double fTemp183 = 0.032806396484375 * fVec0[(IOTA0 - 34) & 255];
-			double fTemp184 = 0.025299072265625 * fVec0[(IOTA0 - 36) & 255];
-			double fTemp185 = 0.044464111328125 * fVec0[(IOTA0 - 32) & 255];
-			double fTemp186 = 0.01739501953125 * fVec0[(IOTA0 - 33) & 255];
-			double fTemp187 = 0.010009765625 * fVec0[(IOTA0 - 37) & 255];
-			double fTemp188 = 0.03729248046875 * fVec1[(IOTA0 - 47) & 255];
-			double fTemp189 = 0.053253173828125 * fVec1[(IOTA0 - 45) & 255];
-			double fTemp190 = 0.095489501953125 * fVec1[(IOTA0 - 43) & 255];
-			double fTemp191 = 0.084747314453125 * fVec1[(IOTA0 - 40) & 255];
-			double fTemp192 = 0.017852783203125 * fVec1[(IOTA0 - 39) & 255];
-			double fTemp193 = 0.027252197265625 * fVec1[(IOTA0 - 38) & 255];
-			double fTemp194 = 0.05596923828125 * fVec1[(IOTA0 - 34) & 255];
-			double fTemp195 = 0.0537109375 * fVec1[(IOTA0 - 32) & 255];
-			double fTemp196 = 0.010894775390625 * fVec1[(IOTA0 - 25) & 255];
-			double fTemp197 = 0.0015869140625 * fVec2[(IOTA0 - 30) & 255];
-			double fTemp198 = 0.02838134765625 * fVec1[(IOTA0 - 49) & 255];
-			double fTemp199 = 0.001068115234375 * (fVec0[(IOTA0 - 125) & 255] - fVec0[(IOTA0 - 79) & 255]);
-			double fTemp200 = 0.0003662109375 * (fVec1[(IOTA0 - 81) & 255] + fVec1[(IOTA0 - 113) & 255] + (fVec2[(IOTA0 - 138) & 255] - (fVec2[(IOTA0 - 112) & 255] + fVec2[(IOTA0 - 133) & 255])));
-			double fTemp201 = 0.00103759765625 * (fVec1[(IOTA0 - 79) & 255] - fVec1[(IOTA0 - 104) & 255] + fVec1[(IOTA0 - 142) & 255] - fVec2[(IOTA0 - 153) & 255]);
-			double fTemp202 = 0.00323486328125 * fVec0[(IOTA0 - 7) & 255];
-			double fTemp203 = 0.08148193359375 * fVec0[(IOTA0 - 60) & 255];
-			double fTemp204 = 0.0048828125 * (fVec1[(IOTA0 - 63) & 255] + (fVec2[(IOTA0 - 57) & 255] - fVec2[(IOTA0 - 62) & 255])) + 0.001495361328125 * (fVec1[(IOTA0 - 150) & 255] - (fVec2[(IOTA0 - 9) & 255] + fVec2[(IOTA0 - 77) & 255])) + 0.00311279296875 * fVec2[(IOTA0 - 83) & 255] + 0.004364013671875 * fVec2[(IOTA0 - 81) & 255] + 0.10296630859375 * fVec1[(IOTA0 - 28) & 255] + 0.01263427734375 * fVec2[(IOTA0 - 49) & 255];
-			double fTemp205 = fVec2[(IOTA0 - 12) & 255];
-			double fTemp206 = fVec0[(IOTA0 - 139) & 255];
-			double fTemp207 = fVec1[(IOTA0 - 83) & 255];
-			double fTemp208 = fVec0[(IOTA0 - 99) & 255];
-			double fTemp209 = fVec1[(IOTA0 - 67) & 255];
-			double fTemp210 = fVec0[(IOTA0 - 54) & 255];
-			double fTemp211 = fVec2[(IOTA0 - 2) & 255] - fVec1[(IOTA0 - 141) & 255];
-			double fTemp212 = fVec0[(IOTA0 - 123) & 255] - fVec0[(IOTA0 - 72) & 255];
-			double fTemp213 = fVec1[(IOTA0 - 119) & 255];
-			double fTemp214 = fVec0[(IOTA0 - 103) & 255];
-			double fTemp215 = fVec1[(IOTA0 - 111) & 255] - fVec1[(IOTA0 - 131) & 255] + (fVec2[(IOTA0 - 142) & 255] - (fVec2[(IOTA0 - 108) & 255] + fVec2[(IOTA0 - 137) & 255]));
-			double fTemp216 = fVec0[(IOTA0 - 136) & 255];
-			double fTemp217 = fVec2[(IOTA0 - 107) & 255] - fVec1[(IOTA0 - 112) & 255];
-			double fTemp218 = fVec0[(IOTA0 - 92) & 255] + fVec0[(IOTA0 - 102) & 255];
-			double fTemp219 = fVec1[(IOTA0 - 12) & 255] + fVec2[(IOTA0 - 65) & 255];
-			double fTemp220 = fVec0[(IOTA0 - 1) & 255];
-			double fTemp221 = fVec1[(IOTA0 - 126) & 255] - (fVec1[(IOTA0 - 118) & 255] + fVec1[(IOTA0 - 125) & 255]) + (fVec2[(IOTA0 - 115) & 255] - fVec2[(IOTA0 - 120) & 255]);
-			double fTemp222 = fVec0[(IOTA0 - 78) & 255] + fVec0[(IOTA0 - 88) & 255] - fVec0[(IOTA0 - 112) & 255] + fVec0[(IOTA0 - 128) & 255];
-			double fTemp223 = fVec1[(IOTA0 - 132) & 255];
-			double fTemp224 = fVec0[(IOTA0 - 107) & 255];
-			double fTemp225 = fVec0[(IOTA0 - 137) & 255] - fVec0[(IOTA0 - 98) & 255];
-			double fTemp226 = fVec1[(IOTA0 - 68) & 255] + fVec1[(IOTA0 - 102) & 255];
-			double fTemp227 = fVec2[(IOTA0 - 97) & 255] + fVec2[(IOTA0 - 152) & 255];
-			double fTemp228 = fVec0[(IOTA0 - 117) & 255] - fVec0[(IOTA0 - 64) & 255];
-			double fTemp229 = fVec2[(IOTA0 - 35) & 255];
-			double fTemp230 = fVec0[(IOTA0 - 23) & 255];
-			double fTemp231 = fVec2[(IOTA0 - 59) & 255];
-			double fTemp232 = fVec0[(IOTA0 - 14) & 255];
-			double fTemp233 = fVec1[(IOTA0 - 6) & 255];
-			double fTemp234 = fVec0[(IOTA0 - 151) & 255];
-			double fTemp235 = fVec1[(IOTA0 - 115) & 255] - (fVec2[(IOTA0 - 118) & 255] + fVec2[(IOTA0 - 129) & 255] - fVec2[(IOTA0 - 134) & 255]);
-			double fTemp236 = fVec0[(IOTA0 - 108) & 255] + fVec0[(IOTA0 - 110) & 255];
-			double fTemp237 = fVec1[(IOTA0 - 23) & 255] + (fVec2[(IOTA0 - 8) & 255] - fVec2[(IOTA0 - 5) & 255]);
-			double fTemp238 = fVec0[(IOTA0 - 96) & 255] - fVec0[(IOTA0 - 133) & 255];
-			double fTemp239 = fVec1[(IOTA0 - 20) & 255] - fVec1[(IOTA0 - 64) & 255] + fVec1[(IOTA0 - 85) & 255];
-			double fTemp240 = fVec0[(IOTA0 - 145) & 255];
-			double fTemp241 = fVec0[(IOTA0 - 127) & 255] - (fVec0[(IOTA0 - 95) & 255] + fVec0[(IOTA0 - 100) & 255]);
-			double fTemp242 = fVec2[(IOTA0 - 1) & 255] + fVec2[(IOTA0 - 31) & 255];
-			double fTemp243 = fVec1[(IOTA0 - 138) & 255] - fVec1[(IOTA0 - 66) & 255] - (fVec2[(IOTA0 - 147) & 255] - (fVec2[(IOTA0 - 73) & 255] - fVec2[(IOTA0 - 98) & 255]));
-			double fTemp244 = fVec0[(IOTA0 - 115) & 255] - fVec0[(IOTA0 - 83) & 255];
-			double fTemp245 = fVec2[(IOTA0 - 6) & 255];
-			double fTemp246 = fVec0[(IOTA0 - 129) & 255];
-			double fTemp247 = fVec2[(IOTA0 - 61) & 255];
-			double fTemp248 = fVec0[(IOTA0 - 12) & 255];
-			double fTemp249 = fVec2[(IOTA0 - 99) & 255] - fVec2[(IOTA0 - 100) & 255] + fVec2[(IOTA0 - 150) & 255];
-			double fTemp250 = fVec0[(IOTA0 - 85) & 255] + fVec0[(IOTA0 - 91) & 255] - fVec0[(IOTA0 - 113) & 255] + fVec0[(IOTA0 - 142) & 255];
-			double fTemp251 = fVec2[(IOTA0 - 113) & 255] - fVec2[(IOTA0 - 116) & 255];
-			double fTemp252 = fVec0[(IOTA0 - 130) & 255];
-			double fTemp253 = fVec2[(IOTA0 - 109) & 255] - (fVec1[(IOTA0 - 114) & 255] + fVec1[(IOTA0 - 129) & 255] - fVec1[(IOTA0 - 130) & 255]);
-			double fTemp254 = fVec0[(IOTA0 - 76) & 255] + fVec0[(IOTA0 - 134) & 255];
-			double fTemp255 = fVec1[(IOTA0 - 51) & 255];
-			double fTemp256 = fVec0[(IOTA0 - 31) & 255];
-			double fTemp257 = fVec2[(IOTA0 - 63) & 255];
-			double fTemp258 = fVec0[(IOTA0 - 5) & 255] - fVec0[(IOTA0 - 10) & 255];
-			double fTemp259 = fVec2[(IOTA0 - 20) & 255];
-			double fTemp260 = fVec0[(IOTA0 - 149) & 255];
-			double fTemp261 = fVec1[(IOTA0 - 105) & 255] - fVec1[(IOTA0 - 135) & 255] + fVec1[(IOTA0 - 136) & 255] + fVec2[(IOTA0 - 101) & 255] + fVec2[(IOTA0 - 148) & 255];
-			double fTemp262 = fVec0[(IOTA0 - 94) & 255] - fVec0[(IOTA0 - 111) & 255];
-			double fTemp263 = fVec1[(IOTA0 - 91) & 255] + fVec1[(IOTA0 - 148) & 255] + (fVec2[(IOTA0 - 10) & 255] - fVec2[(IOTA0 - 7) & 255]);
-			double fTemp264 = fVec0[(IOTA0 - 135) & 255] - fVec0[(IOTA0 - 152) & 255];
-			double fTemp265 = fVec0[(IOTA0 - 143) & 255];
-			double fTemp266 = fVec1[(IOTA0 - 153) & 255];
-			double fTemp267 = fVec2[(IOTA0 - 85) & 255] - fVec1[(IOTA0 - 86) & 255];
-			double fTemp268 = fVec0[(IOTA0 - 68) & 255];
-			double fTemp269 = fVec1[(IOTA0 - 2) & 255] + fVec1[(IOTA0 - 29) & 255] + fVec2[(IOTA0 - 18) & 255];
-			double fTemp270 = fVec0[(IOTA0 - 147) & 255];
-			double fTemp271 = fVec2[(IOTA0 - 95) & 255] - (fVec2[(IOTA0 - 90) & 255] + fVec2[(IOTA0 - 92) & 255]);
-			double fTemp272 = fVec0[(IOTA0 - 146) & 255] - fVec0[(IOTA0 - 121) & 255];
-			double fTemp273 = fVec1[(IOTA0 - 146) & 255];
-			double fTemp274 = fVec0[(IOTA0 - 77) & 255];
-			double fTemp275 = fVec2[(IOTA0 - 82) & 255];
-			double fTemp276 = fVec0[(IOTA0 - 74) & 255] - fVec0[(IOTA0 - 109) & 255] + fVec0[(IOTA0 - 140) & 255];
-			output0[i0] = FAUSTFLOAT(0.00177001953125 * (fTemp1 - fTemp4) + fTemp5 + fTemp6 + fTemp7 + 0.006195068359375 * (fTemp8 + fTemp9) + 3.0517578125e-05 * (fTemp10 - fTemp11) + 0.000335693359375 * (fTemp12 + fTemp13) + 0.001617431640625 * (fTemp14 - fTemp15) + 0.001983642578125 * (fTemp16 + fTemp17) + 0.0010986328125 * (fTemp18 - fTemp19) + 0.00079345703125 * (fTemp20 + fTemp21) + fTemp22 + fTemp23 + fTemp24 + fTemp25 + fTemp26 + fTemp27 + fTemp28 + fTemp29 + fTemp30 + fTemp31 + fTemp32 + fTemp33 + fTemp34 + fTemp35 + fTemp36 + fTemp37 + fTemp38 + fTemp39 + fTemp40 + fTemp41 + fTemp42 + fTemp43 + fTemp44 + fTemp45 + fTemp46 + fTemp47 + fTemp48 + fTemp49 + fTemp50 + fTemp51 + fTemp52 + fTemp53 + fTemp54 + fTemp55 + fTemp56 + fTemp57 + fTemp58 + 0.000732421875 * (fTemp59 + fTemp60) + 0.0001220703125 * (fTemp61 + fTemp62) + 0.001953125 * (fTemp63 + fTemp64) + 0.000885009765625 * (fTemp65 + fTemp66) + 0.000152587890625 * (fTemp67 - fTemp68) + 0.003082275390625 * (fTemp69 + fTemp70) + 0.0023193359375 * (fTemp71 - fTemp72) + 9.1552734375e-05 * (fTemp73 + fTemp74) + 0.00225830078125 * (fTemp75 - fTemp76) + 0.00030517578125 * (fTemp77 - fTemp78) + fTemp79 + fTemp80 + fTemp81 + fTemp82 + fTemp83 + fTemp84 + fTemp85 + fTemp86 + fTemp87 + fTemp88 + fTemp89 + fTemp90 + fTemp91 + fTemp92 + fTemp93 + fTemp94 + fTemp95 + fTemp96 + fTemp97 + fTemp98 + fTemp99 + fTemp100 + fTemp101 + fTemp102 + fTemp103 + fTemp104 + fTemp105 + fTemp106 + 0.001251220703125 * (fTemp107 - fTemp108) + 0.001556396484375 * (fTemp109 + fTemp110) + 0.00091552734375 * (fTemp111 - fTemp112) + 0.00054931640625 * (fTemp113 + fTemp114) + 0.013153076171875 * (fTemp115 - fTemp116) + 0.00018310546875 * (fTemp117 - fTemp118) + 0.0025634765625 * (fTemp119 - fTemp120) + 0.00164794921875 * (fTemp121 - fTemp122) + fTemp123 + fTemp124 + fTemp125 + 0.000946044921875 * (fTemp126 + fTemp127) - (fTemp128 + fTemp129 + fTemp130 + fTemp131 + fTemp132 + fTemp133 + fTemp134 + fTemp135 + fTemp136 + fTemp137 + fTemp138 + fTemp139 + fTemp140 + fTemp141 + fTemp142 + fTemp143 + fTemp144 + fTemp145 + fTemp146 + fTemp147 + fTemp148 + fTemp149 + fTemp150 + fTemp151 + fTemp152 + fTemp153 + fTemp154 + fTemp155 + fTemp156 + fTemp157 + fTemp158 + fTemp159 + fTemp160 + fTemp161 + fTemp162 + fTemp163 + fTemp164 + fTemp165 + fTemp166 + fTemp167 + fTemp168 + fTemp169 + fTemp170 + fTemp171 + fTemp172 + fTemp173 + fTemp174 + fTemp175 + fTemp176 + fTemp177 + fTemp178 + fTemp179 + fTemp180 + fTemp181 + fTemp182 + fTemp183 + fTemp184 + fTemp185 + fTemp186 + fTemp187 + fTemp188 + fTemp189 + fTemp190 + fTemp191 + fTemp192 + fTemp193 + fTemp194 + fTemp195 + fTemp196 + fTemp197 + fTemp198 + fTemp199 + fTemp200 + fTemp201 + fTemp202 + fTemp203 + fTemp204 + 0.00152587890625 * (fTemp205 + fTemp206) + 0.001373291015625 * (fTemp207 - fTemp208) + 0.007598876953125 * (fTemp209 + fTemp210) + 0.001007080078125 * (fTemp211 + fTemp212) + 6.103515625e-05 * (fTemp213 - fTemp214) + 0.00048828125 * (fTemp215 - fTemp216) + 0.000457763671875 * (fTemp217 - fTemp218) + 0.00250244140625 * (fTemp219 + fTemp220) + 0.000213623046875 * (fTemp221 - fTemp222) + 0.000518798828125 * (fTemp223 + fTemp224) + 0.00146484375 * (fTemp225 - fTemp226) + 0.0008544921875 * (fTemp227 + fTemp228) + 0.015625 * (fTemp229 + fTemp230) + 0.00408935546875 * (fTemp231 - fTemp232) + 0.002166748046875 * (fTemp233 + fTemp234) + 0.000244140625 * (fTemp235 + fTemp236) + 0.001312255859375 * (fTemp237 - fTemp238) + 0.001800537109375 * (fTemp239 + fTemp240) + 0.001129150390625 * (fTemp241 - fTemp242) + 0.000823974609375 * (fTemp243 + fTemp244) + 0.001190185546875 * (fTemp245 + fTemp246) + 0.003448486328125 * (fTemp247 - fTemp248) + 0.000762939453125 * (fTemp249 - fTemp250) + 0.000274658203125 * (fTemp251 - fTemp252) + 0.000396728515625 * (fTemp253 - fTemp254) + 0.02264404296875 * (fTemp255 + fTemp256) + 0.002960205078125 * (fTemp257 + fTemp258) + 0.00201416015625 * (fTemp259 + fTemp260) + 0.000701904296875 * (fTemp261 - fTemp262) + 0.00140380859375 * (fTemp263 + fTemp264) + 0.001678466796875 * (fTemp265 - fTemp266) + 0.002197265625 * (fTemp267 - fTemp268) + 0.00189208984375 * (fTemp269 + fTemp270) + 0.0009765625 * (fTemp271 - fTemp272) + 0.00128173828125 * (fTemp273 - fTemp274) + 0.000640869140625 * (fTemp275 - fTemp276)));
-			output1[i0] = FAUSTFLOAT(0.000335693359375 * (fTemp12 - fTemp13) + 0.001953125 * (fTemp63 - fTemp64) + 0.00091552734375 * (fTemp111 + fTemp112) + 0.00152587890625 * (fTemp206 - fTemp205) + fTemp128 + fTemp129 + fTemp130 + fTemp131 + fTemp5 + fTemp132 + fTemp133 + fTemp134 + fTemp7 + 0.001800537109375 * (fTemp240 - fTemp239) + 0.00079345703125 * (fTemp20 - fTemp21) + 0.006195068359375 * (fTemp8 - fTemp9) + 0.000946044921875 * (fTemp126 - fTemp127) + 0.001556396484375 * (fTemp109 - fTemp110) + 0.001678466796875 * (fTemp266 + fTemp265) + 0.001129150390625 * (fTemp242 + fTemp241) + 0.0023193359375 * (fTemp71 + fTemp72) + 0.00250244140625 * (fTemp220 - fTemp219) + fTemp135 + fTemp136 + fTemp137 + fTemp138 + fTemp139 + fTemp140 + fTemp141 + fTemp142 + fTemp143 + fTemp144 + fTemp145 + fTemp147 + fTemp148 + fTemp149 + fTemp150 + fTemp151 + fTemp24 + fTemp152 + fTemp154 + fTemp26 + fTemp27 + fTemp155 + fTemp156 + fTemp28 + fTemp29 + fTemp30 + fTemp31 + fTemp32 + fTemp33 + fTemp34 + fTemp35 + fTemp36 + fTemp37 + fTemp38 + fTemp39 + fTemp40 + fTemp41 + fTemp42 + fTemp43 + fTemp44 + fTemp45 + fTemp46 + fTemp47 + fTemp48 + fTemp49 + fTemp50 + fTemp51 + fTemp52 + fTemp53 + fTemp54 + fTemp55 + fTemp56 + fTemp57 + fTemp58 + 0.00018310546875 * (fTemp117 + fTemp118) + 0.00189208984375 * (fTemp270 - fTemp269) + 0.00146484375 * (fTemp226 + fTemp225) + 3.0517578125e-05 * (fTemp10 + fTemp11) + 0.001617431640625 * (fTemp14 + fTemp15) + fTemp179 + fTemp180 + fTemp82 + fTemp181 + fTemp182 + fTemp183 + fTemp184 + fTemp185 + fTemp84 + fTemp186 + fTemp187 + fTemp85 + fTemp86 + fTemp87 + fTemp88 + fTemp89 + fTemp90 + fTemp91 + fTemp92 + fTemp93 + fTemp94 + fTemp95 + fTemp96 + fTemp97 + fTemp98 + fTemp99 + fTemp100 + fTemp101 + fTemp102 + fTemp103 + fTemp104 + fTemp105 + fTemp106 + 0.013153076171875 * (fTemp115 + fTemp116) + 0.0001220703125 * (fTemp61 - fTemp62) + fTemp199 + fTemp202 + fTemp123 + fTemp125 + fTemp124 + fTemp203 - (fTemp6 + fTemp22 + fTemp146 + fTemp23 + fTemp25 + fTemp153 + fTemp157 + fTemp158 + fTemp159 + fTemp160 + fTemp161 + fTemp162 + fTemp163 + fTemp164 + fTemp165 + fTemp166 + fTemp167 + fTemp168 + fTemp169 + fTemp170 + fTemp171 + fTemp172 + fTemp173 + fTemp174 + fTemp175 + fTemp176 + fTemp177 + fTemp79 + fTemp178 + fTemp80 + fTemp81 + fTemp83 + fTemp188 + fTemp189 + fTemp190 + fTemp191 + fTemp192 + fTemp193 + fTemp194 + fTemp195 + fTemp196 + fTemp197 + fTemp198 + fTemp200 + fTemp201 + fTemp204 + 0.00128173828125 * (fTemp273 + fTemp274) + 0.007598876953125 * (fTemp209 - fTemp210) + 0.000701904296875 * (fTemp261 + fTemp262) + 0.001251220703125 * (fTemp108 + fTemp107) + 0.000244140625 * (fTemp235 - fTemp236) + 0.001983642578125 * (fTemp17 - fTemp16) + 0.000640869140625 * (fTemp275 + fTemp276) + 0.001373291015625 * (fTemp207 + fTemp208) + 9.1552734375e-05 * (fTemp74 - fTemp73) + 0.015625 * (fTemp229 - fTemp230) + 0.00201416015625 * (fTemp259 - fTemp260) + 0.0008544921875 * (fTemp227 - fTemp228) + 0.00048828125 * (fTemp215 + fTemp216) + 0.00140380859375 * (fTemp263 - fTemp264) + 0.001007080078125 * (fTemp211 - fTemp212) + 0.00030517578125 * (fTemp78 + fTemp77) + 0.02264404296875 * (fTemp255 - fTemp256) + 0.003082275390625 * (fTemp70 - fTemp69) + 0.000396728515625 * (fTemp253 + fTemp254) + 0.000885009765625 * (fTemp66 - fTemp65) + 0.002960205078125 * (fTemp257 - fTemp258) + 0.00177001953125 * (fTemp4 + fTemp1) + 0.000518798828125 * (fTemp223 - fTemp224) + 0.001312255859375 * (fTemp237 + fTemp238) + 0.0010986328125 * (fTemp19 + fTemp18) + 0.001190185546875 * (fTemp245 - fTemp246) + 0.002197265625 * (fTemp267 + fTemp268) + 0.002166748046875 * (fTemp233 - fTemp234) + 0.000823974609375 * (fTemp243 - fTemp244) + 0.00225830078125 * (fTemp76 + fTemp75) + 0.003448486328125 * (fTemp247 + fTemp248) + 0.000274658203125 * (fTemp251 + fTemp252) + 0.000762939453125 * (fTemp249 + fTemp250) + 0.00054931640625 * (fTemp114 - fTemp113) + 0.00164794921875 * (fTemp122 + fTemp121) + 0.000732421875 * (fTemp60 - fTemp59) + 0.00408935546875 * (fTemp231 + fTemp232) + 0.0009765625 * (fTemp271 + fTemp272) + 0.0025634765625 * (fTemp120 + fTemp119) + 6.103515625e-05 * (fTemp213 + fTemp214) + 0.000457763671875 * (fTemp217 + fTemp218) + 0.000213623046875 * (fTemp221 + fTemp222) + 0.000152587890625 * (fTemp68 + fTemp67)));
+			double fTemp3 = fVec1[(IOTA0 - 68) & 255];
+			double fTemp4 = double(input1[i0]);
+			fVec2[IOTA0 & 255] = fTemp4;
+			double fTemp5 = fVec2[(IOTA0 - 85) & 255];
+			double fTemp6 = fVec0[(IOTA0 - 151) & 255];
+			double fTemp7 = fVec1[(IOTA0 - 70) & 255] + fTemp2 + fVec1[(IOTA0 - 75) & 255];
+			double fTemp8 = fVec1[(IOTA0 - 89) & 255];
+			double fTemp9 = fVec2[(IOTA0 - 145) & 255];
+			double fTemp10 = fVec1[(IOTA0 - 87) & 255];
+			double fTemp11 = fVec2[(IOTA0 - 11) & 255];
+			double fTemp12 = fVec1[(IOTA0 - 141) & 255];
+			double fTemp13 = fVec2[(IOTA0 - 34) & 255];
+			double fTemp14 = fVec1[(IOTA0 - 18) & 255];
+			double fTemp15 = fVec1[(IOTA0 - 6) & 255];
+			double fTemp16 = fVec2[(IOTA0 - 26) & 255];
+			double fTemp17 = fVec0[(IOTA0 - 3) & 255];
+			double fTemp18 = fVec1[(IOTA0 - 73) & 255];
+			double fTemp19 = fVec2[(IOTA0 - 88) & 255];
+			double fTemp20 = fVec2[(IOTA0 - 151) & 255];
+			double fTemp21 = fVec1[(IOTA0 - 81) & 255];
+			double fTemp22 = fVec0[(IOTA0 - 153) & 255];
+			double fTemp23 = fVec1[(IOTA0 - 143) & 255];
+			double fTemp24 = fVec0[(IOTA0 - 72) & 255];
+			double fTemp25 = fVec1[(IOTA0 - 55) & 255] + fVec1[(IOTA0 - 69) & 255];
+			double fTemp26 = fVec1[(IOTA0 - 99) & 255];
+			double fTemp27 = fVec0[(IOTA0 - 83) & 255];
+			double fTemp28 = fVec1[(IOTA0 - 2) & 255];
+			double fTemp29 = fVec2[(IOTA0 - 16) & 255];
+			double fTemp30 = fVec1[(IOTA0 - 77) & 255];
+			double fTemp31 = fVec0[(IOTA0 - 146) & 255];
+			double fTemp32 = 0.001068115234375 * (fVec1[(IOTA0 - 79) & 255] - fVec1[(IOTA0 - 125) & 255]);
+			double fTemp33 = fVec0[(IOTA0 - 96) & 255];
+			double fTemp34 = fVec1[(IOTA0 - 153) & 255];
+			double fTemp35 = fVec0[(IOTA0 - 77) & 255];
+			double fTemp36 = fVec2[(IOTA0 - 127) & 255];
+			double fTemp37 = fVec1[(IOTA0 - 106) & 255] + fVec1[(IOTA0 - 114) & 255];
+			double fTemp38 = fVec1[(IOTA0 - 103) & 255];
+			double fTemp39 = fVec0[(IOTA0 - 119) & 255];
+			double fTemp40 = fVec1[(IOTA0 - 14) & 255];
+			double fTemp41 = fVec2[(IOTA0 - 59) & 255];
+			double fTemp42 = fVec1[(IOTA0 - 12) & 255];
+			double fTemp43 = fVec2[(IOTA0 - 61) & 255];
+			double fTemp44 = fVec0[(IOTA0 - 112) & 255];
+			double fTemp45 = fVec1[(IOTA0 - 92) & 255] + fVec1[(IOTA0 - 102) & 255];
+			double fTemp46 = fVec2[(IOTA0 - 107) & 255];
+			double fTemp47 = fVec0[(IOTA0 - 66) & 255];
+			double fTemp48 = fVec2[(IOTA0 - 98) & 255];
+			double fTemp49 = fVec2[(IOTA0 - 147) & 255];
+			double fTemp50 = fVec1[(IOTA0 - 83) & 255];
+			double fTemp51 = fVec1[(IOTA0 - 115) & 255];
+			double fTemp52 = fVec0[(IOTA0 - 138) & 255];
+			double fTemp53 = fVec2[(IOTA0 - 73) & 255];
+			double fTemp54 = fVec2[(IOTA0 - 31) & 255];
+			double fTemp55 = fVec2[(IOTA0 - 1) & 255];
+			double fTemp56 = fVec1[(IOTA0 - 95) & 255] + fVec1[(IOTA0 - 100) & 255];
+			double fTemp57 = fVec1[(IOTA0 - 127) & 255];
+			double fTemp58 = fVec0[(IOTA0 - 64) & 255];
+			double fTemp59 = fVec1[(IOTA0 - 145) & 255];
+			double fTemp60 = fVec0[(IOTA0 - 20) & 255] + fVec0[(IOTA0 - 85) & 255];
+			double fTemp61 = fVec0[(IOTA0 - 15) & 255];
+			double fTemp62 = fVec1[(IOTA0 - 8) & 255];
+			double fTemp63 = fVec0[(IOTA0 - 14) & 255];
+			double fTemp64 = fVec0[(IOTA0 - 16) & 255];
+			double fTemp65 = fVec1[(IOTA0 - 97) & 255];
+			double fTemp66 = fVec0[(IOTA0 - 89) & 255];
+			double fTemp67 = fVec0[(IOTA0 - 152) & 255];
+			double fTemp68 = fVec2[(IOTA0 - 14) & 255];
+			double fTemp69 = fVec1[(IOTA0 - 49) & 255];
+			double fTemp70 = fVec1[(IOTA0 - 101) & 255];
+			double fTemp71 = fVec0[(IOTA0 - 106) & 255] + fVec0[(IOTA0 - 137) & 255] + fVec2[(IOTA0 - 86) & 255];
+			double fTemp72 = fVec1[(IOTA0 - 144) & 255];
+			double fTemp73 = fVec0[(IOTA0 - 139) & 255];
+			double fTemp74 = fVec2[(IOTA0 - 96) & 255];
+			double fTemp75 = fVec2[(IOTA0 - 149) & 255];
+			double fTemp76 = fVec1[(IOTA0 - 93) & 255];
+			double fTemp77 = fVec1[(IOTA0 - 51) & 255];
+			double fTemp78 = fVec2[(IOTA0 - 94) & 255];
+			double fTemp79 = fVec0[(IOTA0 - 140) & 255];
+			double fTemp80 = fVec1[(IOTA0 - 119) & 255];
+			double fTemp81 = fVec0[(IOTA0 - 68) & 255];
+			double fTemp82 = fVec0[(IOTA0 - 102) & 255];
+			double fTemp83 = fVec1[(IOTA0 - 98) & 255];
+			double fTemp84 = fVec1[(IOTA0 - 137) & 255];
+			double fTemp85 = fVec1[(IOTA0 - 124) & 255];
+			double fTemp86 = fVec0[(IOTA0 - 120) & 255];
+			double fTemp87 = fVec2[(IOTA0 - 32) & 255];
+			double fTemp88 = fVec2[(IOTA0 - 124) & 255];
+			double fTemp89 = fVec2[(IOTA0 - 123) & 255];
+			double fTemp90 = fVec1[(IOTA0 - 82) & 255] + fVec1[(IOTA0 - 84) & 255];
+			double fTemp91 = fVec1[(IOTA0 - 118) & 255];
+			double fTemp92 = fVec0[(IOTA0 - 99) & 255];
+			double fTemp93 = fVec0[(IOTA0 - 97) & 255];
+			double fTemp94 = fVec2[(IOTA0 - 130) & 255];
+			double fTemp95 = fVec2[(IOTA0 - 5) & 255];
+			double fTemp96 = fVec1[(IOTA0 - 96) & 255];
+			double fTemp97 = fVec1[(IOTA0 - 133) & 255];
+			double fTemp98 = fVec0[(IOTA0 - 23) & 255];
+			double fTemp99 = fVec2[(IOTA0 - 8) & 255];
+			double fTemp100 = 0.0006103515625 * (fVec2[(IOTA0 - 104) & 255] + fVec2[(IOTA0 - 141) & 255] - (fVec0[(IOTA0 - 109) & 255] + fVec0[(IOTA0 - 103) & 255] + fVec0[(IOTA0 - 134) & 255] + fVec2[(IOTA0 - 103) & 255] + fVec2[(IOTA0 - 146) & 255]));
+			double fTemp101 = 0.002349853515625 * (fVec0[(IOTA0 - 9) & 255] + fVec0[(IOTA0 - 98) & 255] + fVec2[(IOTA0 - 23) & 255] - fVec0[(IOTA0 - 18) & 255]);
+			double fTemp102 = 0.00103759765625 * (fVec0[(IOTA0 - 104) & 255] + fVec2[(IOTA0 - 153) & 255] - (fVec0[(IOTA0 - 79) & 255] + fVec0[(IOTA0 - 142) & 255]));
+			double fTemp103 = 0.002227783203125 * (fVec0[(IOTA0 - 7) & 255] + fVec2[(IOTA0 - 21) & 255] - fVec2[(IOTA0 - 24) & 255]);
+			double fTemp104 = 0.001220703125 * (fVec0[(IOTA0 - 21) & 255] + fVec0[(IOTA0 - 145) & 255] + fVec2[(IOTA0 - 3) & 255]);
+			double fTemp105 = 0.00067138671875 * (fVec0[(IOTA0 - 108) & 255] + fVec2[(IOTA0 - 102) & 255] + fVec2[(IOTA0 - 143) & 255] - (fVec0[(IOTA0 - 95) & 255] + fVec0[(IOTA0 - 107) & 255]));
+			double fTemp106 = fVec0[(IOTA0 - 88) & 255];
+			double fTemp107 = fVec0[(IOTA0 - 94) & 255];
+			double fTemp108 = fVec2[(IOTA0 - 17) & 255];
+			double fTemp109 = fVec1[(IOTA0 - 4) & 255];
+			double fTemp110 = fVec2[(IOTA0 - 33) & 255];
+			double fTemp111 = fVec0[(IOTA0 - 135) & 255];
+			double fTemp112 = fVec1[(IOTA0 - 94) & 255];
+			double fTemp113 = fVec1[(IOTA0 - 111) & 255];
+			double fTemp114 = fVec0[(IOTA0 - 105) & 255];
+			double fTemp115 = fVec0[(IOTA0 - 136) & 255];
+			double fTemp116 = fVec2[(IOTA0 - 101) & 255];
+			double fTemp117 = fVec2[(IOTA0 - 148) & 255];
+			double fTemp118 = 0.002471923828125 * (fVec0[(IOTA0 - 11) & 255] + fVec0[(IOTA0 - 17) & 255]);
+			double fTemp119 = 0.035369873046875 * fVec0[(IOTA0 - 35) & 255];
+			double fTemp120 = 0.01470947265625 * fVec0[(IOTA0 - 33) & 255];
+			double fTemp121 = 0.05389404296875 * fVec0[(IOTA0 - 61) & 255];
+			double fTemp122 = 0.0594482421875 * fVec0[(IOTA0 - 60) & 255];
+			double fTemp123 = 0.041259765625 * fVec0[(IOTA0 - 59) & 255];
+			double fTemp124 = 0.076507568359375 * fVec0[(IOTA0 - 58) & 255];
+			double fTemp125 = 0.089569091796875 * fVec0[(IOTA0 - 57) & 255];
+			double fTemp126 = 0.01544189453125 * fVec0[(IOTA0 - 56) & 255];
+			double fTemp127 = 0.00592041015625 * fVec0[(IOTA0 - 52) & 255];
+			double fTemp128 = 0.006500244140625 * fVec0[(IOTA0 - 50) & 255];
+			double fTemp129 = 0.00830078125 * fVec0[(IOTA0 - 48) & 255];
+			double fTemp130 = 0.029937744140625 * fVec0[(IOTA0 - 44) & 255];
+			double fTemp131 = 0.00482177734375 * fVec0[(IOTA0 - 78) & 255];
+			double fTemp132 = 0.00604248046875 * fVec0[(IOTA0 - 76) & 255];
+			double fTemp133 = 0.01849365234375 * fVec0[(IOTA0 - 62) & 255];
+			double fTemp134 = 0.001922607421875 * (fVec0[(IOTA0 - 90) & 255] + fVec0[(IOTA0 - 92) & 255]);
+			double fTemp135 = 0.002716064453125 * fVec0[(IOTA0 - 84) & 255];
+			double fTemp136 = 0.00384521484375 * fVec0[(IOTA0 - 82) & 255];
+			double fTemp137 = 0.00628662109375 * fVec0[(IOTA0 - 54) & 255];
+			double fTemp138 = 0.002532958984375 * fVec0[(IOTA0 - 13) & 255];
+			double fTemp139 = 0.21453857421875 * fVec0[(IOTA0 - 42) & 255];
+			double fTemp140 = 0.7164306640625 * fVec0[(IOTA0 - 27) & 255];
+			double fTemp141 = 0.032379150390625 * fVec0[(IOTA0 - 26) & 255];
+			double fTemp142 = 0.0042724609375 * fVec0[(IOTA0 - 24) & 255];
+			double fTemp143 = 0.003997802734375 * fVec0[(IOTA0 - 74) & 255];
+			double fTemp144 = 0.211029052734375 * fVec0[(IOTA0 - 41) & 255];
+			double fTemp145 = 0.53509521484375 * fVec0[(IOTA0 - 37) & 255];
+			double fTemp146 = 0.002044677734375 * (fVec0[(IOTA0 - 100) & 255] - fVec0[(IOTA0 - 4) & 255]);
+			double fTemp147 = 0.025909423828125 * fVec2[(IOTA0 - 46) & 255];
+			double fTemp148 = 0.052093505859375 * fVec2[(IOTA0 - 44) & 255];
+			double fTemp149 = 0.315521240234375 * fVec2[(IOTA0 - 42) & 255];
+			double fTemp150 = 0.38751220703125 * fVec2[(IOTA0 - 41) & 255];
+			double fTemp151 = 0.143341064453125 * fVec2[(IOTA0 - 39) & 255];
+			double fTemp152 = 0.047607421875 * fVec2[(IOTA0 - 36) & 255];
+			double fTemp153 = 0.000579833984375 * fVec0[(IOTA0 - 133) & 255];
+			double fTemp154 = 0.002105712890625 * (fVec2[(IOTA0 - 19) & 255] - fVec2[(IOTA0 - 67) & 255]);
+			double fTemp155 = 0.004180908203125 * fVec2[(IOTA0 - 66) & 255];
+			double fTemp156 = 0.003936767578125 * fVec2[(IOTA0 - 68) & 255];
+			double fTemp157 = 0.004486083984375 * fVec2[(IOTA0 - 64) & 255];
+			double fTemp158 = 0.003143310546875 * fVec2[(IOTA0 - 78) & 255];
+			double fTemp159 = 0.005950927734375 * fVec2[(IOTA0 - 76) & 255];
+			double fTemp160 = 0.004058837890625 * fVec2[(IOTA0 - 74) & 255];
+			double fTemp161 = 0.001861572265625 * (fVec2[(IOTA0 - 15) & 255] - fVec2[(IOTA0 - 79) & 255]);
+			double fTemp162 = 0.006927490234375 * fVec2[(IOTA0 - 56) & 255];
+			double fTemp163 = 0.00811767578125 * fVec2[(IOTA0 - 54) & 255];
+			double fTemp164 = 0.00238037109375 * fVec2[(IOTA0 - 27) & 255];
+			double fTemp165 = 0.009796142578125 * fVec2[(IOTA0 - 52) & 255];
+			double fTemp166 = 0.012420654296875 * fVec2[(IOTA0 - 50) & 255];
+			double fTemp167 = 0.016845703125 * fVec2[(IOTA0 - 48) & 255];
+			double fTemp168 = 0.0037841796875 * fVec2[(IOTA0 - 72) & 255];
+			double fTemp169 = 0.005401611328125 * fVec2[(IOTA0 - 60) & 255];
+			double fTemp170 = 0.006072998046875 * fVec2[(IOTA0 - 58) & 255];
+			double fTemp171 = 0.003814697265625 * (fVec0[(IOTA0 - 31) & 255] + fVec2[(IOTA0 - 70) & 255]);
+			double fTemp172 = 0.002410888671875 * (fVec2[(IOTA0 - 25) & 255] - fVec0[(IOTA0 - 10) & 255]);
+			double fTemp173 = 0.0020751953125 * (fVec0[(IOTA0 - 5) & 255] + fVec2[(IOTA0 - 29) & 255]);
+			double fTemp174 = 0.00244140625 * (fVec1[(IOTA0 - 71) & 255] - fVec1[(IOTA0 - 47) & 255]);
+			double fTemp175 = 0.003692626953125 * fVec1[(IOTA0 - 67) & 255];
+			double fTemp176 = 0.00341796875 * fVec1[(IOTA0 - 65) & 255];
+			double fTemp177 = 0.994537353515625 * fVec1[(IOTA0 - 27) & 255];
+			double fTemp178 = 0.06201171875 * fVec1[(IOTA0 - 26) & 255];
+			double fTemp179 = 0.019989013671875 * fVec1[(IOTA0 - 24) & 255];
+			double fTemp180 = 0.01171875 * fVec1[(IOTA0 - 22) & 255];
+			double fTemp181 = 0.0081787109375 * fVec1[(IOTA0 - 20) & 255];
+			double fTemp182 = 0.00433349609375 * fVec0[(IOTA0 - 80) & 255];
+			double fTemp183 = 0.00494384765625 * fVec1[(IOTA0 - 16) & 255];
+			double fTemp184 = fVec0[(IOTA0 - 132) & 255];
+			double fTemp185 = fVec1[(IOTA0 - 107) & 255];
+			double fTemp186 = fVec2[(IOTA0 - 35) & 255];
+			double fTemp187 = fVec1[(IOTA0 - 23) & 255];
+			double fTemp188 = fVec2[(IOTA0 - 12) & 255];
+			double fTemp189 = fVec1[(IOTA0 - 139) & 255];
+			double fTemp190 = fVec2[(IOTA0 - 20) & 255];
+			double fTemp191 = fVec1[(IOTA0 - 149) & 255];
+			double fTemp192 = fVec0[(IOTA0 - 67) & 255];
+			double fTemp193 = fVec1[(IOTA0 - 54) & 255];
+			double fTemp194 = fVec1[(IOTA0 - 35) & 255];
+			double fTemp195 = fVec0[(IOTA0 - 46) & 255];
+			double fTemp196 = fVec0[(IOTA0 - 51) & 255];
+			double fTemp197 = fVec1[(IOTA0 - 31) & 255];
+			double fTemp198 = fVec0[(IOTA0 - 6) & 255];
+			double fTemp199 = fVec1[(IOTA0 - 151) & 255];
+			double fTemp200 = fVec2[(IOTA0 - 6) & 255];
+			double fTemp201 = fVec1[(IOTA0 - 129) & 255];
+			double fTemp202 = fVec2[(IOTA0 - 95) & 255];
+			double fTemp203 = fVec1[(IOTA0 - 121) & 255];
+			double fTemp204 = fVec2[(IOTA0 - 90) & 255] + fVec2[(IOTA0 - 92) & 255];
+			double fTemp205 = fVec1[(IOTA0 - 146) & 255];
+			double fTemp206 = fVec1[(IOTA0 - 116) & 255];
+			double fTemp207 = fVec0[(IOTA0 - 124) & 255];
+			double fTemp208 = fVec2[(IOTA0 - 117) & 255];
+			double fTemp209 = fVec0[(IOTA0 - 123) & 255];
+			double fTemp210 = fVec2[(IOTA0 - 75) & 255];
+			double fTemp211 = fVec2[(IOTA0 - 80) & 255];
+			double fTemp212 = fVec1[(IOTA0 - 80) & 255] + fVec1[(IOTA0 - 53) & 255] + fVec1[(IOTA0 - 86) & 255];
+			double fTemp213 = fVec2[(IOTA0 - 2) & 255];
+			double fTemp214 = fVec1[(IOTA0 - 123) & 255];
+			double fTemp215 = fVec0[(IOTA0 - 141) & 255];
+			double fTemp216 = fVec1[(IOTA0 - 72) & 255];
+			double fTemp217 = fVec1[(IOTA0 - 113) & 255];
+			double fTemp218 = fVec2[(IOTA0 - 99) & 255];
+			double fTemp219 = fVec2[(IOTA0 - 150) & 255];
+			double fTemp220 = fVec1[(IOTA0 - 142) & 255];
+			double fTemp221 = fVec2[(IOTA0 - 100) & 255];
+			double fTemp222 = fVec1[(IOTA0 - 85) & 255] + fVec1[(IOTA0 - 91) & 255];
+			double fTemp223 = fVec1[(IOTA0 - 120) & 255];
+			double fTemp224 = fVec2[(IOTA0 - 119) & 255] + fVec2[(IOTA0 - 128) & 255];
+			double fTemp225 = fVec1[(IOTA0 - 122) & 255];
+			double fTemp226 = fVec0[(IOTA0 - 121) & 255] + fVec2[(IOTA0 - 121) & 255] + fVec2[(IOTA0 - 126) & 255];
+			double fTemp227 = fVec2[(IOTA0 - 111) & 255];
+			double fTemp228 = fVec1[(IOTA0 - 105) & 255];
+			double fTemp229 = fVec2[(IOTA0 - 84) & 255];
+			double fTemp230 = fVec1[(IOTA0 - 132) & 255];
+			double fTemp231 = fVec2[(IOTA0 - 97) & 255];
+			double fTemp232 = fVec2[(IOTA0 - 152) & 255];
+			double fTemp233 = fVec1[(IOTA0 - 117) & 255];
+			double fTemp234 = fVec1[(IOTA0 - 64) & 255];
+			double fTemp235 = 0.0003662109375 * (fVec0[(IOTA0 - 113) & 255] + fVec0[(IOTA0 - 81) & 255] + fVec2[(IOTA0 - 138) & 255] - (fVec2[(IOTA0 - 112) & 255] + fVec2[(IOTA0 - 133) & 255]));
+			double fTemp236 = 0.001739501953125 * (fVec0[(IOTA0 - 75) & 255] + fVec2[(IOTA0 - 69) & 255] + fVec2[(IOTA0 - 87) & 255] - fVec2[(IOTA0 - 13) & 255]);
+			double fTemp237 = 0.0048828125 * (fVec0[(IOTA0 - 63) & 255] + fVec2[(IOTA0 - 57) & 255] - fVec2[(IOTA0 - 62) & 255]);
+			double fTemp238 = fVec0[(IOTA0 - 93) & 255] + fVec2[(IOTA0 - 4) & 255] + fVec2[(IOTA0 - 93) & 255];
+			double fTemp239 = fVec0[(IOTA0 - 143) & 255];
+			double fTemp240 = fVec1[(IOTA0 - 148) & 255];
+			double fTemp241 = fVec2[(IOTA0 - 63) & 255];
+			double fTemp242 = fVec1[(IOTA0 - 5) & 255];
+			double fTemp243 = fVec1[(IOTA0 - 10) & 255];
+			double fTemp244 = fVec0[(IOTA0 - 117) & 255] + fVec2[(IOTA0 - 132) & 255];
+			double fTemp245 = fVec2[(IOTA0 - 122) & 255] + fVec2[(IOTA0 - 125) & 255];
+			double fTemp246 = fVec1[(IOTA0 - 126) & 255];
+			double fTemp247 = fVec0[(IOTA0 - 130) & 255];
+			double fTemp248 = fVec2[(IOTA0 - 109) & 255];
+			double fTemp249 = fVec1[(IOTA0 - 134) & 255];
+			double fTemp250 = fVec0[(IOTA0 - 129) & 255];
+			double fTemp251 = fVec0[(IOTA0 - 114) & 255];
+			double fTemp252 = fVec1[(IOTA0 - 76) & 255];
+			double fTemp253 = fVec1[(IOTA0 - 147) & 255];
+			double fTemp254 = fVec0[(IOTA0 - 2) & 255] + fVec0[(IOTA0 - 29) & 255] + fVec2[(IOTA0 - 18) & 255];
+			double fTemp255 = fVec0[(IOTA0 - 12) & 255];
+			double fTemp256 = fVec2[(IOTA0 - 65) & 255];
+			double fTemp257 = fVec1[(IOTA0 - 1) & 255];
+			double fTemp258 = fVec1[(IOTA0 - 112) & 255];
+			double fTemp259 = fVec0[(IOTA0 - 126) & 255];
+			double fTemp260 = fVec2[(IOTA0 - 115) & 255];
+			double fTemp261 = fVec1[(IOTA0 - 128) & 255];
+			double fTemp262 = fVec0[(IOTA0 - 118) & 255];
+			double fTemp263 = fVec0[(IOTA0 - 125) & 255];
+			double fTemp264 = fVec2[(IOTA0 - 120) & 255];
+			double fTemp265 = fVec1[(IOTA0 - 78) & 255] + fVec1[(IOTA0 - 88) & 255];
+			double fTemp266 = fVec2[(IOTA0 - 105) & 255] + fVec2[(IOTA0 - 144) & 255];
+			double fTemp267 = fVec1[(IOTA0 - 138) & 255];
+			double fTemp268 = fVec0[(IOTA0 - 110) & 255] + fVec2[(IOTA0 - 106) & 255] + fVec2[(IOTA0 - 139) & 255];
+			double fTemp269 = fVec1[(IOTA0 - 135) & 255];
+			double fTemp270 = fVec0[(IOTA0 - 91) & 255] + fVec0[(IOTA0 - 148) & 255] + fVec2[(IOTA0 - 10) & 255];
+			double fTemp271 = fVec2[(IOTA0 - 7) & 255];
+			double fTemp272 = fVec1[(IOTA0 - 152) & 255];
+			double fTemp273 = 0.05596923828125 * fVec0[(IOTA0 - 34) & 255];
+			double fTemp274 = 0.017578125 * fVec0[(IOTA0 - 55) & 255];
+			double fTemp275 = 0.01885986328125 * fVec0[(IOTA0 - 53) & 255];
+			double fTemp276 = 0.02838134765625 * fVec0[(IOTA0 - 49) & 255];
+			double fTemp277 = 0.03729248046875 * fVec0[(IOTA0 - 47) & 255];
+			double fTemp278 = 0.053253173828125 * fVec0[(IOTA0 - 45) & 255];
+			double fTemp279 = 0.006134033203125 * fVec0[(IOTA0 - 69) & 255];
+			double fTemp280 = 0.004730224609375 * fVec0[(IOTA0 - 71) & 255];
+			double fTemp281 = 0.002288818359375 * (fVec0[(IOTA0 - 8) & 255] - fVec0[(IOTA0 - 70) & 255]);
+			double fTemp282 = 0.0018310546875 * (fVec0[(IOTA0 - 87) & 255] - fVec0[(IOTA0 - 1) & 255]);
+			double fTemp283 = 0.008544921875 * fVec0[(IOTA0 - 65) & 255];
+			double fTemp284 = 0.0537109375 * fVec0[(IOTA0 - 32) & 255];
+			double fTemp285 = 0.095489501953125 * fVec0[(IOTA0 - 43) & 255];
+			double fTemp286 = 0.063262939453125 * fVec0[(IOTA0 - 30) & 255];
+			double fTemp287 = 0.10296630859375 * fVec0[(IOTA0 - 28) & 255];
+			double fTemp288 = 0.010894775390625 * fVec0[(IOTA0 - 25) & 255];
+			double fTemp289 = 0.00335693359375 * fVec0[(IOTA0 - 73) & 255];
+			double fTemp290 = 0.084747314453125 * fVec0[(IOTA0 - 40) & 255];
+			double fTemp291 = 0.017852783203125 * fVec0[(IOTA0 - 39) & 255];
+			double fTemp292 = 0.027252197265625 * fVec0[(IOTA0 - 38) & 255];
+			double fTemp293 = 0.090728759765625 * fVec0[(IOTA0 - 36) & 255];
+			double fTemp294 = 0.00115966796875 * fVec0[(IOTA0 - 144) & 255];
+			double fTemp295 = 0.031005859375 * fVec2[(IOTA0 - 45) & 255];
+			double fTemp296 = 0.074981689453125 * fVec2[(IOTA0 - 43) & 255];
+			double fTemp297 = 0.108306884765625 * fVec2[(IOTA0 - 40) & 255];
+			double fTemp298 = 0.069854736328125 * fVec2[(IOTA0 - 38) & 255];
+			double fTemp299 = 0.69757080078125 * fVec2[(IOTA0 - 37) & 255];
+			double fTemp300 = 0.0015869140625 * fVec2[(IOTA0 - 30) & 255];
+			double fTemp301 = 0.004364013671875 * fVec2[(IOTA0 - 81) & 255];
+			double fTemp302 = 0.00311279296875 * fVec2[(IOTA0 - 83) & 255];
+			double fTemp303 = 0.005889892578125 * fVec2[(IOTA0 - 55) & 255];
+			double fTemp304 = 0.00732421875 * fVec2[(IOTA0 - 53) & 255];
+			double fTemp305 = 0.009368896484375 * fVec2[(IOTA0 - 51) & 255];
+			double fTemp306 = 0.01263427734375 * fVec2[(IOTA0 - 49) & 255];
+			double fTemp307 = 0.018402099609375 * fVec2[(IOTA0 - 47) & 255];
+			double fTemp308 = 0.00213623046875 * (fVec2[(IOTA0 - 22) & 255] + fVec2[(IOTA0 - 28) & 255] - fVec0[(IOTA0 - 19) & 255]);
+			double fTemp309 = 0.0013427734375 * (fVec2[(IOTA0 - 71) & 255] - fVec0[(IOTA0 - 147) & 255]);
+			double fTemp310 = 0.007781982421875 * fVec1[(IOTA0 - 50) & 255];
+			double fTemp311 = 0.008697509765625 * fVec1[(IOTA0 - 48) & 255];
+			double fTemp312 = 0.00994873046875 * fVec1[(IOTA0 - 46) & 255];
+			double fTemp313 = 0.003326416015625 * fVec1[(IOTA0 - 45) & 255];
+			double fTemp314 = 0.011566162109375 * fVec1[(IOTA0 - 44) & 255];
+			double fTemp315 = 0.03118896484375 * fVec1[(IOTA0 - 25) & 255];
+			double fTemp316 = 0.001495361328125 * (fVec0[(IOTA0 - 150) & 255] - (fVec2[(IOTA0 - 9) & 255] + fVec2[(IOTA0 - 77) & 255]));
+			double fTemp317 = 0.001434326171875 * (fVec2[(IOTA0 - 89) & 255] - fVec0[(IOTA0 - 149) & 255]);
+			double fTemp318 = 0.004425048828125 * fVec1[(IOTA0 - 43) & 255];
+			double fTemp319 = 0.013671875 * fVec1[(IOTA0 - 42) & 255];
+			double fTemp320 = 0.005828857421875 * fVec1[(IOTA0 - 41) & 255];
+			double fTemp321 = 0.016448974609375 * fVec1[(IOTA0 - 40) & 255];
+			double fTemp322 = 0.00762939453125 * fVec1[(IOTA0 - 39) & 255];
+			double fTemp323 = 0.010009765625 * fVec1[(IOTA0 - 37) & 255];
+			double fTemp324 = 0.00042724609375 * (fVec2[(IOTA0 - 140) & 255] - (fVec2[(IOTA0 - 110) & 255] + fVec2[(IOTA0 - 135) & 255]));
+			double fTemp325 = 0.002685546875 * (fVec1[(IOTA0 - 3) & 255] - fVec1[(IOTA0 - 66) & 255]);
+			double fTemp326 = 0.02496337890625 * fVec1[(IOTA0 - 29) & 255];
+			double fTemp327 = 0.126190185546875 * fVec1[(IOTA0 - 28) & 255];
+			double fTemp328 = 0.010467529296875 * fVec1[(IOTA0 - 21) & 255];
+			double fTemp329 = 0.007904052734375 * fVec1[(IOTA0 - 19) & 255];
+			double fTemp330 = 0.00634765625 * fVec1[(IOTA0 - 17) & 255];
+			double fTemp331 = 0.005340576171875 * fVec1[(IOTA0 - 15) & 255];
+			double fTemp332 = 0.00457763671875 * fVec1[(IOTA0 - 13) & 255];
+			double fTemp333 = 0.0040283203125 * fVec1[(IOTA0 - 11) & 255];
+			double fTemp334 = 0.00360107421875 * fVec1[(IOTA0 - 9) & 255];
+			double fTemp335 = 0.00323486328125 * fVec1[(IOTA0 - 7) & 255];
+			double fTemp336 = 0.1446533203125 * fVec1[(IOTA0 - 57) & 255];
+			double fTemp337 = 0.0201416015625 * (fVec1[(IOTA0 - 38) & 255] + fVec1[(IOTA0 - 56) & 255]);
+			double fTemp338 = 0.025299072265625 * fVec1[(IOTA0 - 36) & 255];
+			double fTemp339 = 0.032806396484375 * fVec1[(IOTA0 - 34) & 255];
+			double fTemp340 = 0.01739501953125 * fVec1[(IOTA0 - 33) & 255];
+			double fTemp341 = 0.044464111328125 * fVec1[(IOTA0 - 32) & 255];
+			double fTemp342 = 0.065460205078125 * fVec1[(IOTA0 - 30) & 255];
+			double fTemp343 = 0.08148193359375 * fVec1[(IOTA0 - 60) & 255];
+			double fTemp344 = 0.0733642578125 * fVec1[(IOTA0 - 59) & 255];
+			double fTemp345 = 0.1060791015625 * fVec1[(IOTA0 - 58) & 255];
+			double fTemp346 = 0.00726318359375 * fVec1[(IOTA0 - 52) & 255];
+			double fTemp347 = 0.0035400390625 * fVec1[(IOTA0 - 63) & 255];
+			double fTemp348 = 0.023162841796875 * fVec1[(IOTA0 - 62) & 255];
+			double fTemp349 = 0.088714599609375 * fVec1[(IOTA0 - 61) & 255];
+			double fTemp350 = fVec1[(IOTA0 - 108) & 255];
+			double fTemp351 = fVec1[(IOTA0 - 110) & 255];
+			double fTemp352 = fVec0[(IOTA0 - 115) & 255] + fVec2[(IOTA0 - 134) & 255];
+			double fTemp353 = fVec2[(IOTA0 - 118) & 255] + fVec2[(IOTA0 - 129) & 255];
+			double fTemp354 = fVec0[(IOTA0 - 111) & 255] + fVec2[(IOTA0 - 142) & 255];
+			double fTemp355 = fVec1[(IOTA0 - 136) & 255];
+			double fTemp356 = fVec0[(IOTA0 - 131) & 255] + fVec2[(IOTA0 - 108) & 255] + fVec2[(IOTA0 - 137) & 255];
+			double fTemp357 = fVec2[(IOTA0 - 91) & 255];
+			double fTemp358 = fVec1[(IOTA0 - 131) & 255];
+			double fTemp359 = fVec1[(IOTA0 - 150) & 255];
+			double fTemp360 = fVec0[(IOTA0 - 22) & 255];
+			double fTemp361 = fVec0[(IOTA0 - 101) & 255];
+			double fTemp362 = fVec0[(IOTA0 - 128) & 255] + fVec2[(IOTA0 - 136) & 255];
+			double fTemp363 = fVec0[(IOTA0 - 116) & 255];
+			double fTemp364 = fVec1[(IOTA0 - 90) & 255];
+			double fTemp365 = fVec0[(IOTA0 - 127) & 255] + fVec2[(IOTA0 - 114) & 255] + fVec2[(IOTA0 - 131) & 255];
+			double fTemp366 = fVec2[(IOTA0 - 82) & 255];
+			double fTemp367 = fVec1[(IOTA0 - 109) & 255];
+			double fTemp368 = fVec1[(IOTA0 - 74) & 255];
+			double fTemp369 = fVec1[(IOTA0 - 140) & 255];
+			double fTemp370 = fVec2[(IOTA0 - 113) & 255];
+			double fTemp371 = fVec2[(IOTA0 - 116) & 255];
+			double fTemp372 = fVec1[(IOTA0 - 130) & 255];
+			output0[i0] = FAUSTFLOAT(0.002197265625 * (fTemp1 + fTemp3 - fTemp5) + 0.001556396484375 * (fTemp6 + fTemp7) + 0.000732421875 * (fTemp8 + fTemp9 + fTemp10) + 0.001617431640625 * (fTemp11 - fTemp12) + 0.006195068359375 * (fTemp13 + fTemp14) + 0.00225830078125 * (fTemp15 - fTemp16) + 0.001953125 * (fTemp17 + fTemp18) + 0.000946044921875 * (fTemp19 + fTemp20 + fTemp21 - fTemp4) + 0.001678466796875 * (fTemp22 - fTemp23) + 0.003082275390625 * (fTemp24 + fTemp25) + 0.001373291015625 * (fTemp26 - fTemp27) + 0.00177001953125 * (fTemp28 - (fTemp0 + fTemp29)) + 0.00128173828125 * (fTemp30 - fTemp31) + fTemp32 + 0.0023193359375 * (fTemp33 - fTemp34) + 0.00018310546875 * (fTemp35 + fTemp36 - fTemp37) + 6.103515625e-05 * (fTemp38 - fTemp39) + 0.00408935546875 * (fTemp40 - fTemp41) + 0.003448486328125 * (fTemp42 - fTemp43) + 0.000457763671875 * (fTemp44 + fTemp45 - fTemp46) + 0.000823974609375 * (fTemp47 + fTemp48 + fTemp49 + fTemp50 - (fTemp51 + fTemp52 + fTemp53)) + 0.001129150390625 * (fTemp54 + fTemp55 + fTemp56 - fTemp57) + 0.001800537109375 * (fTemp58 - (fTemp59 + fTemp60)) + 0.0025634765625 * (fTemp61 + fTemp62 - (fTemp63 + fTemp64)) + 0.00164794921875 * (fTemp65 - (fTemp66 + fTemp67 + fTemp68 + fTemp69)) + 0.00079345703125 * (fTemp70 + fTemp71) + 0.000885009765625 * (fTemp72 + fTemp73 + fTemp74 + fTemp75 + fTemp76 - fTemp77) + 0.00091552734375 * (fTemp78 - (fTemp79 + fTemp80)) + 0.00146484375 * (fTemp81 + fTemp82 + fTemp83 - fTemp84) + 9.1552734375e-05 * (fTemp85 + fTemp86 + fTemp87 + fTemp88 + fTemp89 + fTemp90 - (fTemp91 + fTemp92 + fTemp93 + fTemp94)) + 0.001312255859375 * (fTemp95 + fTemp96 - (fTemp97 + fTemp98 + fTemp99)) + fTemp100 + fTemp101 + fTemp102 + fTemp103 + fTemp104 + fTemp105 + 0.001983642578125 * (fTemp106 + fTemp107 + fTemp108 + fTemp109 - fTemp110) + 0.000701904296875 * (fTemp111 + fTemp112 - (fTemp113 + fTemp114 + fTemp115 + fTemp116 + fTemp117)) + fTemp118 + fTemp119 + fTemp120 + fTemp121 + fTemp122 + fTemp123 + fTemp124 + fTemp125 + fTemp126 + fTemp127 + fTemp128 + fTemp129 + fTemp130 + fTemp131 + fTemp132 + fTemp133 + fTemp134 + fTemp135 + fTemp136 + fTemp137 + fTemp138 + fTemp139 + fTemp140 + fTemp141 + fTemp142 + fTemp143 + fTemp144 + fTemp145 + fTemp146 + fTemp147 + fTemp148 + fTemp149 + fTemp150 + fTemp151 + fTemp152 + fTemp153 + fTemp154 + fTemp155 + fTemp156 + fTemp157 + fTemp158 + fTemp159 + fTemp160 + fTemp161 + fTemp162 + fTemp163 + fTemp164 + fTemp165 + fTemp166 + fTemp167 + fTemp168 + fTemp169 + fTemp170 + fTemp171 + fTemp172 + fTemp173 + fTemp174 + fTemp175 + fTemp176 + fTemp177 + fTemp178 + fTemp179 + fTemp180 + fTemp181 + fTemp182 + fTemp183 - (0.000518798828125 * (fTemp184 + fTemp185) + 0.015625 * (fTemp186 + fTemp187) + 0.00152587890625 * (fTemp188 + fTemp189) + 0.00201416015625 * (fTemp190 + fTemp191) + 0.007598876953125 * (fTemp192 + fTemp193) + 0.013153076171875 * (fTemp194 - fTemp195) + 0.02264404296875 * (fTemp196 + fTemp197) + 0.002166748046875 * (fTemp198 + fTemp199) + 0.001190185546875 * (fTemp200 + fTemp201) + 0.0009765625 * (fTemp202 + fTemp203 - (fTemp204 + fTemp205)) + 0.0001220703125 * (fTemp206 + fTemp207 + fTemp208 - (fTemp209 + fTemp210 + fTemp211 + fTemp212)) + 0.001007080078125 * (fTemp213 + fTemp214 - (fTemp215 + fTemp216)) + 0.000762939453125 * (fTemp217 + fTemp218 + fTemp219 - (fTemp220 + fTemp221 + fTemp222)) + 3.0517578125e-05 * (fTemp223 + fTemp224 - (fTemp225 + fTemp226)) + 0.000335693359375 * (fTemp227 + fTemp228 - (fTemp229 + fTemp230)) + 0.0008544921875 * (fTemp231 + fTemp232 + fTemp233 - fTemp234) + fTemp235 + fTemp236 + fTemp237 + 0.0010986328125 * (fTemp238 - (fTemp239 + fTemp240)) + 0.002960205078125 * (fTemp241 + fTemp242 - fTemp243) + 0.000152587890625 * (fTemp244 - (fTemp245 + fTemp246)) + 0.000396728515625 * (fTemp247 + fTemp248 - (fTemp249 + fTemp250 + fTemp251 + fTemp252)) + 0.00189208984375 * (fTemp253 + fTemp254) + 0.00250244140625 * (fTemp255 + fTemp256 + fTemp257) + 0.000213623046875 * (fTemp258 + fTemp259 + fTemp260 - (fTemp261 + fTemp262 + fTemp263 + fTemp264 + fTemp265)) + 0.00054931640625 * (fTemp266 - (fTemp267 + fTemp268)) + 0.00140380859375 * (fTemp269 + fTemp270 - (fTemp271 + fTemp272)) + fTemp273 + fTemp274 + fTemp275 + fTemp276 + fTemp277 + fTemp278 + fTemp279 + fTemp280 + fTemp281 + fTemp282 + fTemp283 + fTemp284 + fTemp285 + fTemp286 + fTemp287 + fTemp288 + fTemp289 + fTemp290 + fTemp291 + fTemp292 + fTemp293 + fTemp294 + fTemp295 + fTemp296 + fTemp297 + fTemp298 + fTemp299 + fTemp300 + fTemp301 + fTemp302 + fTemp303 + fTemp304 + fTemp305 + fTemp306 + fTemp307 + fTemp308 + fTemp309 + fTemp310 + fTemp311 + fTemp312 + fTemp313 + fTemp314 + fTemp315 + fTemp316 + fTemp317 + fTemp318 + fTemp319 + fTemp320 + fTemp321 + fTemp322 + fTemp323 + fTemp324 + fTemp325 + fTemp326 + fTemp327 + fTemp328 + fTemp329 + fTemp330 + fTemp331 + fTemp332 + fTemp333 + fTemp334 + fTemp335 + fTemp336 + fTemp337 + fTemp338 + fTemp339 + fTemp340 + fTemp341 + fTemp342 + fTemp343 + fTemp344 + fTemp345 + fTemp346 + fTemp347 + fTemp348 + fTemp349 + 0.000244140625 * (fTemp350 + fTemp351 + fTemp352 - fTemp353) + 0.00048828125 * (fTemp354 - (fTemp355 + fTemp356)) + 0.001251220703125 * (fTemp357 + fTemp358 - fTemp359) + 0.00030517578125 * (fTemp360 + fTemp361 + fTemp362 - (fTemp363 + fTemp364 + fTemp365)) + 0.000640869140625 * (fTemp366 + fTemp367 - (fTemp368 + fTemp369)) + 0.000274658203125 * (fTemp370 - (fTemp371 + fTemp372))));
+			output1[i0] = FAUSTFLOAT(0.0023193359375 * (fTemp33 + fTemp34) + 0.000732421875 * (fTemp9 - (fTemp10 + fTemp8)) + 0.015625 * (fTemp187 - fTemp186) + 0.013153076171875 * (fTemp195 + fTemp194) + 0.001617431640625 * (fTemp11 + fTemp12) + 0.001678466796875 * (fTemp22 + fTemp23) + 0.007598876953125 * (fTemp193 - fTemp192) + 0.00250244140625 * (fTemp257 - (fTemp255 + fTemp256)) + 0.02264404296875 * (fTemp197 - fTemp196) + 0.000823974609375 * (fTemp51 + fTemp47 + fTemp48 + fTemp49 - (fTemp52 + fTemp53 + fTemp50)) + 0.00146484375 * (fTemp81 + fTemp82 + fTemp84 - fTemp83) + fTemp100 + fTemp101 + fTemp102 + fTemp103 + fTemp104 + fTemp105 + 0.001129150390625 * (fTemp55 + fTemp54 + fTemp57 - fTemp56) + 0.001800537109375 * (fTemp58 + fTemp59 - fTemp60) + 0.000885009765625 * (fTemp73 + fTemp74 + fTemp75 + fTemp77 - (fTemp76 + fTemp72)) + 0.00018310546875 * (fTemp35 + fTemp36 + fTemp37) + 0.001312255859375 * (fTemp95 + fTemp97 - (fTemp98 + fTemp99 + fTemp96)) + 0.002960205078125 * (fTemp242 - (fTemp241 + fTemp243)) + 0.00079345703125 * (fTemp71 - fTemp70) + 0.00091552734375 * (fTemp78 + fTemp80 - fTemp79) + 0.000244140625 * (fTemp350 + fTemp353 + fTemp351 - fTemp352) + fTemp118 + fTemp119 + fTemp120 + fTemp121 + fTemp122 + fTemp123 + fTemp124 + fTemp125 + fTemp126 + fTemp127 + fTemp128 + fTemp129 + fTemp130 + fTemp131 + fTemp132 + fTemp133 + fTemp134 + fTemp135 + fTemp136 + fTemp137 + fTemp138 + fTemp139 + fTemp140 + fTemp141 + fTemp142 + fTemp143 + fTemp144 + fTemp145 + fTemp146 + fTemp147 + fTemp148 + fTemp149 + fTemp150 + fTemp151 + fTemp152 + fTemp153 + fTemp154 + fTemp155 + fTemp156 + fTemp157 + fTemp158 + fTemp159 + fTemp160 + fTemp161 + fTemp162 + fTemp163 + fTemp164 + fTemp165 + fTemp166 + fTemp167 + fTemp168 + fTemp169 + fTemp170 + fTemp171 + fTemp172 + fTemp310 + fTemp311 + fTemp312 + fTemp313 + fTemp314 + fTemp315 + fTemp318 + fTemp319 + fTemp320 + fTemp321 + fTemp322 + fTemp323 + fTemp173 + fTemp325 + fTemp326 + fTemp327 + fTemp328 + fTemp329 + fTemp330 + fTemp331 + fTemp332 + fTemp333 + fTemp334 + fTemp335 + fTemp336 + fTemp337 + fTemp338 + fTemp339 + fTemp340 + fTemp341 + fTemp342 + fTemp343 + fTemp344 + fTemp345 + fTemp346 + fTemp347 + fTemp348 + fTemp182 + fTemp349 - (0.002166748046875 * (fTemp198 - fTemp199) + 0.00201416015625 * (fTemp190 - fTemp191) + 0.001373291015625 * (fTemp27 + fTemp26) + 0.00128173828125 * (fTemp31 + fTemp30) + 0.000518798828125 * (fTemp184 - fTemp185) + 0.001190185546875 * (fTemp200 - fTemp201) + 0.001953125 * (fTemp18 - fTemp17) + 0.006195068359375 * (fTemp14 - fTemp13) + 0.00225830078125 * (fTemp16 + fTemp15) + 0.00152587890625 * (fTemp188 - fTemp189) + 0.00408935546875 * (fTemp41 + fTemp40) + 0.003448486328125 * (fTemp43 + fTemp42) + fTemp32 + 0.003082275390625 * (fTemp25 - fTemp24) + 6.103515625e-05 * (fTemp39 + fTemp38) + fTemp235 + fTemp236 + fTemp237 + 0.000213623046875 * (fTemp261 + fTemp259 + fTemp260 + fTemp265 - (fTemp258 + fTemp262 + fTemp263 + fTemp264)) + 0.002197265625 * (fTemp5 + fTemp3 - fTemp1) + 0.000762939453125 * (fTemp220 + fTemp218 + fTemp219 + fTemp222 - (fTemp221 + fTemp217)) + 0.001007080078125 * (fTemp213 + fTemp216 - (fTemp215 + fTemp214)) + 0.001556396484375 * (fTemp7 - fTemp6) + 0.00030517578125 * (fTemp360 + fTemp361 + fTemp364 + fTemp362 - (fTemp363 + fTemp365)) + 0.0010986328125 * (fTemp240 + fTemp238 - fTemp239) + 0.00140380859375 * (fTemp272 + fTemp270 - (fTemp271 + fTemp269)) + 0.0009765625 * (fTemp202 + fTemp205 - (fTemp204 + fTemp203)) + 0.00177001953125 * (fTemp29 + fTemp0 + fTemp28) + 0.000701904296875 * (fTemp114 + fTemp115 + fTemp116 + fTemp117 + fTemp112 - (fTemp111 + fTemp113)) + 0.000946044921875 * (fTemp4 + fTemp21 - (fTemp19 + fTemp20)) + 0.001983642578125 * (fTemp110 + fTemp109 - (fTemp106 + fTemp107 + fTemp108)) + 0.0001220703125 * (fTemp207 + fTemp208 + fTemp212 - (fTemp206 + fTemp209 + fTemp210 + fTemp211)) + 0.000396728515625 * (fTemp249 + fTemp247 + fTemp248 + fTemp252 - (fTemp251 + fTemp250)) + 0.000640869140625 * (fTemp369 + fTemp366 + fTemp368 - fTemp367) + 0.000335693359375 * (fTemp227 + fTemp230 - (fTemp229 + fTemp228)) + 0.0008544921875 * (fTemp231 + fTemp232 + fTemp234 - fTemp233) + 0.00189208984375 * (fTemp254 - fTemp253) + 0.0025634765625 * (fTemp64 + fTemp63 + fTemp62 - fTemp61) + 0.000274658203125 * (fTemp370 + fTemp372 - fTemp371) + 0.00054931640625 * (fTemp267 + fTemp266 - fTemp268) + 0.00164794921875 * (fTemp66 + fTemp67 + fTemp68 + fTemp65 - fTemp69) + 0.000457763671875 * (fTemp46 + fTemp45 - fTemp44) + 9.1552734375e-05 * (fTemp85 + fTemp92 + fTemp93 + fTemp94 + fTemp90 - (fTemp91 + fTemp86 + fTemp87 + fTemp89 + fTemp88)) + fTemp273 + fTemp274 + fTemp275 + fTemp276 + fTemp277 + fTemp278 + fTemp279 + fTemp280 + fTemp281 + fTemp282 + fTemp283 + fTemp284 + fTemp285 + fTemp286 + fTemp287 + fTemp288 + fTemp289 + fTemp290 + fTemp291 + fTemp292 + fTemp293 + fTemp294 + fTemp295 + fTemp296 + fTemp297 + fTemp298 + fTemp299 + fTemp300 + fTemp301 + fTemp302 + fTemp303 + fTemp304 + fTemp305 + fTemp306 + fTemp307 + fTemp308 + fTemp309 + fTemp316 + fTemp317 + fTemp324 + fTemp174 + fTemp175 + fTemp176 + fTemp177 + fTemp178 + fTemp179 + fTemp180 + fTemp183 + fTemp181 + 0.00048828125 * (fTemp355 + fTemp354 - fTemp356) + 0.001251220703125 * (fTemp357 + fTemp359 - fTemp358) + 0.000152587890625 * (fTemp246 + fTemp244 - fTemp245) + 3.0517578125e-05 * (fTemp225 + fTemp224 - (fTemp223 + fTemp226))));
 			IOTA0 = IOTA0 + 1;
 		}
 	}
 
 };
-
-#ifdef FAUST_UIMACROS
-	
-	#define FAUST_FILE_NAME "hb1_to_binaural.dsp"
-	#define FAUST_CLASS_NAME "hb1_to_binaural"
-	#define FAUST_COMPILATION_OPIONS "-a /usr/local/Cellar/faust/2.68.1_1/share/faust/max-msp/max-msp64.cpp -lang cpp -i -ct 1 -cn hb1_to_binaural -es 1 -mcd 16 -uim -double -ftz 0"
-	#define FAUST_INPUTS 3
-	#define FAUST_OUTPUTS 2
-	#define FAUST_ACTIVES 0
-	#define FAUST_PASSIVES 0
-
-
-	#define FAUST_LIST_ACTIVES(p) \
-
-	#define FAUST_LIST_PASSIVES(p) \
-
-#endif
 
 /***************************END USER SECTION ***************************/
 
@@ -9752,7 +9841,7 @@ class midi {
         midi() {}
         virtual ~midi() {}
 
-        // Additional time-stamped API for MIDI input
+        // Additional timestamped API for MIDI input
         virtual MapUI* keyOn(double, int channel, int pitch, int velocity)
         {
             return keyOn(channel, pitch, velocity);
@@ -12589,6 +12678,7 @@ struct FAUST_API JSONUIDecoderBase
     virtual void buildUserInterface(UI* ui_interface, char* memory_block) = 0;
     virtual void buildUserInterface(UIGlue* ui_interface, char* memory_block) = 0;
     virtual bool hasCompileOption(const std::string& option) = 0;
+    virtual std::string getCompileOption(const std::string& option) = 0;
 };
 
 template <typename REAL>
@@ -13033,6 +13123,20 @@ struct FAUST_API JSONUIDecoderReal : public JSONUIDecoderBase {
             if (token == option) return true;
         }
         return false;
+    }
+    
+    std::string getCompileOption(const std::string& option)
+    {
+        std::istringstream iss(fCompileOptions);
+        std::string token;
+        while (std::getline(iss, token, ' ')) {
+            if (token == option) {
+                std::string res;
+                iss >> res;
+                return res;
+            }
+        }
+        return "";
     }
     
     int getDSPSize() { return fDSPSize; }
@@ -14201,7 +14305,8 @@ struct dsp_poly_factory : public dsp_factory {
 
     /* Create a new polyphonic DSP instance with global effect, to be deleted with C++ 'delete'
      *
-     * @param nvoices - number of polyphony voices, should be at least 1
+     * @param nvoices - number of polyphony voices, should be at least 1.
+     * If -1 is used, the voice number found in the 'declare options "[nvoices:N]";' section will be used.
      * @param control - whether voices will be dynamically allocated and controlled (typically by a MIDI controler).
      *                If false all voices are always running.
      * @param group - if true, voices are not individually accessible, a global "Voices" tab will automatically dispatch
@@ -14211,6 +14316,13 @@ struct dsp_poly_factory : public dsp_factory {
      */
     dsp_poly* createPolyDSPInstance(int nvoices, bool control, bool group, bool is_double = false)
     {
+        if (nvoices == -1) {
+            // Get 'nvoices' from the metadata declaration
+            dsp* dsp = fProcessFactory->createDSPInstance();
+            bool midi_sync;
+            MidiMeta::analyse(dsp, midi_sync, nvoices);
+            delete dsp;
+        }
         dsp_poly* dsp_poly = new hb1_to_binaural_poly(adaptDSP(fProcessFactory->createDSPInstance(), is_double), nvoices, control, group);
         if (fEffectFactory) {
             // the 'dsp_poly' object has to be controlled with MIDI, so kept separated from new dsp_sequencer(...) object
@@ -14297,7 +14409,8 @@ void faust_allocate(t_faust* x, int nvoices)
         post("monophonic DSP");
     #endif
         // Create a DS/US + Filter adapted DSP
-        x->m_dsp = createSRAdapter<FAUSTFLOAT>(new hb1_to_binaural(), DOWN_SAMPLING, UP_SAMPLING, FILTER_TYPE);
+        std::string error;
+        x->m_dsp = createSRAdapter<FAUSTFLOAT>(new hb1_to_binaural(), error, DOWN_SAMPLING, UP_SAMPLING, FILTER_TYPE);
     }
     
 #ifdef MIDICTRL
@@ -14847,7 +14960,7 @@ void ext_main(void* r)
     faust_class = c;
 #ifdef POST
     post((char*)"Faust DSP object v%s (sample = %s bits code = %s)", EXTERNAL_VERSION, ((sizeof(FAUSTFLOAT) == 4) ? "32" : "64"), getCodeSize());
-    post((char*)"Copyright (c) 2012-2023 Grame");
+    post((char*)"Copyright (c) 2012-2024 Grame");
 #endif
     Max_Meta1 meta1;
     tmp_dsp->metadata(&meta1);
