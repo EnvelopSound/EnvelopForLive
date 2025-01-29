@@ -764,7 +764,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 260.0, 236.0, 231.0, 22.0 ],
-					"text" : "e4l.ambidecode.angles -45. 45. 135. 225."
+					"text" : "e4l.ambidecode.angles -45. 45. -135. 135."
 				}
 
 			}
